@@ -935,3 +935,134 @@ footer {
         font-size: 1.5rem;
     }
 }
+
+/* Vision Core homepage: upstream notice & product distinction */
+.upstream-banner {
+    background: #fff8e6;
+    border-bottom: 1px solid #f0d78c;
+    padding: var(--space-4) 0;
+    font-size: var(--text-sm);
+    line-height: 1.5;
+}
+
+.upstream-banner a {
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.upstream-banner-inner p {
+    margin: 0;
+    max-width: 72ch;
+}
+
+.hero-secondary {
+    font-size: var(--text-md) !important;
+    color: #6c757d !important;
+    margin-top: calc(-1 * var(--space-4)) !important;
+}
+
+.section-lead {
+    text-align: center;
+    max-width: 42rem;
+    margin: -0.5rem auto var(--space-8);
+    color: #495057;
+    line-height: var(--body-line-height);
+}
+
+.section-lead a {
+    color: var(--primary-dark);
+    font-weight: 500;
+}
+
+.distinction {
+    padding: var(--space-12) 0;
+    background: white;
+}
+
+.distinction-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.distinction-card {
+    padding: var(--space-6);
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    background: var(--light);
+}
+
+.distinction-card h3 {
+    margin-bottom: var(--space-3);
+    font-size: var(--text-lg);
+}
+
+.distinction-card p {
+    margin: 0;
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: #495057;
+}
+
+.distinction-card a {
+    color: var(--primary-dark);
+    font-weight: 500;
+}
+
+.distinction-card-product {
+    border-top: 3px solid var(--secondary);
+}
+
+.distinction-card-core {
+    border-top: 3px solid var(--terminal-green);
+}
+
+.distinction-card-upstream {
+    border-top: 3px solid var(--primary);
+}
+
+.vision-core-features {
+    background: white;
+}
+
+.engine-features {
+    background: #f1f3f5;
+}
+
+.feature-card-static {
+    cursor: default;
+    text-decoration: none;
+    color: inherit;
+}
+
+.feature-card-static:hover {
+    transform: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+    background: rgba(0, 0, 0, 0.06);
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+}
+
+.footer-tagline {
+    text-align: center;
+    color: #6c757d;
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+    line-height: 1.6;
+}
+
+.footer-tagline a {
+    color: var(--primary-dark);
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .distinction-grid {
+        grid-template-columns: 1fr;
+    }
+}

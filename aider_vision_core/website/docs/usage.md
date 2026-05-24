@@ -1,12 +1,14 @@
 ---
 nav_order: 30
 has_children: true
-description: How to use aider to pair program with AI and edit code in your local git repo.
+description: How to use the engine CLI in your local git repo.
 ---
 
 # Usage
 
-Run `aider` with the source code files you want to edit.
+{% include vision-notice.md %}
+
+Run `aider-vision-core` with the source code files you want to edit.
 These files will be "added to the chat session", so that
 aider can see their
 contents and edit them for you.
@@ -14,7 +16,7 @@ They can be existing files or the name of files you want
 aider to create for you.
 
 ```
-aider <file1> <file2> ...
+aider-vision-core <file1> <file2> ...
 ```
 
 At the aider `>` prompt, ask for code changes and aider
@@ -22,7 +24,7 @@ will edit those files to accomplish your request.
 
 
 ```
-$ aider factorial.py
+$ aider-vision-core factorial.py
 
 Aider v0.37.1-dev
 Models: gpt-4o with diff edit format, weak model gpt-3.5-turbo

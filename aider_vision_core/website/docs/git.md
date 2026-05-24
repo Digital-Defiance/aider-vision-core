@@ -1,10 +1,18 @@
 ---
 parent: More info
 nav_order: 100
-description: Aider is tightly integrated with git.
+description: Git integration and submodule workspaces (Vision Core).
 ---
 
 # Git integration
+
+{% include vision-notice.md %}
+
+## Submodule workspaces (Vision Core)
+
+When the workspace root is a **git superproject** with nested submodules, Vision Core discovers submodule repos, tracks files inside them, and can commit submodule pointer updates from the root. Use a single workspace path with `aider-vision-core-serve --workspace`.
+
+---
 
 Aider works best with code that is part of a git repo.
 Aider is tightly integrated with git, which makes it easy to:

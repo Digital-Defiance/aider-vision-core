@@ -1,9 +1,11 @@
+title: Aider Vision Core
+description: Headless Aider engine fork — docs for install, HTTP API, and git workspaces.
 theme: just-the-docs
-url: "https://aider.chat"
+url: ""
 
 # Analytics configuration
 analytics:
-  enabled: false  # Single switch to control analytics and cookie consent
+  enabled: false
   posthog_key: 'phc_99T7muzafUMMZX15H8XePbMSreEUzahHbtWjy3l5Qbv'
   posthog_host: 'https://us.i.posthog.com'
 
@@ -17,7 +19,7 @@ defaults:
       path: "README.md"
       type: "pages"
     values:
-      description: "aider is AI pair programming in your terminal"
+      description: "Aider Vision Core — headless engine documentation"
 
 exclude:
   - "tmp*"
@@ -27,22 +29,26 @@ exclude:
   - "OLD/**"
   - vendor
   - feed.xml
+  - blog
+  - _posts
 
 aux_links:
-  "GitHub":
-    - "https://github.com/Aider-AI/aider"
-  "Discord":
-    - "https://discord.gg/Y7X7bhMQFV"
-  "Blog":
-    - "/blog/"
+  "Aider Vision":
+    - "https://aider-vision.digitaldefiance.org/"
+  "Upstream Aider":
+    - "https://aider.chat/"
+  "GitHub (fork)":
+    - "https://github.com/Digital-Defiance/aider-vision-core"
 
 nav_external_links:
-  - title: "GitHub"
-    url: "https://github.com/Aider-AI/aider"
-  - title: "Discord"
-    url: "https://discord.gg/Y7X7bhMQFV"
+  - title: "Aider Vision"
+    url: "https://aider-vision.digitaldefiance.org/"
+  - title: "aider.chat"
+    url: "https://aider.chat/"
+  - title: "GitHub (fork)"
+    url: "https://github.com/Digital-Defiance/aider-vision-core"
 
-repository: Aider-AI/aider
+repository: Digital-Defiance/aider-vision-core
 
 callouts:
   tip:
@@ -52,18 +58,15 @@ callouts:
     title: Note
     color: yellow
 
-# Custom CSS for our table of contents
 kramdown:
   syntax_highlighter_opts:
     css_class: highlight
-    
+
 sass:
   style: compressed
-  
-# Additional CSS
+
 compress_html:
   clippings: all
   comments: all
   endings: all
   startings: []
-  

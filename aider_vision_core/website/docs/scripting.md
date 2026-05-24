@@ -1,12 +1,27 @@
 ---
 parent: More info
 nav_order: 400
-description: You can script aider via the command line or python.
+description: CLI scripting, Python API, and aider-vision-core-serve HTTP API.
 ---
 
-# Scripting aider
+# Scripting & headless API
 
-You can script aider via the command line or python.
+{% include vision-notice.md %}
+
+## HTTP API (Vision Core)
+
+Run the local server for [Aider Vision](https://aider-vision.digitaldefiance.org/) or other clients:
+
+```bash
+aider-vision-core-serve --workspace /path/to/git/repo
+# default http://127.0.0.1:8741 — see aider_vision_core/http_api.py
+```
+
+Sessions, streaming (SSE), and auth are implemented in the Python package; this site does not duplicate the OpenAPI spec.
+
+## Command line & Python
+
+You can script the engine via the command line or Python (same as upstream Aider, binary `aider-vision-core`).
 
 ## Command line
 
@@ -15,18 +30,18 @@ It will do that one thing, apply the edits to the files and then exit.
 So you could do:
 
 ```bash
-aider --message "make a script that prints hello" hello.js
+aider-vision-core --message "make a script that prints hello" hello.js
 ```
 
 Or you can write simple shell scripts to apply the same instruction to many files:
 
 ```bash
 for FILE in *.py ; do
-    aider --message "add descriptive docstrings to all the functions" $FILE
+    aider-vision-core --message "add descriptive docstrings to all the functions" $FILE
 done
 ```
 
-Use `aider --help` to see all the 
+Use `aider-vision-core --help` to see all the 
 [command line options](/docs/config/options.html),
 but these are useful for scripting:
 

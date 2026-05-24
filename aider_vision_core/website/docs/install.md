@@ -2,25 +2,21 @@
 title: Installation
 has_children: true
 nav_order: 20
-description: How to install and get started pair programming with aider.
+description: Install aider-vision-core and run the CLI or HTTP server.
 ---
 
 # Installation
 {: .no_toc }
 
+{% include vision-notice.md %}
 
-## Get started quickly with aider-install
+## Quick start
 
 {% include get-started.md %}
 
-This will install aider in its own separate python environment.
-If needed, 
-aider-install will also install a separate version of python 3.12 to use with aider.
+Optional: [optional install steps](/docs/install/optional.html). Usage details for the shared engine: [Usage](/docs/usage.html) and [upstream usage](https://aider.chat/docs/usage.html).
 
-Once aider is installed,
-there are also some [optional install steps](/docs/install/optional.html).
-
-See the [usage instructions](https://aider.chat/docs/usage.html) to start coding with aider.
+The upstream [aider.chat install.sh](https://aider.chat/install.sh) flow installs **Aider**, not this package — use `pip install aider-vision-core` for Vision Core.
 
 ## One-liners
 

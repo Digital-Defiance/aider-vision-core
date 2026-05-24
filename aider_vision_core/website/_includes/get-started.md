@@ -1,22 +1,17 @@
 
-If you already have python 3.8-3.13 installed, you can get started quickly like this.
-
-First, install aider:
+Install the engine package, then run the CLI or HTTP server.
 
 {% include install.md %}
 
-Start working with aider on your codebase:
-
 ```bash
-# Change directory into your codebase
-cd /to/your/project
+# Change directory into your git workspace
+cd /path/to/your/project
 
-# DeepSeek
-aider --model deepseek --api-key deepseek=<key>
+# CLI
+aider-vision-core --model sonnet --api-key anthropic=<key>
 
-# Claude 3.7 Sonnet
-aider --model sonnet --api-key anthropic=<key>
-
-# o3-mini
-aider --model o3-mini --api-key openai=<key>
+# Or headless HTTP API (from repo root)
+aider-vision-core-serve --workspace /path/to/your/project
 ```
+
+For the **Aider Vision** desktop app, use [aider-vision.digitaldefiance.org](https://aider-vision.digitaldefiance.org/) — it talks to this engine over HTTP.
