@@ -5,7 +5,7 @@ from pathlib import Path
 
 import packaging.version
 
-import aider
+import aider_vision_core
 from aider_vision_core import utils
 from aider_vision_core.dump import dump  # noqa: F401
 
@@ -14,14 +14,14 @@ VERSION_CHECK_FNAME = Path.home() / ".aider" / "caches" / "versioncheck"
 
 def install_from_main_branch(io):
     """
-    Install the latest version of aider from the main branch of the GitHub repository.
+    Install the latest version of aider-vision-core from the main branch of the GitHub repository.
     """
 
     return utils.check_pip_install_extra(
         io,
         None,
-        "Install the development version of aider from the main branch?",
-        ["git+https://github.com/Aider-AI/aider.git"],
+        "Install the development version of aider-vision-core from the main branch?",
+        ["git+https://github.com/Digital-Defiance/aider-vision-core.git"],
         self_update=True,
     )
 
@@ -55,7 +55,7 @@ def install_upgrade(io, latest_version=None):
     )
 
     if success:
-        io.tool_output("Re-run aider to use new version.")
+        io.tool_output("Re-run aider-vision-core to use new version.")
         sys.exit()
 
     return
@@ -78,7 +78,7 @@ def check_version(io, just_check=False, verbose=False):
         response = requests.get("https://pypi.org/pypi/aider-vision-core/json")
         data = response.json()
         latest_version = data["info"]["version"]
-        current_version = aider.__version__
+        current_version = aider_vision_core.__version__
 
         if just_check or verbose:
             io.tool_output(f"Current version: {current_version}")

@@ -48,6 +48,8 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
 write_to = "aider_vision_core/_version.py"
+# PyPI rejects uploads with local versions (+g<hash>); use release tags for publishing.
+local_scheme = "no-local-version"
 
 [tool.codespell]
 skip = "*.svg,Gemfile.lock,tests/fixtures/*,aider_vision_core/website/assets/*"

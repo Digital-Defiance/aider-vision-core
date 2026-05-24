@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: aider-vision-core
-Version: 0.90.1.dev0+g3583f5e68.d20260524
+Version: 0.90.1.dev0
 Summary: aider-vision-core: Aider fork with headless API, submodule git, and web integration
 Project-URL: Homepage, https://github.com/Digital-Defiance/aider-vision-core
 Classifier: Development Status :: 4 - Beta
