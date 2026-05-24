@@ -69,6 +69,7 @@ aider_vision_core/special.py
 aider_vision_core/urls.py
 aider_vision_core/utils.py
 aider_vision_core/versioncheck.py
+aider_vision_core/vision_runtime.py
 aider_vision_core/vision_serve.py
 aider_vision_core/voice.py
 aider_vision_core/waiting.py
@@ -308,6 +309,7 @@ requirements/tree-sitter.in
 scripts/30k-image.py
 scripts/Dockerfile.jekyll
 scripts/__init__.py
+scripts/audit_rename_compat.py
 scripts/blame.py
 scripts/clean_metadata.py
 scripts/dl_icons.py
@@ -363,6 +365,7 @@ tests/basic/test_ssl_verification.py
 tests/basic/test_udiff.py
 tests/basic/test_urls.py
 tests/basic/test_utils.py
+tests/basic/test_vision_runtime.py
 tests/basic/test_voice.py
 tests/basic/test_watch.py
 tests/basic/test_wholefile.py
