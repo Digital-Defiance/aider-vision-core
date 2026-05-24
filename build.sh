@@ -41,9 +41,12 @@ usage() {
 }
 
 run_sync_vision() {
-  local sync_args=()
-  (( ASSUME_YES )) && sync_args+=(--yes)
-  bash "${ROOT}/scripts/sync_aider_vision.sh" "${VERSION}" "${sync_args[@]}"
+  # Avoid "${arr[@]}" on an empty array: with set -u, Bash 3.2 (macOS) errors.
+  if (( ASSUME_YES )); then
+    bash "${ROOT}/scripts/sync_aider_vision.sh" "${VERSION}" --yes
+  else
+    bash "${ROOT}/scripts/sync_aider_vision.sh" "${VERSION}"
+  fi
 }
 
 die() {

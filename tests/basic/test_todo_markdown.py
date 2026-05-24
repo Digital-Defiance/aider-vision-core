@@ -31,6 +31,25 @@ class TestTodoMarkdown(unittest.TestCase):
         self.assertEqual(len(loaded.todos[0].checklist), 2)
         self.assertTrue(loaded.todos[0].checklist[0].done)
 
+    def test_three_layer_roundtrip(self):
+        store = TodoStore(
+            todos=[
+                TodoItem(
+                    id="x1",
+                    title="API feature",
+                    requirements="### REQ-1\n**SHALL** work",
+                    design="## Overview\nFastAPI",
+                    tasks_md="- [ ] Implement endpoint",
+                    depends_on=[],
+                    status="open",
+                )
+            ],
+        )
+        loaded = import_markdown(export_markdown(store))
+        self.assertEqual(loaded.todos[0].requirements, "### REQ-1\n**SHALL** work")
+        self.assertIn("FastAPI", loaded.todos[0].design)
+        self.assertIn("endpoint", loaded.todos[0].tasks_md)
+
     def test_auto_complete_on_checklist(self):
         with GitTemporaryDirectory() as temp_dir:
             make_repo(temp_dir)
