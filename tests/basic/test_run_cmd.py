@@ -1,6 +1,6 @@
 import pytest  # noqa: F401
 
-from aider.run_cmd import run_cmd
+from aider_vision_core.run_cmd import run_cmd
 
 
 def test_run_cmd_echo():

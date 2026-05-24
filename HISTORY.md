@@ -143,7 +143,7 @@ versions.
 - Added a `--shell-completions` argument to generate shell completion scripts (e.g., for bash, zsh).
 - Explicit `--attribute-author` or `--attribute-committer` flags now override the default behavior when `--attribute-co-authored-by` is used, allowing finer control over commit attribution, by Andrew Grigorev.
 - Fixed an issue where read-only status of files might not be preserved correctly by some commands (e.g. `/drop` after adding a read-only file).
-- The `aider-args` utility (or `python -m aider.args`) now defaults to printing a sample YAML configuration if no arguments are provided.
+- The `aider-args` utility (or `python -m aider_vision_core.args`) now defaults to printing a sample YAML configuration if no arguments are provided.
 - Displayed token count progress and the name of the file or identifier being processed during repo map updates.
 - Extended the waiting spinner to also show for non-streaming responses and further enhanced its animation with console width clipping, cursor hiding, and a more continuous appearance.
 - Dropped support for Python 3.9.
@@ -733,7 +733,7 @@ versions.
 
 ### Aider v0.57.1
 
-- Fixed dependency conflict between aider-chat[help] and [playwright].
+- Fixed dependency conflict between aider-vision-core[help] and [playwright].
 
 ### Aider v0.57.0
 
@@ -1042,9 +1042,9 @@ versions.
 
 - Default pip install size reduced by 3-12x.
 - Added 3 package extras, which aider will offer to install when needed:
-  - `aider-chat[help]`
-  - `aider-chat[browser]`
-  - `aider-chat[playwright]`
+  - `aider-vision-core[help]`
+  - `aider-vision-core[browser]`
+  - `aider-vision-core[playwright]`
 - Improved regex for detecting URLs in user chat messages.
 - Bugfix to globbing logic when absolute paths are included in `/add`.
 - Simplified output of `--models`.

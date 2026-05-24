@@ -115,7 +115,7 @@ def run_install(cmd):
             fnames = git_repo.get_tracked_files()
             self.assertIn(str(fname), fnames)
 
-    @patch("aider.repo.simple_send_with_retries")
+    @patch("aider_vision_core.repo.simple_send_with_retries")
     def test_noop_commit(self, mock_send):
         mock_send.return_value = '"a good commit message"'
 @@@@@@@@@@@@@@@@@@@@
@@ -179,7 +179,7 @@ def run_install(cmd):
             self.assertNotIn(str(root_file), tracked_files)
             self.assertNotIn(str(another_subdir_file), tracked_files)
 
-    @patch("aider.repo.simple_send_with_retries")
+    @patch("aider_vision_core.repo.simple_send_with_retries")
     def test_noop_commit(self, mock_send):
         mock_send.return_value = '"a good commit message"'
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
@@ -421,21 +421,21 @@ if __name__ == "__main__":
 import os
 import unittest
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import IgnorantTemporaryDirectory
 @@@@@@@@@@@@@@@@@@@@
 import os
 import unittest
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.repo import GitRepo
-from aider.utils import IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.utils import IgnorantTemporaryDirectory
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
@@ -449,9 +449,9 @@ Certainly! I'll make the necessary changes to replace `IgnorantTemporaryDirector
 tests/basic/test_repomap.py
 ```python
 <<<<<<< SEARCH
-from aider.utils import IgnorantTemporaryDirectory
+from aider_vision_core.utils import IgnorantTemporaryDirectory
 =======
-from aider.utils import GitTemporaryDirectory
+from aider_vision_core.utils import GitTemporaryDirectory
 >>>>>>> REPLACE
 ```
 
@@ -493,12 +493,12 @@ tests/basic/test_repomap.py
         with GitTemporaryDirectory() as temp_dir:
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_repomap.py @@@@@@@@@@@@@@@@@@@@
-from aider.utils import IgnorantTemporaryDirectory
+from aider_vision_core.utils import IgnorantTemporaryDirectory
 
 
 class TestRepoMap(unittest.TestCase):
 @@@@@@@@@@@@@@@@@@@@
-from aider.utils import IgnorantTemporaryDirectory, GitTemporaryDirectory
+from aider_vision_core.utils import IgnorantTemporaryDirectory, GitTemporaryDirectory
 
 
 class TestRepoMap(unittest.TestCase):
@@ -524,18 +524,18 @@ class TestRepoMap(unittest.TestCase):
             repo_map = RepoMap(main_model=self.GPT35, root=temp_dir, io=io)
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_repomap.py @@@@@@@@@@@@@@@@@@@@
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repo import GitRepo
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 @@@@@@@@@@@@@@@@@@@@
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
@@ -543,7 +543,7 @@ from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_false_vals_in_env_file(self):
         self.create_env_file(".env", "AIDER_SHOW_DIFFS=off")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -551,7 +551,7 @@ from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 
     def test_true_vals_in_env_file(self):
         self.create_env_file(".env", "AIDER_SHOW_DIFFS=on")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -561,7 +561,7 @@ from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 @@@@@@@@@@@@@@@@@@@@
     def test_false_vals_in_env_file(self):
         self.create_env_file(".env", "AIDER_SHOW_DIFFS=off")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -569,14 +569,14 @@ from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 
     def test_true_vals_in_env_file(self):
         self.create_env_file(".env", "AIDER_SHOW_DIFFS=on")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
             self.assertEqual(kwargs["show_diffs"], True)
 
     def test_map_tokens_option(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git", "--map-tokens", "0", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -584,7 +584,7 @@ from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
             self.assertIsNone(kwargs["repo_map"])
 
     def test_map_tokens_default(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -626,7 +626,7 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_dark_mode_sets_code_theme(self):
         # Mock Coder.create to capture the configuration
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--dark-mode", "--no-git"], input=DummyInput(), output=DummyOutput())
             # Ensure Coder.create was called
             MockCoder.assert_called_once()
@@ -636,7 +636,7 @@ tests/basic/test_main.py
 
     def test_light_mode_sets_code_theme(self):
         # Mock Coder.create to capture the configuration
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--light-mode", "--no-git"], input=DummyInput(), output=DummyOutput())
             # Ensure Coder.create was called
             MockCoder.assert_called_once()
@@ -646,7 +646,7 @@ tests/basic/test_main.py
 =======
     def test_dark_mode_sets_code_theme(self):
         # Mock Coder.create to capture the configuration
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--dark-mode"], input=DummyInput(), output=DummyOutput())
             # Ensure Coder.create was called
             MockCoder.assert_called_once()
@@ -656,7 +656,7 @@ tests/basic/test_main.py
 
     def test_light_mode_sets_code_theme(self):
         # Mock Coder.create to capture the configuration
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--light-mode"], input=DummyInput(), output=DummyOutput())
             # Ensure Coder.create was called
             MockCoder.assert_called_once()
@@ -671,7 +671,7 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_env_file_flag_sets_automatic_variable(self):
         env_file_path = self.create_env_file(".env.test", "AIDER_DARK_MODE=True")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(
                 ["--env-file", str(env_file_path), "--no-git"],
                 input=DummyInput(),
@@ -684,7 +684,7 @@ tests/basic/test_main.py
 
     def test_default_env_file_sets_automatic_variable(self):
         self.create_env_file(".env", "AIDER_DARK_MODE=True")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git"], input=DummyInput(), output=DummyOutput())
             # Ensure Coder.create was called
             MockCoder.assert_called_once()
@@ -694,7 +694,7 @@ tests/basic/test_main.py
 
     def test_false_vals_in_env_file(self):
         self.create_env_file(".env", "AIDER_SHOW_DIFFS=off")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -702,7 +702,7 @@ tests/basic/test_main.py
 
     def test_true_vals_in_env_file(self):
         self.create_env_file(".env", "AIDER_SHOW_DIFFS=on")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-
 
 
@@ -718,7 +718,7 @@ tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
     def test_map_tokens_option(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git", "--map-tokens", "0", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -726,7 +726,7 @@ tests/basic/test_main.py
             self.assertIsNone(kwargs["repo_map"])
 
     def test_map_tokens_default(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -736,8 +736,8 @@ tests/basic/test_main.py
     def test_lint_option(self):
 =======
     def test_map_tokens_option(self):
-        with patch("aider.coders.Coder.create") as MockCoder, \
-             patch("aider.repomap.RepoMap") as MockRepoMap:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder, \
+             patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
             main(["--map-tokens", "0", "--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -746,8 +746,8 @@ tests/basic/test_main.py
             MockRepoMap.assert_not_called()
 
     def test_map_tokens_default(self):
-        with patch("aider.coders.Coder.create") as MockCoder, \
-             patch("aider.repomap.RepoMap") as MockRepoMap:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder, \
+             patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
             main(["--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -775,7 +775,7 @@ Both tests now use `gpt-4o` as the model and mock the `RepoMap` class to ensure 
 > ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in tests/basic/test_main.py  
 > <<<<<<< SEARCH  
 >     def test_map_tokens_option(self):  
->         with patch("aider.coders.Coder.create") as MockCoder:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder:  
 >             main(["--no-git", "--map-tokens", "0", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -783,7 +783,7 @@ Both tests now use `gpt-4o` as the model and mock the `RepoMap` class to ensure 
 >             self.assertIsNone(kwargs["repo_map"])  
 >   
 >     def test_map_tokens_default(self):  
->         with patch("aider.coders.Coder.create") as MockCoder:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder:  
 >             main(["--no-git", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -793,8 +793,8 @@ Both tests now use `gpt-4o` as the model and mock the `RepoMap` class to ensure 
 >     def test_lint_option(self):  
 > =======  
 >     def test_map_tokens_option(self):  
->         with patch("aider.coders.Coder.create") as MockCoder, \  
->              patch("aider.repomap.RepoMap") as MockRepoMap:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder, \  
+>              patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:  
 >             main(["--map-tokens", "0", "--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -803,8 +803,8 @@ Both tests now use `gpt-4o` as the model and mock the `RepoMap` class to ensure 
 >             MockRepoMap.assert_not_called()  
 >   
 >     def test_map_tokens_default(self):  
->         with patch("aider.coders.Coder.create") as MockCoder, \  
->              patch("aider.repomap.RepoMap") as MockRepoMap:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder, \  
+>              patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:  
 >             main(["--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -823,7 +823,7 @@ tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
     def test_map_tokens_option(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git", "--map-tokens", "0", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -831,7 +831,7 @@ tests/basic/test_main.py
             self.assertIsNone(kwargs["repo_map"])
 
     def test_map_tokens_default(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -841,8 +841,8 @@ tests/basic/test_main.py
     def test_lint_option(self):
 =======
     def test_map_tokens_option(self):
-        with patch("aider.coders.Coder.create") as MockCoder, \
-             patch("aider.repomap.RepoMap") as MockRepoMap:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder, \
+             patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
             main(["--map-tokens", "0", "--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -851,8 +851,8 @@ tests/basic/test_main.py
             MockRepoMap.assert_not_called()
 
     def test_map_tokens_default(self):
-        with patch("aider.coders.Coder.create") as MockCoder, \
-             patch("aider.repomap.RepoMap") as MockRepoMap:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder, \
+             patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
             main(["--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -881,7 +881,7 @@ These changes will implement the tests for the `--map-tokens` option as requeste
 > ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in tests/basic/test_main.py  
 > <<<<<<< SEARCH  
 >     def test_map_tokens_option(self):  
->         with patch("aider.coders.Coder.create") as MockCoder:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder:  
 >             main(["--no-git", "--map-tokens", "0", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -889,7 +889,7 @@ These changes will implement the tests for the `--map-tokens` option as requeste
 >             self.assertIsNone(kwargs["repo_map"])  
 >   
 >     def test_map_tokens_default(self):  
->         with patch("aider.coders.Coder.create") as MockCoder:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder:  
 >             main(["--no-git", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -899,8 +899,8 @@ These changes will implement the tests for the `--map-tokens` option as requeste
 >     def test_lint_option(self):  
 > =======  
 >     def test_map_tokens_option(self):  
->         with patch("aider.coders.Coder.create") as MockCoder, \  
->              patch("aider.repomap.RepoMap") as MockRepoMap:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder, \  
+>              patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:  
 >             main(["--map-tokens", "0", "--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -909,8 +909,8 @@ These changes will implement the tests for the `--map-tokens` option as requeste
 >             MockRepoMap.assert_not_called()  
 >   
 >     def test_map_tokens_default(self):  
->         with patch("aider.coders.Coder.create") as MockCoder, \  
->              patch("aider.repomap.RepoMap") as MockRepoMap:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder, \  
+>              patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:  
 >             main(["--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -932,7 +932,7 @@ tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
     def test_map_tokens_option(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--map-tokens", "0", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -940,7 +940,7 @@ tests/basic/test_main.py
             self.assertIsNone(kwargs["repo_map"])
 
     def test_map_tokens_default(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -959,7 +959,7 @@ import git
 from prompt_toolkit.input import DummyInput
 from prompt_toolkit.output import DummyOutput
 
-from aider.dump import dump  # noqa: F401
+from aider_vision_core.dump import dump  # noqa: F401
 @@@@@@@@@@@@@@@@@@@@
 from unittest.mock import MagicMock, patch
 
@@ -967,109 +967,109 @@ import git
 from prompt_toolkit.input import DummyInput
 from prompt_toolkit.output import DummyOutput
 
-from aider.dump import dump  # noqa: F401
-from aider.models import Model
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.models import Model
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_main_args(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             # --yes will just ok the git repo without blocking on input
             # following calls to main will see the new repo already
             main(["--no-auto-commits", "--yes"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["auto_commits"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--auto-commits"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["auto_commits"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main([], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
             assert kwargs["auto_commits"] is True
             assert kwargs["pretty"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-dirty-commits"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--dirty-commits"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
 @@@@@@@@@@@@@@@@@@@@
     def test_main_args(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             # --yes will just ok the git repo without blocking on input
             # following calls to main will see the new repo already
             main(["--no-auto-commits", "--yes"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["auto_commits"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--auto-commits"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["auto_commits"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main([], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
             assert kwargs["auto_commits"] is True
             assert kwargs["pretty"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-dirty-commits"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--dirty-commits"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
 
-    @patch("aider.main.RepoMap")
+    @patch("aider_vision_core.main.RepoMap")
     def test_map_tokens_with_gpt4o(self, MockRepoMap):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--model", "gpt-4o", "--map-tokens", "1024", "--yes"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["map_tokens"] == 1024
             MockRepoMap.assert_called_once()
 
-    @patch("aider.main.RepoMap")
+    @patch("aider_vision_core.main.RepoMap")
     def test_map_tokens_zero_with_gpt4o(self, MockRepoMap):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--model", "gpt-4o", "--map-tokens", "0", "--yes"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["map_tokens"] == 0
             MockRepoMap.assert_not_called()
 
-    @patch("aider.main.RepoMap")
+    @patch("aider_vision_core.main.RepoMap")
     def test_default_map_tokens_with_gpt4o(self, MockRepoMap):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--model", "gpt-4o", "--yes"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["map_tokens"] == 1024
@@ -1077,14 +1077,14 @@ from aider.models import Model
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
-@@@ #### E           AttributeError: <module 'aider.main' from '/Users/gauthier/Projects/aider/aider/main.py'> does not have the attribute 'RepoMap' @@@@@@@@@@@@@@@@@@@@
+@@@ #### E           AttributeError: <module 'aider_vision_core.main' from '/Users/gauthier/Projects/aider/aider/main.py'> does not have the attribute 'RepoMap' @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
-from aider.dump import dump  # noqa: F401
-from aider.models import Model
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.models import Model
 @@@@@@@@@@@@@@@@@@@@
-from aider.dump import dump  # noqa: F401
-from aider.models import Model
-from aider.repomap import RepoMap
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
 from unittest.mock import MagicMock, patch
@@ -1093,8 +1093,8 @@ import git
 from prompt_toolkit.input import DummyInput
 from prompt_toolkit.output import DummyOutput
 
-from aider.dump import dump  # noqa: F401
-from aider.models import Model
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.models import Model
 @@@@@@@@@@@@@@@@@@@@
 from unittest.mock import MagicMock, patch
 
@@ -1102,9 +1102,9 @@ import git
 from prompt_toolkit.input import DummyInput
 from prompt_toolkit.output import DummyOutput
 
-from aider.dump import dump  # noqa: F401
-from aider.models import Model
-from aider.repomap import RepoMap
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
 import os
@@ -1119,11 +1119,11 @@ import git
 from prompt_toolkit.input import DummyInput
 from prompt_toolkit.output import DummyOutput
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.main import check_gitignore, main, setup_git
-from aider.models import Model
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.models import Model
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
 @@@@@@@@@@@@@@@@@@@@
 import os
 import subprocess
@@ -1137,34 +1137,34 @@ import git
 from prompt_toolkit.input import DummyInput
 from prompt_toolkit.output import DummyOutput
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.main import check_gitignore, main, setup_git
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
 @@@ #### add tests for --map-tokens: use with --model gpt-4o and --map-tokens 0 and --exit. mock aider.repomap.RepoMap and ensure it is not called. in a `GitTemporaryDirectory` @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.main import check_gitignore, main, setup_git
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
 @@@@@@@@@@@@@@@@@@@@
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.main import check_gitignore, main, setup_git
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
 
 class TestMapTokens(TestCase):
-    @patch('aider.coders.Coder.create')
-    @patch('aider.repomap.RepoMap.__init__')
+    @patch('aider_vision_core.coders.Coder.create')
+    @patch('aider_vision_core.repomap.RepoMap.__init__')
     def test_map_tokens_with_gpt4o(self, mock_repomap_init, mock_coder_create):
         mock_repomap_init.return_value = None
         mock_coder_create.return_value.run.return_value = None
@@ -1200,15 +1200,15 @@ tests/test_map_tokens.py
 import os
 from unittest.mock import patch
 
-from aider.main import main
-from aider.utils import GitTemporaryDirectory
+from aider_vision_core.main import main
+from aider_vision_core.utils import GitTemporaryDirectory
 
 
 def test_map_tokens_zero():
     with GitTemporaryDirectory() as repo_path:
         os.chdir(repo_path)
 
-        with patch("aider.repomap.RepoMap") as MockRepoMap:
+        with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
             main(
                 [
                     "--model",
@@ -1226,7 +1226,7 @@ def test_map_tokens_default():
     with GitTemporaryDirectory() as repo_path:
         os.chdir(repo_path)
 
-        with patch("aider.repomap.RepoMap") as MockRepoMap:
+        with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
             main(
                 [
                     "--model",
@@ -1265,10 +1265,10 @@ import git
 from prompt_toolkit.input import DummyInput
 from prompt_toolkit.output import DummyOutput
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.main import check_gitignore, main, setup_git
-from aider.utils import GitTemporaryDirectory,
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.utils import GitTemporaryDirectory,
 
 
 
@@ -1309,13 +1309,13 @@ from aider.utils import GitTemporaryDirectory,
 
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(["--model", "gpt-4", "--map-tokens", "0", "--exit"], input=DummyInput(), output=DummyOutput())
                 MockRepoMap.assert_not_called()
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(["--model", "gpt-4", "--map-tokens", "1000", "--exit"], input=DummyInput(), output=DummyOutput())
                 MockRepoMap.assert_called_once()
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
@@ -1325,32 +1325,32 @@ from aider.utils import GitTemporaryDirectory,
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(["--model", "gpt-4", "--map-tokens", "0", "--exit"], input=DummyInput(), output=DummyOutput())
                 MockRepoMap.assert_not_called()
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(["--model", "gpt-4", "--map-tokens", "1000", "--exit"], input=DummyInput(), output=DummyOutput())
                 MockRepoMap.assert_called_once()
 @@@@@@@@@@@@@@@@@@@@
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"], input=DummyInput(), output=DummyOutput())
                 MockRepoMap.assert_not_called()
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"], input=DummyInput(), output=DummyOutput())
                 MockRepoMap.assert_called_once()
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "0", "--exit"],
                     input=DummyInput(),
@@ -1360,7 +1360,7 @@ from aider.utils import GitTemporaryDirectory,
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "1000", "--exit"],
                     input=DummyInput(),
@@ -1370,7 +1370,7 @@ from aider.utils import GitTemporaryDirectory,
 @@@@@@@@@@@@@@@@@@@@
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"],
                     input=DummyInput(),
@@ -1380,7 +1380,7 @@ from aider.utils import GitTemporaryDirectory,
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"],
                     input=DummyInput(),
@@ -1394,7 +1394,7 @@ from aider.utils import GitTemporaryDirectory,
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.base_coder.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"],
                     input=DummyInput(),
@@ -1404,7 +1404,7 @@ from aider.utils import GitTemporaryDirectory,
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"],
                     input=DummyInput(),
@@ -1414,7 +1414,7 @@ from aider.utils import GitTemporaryDirectory,
 @@@@@@@@@@@@@@@@@@@@
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"],
                     input=DummyInput(),
@@ -1424,7 +1424,7 @@ from aider.utils import GitTemporaryDirectory,
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 MockRepoMap.return_value.max_map_tokens = 1000
                 main(
                     ["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"],
@@ -1439,7 +1439,7 @@ from aider.utils import GitTemporaryDirectory,
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"],
                     input=DummyInput(),
@@ -1449,7 +1449,7 @@ from aider.utils import GitTemporaryDirectory,
 @@@@@@@@@@@@@@@@@@@@
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 MockRepoMap.return_value.max_map_tokens = 0
                 main(
                     ["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"],
@@ -2120,7 +2120,7 @@ aider/versioncheck.py
     if not is_update_available:
         return False
 
-    cmd = utils.get_pip_install(["--upgrade", "aider-chat"])
+    cmd = utils.get_pip_install(["--upgrade", "aider-vision-core"])
 
     text = f"""
 Newer aider version v{latest_version} is available. To upgrade, run:
@@ -2147,8 +2147,8 @@ from pathlib import Path
 import packaging.version
 
 import aider
-from aider import utils
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import utils
+from aider_vision_core.dump import dump  # noqa: F401
 
 
 def check_version(io, just_check=False):
@@ -2163,7 +2163,7 @@ def check_version(io, just_check=False):
     import requests
 
     try:
-        response = requests.get("https://pypi.org/pypi/aider-chat/json")
+        response = requests.get("https://pypi.org/pypi/aider-vision-core/json")
         data = response.json()
         latest_version = data["info"]["version"]
         current_version = aider.__version__
@@ -2192,7 +2192,7 @@ def check_version(io, just_check=False):
     if not is_update_available:
         return False
 
-    cmd = utils.get_pip_install(["--upgrade", "aider-chat"])
+    cmd = utils.get_pip_install(["--upgrade", "aider-vision-core"])
 
     text = f"""
 Newer aider version v{latest_version} is available. To upgrade, run:
@@ -2219,8 +2219,8 @@ from pathlib import Path
 import packaging.version
 
 import aider
-from aider import utils
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import utils
+from aider_vision_core.dump import dump  # noqa: F401
 
 
 def check_version(io, just_check=False):
@@ -2235,7 +2235,7 @@ def check_version(io, just_check=False):
     import requests
 
     try:
-        response = requests.get("https://pypi.org/pypi/aider-chat/json")
+        response = requests.get("https://pypi.org/pypi/aider-vision-core/json")
         data = response.json()
         latest_version = data["info"]["version"]
         current_version = aider.__version__
@@ -2274,7 +2274,7 @@ Newer aider version v{latest_version} is available. To upgrade, run:
         io.tool_error(text)
         return True
 
-    cmd = utils.get_pip_install(["--upgrade", "aider-chat"])
+    cmd = utils.get_pip_install(["--upgrade", "aider-vision-core"])
 
     text = f"""
 Newer aider version v{latest_version} is available. To upgrade, run:
@@ -2310,8 +2310,8 @@ from unittest.mock import MagicMock, patch
 
 import httpx
 
-from aider.llm import litellm
-from aider.sendchat import send_with_retries
+from aider_vision_core.llm import litellm
+from aider_vision_core.sendchat import send_with_retries
 
 
 class PrintCalled(Exception):
@@ -2325,8 +2325,8 @@ from unittest.mock import MagicMock, patch
 
 import httpx
 
-from aider.llm import litellm
-from aider.sendchat import send_with_retries, simple_send_with_retries
+from aider_vision_core.llm import litellm
+from aider_vision_core.sendchat import send_with_retries, simple_send_with_retries
 
 
 class PrintCalled(Exception):
@@ -2344,7 +2344,7 @@ class TestSendChat(unittest.TestCase):
         send_with_retries("model", ["message"], None, False)
         mock_print.assert_called_once()
 
-    @patch("aider.sendchat.litellm.completion")
+    @patch("aider_vision_core.sendchat.litellm.completion")
     def test_simple_send_with_retries_headers(self, mock_completion):
         # Mock the response
         mock_response = MagicMock()
@@ -2376,7 +2376,7 @@ class TestSendChat(unittest.TestCase):
 
 @@@ #### no, don't mock completion. mock the httpx library which completion uses to actually make the http request @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_sendchat.py @@@@@@@@@@@@@@@@@@@@
-    @patch("aider.sendchat.litellm.completion")
+    @patch("aider_vision_core.sendchat.litellm.completion")
     def test_simple_send_with_retries_headers(self, mock_completion):
         # Mock the response
         mock_response = MagicMock()
@@ -2760,9 +2760,9 @@ from typing import Optional
 import yaml
 from PIL import Image
 
-from aider import urls
-from aider.dump import dump  # noqa: F401
-from aider.llm import litellm
+from aider_vision_core import urls
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import litellm
 @@@@@@@@@@@@@@@@@@@@
 import difflib
 import importlib
@@ -2777,9 +2777,9 @@ from typing import Optional
 import yaml
 from PIL import Image
 
-from aider import urls
-from aider.dump import dump  # noqa: F401
-from aider.llm import litellm, AIDER_SITE_URL, AIDER_APP_NAME
+from aider_vision_core import urls
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import litellm, AIDER_SITE_URL, AIDER_APP_NAME
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/models.py @@@@@@@@@@@@@@@@@@@@
         "anthropic/claude-3-5-sonnet-20240620",
@@ -2866,27 +2866,27 @@ class GitRepo:
             pass
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/main.py @@@@@@@@@@@@@@@@@@@@
-from aider.repo import GitRepo
-from aider.sendchat import simple_send_with_retries
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.sendchat import simple_send_with_retries
 @@@@@@@@@@@@@@@@@@@@
-from aider.repo import GitRepo, SuitableRepoNotFound
-from aider.sendchat import simple_send_with_retries
+from aider_vision_core.repo import GitRepo, SuitableRepoNotFound
+from aider_vision_core.sendchat import simple_send_with_retries
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/main.py @@@@@@@@@@@@@@@@@@@@
-from aider.repo import GitRepo
-from aider.scrape import main as scrape_main
-from aider.sendchat import simple_send_with_retries
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.scrape import main as scrape_main
+from aider_vision_core.sendchat import simple_send_with_retries
 @@@@@@@@@@@@@@@@@@@@
-from aider.repo import GitRepo, SuitableRepoNotFound
-from aider.scrape import main as scrape_main
-from aider.sendchat import simple_send_with_retries
+from aider_vision_core.repo import GitRepo, SuitableRepoNotFound
+from aider_vision_core.scrape import main as scrape_main
+from aider_vision_core.sendchat import simple_send_with_retries
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/main.py @@@@@@@@@@@@@@@@@@@@
-from aider.repo import GitRepo
-from aider.sendchat import send_with_retries, simple_send_with_retries
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.sendchat import send_with_retries, simple_send_with_retries
 @@@@@@@@@@@@@@@@@@@@
-from aider.repo import GitRepo, SuitableRepoNotFound
-from aider.sendchat import send_with_retries, simple_send_with_retries
+from aider_vision_core.repo import GitRepo, SuitableRepoNotFound
+from aider_vision_core.sendchat import send_with_retries, simple_send_with_retries
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
@@ -3735,7 +3735,7 @@ from typing import List
 @@@ SEARCH: aider/io_polling.py @@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@
 from typing import List
-from aider.io import InputOutput
+from aider_vision_core.io import InputOutput
 
 class InputOutputPolling(InputOutput):
     def __init__(self, *args, **kwargs):
@@ -3818,7 +3818,7 @@ from pathlib import Path
 import git
 from PIL import ImageGrab
 
-from aider import models, prompts, voice
+from aider_vision_core import models, prompts, voice
 @@@@@@@@@@@@@@@@@@@@
 import os
 import re
@@ -3832,7 +3832,7 @@ import git
 import pyperclip
 from PIL import ImageGrab, Image
 
-from aider import models, prompts, voice
+from aider_vision_core import models, prompts, voice
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/commands.py @@@@@@@@@@@@@@@@@@@@
     def cmd_clipboard(self, args):
@@ -4179,15 +4179,15 @@ tokenizers<0.14,>=0.11.1
 
 
 @@@ #### can we get the last modified date from git instead @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
 <!--[[[cog
 import os
 import datetime
 
 files = [
-    'aider/website/docs/leaderboards/index.md',
-    'aider/website/_data/edit_leaderboard.yml',
-    'aider/website/_data/refactor_leaderboard.yml'
+    'aider_vision_core/website/docs/leaderboards/index.md',
+    'aider_vision_core/website/_data/edit_leaderboard.yml',
+    'aider_vision_core/website/_data/refactor_leaderboard.yml'
 ]
 
 mod_times = [os.path.getmtime(file) for file in files]
@@ -4201,9 +4201,9 @@ import subprocess
 import datetime
 
 files = [
-    'aider/website/docs/leaderboards/index.md',
-    'aider/website/_data/edit_leaderboard.yml',
-    'aider/website/_data/refactor_leaderboard.yml'
+    'aider_vision_core/website/docs/leaderboards/index.md',
+    'aider_vision_core/website/_data/edit_leaderboard.yml',
+    'aider_vision_core/website/_data/refactor_leaderboard.yml'
 ]
 
 def get_last_modified_date(file):
@@ -4603,8 +4603,8 @@ class Coder:
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/commands.py @@@@@@@@@@@@@@@@@@@@
 def get_help_md():
-    from aider.coders import Coder
-    from aider.models import Model
+    from aider_vision_core.coders import Coder
+    from aider_vision_core.models import Model
 
     coder = Coder(Model("gpt-3.5-turbo"), None)
     md = coder.commands.get_help_md()
@@ -4621,8 +4621,8 @@ if __name__ == "__main__":
     sys.exit(status)
 @@@@@@@@@@@@@@@@@@@@
 def get_help_md():
-    from aider.coders import Coder
-    from aider.models import Model
+    from aider_vision_core.coders import Coder
+    from aider_vision_core.models import Model
 
     coder = Coder(Model("gpt-3.5-turbo"), None)
     md = coder.commands.get_help_md()
@@ -5577,7 +5577,7 @@ aider/coders/base_coder.py
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 MockRepoMap.return_value.max_map_tokens = 1000
                 main(
                     ["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"],
@@ -5588,7 +5588,7 @@ aider/coders/base_coder.py
 @@@@@@@@@@@@@@@@@@@@
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 MockRepoMap.return_value.max_map_tokens = 1000
                 main(
                     ["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"],
@@ -6214,11 +6214,11 @@ import git
 import pyperclip
 from PIL import Image, ImageGrab
 
-from aider import models, prompts, voice
-from aider.help import Help, install_help_extra
-from aider.llm import litellm
-from aider.scrape import Scraper, install_playwright
-from aider.utils import is_image_file
+from aider_vision_core import models, prompts, voice
+from aider_vision_core.help import Help, install_help_extra
+from aider_vision_core.llm import litellm
+from aider_vision_core.scrape import Scraper, install_playwright
+from aider_vision_core.utils import is_image_file
 
 from .dump import dump  # noqa: F401
 
@@ -6255,7 +6255,7 @@ class Commands:
     def cmd_chat_mode(self, args):
         "Switch to a new chat mode"
 
-        from aider import coders
+        from aider_vision_core import coders
 
         ef = args.strip()
         valid_formats = OrderedDict(
@@ -6366,11 +6366,11 @@ from PIL import Image, ImageGrab
 from pypager.pager import Pager
 from pypager.source import StringSource
 
-from aider import models, prompts, voice
-from aider.help import Help, install_help_extra
-from aider.llm import litellm
-from aider.scrape import Scraper, install_playwright
-from aider.utils import is_image_file
+from aider_vision_core import models, prompts, voice
+from aider_vision_core.help import Help, install_help_extra
+from aider_vision_core.llm import litellm
+from aider_vision_core.scrape import Scraper, install_playwright
+from aider_vision_core.utils import is_image_file
 
 from .dump import dump  # noqa: F401
 
@@ -6407,7 +6407,7 @@ class Commands:
     def cmd_chat_mode(self, args):
         "Switch to a new chat mode"
 
-        from aider import coders
+        from aider_vision_core import coders
 
         ef = args.strip()
         valid_formats = OrderedDict(
@@ -7498,13 +7498,13 @@ from PIL import Image, ImageGrab
 from pypager.pager import Pager
 from pypager.source import StringSource
 
-from aider import models, prompts, voice
+from aider_vision_core import models, prompts, voice
 @@@@@@@@@@@@@@@@@@@@
 import git
 import pyperclip
 from PIL import Image, ImageGrab
 
-from aider import models, prompts, voice
+from aider_vision_core import models, prompts, voice
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
@@ -9263,7 +9263,7 @@ class Coder:
             file_path.write_text("Modified content")
 
             # Mock simple_send_with_retries to return a canned commit message
-            with mock.patch("aider.sendchat.simple_send_with_retries") as mock_send:
+            with mock.patch("aider_vision_core.sendchat.simple_send_with_retries") as mock_send:
                 mock_send.return_value = [{"content": "Canned commit message"}]
 
                 # Run cmd_commit
@@ -9290,7 +9290,7 @@ class Coder:
             file_path.write_text("Modified content")
 
             # Mock simple_send_with_retries to return a canned commit message
-            with mock.patch("aider.sendchat.simple_send_with_retries") as mock_send:
+            with mock.patch("aider_vision_core.sendchat.simple_send_with_retries") as mock_send:
                 mock_send.return_value = [{"content": "Canned commit message"}]
 
                 # Run cmd_commit
@@ -9311,7 +9311,7 @@ class Coder:
             file_path.write_text("Modified content")
 
             # Mock simple_send_with_retries to return a canned commit message
-            with mock.patch("aider.sendchat.simple_send_with_retries") as mock_send:
+            with mock.patch("aider_vision_core.sendchat.simple_send_with_retries") as mock_send:
                 mock_send.return_value = [{"content": "Canned commit message"}]
 
                 # Run cmd_commit
@@ -9377,48 +9377,48 @@ class Coder:
 
 @@@ #### Coder.create no longer takes a pretty arg @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main([], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
             assert kwargs["auto_commits"] is True
             assert kwargs["pretty"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is True
 @@@@@@@@@@@@@@@@@@@@
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main([], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
             assert kwargs["auto_commits"] is True
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main([], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
             assert kwargs["auto_commits"] is True
             assert kwargs["pretty"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is True
 @@@@@@@@@@@@@@@@@@@@
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main([], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
@@ -9441,7 +9441,7 @@ class Coder:
 @@@ #### instead of mocking aider.sendchat.simple_send_with_retries, mock repo.get_commit_message @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_commands.py @@@@@@@@@@@@@@@@@@@@
             # Mock simple_send_with_retries to return a canned commit message
-            with mock.patch("aider.sendchat.simple_send_with_retries") as mock_send:
+            with mock.patch("aider_vision_core.sendchat.simple_send_with_retries") as mock_send:
                 mock_send.return_value = [{"content": "Canned commit message"}]
 
                 # Run cmd_commit
@@ -9539,25 +9539,25 @@ class Coder:
 
 
 @@@ #### the edit leaderboard is wider than the width allocated, so users need to scroll left/right to see it all @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
 <table style="width: 100%; max-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
 @@@@@@@@@@@@@@@@@@@@
 <div style="overflow-x: auto;">
 <table style="width: 100%; min-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
 </table>
 @@@@@@@@@@@@@@@@@@@@
 </table>
 </div>
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
 <table style="width: 100%; max-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
 @@@@@@@@@@@@@@@@@@@@
 <div style="overflow-x: auto;">
 <table style="width: 100%; min-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
 </table>
 @@@@@@@@@@@@@@@@@@@@
 </table>
@@ -9566,31 +9566,31 @@ class Coder:
 
 
 @@@ #### no, this happens even on wide desktop browsers. it's not just a small screen issue @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
 <div style="overflow-x: auto;">
 <table style="width: 100%; min-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
 @@@@@@@@@@@@@@@@@@@@
 <table style="width: 100%; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
 </table>
 </div>
 @@@@@@@@@@@@@@@@@@@@
 </table>
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
 <div style="overflow-x: auto;">
 <table style="width: 100%; min-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
 @@@@@@@@@@@@@@@@@@@@
 <table style="width: 100%; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
 </table>
 </div>
 @@@@@@@@@@@@@@@@@@@@
 </table>
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
 <style>
   tr.selected {
     color: #0056b3;
@@ -9613,7 +9613,7 @@ class Coder:
   }
 </style>
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
 <style>
   tr.selected {
     color: #0056b3;
@@ -9639,7 +9639,7 @@ class Coder:
 
 
 @@@ #### the edit leaderboard is wider than the width allocated, so users need to scroll left/right to see it all. even on desktop browsers that are very wide @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
 <table style="width: 100%; max-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
   <thead style="background-color: #f2f2f2;">
     <tr>
@@ -9690,7 +9690,7 @@ class Coder:
   </table>
 </div>
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
 <table style="width: 100%; max-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
   <thead style="background-color: #f2f2f2;">
     <tr>
@@ -9750,7 +9750,7 @@ class Coder:
 
 To address the issue of the edit leaderboard being wider than the allocated width, we can modify the table styling to make it more responsive and easier to view on various screen sizes. Here's how we can update the code:
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 <table style="width: 100%; max-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
@@ -9799,7 +9799,7 @@ aider/website/docs/leaderboards/index.md
 
 
 @@@ #### the edit leaderboard is wider than the width allocated, so users need to scroll left/right to see it all. even on desktop browsers that are very wide @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/leaderboards/index.md @@@@@@@@@@@@@@@@@@@@
 <table style="width: 100%; max-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
   <thead style="background-color: #f2f2f2;">
     <tr>
@@ -10023,7 +10023,7 @@ aider/website/docs/leaderboards/index.md
 
 
 @@@ #### update the docs @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/git.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/git.md @@@@@@@@@@@@@@@@@@@@
 ## Commit attribution
 
 Aider marks commits that it either authored or committed.
@@ -10177,7 +10177,7 @@ Both of these options are disabled by default, but can be useful for easily iden
         question = "What is the meaning of life?"
         canned_reply = "The meaning of life is 42."
 
-        with mock.patch("aider.coders.Coder.run") as mock_run:
+        with mock.patch("aider_vision_core.coders.Coder.run") as mock_run:
             mock_run.return_value = canned_reply
 
             commands.cmd_ask(question)
@@ -10199,8 +10199,8 @@ Both of these options are disabled by default, but can be useful for easily iden
         question = "What is the meaning of life?"
         canned_reply = "The meaning of life is 42."
 
-        with mock.patch("aider.coders.Coder.run") as mock_run, \
-             mock.patch("aider.coders.Coder.create") as mock_create:
+        with mock.patch("aider_vision_core.coders.Coder.run") as mock_run, \
+             mock.patch("aider_vision_core.coders.Coder.create") as mock_create:
             mock_run.return_value = canned_reply
             mock_create.return_value = coder
 
@@ -10230,13 +10230,13 @@ from unittest import TestCase, mock
 
 import git
 
-from aider.coders import Coder
-from aider.commands import Commands
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repo import GitRepo
-from aider.utils import ChdirTemporaryDirectory, GitTemporaryDirectory, make_repo
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.utils import ChdirTemporaryDirectory, GitTemporaryDirectory, make_repo
 @@@@@@@@@@@@@@@@@@@@
 import codecs
 import os
@@ -10249,13 +10249,13 @@ from unittest import TestCase, mock
 
 import git
 
-from aider.coders import Coder
-from aider.commands import Commands, SwitchCoder
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repo import GitRepo
-from aider.utils import ChdirTemporaryDirectory, GitTemporaryDirectory, make_repo
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands, SwitchCoder
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.utils import ChdirTemporaryDirectory, GitTemporaryDirectory, make_repo
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
@@ -10300,7 +10300,7 @@ from aider.utils import ChdirTemporaryDirectory, GitTemporaryDirectory, make_rep
         question = "What is the meaning of life?"
         canned_reply = "The meaning of life is 42."
 
-        with mock.patch("aider.coders.Coder.run") as mock_run:
+        with mock.patch("aider_vision_core.coders.Coder.run") as mock_run:
             mock_run.return_value = canned_reply
 
             commands.cmd_ask(question)
@@ -10322,7 +10322,7 @@ from aider.utils import ChdirTemporaryDirectory, GitTemporaryDirectory, make_rep
         question = "What is the meaning of life?"
         canned_reply = "The meaning of life is 42."
 
-        with mock.patch("aider.coders.Coder.run") as mock_run:
+        with mock.patch("aider_vision_core.coders.Coder.run") as mock_run:
             mock_run.return_value = canned_reply
 
             with self.assertRaises(SwitchCoder):
@@ -10349,8 +10349,8 @@ from unittest import TestCase, mock
 
 import git
 
-from aider.coders import Coder
-from aider.commands import Commands
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands
 @@@@@@@@@@@@@@@@@@@@
 import codecs
 import os
@@ -10363,8 +10363,8 @@ from unittest import TestCase, mock
 
 import git
 
-from aider.coders import Coder
-from aider.commands import Commands, SwitchCoder
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands, SwitchCoder
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
@@ -10511,7 +10511,7 @@ import git
 import pyperclip
 from PIL import Image, ImageGrab
 
-from aider import models, prompts, voice
+from aider_vision_core import models, prompts, voice
 @@@@@@@@@@@@@@@@@@@@
 import os
 import re
@@ -10526,7 +10526,7 @@ import pyperclip
 from PIL import Image, ImageGrab
 from rich.text import Text
 
-from aider import models, prompts, voice
+from aider_vision_core import models, prompts, voice
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
@@ -10557,7 +10557,7 @@ from aider import models, prompts, voice
             self.io.tool_error("Please provide a question or topic for the chat.")
             return
 
-        from aider.coders import Coder
+        from aider_vision_core.coders import Coder
 
         coder = Coder.create(
             io=self.io,
@@ -10591,7 +10591,7 @@ from aider import models, prompts, voice
             self.io.tool_error(f"Please provide a question or topic for the {edit_format} chat.")
             return
 
-        from aider.coders import Coder
+        from aider_vision_core.coders import Coder
 
         coder = Coder.create(
             io=self.io,
@@ -10618,7 +10618,7 @@ from aider import models, prompts, voice
 
 Certainly! I'll update the documentation to include a small example of the `/code` command. Here's the change:
 
-aider/website/docs/usage/modes.md
+aider_vision_core/website/docs/usage/modes.md
 <source>markdown
 <<<<<<< SEARCH
 - `code` - Aider will make changes to your code to satisfy your requests.
@@ -10637,7 +10637,7 @@ send messages in other modes using `/code`, `/ask`, and `/help` commands:
 >>>>>>> REPLACE
 </source>
 
-aider/website/docs/usage/modes.md
+aider_vision_core/website/docs/usage/modes.md
 <source>markdown
 <<<<<<< SEARCH
 
@@ -10822,7 +10822,7 @@ aider/website/docs/usage/modes.md
     def test_cmd_add_unicode_error(self):
         # Initialize the Commands and InputOutput objects
         io = InputOutput(pretty=False, yes=True)
-        from aider.coders import Coder
+        from aider_vision_core.coders import Coder
 
         coder = Coder.create(self.GPT35, None, io)
         commands = Commands(io, coder)
@@ -10841,7 +10841,7 @@ aider/website/docs/usage/modes.md
     def test_cmd_add_unicode_error(self):
         # Initialize the Commands and InputOutput objects
         io = InputOutput(pretty=False, yes=True)
-        from aider.coders import Coder
+        from aider_vision_core.coders import Coder
 
         coder = Coder.create(self.GPT35, None, io)
         commands = Commands(io, coder)
@@ -10858,7 +10858,7 @@ aider/website/docs/usage/modes.md
     def test_cmd_add_read_only_file(self):
         # Initialize the Commands and InputOutput objects
         io = InputOutput(pretty=False, yes=True)
-        from aider.coders import Coder
+        from aider_vision_core.coders import Coder
 
         coder = Coder.create(self.GPT35, None, io)
         commands = Commands(io, coder)
@@ -10896,7 +10896,7 @@ aider/website/docs/usage/modes.md
     def test_cmd_add_read_only_file(self):
         # Initialize the Commands and InputOutput objects
         io = InputOutput(pretty=False, yes=True)
-        from aider.coders import Coder
+        from aider_vision_core.coders import Coder
 
         coder = Coder.create(self.GPT35, None, io)
         commands = Commands(io, coder)
@@ -10941,7 +10941,7 @@ aider/website/docs/usage/modes.md
         with GitTemporaryDirectory():
             # Initialize the Commands and InputOutput objects
             io = InputOutput(pretty=False, yes=True)
-            from aider.coders import Coder
+            from aider_vision_core.coders import Coder
 
             coder = Coder.create(self.GPT35, None, io)
             commands = Commands(io, coder)
@@ -11551,8 +11551,8 @@ import json
 
 import backoff
 
-from aider.dump import dump  # noqa: F401
-from aider.llm import litellm
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import litellm
 @@@@@@@@@@@@@@@@@@@@
 import hashlib
 import json
@@ -11560,8 +11560,8 @@ import os
 
 import backoff
 
-from aider.dump import dump  # noqa: F401
-from aider.llm import litellm
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import litellm
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/sendchat.py @@@@@@@@@@@@@@@@@@@@
     kwargs = dict(
@@ -11795,7 +11795,7 @@ README.md
 You can get started quickly like this:
 
 ```
-python -m pip install aider-chat
+python -m pip install aider-vision-core
 
 # Change directory into a git repo
 cd /to/your/git/repo
@@ -11812,7 +11812,7 @@ aider
 Vous pouvez commencer rapidement comme ceci :
 
 ```
-python -m pip install aider-chat
+python -m pip install aider-vision-core
 
 # Changez de répertoire vers un dépôt git
 cd /vers/votre/depot/git
@@ -12008,9 +12008,9 @@ HISTORY.md
 
 - Default pip install size reduced by 3-12x.
 - Added 3 package extras, which aider will offer to install when needed:
-  - `aider-chat[help]`
-  - `aider-chat[browser]`
-  - `aider-chat[playwright]`
+  - `aider-vision-core[help]`
+  - `aider-vision-core[browser]`
+  - `aider-vision-core[playwright]`
 - Improved regex for detecting URLs in user chat messages.
 - Bugfix to globbing logic when absolute paths are included in `/add`.
 - Simplified output of `--models`.
@@ -12406,9 +12406,9 @@ Now, let's update the main.py file to use this new Analytics object:
 aider/main.py
 ```python
 <<<<<<< SEARCH
-from aider import analytics
+from aider_vision_core import analytics
 =======
-from aider.analytics import Analytics
+from aider_vision_core.analytics import Analytics
 >>>>>>> REPLACE
 ```
 
@@ -12563,9 +12563,9 @@ This implementation allows you to easily add analytics tracking throughout your 
 >   
 > ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider/main.py  
 > <<<<<<< SEARCH  
-> from aider import analytics  
+> from aider_vision_core import analytics  
 > =======  
-> from aider.analytics import Analytics  
+> from aider_vision_core.analytics import Analytics  
 > >>>>>>> REPLACE  
 >   
 >   
@@ -12652,16 +12652,16 @@ class Analytics:
     )
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/main.py @@@@@@@@@@@@@@@@@@@@
-from aider import __version__, models, utils
-from aider.args import get_parser
-from aider.coders import Coder
-from aider.commands import Commands, SwitchCoder
+from aider_vision_core import __version__, models, utils
+from aider_vision_core.args import get_parser
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands, SwitchCoder
 @@@@@@@@@@@@@@@@@@@@
-from aider import __version__, models, utils
-from aider.args import get_parser
-from aider.coders import Coder
-from aider.commands import Commands, SwitchCoder
-from aider.analytics import Analytics
+from aider_vision_core import __version__, models, utils
+from aider_vision_core.args import get_parser
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands, SwitchCoder
+from aider_vision_core.analytics import Analytics
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/main.py @@@@@@@@@@@@@@@@@@@@
     commands = Commands(io, None, verify_ssl=args.verify_ssl)
@@ -12735,7 +12735,7 @@ import uuid
 from pathlib import Path
 
 from mixpanel import Mixpanel
-from aider import __version__
+from aider_vision_core import __version__
 
 
 class Analytics:
@@ -12888,7 +12888,7 @@ from pathlib import Path
 
 from mixpanel import Mixpanel
 
-from aider import __version__
+from aider_vision_core import __version__
 @@@@@@@@@@@@@@@@@@@@
 import json
 import uuid
@@ -12898,7 +12898,7 @@ from pathlib import Path
 
 from mixpanel import Mixpanel
 
-from aider import __version__
+from aider_vision_core import __version__
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/analytics.py @@@@@@@@@@@@@@@@@@@@
 class Analytics:
@@ -13150,8 +13150,8 @@ from pathlib import Path
 
 from mixpanel import Mixpanel
 
-from aider import __version__
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import __version__
+from aider_vision_core.dump import dump  # noqa: F401
 
 
 class Analytics:
@@ -13172,8 +13172,8 @@ from pathlib import Path
 
 from mixpanel import Mixpanel
 
-from aider import __version__
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import __version__
+from aider_vision_core.dump import dump  # noqa: F401
 
 
 class Analytics:
@@ -13708,8 +13708,8 @@ from mixpanel import Mixpanel
 
 DATA_FILE_NAME = "mixpanel.json"
 
-from aider import __version__
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import __version__
+from aider_vision_core.dump import dump  # noqa: F401
 @@@@@@@@@@@@@@@@@@@@
 import json
 import platform
@@ -13720,8 +13720,8 @@ from pathlib import Path
 
 from mixpanel import Mixpanel
 
-from aider import __version__
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import __version__
+from aider_vision_core.dump import dump  # noqa: F401
 
 DATA_FILE_NAME = "mixpanel.json"
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
@@ -13796,8 +13796,8 @@ HISTORY.md
         fname = "foo.py"
 
         with GitTemporaryDirectory():
-            with patch("aider.coders.Coder.create") as MockCoder:  # noqa: F841
-                with patch("aider.main.InputOutput") as MockSend:
+            with patch("aider_vision_core.coders.Coder.create") as MockCoder:  # noqa: F841
+                with patch("aider_vision_core.main.InputOutput") as MockSend:
 
                     def side_effect(*args, **kwargs):
                         self.assertEqual(kwargs["encoding"], "iso-8859-15")
@@ -13812,8 +13812,8 @@ HISTORY.md
         fname = "foo.py"
 
         with GitTemporaryDirectory():
-            with patch("aider.coders.Coder.create") as MockCoder:  # noqa: F841
-                with patch("aider.main.InputOutput") as MockSend:
+            with patch("aider_vision_core.coders.Coder.create") as MockCoder:  # noqa: F841
+                with patch("aider_vision_core.main.InputOutput") as MockSend:
 
                     def side_effect(*args, **kwargs):
                         self.assertEqual(kwargs["encoding"], "iso-8859-15")
@@ -13824,7 +13824,7 @@ HISTORY.md
                     main(["--yes", fname, "--encoding", "iso-8859-15"])
 
     def test_main_exit_calls_version_check(self):
-        with patch("aider.main.check_version") as mock_check_version:
+        with patch("aider_vision_core.main.check_version") as mock_check_version:
             main(["--exit"])
             mock_check_version.assert_called_once()
 
@@ -13834,30 +13834,30 @@ HISTORY.md
 @@@ #### put it in a `GitTemporaryDirectory` @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_main_exit_calls_version_check(self):
-        with patch("aider.main.check_version") as mock_check_version:
+        with patch("aider_vision_core.main.check_version") as mock_check_version:
             main(["--exit"])
             mock_check_version.assert_called_once()
 @@@@@@@@@@@@@@@@@@@@
     def test_main_exit_calls_version_check(self):
         with GitTemporaryDirectory():
-            with patch("aider.main.check_version") as mock_check_version:
+            with patch("aider_vision_core.main.check_version") as mock_check_version:
                 main(["--exit"])
                 mock_check_version.assert_called_once()
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
-@@@ #### @patch("aider.main.InputOutput") too @@@@@@@@@@@@@@@@@@@@
+@@@ #### @patch("aider_vision_core.main.InputOutput") too @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_main_exit_calls_version_check(self):
         with GitTemporaryDirectory():
-            with patch("aider.main.check_version") as mock_check_version:
+            with patch("aider_vision_core.main.check_version") as mock_check_version:
                 main(["--exit"], input=DummyInput(), output=DummyOutput())
                 mock_check_version.assert_called_once()
 @@@@@@@@@@@@@@@@@@@@
     def test_main_exit_calls_version_check(self):
         with GitTemporaryDirectory():
-            with patch("aider.main.check_version") as mock_check_version, \
-                 patch("aider.main.InputOutput") as mock_input_output:
+            with patch("aider_vision_core.main.check_version") as mock_check_version, \
+                 patch("aider_vision_core.main.InputOutput") as mock_input_output:
                 main(["--exit"], input=DummyInput(), output=DummyOutput())
                 mock_check_version.assert_called_once()
                 mock_input_output.assert_called_once()
@@ -13890,7 +13890,7 @@ def check_version(io, just_check=False, verbose=False):
 @@@ #### do it @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/coders/commit_handler.py @@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@
-from aider import prompts
+from aider_vision_core import prompts
 
 class CommitHandler:
     def __init__(self, repo, io, gpt_prompts, show_diffs, commands):
@@ -13942,10 +13942,10 @@ class CommitHandler:
         return True
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/coders/base_coder.py @@@@@@@@@@@@@@@@@@@@
-from aider import __version__, models, prompts, urls, utils
+from aider_vision_core import __version__, models, prompts, urls, utils
 @@@@@@@@@@@@@@@@@@@@
-from aider import __version__, models, prompts, urls, utils
-from aider.coders.commit_handler import CommitHandler
+from aider_vision_core import __version__, models, prompts, urls, utils
+from aider_vision_core.coders.commit_handler import CommitHandler
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/coders/base_coder.py @@@@@@@@@@@@@@@@@@@@
     def __init__(
@@ -14103,14 +14103,14 @@ from aider.coders.commit_handler import CommitHandler
         return self.commit_handler.dirty_commit(self.need_commit_before_edits, self.dirty_commits)
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/coders/commit_handler.py @@@@@@@@@@@@@@@@@@@@
-from aider import prompts
+from aider_vision_core import prompts
 
 class CommitHandler:
 @@@@@@@@@@@@@@@@@@@@
 class CommitHandler:
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/coders/commit_handler.py @@@@@@@@@@@@@@@@@@@@
-from aider import prompts
+from aider_vision_core import prompts
 
 
 class CommitHandler:
@@ -14296,12 +14296,12 @@ Now, let's update the `base_coder.py` file to use the new `FileManager`:
 aider/coders/base_coder.py
 ```python
 <<<<<<< SEARCH
-from aider import __version__, models, prompts, urls, utils
-from aider.coders.commit_handler import CommitHandler
+from aider_vision_core import __version__, models, prompts, urls, utils
+from aider_vision_core.coders.commit_handler import CommitHandler
 =======
-from aider import __version__, models, prompts, urls, utils
-from aider.coders.commit_handler import CommitHandler
-from aider.coders.file_manager import FileManager
+from aider_vision_core import __version__, models, prompts, urls, utils
+from aider_vision_core.coders.commit_handler import CommitHandler
+from aider_vision_core.coders.file_manager import FileManager
 >>>>>>> REPLACE
 ```
 
@@ -15918,7 +15918,7 @@ import git
 from rich.console import Console, Text
 from rich.markdown import Markdown
 
-from aider import __version__, models, prompts, urls, utils
+from aider_vision_core import __version__, models, prompts, urls, utils
 @@@@@@@@@@@@@@@@@@@@
 import hashlib
 import json
@@ -15941,8 +15941,8 @@ import git
 from rich.console import Console, Text
 from rich.markdown import Markdown
 
-from aider import __version__, models, prompts, urls, utils
-from aider.analytics import Analytics
+from aider_vision_core import __version__, models, prompts, urls, utils
+from aider_vision_core.analytics import Analytics
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
@@ -15973,7 +15973,7 @@ from aider.analytics import Analytics
         print("Analytics have been permanently disabled.")
         return
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/docs/more/analytics.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/docs/more/analytics.md @@@@@@@@@@@@@@@@@@@@
 aider --analytics-disable
 @@@@@@@@@@@@@@@@@@@@
 aider --disable-analytics
@@ -15995,9 +15995,9 @@ from typing import Optional
 import yaml
 from PIL import Image
 
-from aider import urls
-from aider.dump import dump  # noqa: F401
-from aider.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
+from aider_vision_core import urls
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
 @@@@@@@@@@@@@@@@@@@@
 import difflib
 import importlib
@@ -16013,9 +16013,9 @@ from typing import Optional
 import yaml
 from PIL import Image
 
-from aider import urls
-from aider.dump import dump  # noqa: F401
-from aider.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
+from aider_vision_core import urls
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: aider/models.py @@@@@@@@@@@@@@@@@@@@
 def sanity_check_model(io, model):
@@ -16081,19 +16081,19 @@ def sanity_check_model(io, model):
 @@@ #### use cog to import `exclude_website_pats` and emit it into the toml @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: pyproject.toml @@@@@@@@@@@@@@@@@@@@
 [project]
-name = "aider-chat"
+name = "aider-vision-core"
 @@@@@@@@@@@@@@@@@@@@
 # [[[cog
-# from aider.help_pats import exclude_website_pats
+# from aider_vision_core.help_pats import exclude_website_pats
 # ]]]
 # [[[end]]]
 
 [project]
-name = "aider-chat"
+name = "aider-vision-core"
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: pyproject.toml @@@@@@@@@@@@@@@@@@@@
 [tool.setuptools.exclude-package-data]
-"aider.website" = [
+"aider_vision_core.website" = [
     "examples/**",
     "_posts/**",
     "HISTORY.md",
@@ -16105,7 +16105,7 @@ name = "aider-chat"
 ]
 @@@@@@@@@@@@@@@@@@@@
 [tool.setuptools.exclude-package-data]
-"aider.website" = [
+"aider_vision_core.website" = [
 # [[[cog
 # print("\n".join(f'    "{pat}",' for pat in exclude_website_pats))
 # ]]]
@@ -16596,8 +16596,8 @@ from pathlib import Path
 
 from mixpanel import Mixpanel
 
-from aider import __version__
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import __version__
+from aider_vision_core.dump import dump  # noqa: F401
 
 project_token = "6da9a43058a5d1b9f3353153921fb04d"
 
@@ -16632,8 +16632,8 @@ from pathlib import Path
 from mixpanel import Mixpanel
 from posthog import Posthog
 
-from aider import __version__
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import __version__
+from aider_vision_core.dump import dump  # noqa: F401
 
 mixpanel_project_token = "6da9a43058a5d1b9f3353153921fb04d"
 posthog_project_api_key = 'phc_99T7muzafUMMZX15H8XePbMSreEUzahHbtWjy3l5Qbv'
@@ -16749,7 +16749,7 @@ class Analytics:
 
 
 @@@ #### do a bar graph with the % code on the y-axis @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
 <canvas id="blameChart" width="800" height="450" style="margin-top: 20px"></canvas>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment"></script>
@@ -16922,7 +16922,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### SyntaxError: Unexpected number '182'. Expected a parameter pattern or a ')' in parameter list. @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                     callbacks: {
                         label: function(context) {
                             var index = context.dataIndex;
@@ -16946,7 +16946,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### switch to a bar graph with the % code on the y-axis @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
 <canvas id="blameChart" width="800" height="450" style="margin-top: 20px"></canvas>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment"></script>
@@ -17113,7 +17113,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### make the x-axis be the version number @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
     var blameData = {
         datasets: [{
             label: 'Aider\'s Contribution to Each Release',
@@ -17191,7 +17191,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### can we label every version on the x-axis? @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                 x: {
                     type: 'category',
                     title: {
@@ -17220,7 +17220,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### The hover is showing "undefined: NaN% (undefined lines)" @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                 tooltip: {
                     callbacks: {
                         label: function(context) {
@@ -17243,7 +17243,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### The tooltip is showing "undefined: NaN% (undefined lines)". You previous fix resulting in no tooltip @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
             plugins: {
                 tooltip: {
                     callbacks: {
@@ -17269,7 +17269,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### ok, try that @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                 tooltip: {
                     callbacks: {
                         label: function(context) {
@@ -17292,7 +17292,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### do that @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                 tooltip: {
                     callbacks: {
                         label: function(context) {
@@ -17318,7 +17318,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### it still shows 0 lines for all tooltips @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                 tooltip: {
                     callbacks: {
                         label: function(context) {
@@ -17345,7 +17345,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### all the tooltips show 0 lines @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                         label: function(context) {
                             var label = context.dataset.label || '';
                             var value = context.parsed.y || 0;
@@ -17365,7 +17365,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### do that @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                 tooltip: {
                     callbacks: {
                         label: function(context) {
@@ -17392,12 +17392,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### lines is just the percent? i want the number of lines from `aider_total` in the dataset @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
             data: [{% for row in site.data.blame %}{{ row.aider_percentage }},{% endfor %}],
 @@@@@@@@@@@@@@@@@@@@
             data: [{% for row in site.data.blame %}{{ row.aider_total }},{% endfor %}],
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                             var value = context.parsed.y || 0;
                             var lines = context.raw || 0;
                             return `${label}: ${Math.round(value)}% (${lines} lines)`;
@@ -17406,17 +17406,17 @@ document.addEventListener('DOMContentLoaded', function () {
                             var percentage = context.raw.aider_percentage || 0;
                             return `${label}: ${lines} lines (${percentage.toFixed(2)}%)`;
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                     text: 'Aider\'s Contribution to Each Release',
 @@@@@@@@@@@@@@@@@@@@
                     text: 'Aider\'s Contribution (Lines of Code) to Each Release',
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                         text: 'Aider Contribution (% of code)'
 @@@@@@@@@@@@@@@@@@@@
                         text: 'Aider Contribution (Lines of Code)'
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                                 text: 'Y-axis is percent of code, bubble size is lines of code',
 @@@@@@@@@@@@@@@@@@@@
                                 text: 'Y-axis is lines of code, tooltip shows percentage',
@@ -17424,7 +17424,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### the "lines" in the tooltop is just the percent? i want the number of lines from `aider_total` in the dataset @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                         label: function(context) {
                             var label = context.dataset.label || '';
                             var value = context.parsed.y || 0;
@@ -17442,7 +17442,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### SyntaxError: Unexpected token '||' @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                         label: function(context) {
                             var label = context.dataset.label || '';
                             var value = context.parsed.y || 0;
@@ -17461,7 +17461,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### can we pass the aider_total lines into the context, so we can use it in the tooltip? @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
         datasets: [{
             label: 'Aider\'s Contribution to Each Release',
             data: [{% for row in site.data.blame %}{{ row.aider_percentage }},{% endfor %}],
@@ -17478,7 +17478,7 @@ document.addEventListener('DOMContentLoaded', function () {
             borderWidth: 1
         }]
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
                         label: function(context) {
                             console.log(context);
                             var label = context.dataset.label || '';
@@ -17497,7 +17497,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### add another bar chart which plots the aider_total number of lines by release @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
 <canvas id="blameChart" width="800" height="450" style="margin-top: 20px"></canvas>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment"></script>
@@ -17742,7 +17742,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### can we hide the legends? @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
         options: {
             scales: {
                 x: {
@@ -17792,7 +17792,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     display: false
                 },
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
         options: {
             scales: {
                 x: {
@@ -17845,7 +17845,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### make the charts 20% less tall @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/blame.md @@@@@@@@@@@@@@@@@@@@
 <canvas id="blameChart" width="800" height="450" style="margin-top: 20px"></canvas>
 <canvas id="linesChart" width="800" height="450" style="margin-top: 20px"></canvas>
 @@@@@@@@@@@@@@@@@@@@
@@ -19312,7 +19312,7 @@ def plot_over_time(yaml_file):
             named_config.write_text("model: gpt-4-1106-preview\nmap-tokens: 8192\n")
             
             with patch("pathlib.Path.home", return_value=fake_home), \
-                 patch("aider.coders.Coder.create") as MockCoder:
+                 patch("aider_vision_core.coders.Coder.create") as MockCoder:
                 
                 # Test loading from current working directory
                 main(["--yes", "--exit"], input=DummyInput(), output=DummyOutput())
@@ -19385,7 +19385,7 @@ import git
 from dotenv import load_dotenv
 from prompt_toolkit.enums import EditingMode
 
-from aider import __version__, models, utils
+from aider_vision_core import __version__, models, utils
 =======
 import configparser
 import os
@@ -19399,7 +19399,7 @@ import yaml
 from dotenv import load_dotenv
 from prompt_toolkit.enums import EditingMode
 
-from aider import __version__, models, utils
+from aider_vision_core import __version__, models, utils
 >>>>>>> REPLACE
 </source>
 
@@ -19537,15 +19537,15 @@ import git
 from dotenv import load_dotenv
 from prompt_toolkit.enums import EditingMode
 
-from aider import __version__, models, utils
-from aider.args import get_parser
-from aider.coders import Coder
-from aider.commands import Commands, SwitchCoder
-from aider.history import ChatSummary
-from aider.io import InputOutput
-from aider.llm import litellm  # noqa: F401; properly init litellm on launch
-from aider.repo import GitRepo
-from aider.versioncheck import check_version
+from aider_vision_core import __version__, models, utils
+from aider_vision_core.args import get_parser
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands, SwitchCoder
+from aider_vision_core.history import ChatSummary
+from aider_vision_core.io import InputOutput
+from aider_vision_core.llm import litellm  # noqa: F401; properly init litellm on launch
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.versioncheck import check_version
 
 from .dump import dump  # noqa: F401
 @@@@@@@@@@@@@@@@@@@@
@@ -19560,15 +19560,15 @@ import git
 from dotenv import load_dotenv
 from prompt_toolkit.enums import EditingMode
 
-from aider import __version__, models, utils
-from aider.args import get_parser
-from aider.coders import Coder
-from aider.commands import Commands, SwitchCoder
-from aider.history import ChatSummary
-from aider.io import InputOutput
-from aider.llm import litellm  # noqa: F401; properly init litellm on launch
-from aider.repo import GitRepo
-from aider.versioncheck import check_version
+from aider_vision_core import __version__, models, utils
+from aider_vision_core.args import get_parser
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands, SwitchCoder
+from aider_vision_core.history import ChatSummary
+from aider_vision_core.io import InputOutput
+from aider_vision_core.llm import litellm  # noqa: F401; properly init litellm on launch
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.versioncheck import check_version
 
 from .dump import dump  # noqa: F401
 
@@ -19592,7 +19592,7 @@ from .dump import dump  # noqa: F401
 
 
 @@@ #### add a bar graph at the top which plots `pass_rate_1` for each model and edit_format combo. group all the edit_formats for each model together. @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
 ---
 title: LLMs are bad at returning code in json
 excerpt: LLMs write worse code if you ask them to return the code wrapped in json via a tool/function call.
@@ -19649,7 +19649,7 @@ graph TD
 
 
 @@@ #### add a bar graph at the top which plots `pass_rate_1` for each model and edit_format combo. group all the edit_formats for each model together. @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
 ---
 title: LLMs are bad at returning code in json
 excerpt: LLMs write worse code if you ask them to return the code wrapped in json via a tool/function call.
@@ -19747,7 +19747,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### great, but have it pull the data from the yml file @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var ctx = document.getElementById('passRateChart').getContext('2d');
@@ -19887,7 +19887,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 Certainly! I'll reorder the edit formats as requested: Markdown, Tool call, Tool call (strict). Here's the *SEARCH/REPLACE block* to make this change:
 
-aider/website/_data/code-in-json.yml
+aider_vision_core/website/_data/code-in-json.yml
 <source>
 <<<<<<< SEARCH
 - dirname: 2024-08-14-18-38-25--json-gpt-4o-2024-08-06-non-strict-func
@@ -19919,9 +19919,9 @@ aider/website/_data/code-in-json.yml
 >  
 > ^C again to exit  
 
-To order the edit formats as requested (markdown, tool call, tool call strict), we need to modify the YAML data in the `aider/website/_data/code-in-json.yml` file. Here's how we can do that:
+To order the edit formats as requested (markdown, tool call, tool call strict), we need to modify the YAML data in the `aider_vision_core/website/_data/code-in-json.yml` file. Here's how we can do that:
 
-aider/website/_data/code-in-json.yml
+aider_vision_core/website/_data/code-in-json.yml
 <source>yaml
 <<<<<<< SEARCH
 - dirname: 2024-08-14-18-38-25--json-gpt-4o-2024-08-06-non-strict-func
@@ -19947,12 +19947,12 @@ aider/website/_data/code-in-json.yml
 
 # aider chat started at 2024-08-14 20:04:37
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_posts/2024-08-14-code-in-json.md --read aider/website/_data/code-in-json.yml  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_posts/2024-08-14-code-in-json.md --read aider_vision_core/website/_data/code-in-json.yml  
 > Aider v0.50.2-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 305 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_posts/2024-08-14-code-in-json.md to the chat.  
+> Added aider_vision_core/website/_posts/2024-08-14-code-in-json.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 
@@ -19960,7 +19960,7 @@ aider/website/_data/code-in-json.yml
 
 
 @@@ #### make the tool+split color the same as tool, but stripe it @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
         backgroundColor: format === 'Markdown' ? 'rgba(54, 162, 235, 0.8)' :
                          format === 'Tool call' ? 'rgba(255, 99, 132, 0.8)' :
                          'rgba(75, 192, 192, 0.8)',
@@ -19975,7 +19975,7 @@ aider/website/_data/code-in-json.yml
 
 
 @@@ #### can we actually put a dot or stripe pattern across it. i don't want to mess with its border. @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
         backgroundColor: format === 'Markdown' ? 'rgba(54, 162, 235, 0.8)' :
                          format.startsWith('Tool call') ? 'rgba(255, 99, 132, 0.8)' :
                          'rgba(75, 192, 192, 0.8)',
@@ -19996,7 +19996,7 @@ aider/website/_data/code-in-json.yml
             }
         },
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
     new Chart(ctx, config);
 @@@@@@@@@@@@@@@@@@@@
     function createStripedCanvas(isStrict) {
@@ -20023,7 +20023,7 @@ aider/website/_data/code-in-json.yml
 
     new Chart(ctx, config);
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
         backgroundColor: format === 'Markdown' ? 'rgba(54, 162, 235, 0.8)' :
                          format.startsWith('Tool call') ? 'rgba(255, 99, 132, 0.8)' :
                          'rgba(75, 192, 192, 0.8)',
@@ -20062,7 +20062,7 @@ MODELS="
 
 
 @@@ #### the yml contains multiple datapoints for each model/edit_format. average them for display on the graph. @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
     var yamlData = {{ site.data.code-in-json | jsonify }};
     
     var models = [...new Set(yamlData.map(item => item.model))];
@@ -20092,7 +20092,7 @@ MODELS="
 
 
 @@@ #### sort the x-axis by model name @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
     var models = [...new Set(yamlData.map(item => item.model))];
 @@@@@@@@@@@@@@@@@@@@
     var models = [...new Set(yamlData.map(item => item.model))].sort();
@@ -20101,12 +20101,12 @@ MODELS="
 
 @@@ #### refactor the color list comprehension into a function that takes model, returns color @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: benchmark/over_time.py @@@@@@@@@@@@@@@@@@@@
-from aider.dump import dump  # noqa: 401
+from aider_vision_core.dump import dump  # noqa: 401
 
 
 def plot_over_time(yaml_file):
 @@@@@@@@@@@@@@@@@@@@
-from aider.dump import dump  # noqa: 401
+from aider_vision_core.dump import dump  # noqa: 401
 
 
 def get_model_color(model):
@@ -20137,7 +20137,7 @@ def plot_over_time(yaml_file):
 
 
 @@@ #### on narrow screen like phone, the graph looks bad because there's not enough vertical room for the title, legend, x-axis. can we make the graph responsive, so that if its on a very narrow screen the aspect ratio changes to more of a square? @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
     var config = {
         type: 'bar',
         data: data,
@@ -20230,7 +20230,7 @@ def plot_over_time(yaml_file):
         }
     };
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
 <canvas id="passRateChart" width="800" height="400" style="margin-bottom: 20px"></canvas>
 @@@@@@@@@@@@@@@@@@@@
 <div style="position: relative; height: 0; padding-bottom: 50%; margin-bottom: 20px;">
@@ -20240,14 +20240,14 @@ def plot_over_time(yaml_file):
 
 
 @@@ #### no. i just want to increase the height if we are on a small screen. @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
 <canvas id="passRateChart" width="800" height="400" style="margin-bottom: 20px"></canvas>
 @@@@@@@@@@@@@@@@@@@@
 <div id="chartContainer" style="position: relative; height: 0; padding-bottom: 50%; margin-bottom: 20px;">
     <canvas id="passRateChart" style="position: absolute; width: 100%; height: 100%;"></canvas>
 </div>
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
     var config = {
         type: 'bar',
         data: data,
@@ -20338,7 +20338,7 @@ def plot_over_time(yaml_file):
 
 
 @@@ #### add a bar graph in the Syntax errors section. for each model/edit_format, plot the total number of syntax_errors+indentation_errors across all runs of that model/edit_format @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
 ## Syntax errors
 
 @@@@@@@@@@@@@@@@@@@@
@@ -20442,7 +20442,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### ReferenceError: Can't find variable: createStripedCanvas @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
     new Chart(ctx, config);
 });
 </script>
@@ -20476,7 +20476,7 @@ function createStripedCanvas(isStrict) {
 
 
 @@@ #### add the number to the top of each bar in both graphs @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
             plugins: {
                 title: {
                     display: true,
@@ -20527,7 +20527,7 @@ function createStripedCanvas(isStrict) {
                 }
             }
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
             plugins: {
                 title: {
                     display: true,
@@ -20581,7 +20581,7 @@ function createStripedCanvas(isStrict) {
 
 
 @@@ #### move the js for figure 1 into the js file @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_posts/2024-08-14-code-in-json.md @@@@@@@@@@@@@@@@@@@@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var ctx = document.getElementById('passRateChart').getContext('2d');
@@ -20719,7 +20719,7 @@ function createStripedCanvas(isStrict) {
 @@@@@@@@@@@@@@@@@@@@
 <script src="/assets/code-in-json-benchmark.js"></script>
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/code-in-json-benchmark.js @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/code-in-json-benchmark.js @@@@@@@@@@@@@@@@@@@@
 @@@@@@@@@@@@@@@@@@@@
 document.addEventListener('DOMContentLoaded', function () {
     var ctx = document.getElementById('passRateChart').getContext('2d');
@@ -20835,7 +20835,7 @@ function createStripedCanvas(isStrict) {
 
 
 @@@ #### show the value of each bar at the top of each bar @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/code-in-json-benchmark.js @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/code-in-json-benchmark.js @@@@@@@@@@@@@@@@@@@@
     var config = {
         type: 'bar',
         data: data,
@@ -20941,7 +20941,7 @@ function createStripedCanvas(isStrict) {
         }]
     };
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/code-in-json-syntax.js @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/code-in-json-syntax.js @@@@@@@@@@@@@@@@@@@@
     var config = {
         type: 'bar',
         data: data,
@@ -21048,7 +21048,7 @@ function createStripedCanvas(isStrict) {
 
 
 @@@ #### do that @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/code-in-json-benchmark.js @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/code-in-json-benchmark.js @@@@@@@@@@@@@@@@@@@@
 <canvas id="passRateChart" width="800" height="400" style="margin-bottom: 20px"></canvas>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -21368,7 +21368,7 @@ function createStripedCanvas(isStrict) {
 
 
 @@@ #### make the same change to the syntax chart @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/code-in-json-syntax.js @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/code-in-json-syntax.js @@@@@@@@@@@@@@@@@@@@
 <canvas id="syntaxErrorsChart" width="800" height="400" style="margin-bottom: 20px"></canvas>
   
 <script>
@@ -21394,7 +21394,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var ctx = document.getElementById('syntaxErrorsChart').getContext('2d');
     var chartContainer = document.querySelector('.chart-container');
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/code-in-json-syntax.js @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/code-in-json-syntax.js @@@@@@@@@@@@@@@@@@@@
     var config = {
         type: 'bar',
         data: data,
@@ -21417,7 +21417,7 @@ document.addEventListener('DOMContentLoaded', function () {
             aspectRatio: getAspectRatio(),
             scales: {
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/code-in-json-syntax.js @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/code-in-json-syntax.js @@@@@@@@@@@@@@@@@@@@
     new Chart(ctx, config);
 });
 </script>
@@ -21439,7 +21439,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 @@@ #### on the top of the bars, show the percentage numbers with no decimals @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/code-in-json-benchmark.js @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/code-in-json-benchmark.js @@@@@@@@@@@@@@@@@@@@
                         if (data !== null) {
                             ctx.fillStyle = '#000000';
                             ctx.textAlign = 'center';
@@ -21541,7 +21541,7 @@ from pathlib import Path
 
 
 @@@ #### for the number atop the bars, show 1 decimal point if we are on a wide screen (not a phone) @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/code-in-json-benchmark.js @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/code-in-json-benchmark.js @@@@@@@@@@@@@@@@@@@@
         afterDraw: function(chart) {
             var ctx = chart.ctx;
             chart.data.datasets.forEach(function(dataset, i) {
@@ -21579,7 +21579,7 @@ from pathlib import Path
 
 
 @@@ #### just omit the numbers if the screen isn't wide @@@@@@@@@@@@@@@@@@@@
-@@@ SEARCH: aider/website/_includes/code-in-json-benchmark.js @@@@@@@@@@@@@@@@@@@@
+@@@ SEARCH: aider_vision_core/website/_includes/code-in-json-benchmark.js @@@@@@@@@@@@@@@@@@@@
         afterDraw: function(chart) {
             var ctx = chart.ctx;
             var isWideScreen = window.innerWidth > 768; // Assuming 768px as the breakpoint for wide screens
@@ -23602,9 +23602,9 @@ from typing import Optional
 import yaml
 from PIL import Image
 
-from aider import urls
-from aider.dump import dump  # noqa: F401
-from aider.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
+from aider_vision_core import urls
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
 
 DEFAULT_MODEL_NAME = "gpt-4o"
 @@@@@@@@@@@@@@@@@@@@
@@ -23622,9 +23622,9 @@ from typing import Optional
 import yaml
 from PIL import Image
 
-from aider import urls
-from aider.dump import dump  # noqa: F401
-from aider.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
+from aider_vision_core import urls
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
 
 DEFAULT_MODEL_NAME = "gpt-4o"
 ANTHROPIC_BETA_HEADER = "max-tokens-3-5-sonnet-2024-07-15, prompt-caching-2024-07-31"
@@ -24215,7 +24215,7 @@ Option settings:
 
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 MockRepoMap.return_value = mock_repo_map
 
@@ -24233,7 +24233,7 @@ Option settings:
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 MockRepoMap.return_value = mock_repo_map
 
@@ -24247,7 +24247,7 @@ Option settings:
 @@@@@@@@@@@@@@@@@@@@
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -24274,7 +24274,7 @@ Option settings:
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -24287,7 +24287,7 @@ Option settings:
 @@@@@@@@@@@@@@@@@@@@
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -24306,7 +24306,7 @@ Option settings:
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -24321,7 +24321,7 @@ Option settings:
 @@@@@@@@@@@@@@@@@@@@
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory() as temp_dir:
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -24344,7 +24344,7 @@ Option settings:
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory() as temp_dir:
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -24363,7 +24363,7 @@ Option settings:
 @@@@@@@@@@@@@@@@@@@@
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -24615,22 +24615,22 @@ class TestRepoMap(unittest.TestCase):
 import os
 import unittest
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import IgnorantTemporaryDirectory
 @@@@@@@@@@@@@@@@@@@@
 import os
 import unittest
 
 import git
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_repomap.py @@@@@@@@@@@@@@@@@@@@
     def test_repo_map_refresh_files(self):
@@ -24968,11 +24968,11 @@ import unittest
 
 import git
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 @@@@@@@@@@@@@@@@@@@@
 import os
 import time
@@ -24980,11 +24980,11 @@ import unittest
 
 import git
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
@@ -25122,7 +25122,7 @@ class Commands:
 
     def test_sonnet_and_cache_prompts_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.Coder.create") as MockCoder:
+            with patch("aider_vision_core.coders.Coder.create") as MockCoder:
                 mock_coder = MagicMock()
                 MockCoder.return_value = mock_coder
 
@@ -25263,7 +25263,7 @@ from pathlib import Path
 
 import git
 
-from aider.dump import dump  # noqa: F401
+from aider_vision_core.dump import dump  # noqa: F401
 
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tiff", ".webp"}
 
@@ -25285,7 +25285,7 @@ from pathlib import Path
 
 import git
 
-from aider.dump import dump  # noqa: F401
+from aider_vision_core.dump import dump  # noqa: F401
 
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tiff", ".webp"}
 
@@ -25410,12 +25410,12 @@ class IgnorantTemporaryDirectory:
             self.assertIsNone(result)
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
-from aider.main import check_gitignore, main, setup_git
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
 @@@@@@@@@@@@@@@@@@@@
-from aider.main import check_gitignore, main, setup_git
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
-from aider.coders import Coder
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.coders import Coder
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
@@ -25462,12 +25462,12 @@ from aider.coders import Coder
             self.assertIsNone(result)
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
-from aider.main import check_gitignore, main, setup_git
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
 @@@@@@@@@@@@@@@@@@@@
-from aider.main import check_gitignore, main, setup_git
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
-from aider.coders import Coder
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.coders import Coder
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
@@ -25514,12 +25514,12 @@ from aider.coders import Coder
             self.assertIsNone(result)
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
-from aider.main import check_gitignore, main, setup_git
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
 @@@@@@@@@@@@@@@@@@@@
-from aider.main import check_gitignore, main, setup_git
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
-from aider.coders import Coder
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.coders import Coder
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
@@ -26833,7 +26833,7 @@ python -m unittest discover tests
         commands = MagicMock()
 
         # Simulate IsADirectoryError
-        with patch("aider.io.open", side_effect=IsADirectoryError):
+        with patch("aider_vision_core.io.open", side_effect=IsADirectoryError):
             result = io.get_input(root, rel_fnames, addable_rel_fnames, commands)
             self.assertEqual(result, "test input")
 
@@ -26853,11 +26853,11 @@ if __name__ == "__main__":
         commands = MagicMock()
 
         # Simulate IsADirectoryError
-        with patch("aider.io.open", side_effect=IsADirectoryError):
+        with patch("aider_vision_core.io.open", side_effect=IsADirectoryError):
             result = io.get_input(root, rel_fnames, addable_rel_fnames, commands)
             self.assertEqual(result, "test input")
 
-    @patch('aider.io.prompt')
+    @patch('aider_vision_core.io.prompt')
     def test_confirm_ask_explicit_yes_required(self, mock_prompt):
         io = InputOutput(pretty=False)
 
@@ -26903,9 +26903,9 @@ python -m unittest tests/basic/test_io.py
 
 @@@ #### run main() with --apply shell.md --yes and in shell.md include a ```bash block that does `touch file.txt` --> make sure it does NOT create file.txt since shell commands require explicit yes, not --yes @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
-from aider.main import check_gitignore, main, setup_git
+from aider_vision_core.main import check_gitignore, main, setup_git
 @@@@@@@@@@@@@@@@@@@@
-from aider.main import check_gitignore, main, setup_git, ApplyShellCommandsError
+from aider_vision_core.main import check_gitignore, main, setup_git, ApplyShellCommandsError
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_return_coder(self):
@@ -26984,9 +26984,9 @@ from aider.main import check_gitignore, main, setup_git, ApplyShellCommandsError
 
 @@@ #### drop the `ApplyShellCommandsError` nonsense. @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
-from aider.main import ApplyShellCommandsError, check_gitignore, main, setup_git
+from aider_vision_core.main import ApplyShellCommandsError, check_gitignore, main, setup_git
 @@@@@@@@@@@@@@@@@@@@
-from aider.main import check_gitignore, main, setup_git
+from aider_vision_core.main import check_gitignore, main, setup_git
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_apply_shell_commands(self):
@@ -27021,9 +27021,9 @@ from aider.main import check_gitignore, main, setup_git
 
 @@@ #### drop the `ApplyShellCommandsError` nonsense. @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
-from aider.main import ApplyShellCommandsError, check_gitignore, main, setup_git
+from aider_vision_core.main import ApplyShellCommandsError, check_gitignore, main, setup_git
 @@@@@@@@@@@@@@@@@@@@
-from aider.main import check_gitignore, main, setup_git
+from aider_vision_core.main import check_gitignore, main, setup_git
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
     def test_apply_shell_commands(self):
@@ -27086,9 +27086,9 @@ from aider.main import check_gitignore, main, setup_git
             self.assertTrue(Path("file.txt").exists())
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: tests/basic/test_main.py @@@@@@@@@@@@@@@@@@@@
-from aider.main import ApplyShellCommandsError, check_gitignore, main, setup_git
+from aider_vision_core.main import ApplyShellCommandsError, check_gitignore, main, setup_git
 @@@@@@@@@@@@@@@@@@@@
-from aider.main import check_gitignore, main, setup_git
+from aider_vision_core.main import check_gitignore, main, setup_git
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 
@@ -27772,9 +27772,9 @@ def process_markdown(filename):
     print(json.dumps(results, indent=4))
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 @@@ SEARCH: testsr.py @@@@@@@@@@@@@@@@@@@@
-from aider.coders.editblock_coder import DEFAULT_FENCE, find_original_update_blocks
+from aider_vision_core.coders.editblock_coder import DEFAULT_FENCE, find_original_update_blocks
 @@@@@@@@@@@@@@@@@@@@
-from aider.coders.editblock_coder import find_original_update_blocks
+from aider_vision_core.coders.editblock_coder import find_original_update_blocks
 @@@ REPLACE @@@@@@@@@@@@@@@@@@@@
 
 

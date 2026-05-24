@@ -135,12 +135,12 @@ This way the `model`, `edit_format` and `commit_hash`
 should be enough to reliably reproduce any benchmark run.
 
 You can see examples of the benchmark report yaml in the
-[aider leaderboard data files](https://github.com/Aider-AI/aider/blob/main/aider/website/_data/).
+[aider leaderboard data files](https://github.com/Aider-AI/aider/blob/main/aider_vision_core/website/_data/).
 
 
 ## Limitations, notes
 
 - Contributions of benchmark results are welcome! Submit results by opening a PR with edits to the
-[aider leaderboard data files](https://github.com/Aider-AI/aider/blob/main/aider/website/_data/).
+[aider leaderboard data files](https://github.com/Aider-AI/aider/blob/main/aider_vision_core/website/_data/).
 - These scripts are not intended for use by typical aider end users.
 - Some of these tools are written as `bash` scripts, so it will be hard to use them on Windows.

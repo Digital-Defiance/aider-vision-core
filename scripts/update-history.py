@@ -28,8 +28,8 @@ def run_git_log():
         "--pretty=full",
         f"v{latest_ver}..HEAD",
         "--",
-        "aider/",
-        ":!aider/website/",
+        "aider_vision_core/",
+        ":!aider_vision_core/website/",
         ":!scripts/",
         ":!HISTORY.md",
     ]
@@ -44,8 +44,8 @@ def run_git_diff():
         "diff",
         f"v{latest_ver}..HEAD",
         "--",
-        "aider/",
-        ":!aider/website/",
+        "aider_vision_core/",
+        ":!aider_vision_core/website/",
         ":!scripts/",
         ":!HISTORY.md",
     ]

@@ -5,11 +5,11 @@ from unittest.mock import MagicMock
 from requests.exceptions import ConnectionError, ReadTimeout
 
 import aider
-from aider.coders import Coder
-from aider.commands import Commands
-from aider.help import Help, fname_to_url
-from aider.io import InputOutput
-from aider.models import Model
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands
+from aider_vision_core.help import Help, fname_to_url
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
 
 
 class TestHelp(unittest.TestCase):

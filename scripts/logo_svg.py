@@ -124,7 +124,7 @@ def main():
     parser.add_argument(
         "--font",
         type=str,
-        default="aider/website/assets/Glass_TTY_VT220.ttf",
+        default="aider_vision_core/website/assets/Glass_TTY_VT220.ttf",
         help="Path to the TTF font file",
     )
     parser.add_argument("--text", type=str, default="aider", help="Text to display in the SVG")
@@ -134,7 +134,7 @@ def main():
     parser.add_argument(
         "--output",
         type=str,
-        default="aider/website/assets/logo.svg",
+        default="aider_vision_core/website/assets/logo.svg",
         help="Path to save the SVG file",
     )
     parser.add_argument(

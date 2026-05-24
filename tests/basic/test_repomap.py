@@ -7,11 +7,11 @@ from pathlib import Path
 
 import git
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 
 
 class TestRepoMap(unittest.TestCase):

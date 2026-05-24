@@ -1,7 +1,7 @@
 
 [project]
-name = "aider-chat"
-description = "Aider is AI pair programming in your terminal"
+name = "aider-vision-core"
+description = "aider-vision-core: Aider fork with headless API, submodule git, and web integration"
 readme = "README.md"
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -21,10 +21,11 @@ requires-python = ">=3.10,<3.15"
 dynamic = ["dependencies", "optional-dependencies", "version"]
 
 [project.urls]
-Homepage = "https://github.com/Aider-AI/aider"
+Homepage = "https://github.com/Digital-Defiance/aider-vision-core"
 
 [project.scripts]
-aider = "aider.main:main"
+aider-vision-core = "aider_vision_core.main:main"
+aider-vision-core-serve = "aider_vision_core.cli_serve:main"
 
 [tool.setuptools.dynamic]
 dependencies = { file = "requirements.txt" }
@@ -39,15 +40,15 @@ playwright = { file = "requirements/requirements-playwright.txt" }
 include-package-data = true
 
 [tool.setuptools.packages.find]
-include = ["aider"]
+include = ["aider_vision_core"]
 
 [build-system]
 requires = ["setuptools>=68", "setuptools_scm[toml]>=8"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
-write_to = "aider/_version.py"
+write_to = "aider_vision_core/_version.py"
 
 [tool.codespell]
-skip = "*.svg,Gemfile.lock,tests/fixtures/*,aider/website/assets/*"
+skip = "*.svg,Gemfile.lock,tests/fixtures/*,aider_vision_core/website/assets/*"
 write-changes = true

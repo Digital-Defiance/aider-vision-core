@@ -1,6 +1,6 @@
 import os
 
-from aider.utils import safe_abs_path
+from aider_vision_core.utils import safe_abs_path
 
 
 def test_safe_abs_path_symlink_loop(tmp_path):

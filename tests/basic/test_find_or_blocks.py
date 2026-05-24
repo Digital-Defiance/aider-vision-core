@@ -6,9 +6,9 @@ import re
 import sys
 import unittest
 
-from aider.coders.base_coder import all_fences
-from aider.coders.editblock_coder import find_original_update_blocks
-from aider.dump import dump  # noqa: F401
+from aider_vision_core.coders.base_coder import all_fences
+from aider_vision_core.coders.editblock_coder import find_original_update_blocks
+from aider_vision_core.dump import dump  # noqa: F401
 
 
 def process_markdown(filename, fh):

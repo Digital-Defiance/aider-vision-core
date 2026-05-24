@@ -13,16 +13,16 @@ import yaml
 from tqdm import tqdm
 
 website_files = [
-    "aider/website/index.html",
-    "aider/website/share/index.md",
-    "aider/website/_includes/head_custom.html",
-    "aider/website/_includes/home.css",
-    "aider/website/docs/leaderboards/index.md",
+    "aider_vision_core/website/index.html",
+    "aider_vision_core/website/share/index.md",
+    "aider_vision_core/website/_includes/head_custom.html",
+    "aider_vision_core/website/_includes/home.css",
+    "aider_vision_core/website/docs/leaderboards/index.md",
 ]
 
 exclude_files = [
-    "aider/website/install.ps1",
-    "aider/website/install.sh",
+    "aider_vision_core/website/install.ps1",
+    "aider_vision_core/website/install.sh",
 ]
 
 
@@ -40,7 +40,7 @@ def blame(start_tag, end_tag=None):
         for f in files
         if f.endswith((".js", ".py", ".scm", ".sh", "Dockerfile", "Gemfile"))
         or (f.startswith(".github/workflows/") and f.endswith(".yml"))
-        or (f.startswith("aider/resources/") and f.endswith(".yml"))
+        or (f.startswith("aider_vision_core/resources/") and f.endswith(".yml"))
         or f in website_files
         or f in test_files
     ]

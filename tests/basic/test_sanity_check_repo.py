@@ -6,8 +6,8 @@ from unittest import mock
 import pytest
 from git import GitError, Repo
 
-from aider import urls
-from aider.main import sanity_check_repo
+from aider_vision_core import urls
+from aider_vision_core.main import sanity_check_repo
 
 
 @pytest.fixture

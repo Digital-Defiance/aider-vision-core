@@ -1,0 +1,97 @@
+"""
+Headless I/O that emits structured events for web/API consumers.
+"""
+
+from __future__ import annotations
+
+import json
+from typing import Any, Callable
+
+from aider_vision_core.io import InputOutput
+
+
+class EventIO(InputOutput):
+    """
+    InputOutput that records tool/assistant activity as JSON-serializable events.
+
+    Token streaming is emitted by :meth:`Session.run_message` (not here) so chunks
+    are not duplicated to stdout.
+    """
+
+    def __init__(
+        self,
+        on_event: Callable[[dict[str, Any]], None] | None = None,
+        echo_to_console: bool = False,
+        **kwargs,
+    ):
+        super().__init__(fancy_input=False, **kwargs)
+        self.on_event = on_event
+        self.echo_to_console = echo_to_console
+        self.events: list[dict[str, Any]] = []
+
+    def emit(self, event_type: str, **payload: Any) -> dict[str, Any]:
+        event = {"type": event_type, **payload}
+        self.events.append(event)
+        if self.on_event:
+            self.on_event(event)
+        return event
+
+    def drain_events(self) -> list[dict[str, Any]]:
+        events = self.events
+        self.events = []
+        return events
+
+    def write_event_line(self, event: dict[str, Any]) -> None:
+        """Write one JSON line to ``self.output`` (for subprocess workers)."""
+        line = json.dumps(event, ensure_ascii=False) + "\n"
+        if self.output:
+            self.output.write(line)
+            self.output.flush()
+        elif self.echo_to_console:
+            print(line, end="")
+
+    def tool_output(self, *messages, log_only=False, bold=False):
+        if not log_only:
+            text = " ".join(str(m) for m in messages)
+            self.emit("tool_output", text=text)
+        if self.echo_to_console:
+            super().tool_output(*messages, log_only=log_only, bold=bold)
+
+    def tool_error(self, message="", strip=True):
+        self.emit("tool_error", text=str(message))
+        if self.echo_to_console:
+            super().tool_error(message, strip=strip)
+
+    def tool_warning(self, message="", strip=True):
+        self.emit("tool_warning", text=str(message))
+        if self.echo_to_console:
+            super().tool_warning(message, strip=strip)
+
+    def confirm_ask(self, question, subject=None, explicit_yes=None, group=None, allow_never=False):
+        default = explicit_yes if explicit_yes is not None else bool(self.yes)
+        self.emit(
+            "confirm",
+            question=str(question),
+            subject=subject,
+            default=default,
+            auto_answered=bool(self.yes),
+        )
+        if self.yes:
+            return True
+        return super().confirm_ask(
+            question,
+            subject=subject,
+            explicit_yes=explicit_yes,
+            group=group,
+            allow_never=allow_never,
+        )
+
+    def get_input(self, root, rel_fnames, addable_rel_fnames, commands, abs_read_only_fnames, edit_format=""):
+        raise RuntimeError(
+            "EventIO does not support interactive input; send messages via Session.run_message()."
+        )
+
+    def ai_output(self, content):
+        self.emit("assistant_complete", text=content or "")
+        if self.echo_to_console:
+            super().ai_output(content)

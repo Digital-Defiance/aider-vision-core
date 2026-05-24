@@ -20,7 +20,7 @@ See the
 [benchmark README](https://github.com/Aider-AI/aider/blob/main/benchmark/README.md)
 for information on running aider's code editing benchmarks.
 Submit results by opening a PR with edits to the
-[benchmark results data files](https://github.com/Aider-AI/aider/blob/main/aider/website/_data/).
+[benchmark results data files](https://github.com/Aider-AI/aider/blob/main/aider_vision_core/website/_data/).
 
 
 ## Pull Requests
@@ -135,7 +135,7 @@ docker build -t aider -f docker/Dockerfile .
 The project's documentation is built using Jekyll and hosted on GitHub Pages. To build the documentation locally, follow these steps:
 
 1. Install Ruby and Bundler (if not already installed).
-2. Navigate to the `aider/website` directory.
+2. Navigate to the `aider_vision_core/website` directory.
 3. Install the required gems:
    ```
    bundle install
@@ -149,7 +149,7 @@ The project's documentation is built using Jekyll and hosted on GitHub Pages. To
    bundle exec jekyll serve
    ```
 
-The built documentation will be available in the `aider/website/_site` directory.
+The built documentation will be available in the `aider_vision_core/website/_site` directory.
 
 ## Coding Standards
 
@@ -191,7 +191,7 @@ The project uses GitHub Actions for continuous integration. The testing workflow
 - `.github/workflows/ubuntu-tests.yml`: Runs tests on Ubuntu for Python versions 3.9 through 3.12.
 - `.github/workflows/windows-tests.yml`: Runs that on Windows
 
-These workflows are triggered on push and pull request events to the `main` branch, ignoring changes to the `aider/website/**` and `README.md` files.
+These workflows are triggered on push and pull request events to the `main` branch, ignoring changes to the `aider_vision_core/website/**` and `README.md` files.
 
 #### Docker Build and Test
 

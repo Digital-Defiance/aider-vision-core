@@ -3,7 +3,7 @@
 # Run the Docker container with optimizations for faster builds
 docker run \
        --rm \
-       -v "$PWD/aider/website:/site" \
+       -v "$PWD/aider_vision_core/website:/site" \
        -p 4000:4000 \
        -e HISTFILE=/site/.bash_history \
        -e JEKYLL_ENV=development \

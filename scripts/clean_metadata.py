@@ -126,7 +126,7 @@ def main():
     script_dir = Path(__file__).parent.resolve()
     # Adjust path relative to the script's location in the aider repo
     litellm_path = script_dir.parent / "../litellm/model_prices_and_context_window.json"
-    aider_path = script_dir / "../aider/resources/model-metadata.json"
+    aider_path = script_dir / "../aider_vision_core/resources/model-metadata.json"
 
     if not litellm_path.exists():
         print(f"Error: LiteLLM metadata file not found at {litellm_path}")

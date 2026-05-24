@@ -7,10 +7,10 @@
 > - exit code: 1  
 >  
 > aider/repomap.py:22:1: E402 module level import not at top of file  
-> from aider.dump import dump  
+> from aider_vision_core.dump import dump  
 > ^  
 > aider/repomap.py:23:1: E402 module level import not at top of file  
-> from aider.utils import Spinner  
+> from aider_vision_core.utils import Spinner  
 > ^  
 >  
 > isort....................................................................Passed  
@@ -20,10 +20,10 @@
 > - exit code: 1  
 >  
 > aider/repomap.py:22:1: E402 module level import not at top of file  
-> from aider.dump import dump  
+> from aider_vision_core.dump import dump  
 > ^  
 > aider/repomap.py:23:1: E402 module level import not at top of file  
-> from aider.utils import Spinner  
+> from aider_vision_core.utils import Spinner  
 > ^  
 >  
 >  
@@ -34,8 +34,8 @@
 > 19│warnings.simplefilter("ignore", category=FutureWarning)  
 > 20│from tree_sitter_languages import get_language, get_parser  # noqa: E402  
 > 21│  
-> 22█from aider.dump import dump  
-> 23█from aider.utils import Spinner  
+> 22█from aider_vision_core.dump import dump  
+> 23█from aider_vision_core.utils import Spinner  
 > 24│  
 > 25│Tag = namedtuple("Tag", "rel_fname fname line name kind".split())  
 > 26│  
@@ -61,7 +61,7 @@
 #### - exit code: 1  
 ####   
 #### aider/repomap.py:23:1: E402 module level import not at top of file  
-#### from aider.utils import Spinner  
+#### from aider_vision_core.utils import Spinner  
 #### ^  
 ####   
 #### isort....................................................................Passed  
@@ -71,7 +71,7 @@
 #### - exit code: 1  
 ####   
 #### aider/repomap.py:23:1: E402 module level import not at top of file  
-#### from aider.utils import Spinner  
+#### from aider_vision_core.utils import Spinner  
 #### ^  
 ####   
 ####   
@@ -81,8 +81,8 @@
 #### ...⋮...  
 ####  20│from tree_sitter_languages import get_language, get_parser  # noqa: E402  
 ####  21│  
-####  22│from aider.utils import Spinner  
-####  23█from aider.dump import dump  # noqa: F402,E402  
+####  22│from aider_vision_core.utils import Spinner  
+####  23█from aider_vision_core.dump import dump  # noqa: F402,E402  
 ####  24│  
 ####  25│Tag = namedtuple("Tag", "rel_fname fname line name kind".split())  
 ####  26│  
@@ -1352,77 +1352,77 @@ aider/voice.py:
 │    def raw_record_and_transcribe(self, history, language):
 ⋮...
 
-aider/website/HISTORY.md
+aider_vision_core/website/HISTORY.md
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 
-aider/website/_includes/nav_footer_custom.html
+aider_vision_core/website/_includes/nav_footer_custom.html
 
-aider/website/_layouts/redirect.html
+aider_vision_core/website/_layouts/redirect.html
 
-aider/website/_posts/2024-03-08-claude-3.md
+aider_vision_core/website/_posts/2024-03-08-claude-3.md
 
-aider/website/_posts/2024-06-02-main-swe-bench.md
+aider_vision_core/website/_posts/2024-06-02-main-swe-bench.md
 
-aider/website/_posts/2024-07-01-sonnet-not-lazy.md
+aider_vision_core/website/_posts/2024-07-01-sonnet-not-lazy.md
 
-aider/website/_posts/2024-07-25-new-models.md
+aider_vision_core/website/_posts/2024-07-25-new-models.md
 
-aider/website/assets/2024-04-09-gpt-4-turbo.jpg
+aider_vision_core/website/assets/2024-04-09-gpt-4-turbo.jpg
 
-aider/website/assets/aider.jpg
+aider_vision_core/website/assets/aider.jpg
 
-aider/website/assets/benchmarks-speed-1106.jpg
+aider_vision_core/website/assets/benchmarks-speed-1106.jpg
 
-aider/website/assets/benchmarks-speed-1106.svg
+aider_vision_core/website/assets/benchmarks-speed-1106.svg
 
-aider/website/assets/benchmarks-udiff.svg
+aider_vision_core/website/assets/benchmarks-udiff.svg
 
-aider/website/assets/codespaces.mp4
+aider_vision_core/website/assets/codespaces.mp4
 
-aider/website/assets/figure.png
+aider_vision_core/website/assets/figure.png
 
-aider/website/assets/icons/android-chrome-384x384.png
+aider_vision_core/website/assets/icons/android-chrome-384x384.png
 
-aider/website/assets/icons/mstile-150x150.png
+aider_vision_core/website/assets/icons/mstile-150x150.png
 
-aider/website/assets/icons/site.webmanifest
+aider_vision_core/website/assets/icons/site.webmanifest
 
-aider/website/assets/install.jpg
+aider_vision_core/website/assets/install.jpg
 
-aider/website/assets/linting.jpg
+aider_vision_core/website/assets/linting.jpg
 
-aider/website/assets/sonnet-not-lazy.jpg
+aider_vision_core/website/assets/sonnet-not-lazy.jpg
 
-aider/website/docs/benchmarks-speed-1106.md
+aider_vision_core/website/docs/benchmarks-speed-1106.md
 
-aider/website/docs/benchmarks.md
+aider_vision_core/website/docs/benchmarks.md
 
-aider/website/docs/config/adv-model-settings.md
+aider_vision_core/website/docs/config/adv-model-settings.md
 
-aider/website/docs/config/aider_conf.md
+aider_vision_core/website/docs/config/aider_conf.md
 
-aider/website/docs/faq.md
+aider_vision_core/website/docs/faq.md
 
-aider/website/docs/git.md
+aider_vision_core/website/docs/git.md
 
-aider/website/docs/llms/cohere.md
+aider_vision_core/website/docs/llms/cohere.md
 
-aider/website/docs/llms/openrouter.md
+aider_vision_core/website/docs/llms/openrouter.md
 
-aider/website/docs/troubleshooting.md
+aider_vision_core/website/docs/troubleshooting.md
 
-aider/website/docs/troubleshooting/support.md
+aider_vision_core/website/docs/troubleshooting/support.md
 
-aider/website/docs/usage/commands.md
+aider_vision_core/website/docs/usage/commands.md
 
-aider/website/docs/usage/lint-test.md
+aider_vision_core/website/docs/usage/lint-test.md
 
-aider/website/docs/usage/modes.md
+aider_vision_core/website/docs/usage/modes.md
 
-aider/website/index.md
+aider_vision_core/website/index.md
 
-aider/website/share/index.md
+aider_vision_core/website/share/index.md
 
 benchmark/__init__.py
 
@@ -1631,7 +1631,7 @@ tests/scrape/test_scrape.py
 #### /help hi  
 > To use interactive /help you need to install the help extras:  
 >  
-> /Users/gauthier/Projects/aider/.venv/bin/python3.12 -m pip install aider-chat[help] --extra-index-url https://download.pytorch.org/whl/cpu  
+> /Users/gauthier/Projects/aider/.venv/bin/python3.12 -m pip install aider-vision-core[help] --extra-index-url https://download.pytorch.org/whl/cpu  
 > Run pip install? y  
 >  
 >  
@@ -1719,7 +1719,7 @@ tests/basic/test_repo.py
             fnames = git_repo.get_tracked_files()
             self.assertIn(str(fname), fnames)
 
-    @patch("aider.repo.simple_send_with_retries")
+    @patch("aider_vision_core.repo.simple_send_with_retries")
     def test_noop_commit(self, mock_send):
         mock_send.return_value = '"a good commit message"'
 =======
@@ -1783,7 +1783,7 @@ tests/basic/test_repo.py
             self.assertNotIn(str(root_file), tracked_files)
             self.assertNotIn(str(another_subdir_file), tracked_files)
 
-    @patch("aider.repo.simple_send_with_retries")
+    @patch("aider_vision_core.repo.simple_send_with_retries")
     def test_noop_commit(self, mock_send):
         mock_send.return_value = '"a good commit message"'
 >>>>>>> REPLACE
@@ -2237,21 +2237,21 @@ tests/basic/test_repomap.py
 import os
 import unittest
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import IgnorantTemporaryDirectory
 =======
 import os
 import unittest
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.repo import GitRepo
-from aider.utils import IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.utils import IgnorantTemporaryDirectory
 >>>>>>> REPLACE
 ```
 
@@ -2274,9 +2274,9 @@ Certainly! I'll make the necessary changes to replace `IgnorantTemporaryDirector
 tests/basic/test_repomap.py
 ```python
 <<<<<<< SEARCH
-from aider.utils import IgnorantTemporaryDirectory
+from aider_vision_core.utils import IgnorantTemporaryDirectory
 =======
-from aider.utils import GitTemporaryDirectory
+from aider_vision_core.utils import GitTemporaryDirectory
 >>>>>>> REPLACE
 ```
 
@@ -2383,12 +2383,12 @@ To fix the error, we need to import `GitTemporaryDirectory` from the `aider.util
 tests/basic/test_repomap.py
 ```python
 <<<<<<< SEARCH
-from aider.utils import IgnorantTemporaryDirectory
+from aider_vision_core.utils import IgnorantTemporaryDirectory
 
 
 class TestRepoMap(unittest.TestCase):
 =======
-from aider.utils import IgnorantTemporaryDirectory, GitTemporaryDirectory
+from aider_vision_core.utils import IgnorantTemporaryDirectory, GitTemporaryDirectory
 
 
 class TestRepoMap(unittest.TestCase):
@@ -2399,7 +2399,7 @@ This change adds the import for `GitTemporaryDirectory`, which should resolve th
 
 > Tokens: 13,611 sent, 104 received. Cost: $0.04 request, $0.25 session.  
 > Applied edit to tests/basic/test_repomap.py  
-> Commit 7514f02 fix: Import GitTemporaryDirectory from aider.utils  
+> Commit 7514f02 fix: Import GitTemporaryDirectory from aider_vision_core.utils  
 > You can use /undo to revert and discard commit 7514f02.  
 > Commit acbfb4d style: Fix import order in test_repomap.py  
 > You can use /undo to revert and discard commit acbfb4d.  
@@ -2604,8 +2604,8 @@ This change removes the unused `repo` variable, which should resolve the flake8 
 > - hook id: flake8  
 > - exit code: 1  
 >  
-> tests/basic/test_repomap.py:7:1: F401 'aider.repo.GitRepo' imported but unused  
-> from aider.repo import GitRepo  
+> tests/basic/test_repomap.py:7:1: F401 'aider_vision_core.repo.GitRepo' imported but unused  
+> from aider_vision_core.repo import GitRepo  
 > ^  
 >  
 > isort....................................................................Passed  
@@ -2614,8 +2614,8 @@ This change removes the unused `repo` variable, which should resolve the flake8 
 > - hook id: flake8  
 > - exit code: 1  
 >  
-> tests/basic/test_repomap.py:7:1: F401 'aider.repo.GitRepo' imported but unused  
-> from aider.repo import GitRepo  
+> tests/basic/test_repomap.py:7:1: F401 'aider_vision_core.repo.GitRepo' imported but unused  
+> from aider_vision_core.repo import GitRepo  
 > ^  
 >  
 >  
@@ -2623,12 +2623,12 @@ This change removes the unused `repo` variable, which should resolve the flake8 
 >  
 > tests/basic/test_repomap.py:  
 > ...⋮...  
-> 4│from aider.dump import dump  # noqa: F401  
-> 5│from aider.io import InputOutput  
-> 6│from aider.models import Model  
-> 7█from aider.repo import GitRepo  
-> 8│from aider.repomap import RepoMap  
-> 9│from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory  
+> 4│from aider_vision_core.dump import dump  # noqa: F401  
+> 5│from aider_vision_core.io import InputOutput  
+> 6│from aider_vision_core.models import Model  
+> 7█from aider_vision_core.repo import GitRepo  
+> 8│from aider_vision_core.repomap import RepoMap  
+> 9│from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory  
 > 10│  
 > ...⋮...  
 >  
@@ -2639,18 +2639,18 @@ To fix the flake8 error, we need to remove the unused import of `GitRepo`. Here'
 tests/basic/test_repomap.py
 ```python
 <<<<<<< SEARCH
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repo import GitRepo
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 =======
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 >>>>>>> REPLACE
 ```
 
@@ -2675,10 +2675,10 @@ This change removes the unused import of `GitRepo`, which should resolve the fla
 
 #### /undo  
 > Removed: acbfb4d style: Fix import order in test_repomap.py  
-> HEAD is: 7514f02 fix: Import GitTemporaryDirectory from aider.utils  
+> HEAD is: 7514f02 fix: Import GitTemporaryDirectory from aider_vision_core.utils  
 
 #### /undo  
-> Removed: 7514f02 fix: Import GitTemporaryDirectory from aider.utils  
+> Removed: 7514f02 fix: Import GitTemporaryDirectory from aider_vision_core.utils  
 > HEAD is: 843eed8 fix: Use GitTemporaryDirectory in test_subtree_only  
 
 #### /undo  
@@ -2722,7 +2722,7 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_false_vals_in_env_file(self):
         self.create_env_file(".env", "AIDER_SHOW_DIFFS=off")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -2730,7 +2730,7 @@ tests/basic/test_main.py
 
     def test_true_vals_in_env_file(self):
         self.create_env_file(".env", "AIDER_SHOW_DIFFS=on")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -2740,7 +2740,7 @@ tests/basic/test_main.py
 =======
     def test_false_vals_in_env_file(self):
         self.create_env_file(".env", "AIDER_SHOW_DIFFS=off")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -2748,14 +2748,14 @@ tests/basic/test_main.py
 
     def test_true_vals_in_env_file(self):
         self.create_env_file(".env", "AIDER_SHOW_DIFFS=on")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
             self.assertEqual(kwargs["show_diffs"], True)
 
     def test_map_tokens_option(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git", "--map-tokens", "0", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -2763,7 +2763,7 @@ tests/basic/test_main.py
             self.assertIsNone(kwargs["repo_map"])
 
     def test_map_tokens_default(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -2820,7 +2820,7 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_dark_mode_sets_code_theme(self):
         # Mock Coder.create to capture the configuration
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--dark-mode", "--no-git"], input=DummyInput(), output=DummyOutput())
             # Ensure Coder.create was called
             MockCoder.assert_called_once()
@@ -2830,7 +2830,7 @@ tests/basic/test_main.py
 
     def test_light_mode_sets_code_theme(self):
         # Mock Coder.create to capture the configuration
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--light-mode", "--no-git"], input=DummyInput(), output=DummyOutput())
             # Ensure Coder.create was called
             MockCoder.assert_called_once()
@@ -2840,7 +2840,7 @@ tests/basic/test_main.py
 =======
     def test_dark_mode_sets_code_theme(self):
         # Mock Coder.create to capture the configuration
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--dark-mode"], input=DummyInput(), output=DummyOutput())
             # Ensure Coder.create was called
             MockCoder.assert_called_once()
@@ -2850,7 +2850,7 @@ tests/basic/test_main.py
 
     def test_light_mode_sets_code_theme(self):
         # Mock Coder.create to capture the configuration
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--light-mode"], input=DummyInput(), output=DummyOutput())
             # Ensure Coder.create was called
             MockCoder.assert_called_once()
@@ -2865,7 +2865,7 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_env_file_flag_sets_automatic_variable(self):
         env_file_path = self.create_env_file(".env.test", "AIDER_DARK_MODE=True")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(
                 ["--env-file", str(env_file_path), "--no-git"],
                 input=DummyInput(),
@@ -2878,7 +2878,7 @@ tests/basic/test_main.py
 
     def test_default_env_file_sets_automatic_variable(self):
         self.create_env_file(".env", "AIDER_DARK_MODE=True")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git"], input=DummyInput(), output=DummyOutput())
             # Ensure Coder.create was called
             MockCoder.assert_called_once()
@@ -2888,7 +2888,7 @@ tests/basic/test_main.py
 
     def test_false_vals_in_env_file(self):
         self.create_env_file(".env", "AIDER_SHOW_DIFFS=off")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -2896,7 +2896,7 @@ tests/basic/test_main.py
 
     def test_true_vals_in_env_file(self):
         self.create_env_file(".env", "AIDER_SHOW_DIFFS=on")
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-
 
 
@@ -2923,7 +2923,7 @@ tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
     def test_map_tokens_option(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git", "--map-tokens", "0", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -2931,7 +2931,7 @@ tests/basic/test_main.py
             self.assertIsNone(kwargs["repo_map"])
 
     def test_map_tokens_default(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -2941,8 +2941,8 @@ tests/basic/test_main.py
     def test_lint_option(self):
 =======
     def test_map_tokens_option(self):
-        with patch("aider.coders.Coder.create") as MockCoder, \
-             patch("aider.repomap.RepoMap") as MockRepoMap:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder, \
+             patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
             main(["--map-tokens", "0", "--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -2951,8 +2951,8 @@ tests/basic/test_main.py
             MockRepoMap.assert_not_called()
 
     def test_map_tokens_default(self):
-        with patch("aider.coders.Coder.create") as MockCoder, \
-             patch("aider.repomap.RepoMap") as MockRepoMap:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder, \
+             patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
             main(["--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -2980,7 +2980,7 @@ Both tests now use `gpt-4o` as the model and mock the `RepoMap` class to ensure 
 > ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in tests/basic/test_main.py  
 > <<<<<<< SEARCH  
 >     def test_map_tokens_option(self):  
->         with patch("aider.coders.Coder.create") as MockCoder:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder:  
 >             main(["--no-git", "--map-tokens", "0", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -2988,7 +2988,7 @@ Both tests now use `gpt-4o` as the model and mock the `RepoMap` class to ensure 
 >             self.assertIsNone(kwargs["repo_map"])  
 >   
 >     def test_map_tokens_default(self):  
->         with patch("aider.coders.Coder.create") as MockCoder:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder:  
 >             main(["--no-git", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -2998,8 +2998,8 @@ Both tests now use `gpt-4o` as the model and mock the `RepoMap` class to ensure 
 >     def test_lint_option(self):  
 > =======  
 >     def test_map_tokens_option(self):  
->         with patch("aider.coders.Coder.create") as MockCoder, \  
->              patch("aider.repomap.RepoMap") as MockRepoMap:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder, \  
+>              patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:  
 >             main(["--map-tokens", "0", "--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -3008,8 +3008,8 @@ Both tests now use `gpt-4o` as the model and mock the `RepoMap` class to ensure 
 >             MockRepoMap.assert_not_called()  
 >   
 >     def test_map_tokens_default(self):  
->         with patch("aider.coders.Coder.create") as MockCoder, \  
->              patch("aider.repomap.RepoMap") as MockRepoMap:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder, \  
+>              patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:  
 >             main(["--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -3028,7 +3028,7 @@ tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
     def test_map_tokens_option(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git", "--map-tokens", "0", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -3036,7 +3036,7 @@ tests/basic/test_main.py
             self.assertIsNone(kwargs["repo_map"])
 
     def test_map_tokens_default(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-git", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -3046,8 +3046,8 @@ tests/basic/test_main.py
     def test_lint_option(self):
 =======
     def test_map_tokens_option(self):
-        with patch("aider.coders.Coder.create") as MockCoder, \
-             patch("aider.repomap.RepoMap") as MockRepoMap:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder, \
+             patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
             main(["--map-tokens", "0", "--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -3056,8 +3056,8 @@ tests/basic/test_main.py
             MockRepoMap.assert_not_called()
 
     def test_map_tokens_default(self):
-        with patch("aider.coders.Coder.create") as MockCoder, \
-             patch("aider.repomap.RepoMap") as MockRepoMap:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder, \
+             patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
             main(["--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -3086,7 +3086,7 @@ These changes will implement the tests for the `--map-tokens` option as requeste
 > ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in tests/basic/test_main.py  
 > <<<<<<< SEARCH  
 >     def test_map_tokens_option(self):  
->         with patch("aider.coders.Coder.create") as MockCoder:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder:  
 >             main(["--no-git", "--map-tokens", "0", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -3094,7 +3094,7 @@ These changes will implement the tests for the `--map-tokens` option as requeste
 >             self.assertIsNone(kwargs["repo_map"])  
 >   
 >     def test_map_tokens_default(self):  
->         with patch("aider.coders.Coder.create") as MockCoder:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder:  
 >             main(["--no-git", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -3104,8 +3104,8 @@ These changes will implement the tests for the `--map-tokens` option as requeste
 >     def test_lint_option(self):  
 > =======  
 >     def test_map_tokens_option(self):  
->         with patch("aider.coders.Coder.create") as MockCoder, \  
->              patch("aider.repomap.RepoMap") as MockRepoMap:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder, \  
+>              patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:  
 >             main(["--map-tokens", "0", "--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -3114,8 +3114,8 @@ These changes will implement the tests for the `--map-tokens` option as requeste
 >             MockRepoMap.assert_not_called()  
 >   
 >     def test_map_tokens_default(self):  
->         with patch("aider.coders.Coder.create") as MockCoder, \  
->              patch("aider.repomap.RepoMap") as MockRepoMap:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder, \  
+>              patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:  
 >             main(["--model", "gpt-4o"], input=DummyInput(), output=DummyOutput())  
 >             MockCoder.assert_called_once()  
 >             _, kwargs = MockCoder.call_args  
@@ -3137,7 +3137,7 @@ tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
     def test_map_tokens_option(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--map-tokens", "0", "--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -3145,7 +3145,7 @@ tests/basic/test_main.py
             self.assertIsNone(kwargs["repo_map"])
 
     def test_map_tokens_default(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--model", "gpt-4"], input=DummyInput(), output=DummyOutput())
             MockCoder.assert_called_once()
             _, kwargs = MockCoder.call_args
@@ -3167,7 +3167,7 @@ import git
 from prompt_toolkit.input import DummyInput
 from prompt_toolkit.output import DummyOutput
 
-from aider.dump import dump  # noqa: F401
+from aider_vision_core.dump import dump  # noqa: F401
 =======
 from unittest.mock import MagicMock, patch
 
@@ -3175,8 +3175,8 @@ import git
 from prompt_toolkit.input import DummyInput
 from prompt_toolkit.output import DummyOutput
 
-from aider.dump import dump  # noqa: F401
-from aider.models import Model
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.models import Model
 >>>>>>> REPLACE
 ```
 
@@ -3184,104 +3184,104 @@ tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
     def test_main_args(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             # --yes will just ok the git repo without blocking on input
             # following calls to main will see the new repo already
             main(["--no-auto-commits", "--yes"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["auto_commits"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--auto-commits"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["auto_commits"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main([], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
             assert kwargs["auto_commits"] is True
             assert kwargs["pretty"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-dirty-commits"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--dirty-commits"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
 =======
     def test_main_args(self):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             # --yes will just ok the git repo without blocking on input
             # following calls to main will see the new repo already
             main(["--no-auto-commits", "--yes"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["auto_commits"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--auto-commits"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["auto_commits"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main([], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
             assert kwargs["auto_commits"] is True
             assert kwargs["pretty"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-dirty-commits"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--dirty-commits"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
 
-    @patch("aider.main.RepoMap")
+    @patch("aider_vision_core.main.RepoMap")
     def test_map_tokens_with_gpt4o(self, MockRepoMap):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--model", "gpt-4o", "--map-tokens", "1024", "--yes"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["map_tokens"] == 1024
             MockRepoMap.assert_called_once()
 
-    @patch("aider.main.RepoMap")
+    @patch("aider_vision_core.main.RepoMap")
     def test_map_tokens_zero_with_gpt4o(self, MockRepoMap):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--model", "gpt-4o", "--map-tokens", "0", "--yes"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["map_tokens"] == 0
             MockRepoMap.assert_not_called()
 
-    @patch("aider.main.RepoMap")
+    @patch("aider_vision_core.main.RepoMap")
     def test_default_map_tokens_with_gpt4o(self, MockRepoMap):
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--model", "gpt-4o", "--yes"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["map_tokens"] == 1024
@@ -3321,8 +3321,8 @@ These tests cover the scenarios you requested, including using `gpt-4o` and sett
 > - hook id: flake8  
 > - exit code: 1  
 >  
-> tests/basic/test_main.py:16:1: F401 'aider.models.Model' imported but unused  
-> from aider.models import Model  
+> tests/basic/test_main.py:16:1: F401 'aider_vision_core.models.Model' imported but unused  
+> from aider_vision_core.models import Model  
 > ^  
 >  
 > isort....................................................................Passed  
@@ -3331,8 +3331,8 @@ These tests cover the scenarios you requested, including using `gpt-4o` and sett
 > - hook id: flake8  
 > - exit code: 1  
 >  
-> tests/basic/test_main.py:16:1: F401 'aider.models.Model' imported but unused  
-> from aider.models import Model  
+> tests/basic/test_main.py:16:1: F401 'aider_vision_core.models.Model' imported but unused  
+> from aider_vision_core.models import Model  
 > ^  
 >  
 >  
@@ -3340,30 +3340,30 @@ These tests cover the scenarios you requested, including using `gpt-4o` and sett
 >  
 > tests/basic/test_main.py:  
 > ...⋮...  
-> 13│from aider.dump import dump  # noqa: F401  
-> 14│from aider.models import Model  
-> 15│from aider.io import InputOutput  
-> 16█from aider.main import check_gitignore, main, setup_git  
-> 17│from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo  
+> 13│from aider_vision_core.dump import dump  # noqa: F401  
+> 14│from aider_vision_core.models import Model  
+> 15│from aider_vision_core.io import InputOutput  
+> 16█from aider_vision_core.main import check_gitignore, main, setup_git  
+> 17│from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo  
 > 18│  
 > 19│  
 > ...⋮...  
 >  
 > Attempt to fix lint errors? n  
 
-#### E           AttributeError: <module 'aider.main' from '/Users/gauthier/Projects/aider/aider/main.py'> does not have the attribute 'RepoMap'  
+#### E           AttributeError: <module 'aider_vision_core.main' from '/Users/gauthier/Projects/aider/aider/main.py'> does not have the attribute 'RepoMap'  
 
 I understand the error you're encountering. It seems that the `RepoMap` class is not being imported correctly in the `main.py` file. Let's fix this by adding the necessary import statement. Here's the change we need to make:
 
 tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
-from aider.dump import dump  # noqa: F401
-from aider.models import Model
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.models import Model
 =======
-from aider.dump import dump  # noqa: F401
-from aider.models import Model
-from aider.repomap import RepoMap
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
 >>>>>>> REPLACE
 ```
 
@@ -3376,12 +3376,12 @@ This change adds the import for `RepoMap` from the `aider.repomap` module. This 
 >   
 > ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in tests/basic/test_main.py  
 > <<<<<<< SEARCH  
-> from aider.dump import dump  # noqa: F401  
-> from aider.models import Model  
+> from aider_vision_core.dump import dump  # noqa: F401  
+> from aider_vision_core.models import Model  
 > =======  
-> from aider.dump import dump  # noqa: F401  
-> from aider.models import Model  
-> from aider.repomap import RepoMap  
+> from aider_vision_core.dump import dump  # noqa: F401  
+> from aider_vision_core.models import Model  
+> from aider_vision_core.repomap import RepoMap  
 > >>>>>>> REPLACE  
 >   
 > The SEARCH section must exactly match an existing block of lines including all white space, comments, indentation, docstrings, etc  
@@ -3397,8 +3397,8 @@ import git
 from prompt_toolkit.input import DummyInput
 from prompt_toolkit.output import DummyOutput
 
-from aider.dump import dump  # noqa: F401
-from aider.models import Model
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.models import Model
 =======
 from unittest.mock import MagicMock, patch
 
@@ -3406,9 +3406,9 @@ import git
 from prompt_toolkit.input import DummyInput
 from prompt_toolkit.output import DummyOutput
 
-from aider.dump import dump  # noqa: F401
-from aider.models import Model
-from aider.repomap import RepoMap
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
 >>>>>>> REPLACE
 ```
 
@@ -3427,8 +3427,8 @@ This SEARCH/REPLACE block should now correctly match the existing code and add t
 > from prompt_toolkit.input import DummyInput  
 > from prompt_toolkit.output import DummyOutput  
 >   
-> from aider.dump import dump  # noqa: F401  
-> from aider.models import Model  
+> from aider_vision_core.dump import dump  # noqa: F401  
+> from aider_vision_core.models import Model  
 > =======  
 > from unittest.mock import MagicMock, patch  
 >   
@@ -3436,9 +3436,9 @@ This SEARCH/REPLACE block should now correctly match the existing code and add t
 > from prompt_toolkit.input import DummyInput  
 > from prompt_toolkit.output import DummyOutput  
 >   
-> from aider.dump import dump  # noqa: F401  
-> from aider.models import Model  
-> from aider.repomap import RepoMap  
+> from aider_vision_core.dump import dump  # noqa: F401  
+> from aider_vision_core.models import Model  
+> from aider_vision_core.repomap import RepoMap  
 > >>>>>>> REPLACE  
 >   
 > Did you mean to match some of these actual lines from tests/basic/test_main.py?  
@@ -3456,11 +3456,11 @@ This SEARCH/REPLACE block should now correctly match the existing code and add t
 > from prompt_toolkit.input import DummyInput  
 > from prompt_toolkit.output import DummyOutput  
 >   
-> from aider.dump import dump  # noqa: F401  
-> from aider.io import InputOutput  
-> from aider.main import check_gitignore, main, setup_git  
-> from aider.models import Model  
-> from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo  
+> from aider_vision_core.dump import dump  # noqa: F401  
+> from aider_vision_core.io import InputOutput  
+> from aider_vision_core.main import check_gitignore, main, setup_git  
+> from aider_vision_core.models import Model  
+> from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo  
 >   
 > ```  
 >   
@@ -3483,11 +3483,11 @@ import git
 from prompt_toolkit.input import DummyInput
 from prompt_toolkit.output import DummyOutput
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.main import check_gitignore, main, setup_git
-from aider.models import Model
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.models import Model
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
 =======
 import os
 import subprocess
@@ -3501,12 +3501,12 @@ import git
 from prompt_toolkit.input import DummyInput
 from prompt_toolkit.output import DummyOutput
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.main import check_gitignore, main, setup_git
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
 >>>>>>> REPLACE
 ```
 
@@ -3527,11 +3527,11 @@ This SEARCH/REPLACE block now correctly matches the existing code and adds the n
 > - hook id: flake8  
 > - exit code: 1  
 >  
-> tests/basic/test_main.py:16:1: F401 'aider.models.Model' imported but unused  
-> from aider.models import Model  
+> tests/basic/test_main.py:16:1: F401 'aider_vision_core.models.Model' imported but unused  
+> from aider_vision_core.models import Model  
 > ^  
-> tests/basic/test_main.py:17:1: F401 'aider.repomap.RepoMap' imported but unused  
-> from aider.repomap import RepoMap  
+> tests/basic/test_main.py:17:1: F401 'aider_vision_core.repomap.RepoMap' imported but unused  
+> from aider_vision_core.repomap import RepoMap  
 > ^  
 >  
 > isort....................................................................Passed  
@@ -3540,11 +3540,11 @@ This SEARCH/REPLACE block now correctly matches the existing code and adds the n
 > - hook id: flake8  
 > - exit code: 1  
 >  
-> tests/basic/test_main.py:16:1: F401 'aider.models.Model' imported but unused  
-> from aider.models import Model  
+> tests/basic/test_main.py:16:1: F401 'aider_vision_core.models.Model' imported but unused  
+> from aider_vision_core.models import Model  
 > ^  
-> tests/basic/test_main.py:17:1: F401 'aider.repomap.RepoMap' imported but unused  
-> from aider.repomap import RepoMap  
+> tests/basic/test_main.py:17:1: F401 'aider_vision_core.repomap.RepoMap' imported but unused  
+> from aider_vision_core.repomap import RepoMap  
 > ^  
 >  
 >  
@@ -3552,12 +3552,12 @@ This SEARCH/REPLACE block now correctly matches the existing code and adds the n
 >  
 > tests/basic/test_main.py:  
 > ...⋮...  
-> 13│from aider.dump import dump  # noqa: F401  
-> 14│from aider.io import InputOutput  
-> 15│from aider.main import check_gitignore, main, setup_git  
-> 16█from aider.models import Model  
-> 17█from aider.repomap import RepoMap  
-> 18│from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo  
+> 13│from aider_vision_core.dump import dump  # noqa: F401  
+> 14│from aider_vision_core.io import InputOutput  
+> 15│from aider_vision_core.main import check_gitignore, main, setup_git  
+> 16█from aider_vision_core.models import Model  
+> 17█from aider_vision_core.repomap import RepoMap  
+> 18│from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo  
 > 19│  
 > 20│  
 > ...⋮...  
@@ -3596,23 +3596,23 @@ Here's the implementation:
 tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.main import check_gitignore, main, setup_git
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
 =======
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.main import check_gitignore, main, setup_git
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
 
 class TestMapTokens(TestCase):
-    @patch('aider.coders.Coder.create')
-    @patch('aider.repomap.RepoMap.__init__')
+    @patch('aider_vision_core.coders.Coder.create')
+    @patch('aider_vision_core.repomap.RepoMap.__init__')
     def test_map_tokens_with_gpt4o(self, mock_repomap_init, mock_coder_create):
         mock_repomap_init.return_value = None
         mock_coder_create.return_value.run.return_value = None
@@ -3657,23 +3657,23 @@ This test case covers all the scenarios you requested:
 >   
 > ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in tests/basic/test_main.py  
 > <<<<<<< SEARCH  
-> from aider.dump import dump  # noqa: F401  
-> from aider.io import InputOutput  
-> from aider.main import check_gitignore, main, setup_git  
-> from aider.models import Model  
-> from aider.repomap import RepoMap  
-> from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo  
+> from aider_vision_core.dump import dump  # noqa: F401  
+> from aider_vision_core.io import InputOutput  
+> from aider_vision_core.main import check_gitignore, main, setup_git  
+> from aider_vision_core.models import Model  
+> from aider_vision_core.repomap import RepoMap  
+> from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo  
 > =======  
-> from aider.dump import dump  # noqa: F401  
-> from aider.io import InputOutput  
-> from aider.main import check_gitignore, main, setup_git  
-> from aider.models import Model  
-> from aider.repomap import RepoMap  
-> from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo  
+> from aider_vision_core.dump import dump  # noqa: F401  
+> from aider_vision_core.io import InputOutput  
+> from aider_vision_core.main import check_gitignore, main, setup_git  
+> from aider_vision_core.models import Model  
+> from aider_vision_core.repomap import RepoMap  
+> from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo  
 >   
 > class TestMapTokens(TestCase):  
->     @patch('aider.coders.Coder.create')  
->     @patch('aider.repomap.RepoMap.__init__')  
+>     @patch('aider_vision_core.coders.Coder.create')  
+>     @patch('aider_vision_core.repomap.RepoMap.__init__')  
 >     def test_map_tokens_with_gpt4o(self, mock_repomap_init, mock_coder_create):  
 >         mock_repomap_init.return_value = None  
 >         mock_coder_create.return_value.run.return_value = None  
@@ -3704,10 +3704,10 @@ This test case covers all the scenarios you requested:
 > from prompt_toolkit.input import DummyInput  
 > from prompt_toolkit.output import DummyOutput  
 >   
-> from aider.dump import dump  # noqa: F401  
-> from aider.io import InputOutput  
-> from aider.main import check_gitignore, main, setup_git  
-> from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo  
+> from aider_vision_core.dump import dump  # noqa: F401  
+> from aider_vision_core.io import InputOutput  
+> from aider_vision_core.main import check_gitignore, main, setup_git  
+> from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo  
 >   
 >   
 > class TestMain(TestCase):  
@@ -3739,15 +3739,15 @@ tests/test_map_tokens.py
 import os
 from unittest.mock import patch
 
-from aider.main import main
-from aider.utils import GitTemporaryDirectory
+from aider_vision_core.main import main
+from aider_vision_core.utils import GitTemporaryDirectory
 
 
 def test_map_tokens_zero():
     with GitTemporaryDirectory() as repo_path:
         os.chdir(repo_path)
 
-        with patch("aider.repomap.RepoMap") as MockRepoMap:
+        with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
             main(
                 [
                     "--model",
@@ -3765,7 +3765,7 @@ def test_map_tokens_default():
     with GitTemporaryDirectory() as repo_path:
         os.chdir(repo_path)
 
-        with patch("aider.repomap.RepoMap") as MockRepoMap:
+        with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
             main(
                 [
                     "--model",
@@ -3804,10 +3804,10 @@ import git
 from prompt_toolkit.input import DummyInput
 from prompt_toolkit.output import DummyOutput
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.main import check_gitignore, main, setup_git
-from aider.utils import GitTemporaryDirectory,
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.utils import GitTemporaryDirectory,
 
 
 #### /drop aider/repomap.py aider/coders/base_coder.py  
@@ -3855,13 +3855,13 @@ tests/basic/test_main.py
 
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(["--model", "gpt-4", "--map-tokens", "0", "--exit"], input=DummyInput(), output=DummyOutput())
                 MockRepoMap.assert_not_called()
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(["--model", "gpt-4", "--map-tokens", "1000", "--exit"], input=DummyInput(), output=DummyOutput())
                 MockRepoMap.assert_called_once()
 >>>>>>> REPLACE
@@ -3893,25 +3893,25 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(["--model", "gpt-4", "--map-tokens", "0", "--exit"], input=DummyInput(), output=DummyOutput())
                 MockRepoMap.assert_not_called()
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(["--model", "gpt-4", "--map-tokens", "1000", "--exit"], input=DummyInput(), output=DummyOutput())
                 MockRepoMap.assert_called_once()
 =======
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"], input=DummyInput(), output=DummyOutput())
                 MockRepoMap.assert_not_called()
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"], input=DummyInput(), output=DummyOutput())
                 MockRepoMap.assert_called_once()
 >>>>>>> REPLACE
@@ -3928,25 +3928,25 @@ These changes add the `--yes` flag to both test methods, which should prevent an
 > <<<<<<< SEARCH  
 >     def test_map_tokens_option(self):  
 >         with GitTemporaryDirectory():  
->             with patch("aider.repomap.RepoMap") as MockRepoMap:  
+>             with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:  
 >                 main(["--model", "gpt-4", "--map-tokens", "0", "--exit"], input=DummyInput(), output=DummyOutput())  
 >                 MockRepoMap.assert_not_called()  
 >   
 >     def test_map_tokens_option_with_non_zero_value(self):  
 >         with GitTemporaryDirectory():  
->             with patch("aider.repomap.RepoMap") as MockRepoMap:  
+>             with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:  
 >                 main(["--model", "gpt-4", "--map-tokens", "1000", "--exit"], input=DummyInput(), output=DummyOutput())  
 >                 MockRepoMap.assert_called_once()  
 > =======  
 >     def test_map_tokens_option(self):  
 >         with GitTemporaryDirectory():  
->             with patch("aider.repomap.RepoMap") as MockRepoMap:  
+>             with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:  
 >                 main(["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"], input=DummyInput(), output=DummyOutput())  
 >                 MockRepoMap.assert_not_called()  
 >   
 >     def test_map_tokens_option_with_non_zero_value(self):  
 >         with GitTemporaryDirectory():  
->             with patch("aider.repomap.RepoMap") as MockRepoMap:  
+>             with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:  
 >                 main(["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"], input=DummyInput(), output=DummyOutput())  
 >                 MockRepoMap.assert_called_once()  
 > >>>>>>> REPLACE  
@@ -3960,7 +3960,7 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "0", "--exit"],
                     input=DummyInput(),
@@ -3970,7 +3970,7 @@ tests/basic/test_main.py
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "1000", "--exit"],
                     input=DummyInput(),
@@ -3980,7 +3980,7 @@ tests/basic/test_main.py
 =======
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"],
                     input=DummyInput(),
@@ -3990,7 +3990,7 @@ tests/basic/test_main.py
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"],
                     input=DummyInput(),
@@ -4042,7 +4042,7 @@ self = <test_main.TestMain testMethod=test_map_tokens_option>
 
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
->           with patch("aider.base_coder.RepoMap") as MockRepoMap:
+>           with patch("aider_vision_core.base_coder.RepoMap") as MockRepoMap:
 
 tests/basic/test_main.py:380: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
@@ -4050,7 +4050,7 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
     self.target = self.getter()
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-name = 'aider.base_coder'
+name = 'aider_vision_core.base_coder'
 
     def resolve_name(name):
         """
@@ -4132,7 +4132,7 @@ self = <test_main.TestMain testMethod=test_map_tokens_option_with_non_zero_value
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
 >               main(
                     ["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"],
                     input=DummyInput(),
@@ -4205,7 +4205,7 @@ FAILED tests/basic/test_main.py::TestMain::test_map_tokens_option_with_non_zero_
 >  
 > def test_map_tokens_option(self):  
 > with GitTemporaryDirectory():  
-> >           with patch("aider.base_coder.RepoMap") as MockRepoMap:  
+> >           with patch("aider_vision_core.base_coder.RepoMap") as MockRepoMap:  
 >  
 > tests/basic/test_main.py:380:  
 > _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  
@@ -4213,7 +4213,7 @@ FAILED tests/basic/test_main.py::TestMain::test_map_tokens_option_with_non_zero_
 > self.target = self.getter()  
 > _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  
 >  
-> name = 'aider.base_coder'  
+> name = 'aider_vision_core.base_coder'  
 >  
 > def resolve_name(name):  
 > """  
@@ -4295,7 +4295,7 @@ FAILED tests/basic/test_main.py::TestMain::test_map_tokens_option_with_non_zero_
 >  
 > def test_map_tokens_option_with_non_zero_value(self):  
 > with GitTemporaryDirectory():  
-> with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:  
+> with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:  
 > >               main(  
 > ["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"],  
 > input=DummyInput(),  
@@ -4366,7 +4366,7 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.base_coder.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"],
                     input=DummyInput(),
@@ -4376,7 +4376,7 @@ tests/basic/test_main.py
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"],
                     input=DummyInput(),
@@ -4386,7 +4386,7 @@ tests/basic/test_main.py
 =======
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"],
                     input=DummyInput(),
@@ -4396,7 +4396,7 @@ tests/basic/test_main.py
 
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.repomap.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.repomap.RepoMap") as MockRepoMap:
                 MockRepoMap.return_value.max_map_tokens = 1000
                 main(
                     ["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"],
@@ -4438,7 +4438,7 @@ self = <test_main.TestMain testMethod=test_map_tokens_option>
 
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
 >               main(
                     ["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"],
                     input=DummyInput(),
@@ -4510,7 +4510,7 @@ FAILED tests/basic/test_main.py::TestMain::test_map_tokens_option - TypeError...
 >  
 > def test_map_tokens_option(self):  
 > with GitTemporaryDirectory():  
-> with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:  
+> with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:  
 > >               main(  
 > ["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"],  
 > input=DummyInput(),  
@@ -4576,7 +4576,7 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 main(
                     ["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"],
                     input=DummyInput(),
@@ -4586,7 +4586,7 @@ tests/basic/test_main.py
 =======
     def test_map_tokens_option(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 MockRepoMap.return_value.max_map_tokens = 0
                 main(
                     ["--model", "gpt-4", "--map-tokens", "0", "--exit", "--yes"],
@@ -6372,7 +6372,7 @@ aider/versioncheck.py
     if not is_update_available:
         return False
 
-    cmd = utils.get_pip_install(["--upgrade", "aider-chat"])
+    cmd = utils.get_pip_install(["--upgrade", "aider-vision-core"])
 
     text = f"""
 Newer aider version v{latest_version} is available. To upgrade, run:
@@ -6408,8 +6408,8 @@ from pathlib import Path
 import packaging.version
 
 import aider
-from aider import utils
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import utils
+from aider_vision_core.dump import dump  # noqa: F401
 
 
 def check_version(io, just_check=False):
@@ -6424,7 +6424,7 @@ def check_version(io, just_check=False):
     import requests
 
     try:
-        response = requests.get("https://pypi.org/pypi/aider-chat/json")
+        response = requests.get("https://pypi.org/pypi/aider-vision-core/json")
         data = response.json()
         latest_version = data["info"]["version"]
         current_version = aider.__version__
@@ -6453,7 +6453,7 @@ def check_version(io, just_check=False):
     if not is_update_available:
         return False
 
-    cmd = utils.get_pip_install(["--upgrade", "aider-chat"])
+    cmd = utils.get_pip_install(["--upgrade", "aider-vision-core"])
 
     text = f"""
 Newer aider version v{latest_version} is available. To upgrade, run:
@@ -6480,8 +6480,8 @@ from pathlib import Path
 import packaging.version
 
 import aider
-from aider import utils
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import utils
+from aider_vision_core.dump import dump  # noqa: F401
 
 
 def check_version(io, just_check=False):
@@ -6496,7 +6496,7 @@ def check_version(io, just_check=False):
     import requests
 
     try:
-        response = requests.get("https://pypi.org/pypi/aider-chat/json")
+        response = requests.get("https://pypi.org/pypi/aider-vision-core/json")
         data = response.json()
         latest_version = data["info"]["version"]
         current_version = aider.__version__
@@ -6535,7 +6535,7 @@ Newer aider version v{latest_version} is available. To upgrade, run:
         io.tool_error(text)
         return True
 
-    cmd = utils.get_pip_install(["--upgrade", "aider-chat"])
+    cmd = utils.get_pip_install(["--upgrade", "aider-vision-core"])
 
     text = f"""
 Newer aider version v{latest_version} is available. To upgrade, run:
@@ -6608,7 +6608,7 @@ This modification ensures that users running aider in a Docker container are giv
 >  
 > Newer aider version v0.48.0 is available. To upgrade, run:  
 >  
-> /venv/bin/python -m pip install --upgrade aider-chat  
+> /venv/bin/python -m pip install --upgrade aider-vision-core  
 
 # aider chat started at 2024-08-06 14:21:50
 
@@ -8004,73 +8004,73 @@ aider/voice.py:
 │    def raw_record_and_transcribe(self, history, language):
 ⋮...
 
-aider/website/_config.yml
+aider_vision_core/website/_config.yml
 
-aider/website/_includes/env-keys-tip.md
+aider_vision_core/website/_includes/env-keys-tip.md
 
-aider/website/_includes/help.md
+aider_vision_core/website/_includes/help.md
 
-aider/website/_includes/multi-line.md
+aider_vision_core/website/_includes/multi-line.md
 
-aider/website/_posts/2024-04-09-gpt-4-turbo.md
+aider_vision_core/website/_posts/2024-04-09-gpt-4-turbo.md
 
-aider/website/_posts/2024-05-13-models-over-time.md
+aider_vision_core/website/_posts/2024-05-13-models-over-time.md
 
-aider/website/_posts/2024-05-22-swe-bench-lite.md
+aider_vision_core/website/_posts/2024-05-22-swe-bench-lite.md
 
-aider/website/assets/2024-04-09-gpt-4-turbo.jpg
+aider_vision_core/website/assets/2024-04-09-gpt-4-turbo.jpg
 
-aider/website/assets/aider-square.jpg
+aider_vision_core/website/assets/aider-square.jpg
 
-aider/website/assets/benchmarks.jpg
+aider_vision_core/website/assets/benchmarks.jpg
 
-aider/website/assets/figure.png
+aider_vision_core/website/assets/figure.png
 
-aider/website/assets/icons/favicon.ico
+aider_vision_core/website/assets/icons/favicon.ico
 
-aider/website/assets/install.mp4
+aider_vision_core/website/assets/install.mp4
 
-aider/website/assets/llms.jpg
+aider_vision_core/website/assets/llms.jpg
 
-aider/website/assets/robot-ast.png
+aider_vision_core/website/assets/robot-ast.png
 
-aider/website/assets/screencast.svg
+aider_vision_core/website/assets/screencast.svg
 
-aider/website/assets/screenshot.png
+aider_vision_core/website/assets/screenshot.png
 
-aider/website/assets/swe_bench.jpg
+aider_vision_core/website/assets/swe_bench.jpg
 
-aider/website/assets/swe_bench.svg
+aider_vision_core/website/assets/swe_bench.svg
 
-aider/website/assets/udiffs.jpg
+aider_vision_core/website/assets/udiffs.jpg
 
-aider/website/docs/benchmarks-1106.md
+aider_vision_core/website/docs/benchmarks-1106.md
 
-aider/website/docs/config.md
+aider_vision_core/website/docs/config.md
 
-aider/website/docs/install/codespaces.md
+aider_vision_core/website/docs/install/codespaces.md
 
-aider/website/docs/install/docker.md
+aider_vision_core/website/docs/install/docker.md
 
-aider/website/docs/install/pipx.md
+aider_vision_core/website/docs/install/pipx.md
 
-aider/website/docs/llms/azure.md
+aider_vision_core/website/docs/llms/azure.md
 
-aider/website/docs/llms/editing-format.md
+aider_vision_core/website/docs/llms/editing-format.md
 
-aider/website/docs/llms/openai.md
+aider_vision_core/website/docs/llms/openai.md
 
-aider/website/docs/llms/openrouter.md
+aider_vision_core/website/docs/llms/openrouter.md
 
-aider/website/docs/llms/other.md
+aider_vision_core/website/docs/llms/other.md
 
-aider/website/docs/more-info.md
+aider_vision_core/website/docs/more-info.md
 
-aider/website/docs/repomap.md
+aider_vision_core/website/docs/repomap.md
 
-aider/website/examples/pong.md
+aider_vision_core/website/examples/pong.md
 
-aider/website/index.md
+aider_vision_core/website/index.md
 
 benchmark/benchmark.py:
 ⋮...
@@ -8468,8 +8468,8 @@ from unittest.mock import MagicMock, patch
 
 import httpx
 
-from aider.llm import litellm
-from aider.sendchat import send_with_retries
+from aider_vision_core.llm import litellm
+from aider_vision_core.sendchat import send_with_retries
 
 
 class PrintCalled(Exception):
@@ -8483,8 +8483,8 @@ from unittest.mock import MagicMock, patch
 
 import httpx
 
-from aider.llm import litellm
-from aider.sendchat import send_with_retries, simple_send_with_retries
+from aider_vision_core.llm import litellm
+from aider_vision_core.sendchat import send_with_retries, simple_send_with_retries
 
 
 class PrintCalled(Exception):
@@ -8508,7 +8508,7 @@ tests/basic/test_sendchat.py
         send_with_retries("model", ["message"], None, False)
         mock_print.assert_called_once()
 
-    @patch("aider.sendchat.litellm.completion")
+    @patch("aider_vision_core.sendchat.litellm.completion")
     def test_simple_send_with_retries_headers(self, mock_completion):
         # Mock the response
         mock_response = MagicMock()
@@ -8562,7 +8562,7 @@ I understand. Let's modify the test to mock the httpx library instead of mocking
 tests/basic/test_sendchat.py
 ```python
 <<<<<<< SEARCH
-    @patch("aider.sendchat.litellm.completion")
+    @patch("aider_vision_core.sendchat.litellm.completion")
     def test_simple_send_with_retries_headers(self, mock_completion):
         # Mock the response
         mock_response = MagicMock()
@@ -9352,7 +9352,7 @@ Got it! Please let me know what changes you would like to make, and I'll identif
 
 > You need to install the aider browser feature:  
 >  
-> /Users/gauthier/Projects/aider/.venv/bin/python3.12 -m pip install aider-chat[browser]  
+> /Users/gauthier/Projects/aider/.venv/bin/python3.12 -m pip install aider-vision-core[browser]  
 > Run pip install? yes  
 
 # aider chat started at 2024-08-07 11:41:40
@@ -9430,9 +9430,9 @@ from typing import Optional
 import yaml
 from PIL import Image
 
-from aider import urls
-from aider.dump import dump  # noqa: F401
-from aider.llm import litellm
+from aider_vision_core import urls
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import litellm
 =======
 import difflib
 import importlib
@@ -9447,9 +9447,9 @@ from typing import Optional
 import yaml
 from PIL import Image
 
-from aider import urls
-from aider.dump import dump  # noqa: F401
-from aider.llm import litellm, AIDER_SITE_URL, AIDER_APP_NAME
+from aider_vision_core import urls
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import litellm, AIDER_SITE_URL, AIDER_APP_NAME
 >>>>>>> REPLACE
 ```
 
@@ -10089,11 +10089,11 @@ To fix the undefined name error for `SuitableRepoNotFound`, we need to import it
 aider/main.py
 ```python
 <<<<<<< SEARCH
-from aider.repo import GitRepo
-from aider.sendchat import simple_send_with_retries
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.sendchat import simple_send_with_retries
 =======
-from aider.repo import GitRepo, SuitableRepoNotFound
-from aider.sendchat import simple_send_with_retries
+from aider_vision_core.repo import GitRepo, SuitableRepoNotFound
+from aider_vision_core.sendchat import simple_send_with_retries
 >>>>>>> REPLACE
 ```
 
@@ -10106,11 +10106,11 @@ This change adds the import for `SuitableRepoNotFound` from the `aider.repo` mod
 >   
 > ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider/main.py  
 > <<<<<<< SEARCH  
-> from aider.repo import GitRepo  
-> from aider.sendchat import simple_send_with_retries  
+> from aider_vision_core.repo import GitRepo  
+> from aider_vision_core.sendchat import simple_send_with_retries  
 > =======  
-> from aider.repo import GitRepo, SuitableRepoNotFound  
-> from aider.sendchat import simple_send_with_retries  
+> from aider_vision_core.repo import GitRepo, SuitableRepoNotFound  
+> from aider_vision_core.sendchat import simple_send_with_retries  
 > >>>>>>> REPLACE  
 >   
 > The SEARCH section must exactly match an existing block of lines including all white space, comments, indentation, docstrings, etc  
@@ -10120,13 +10120,13 @@ I apologize for the mistake. Let me correct that by providing the exact match fo
 aider/main.py
 ```python
 <<<<<<< SEARCH
-from aider.repo import GitRepo
-from aider.scrape import main as scrape_main
-from aider.sendchat import simple_send_with_retries
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.scrape import main as scrape_main
+from aider_vision_core.sendchat import simple_send_with_retries
 =======
-from aider.repo import GitRepo, SuitableRepoNotFound
-from aider.scrape import main as scrape_main
-from aider.sendchat import simple_send_with_retries
+from aider_vision_core.repo import GitRepo, SuitableRepoNotFound
+from aider_vision_core.scrape import main as scrape_main
+from aider_vision_core.sendchat import simple_send_with_retries
 >>>>>>> REPLACE
 ```
 
@@ -10139,13 +10139,13 @@ This change adds the import for `SuitableRepoNotFound` from the `aider.repo` mod
 >   
 > ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider/main.py  
 > <<<<<<< SEARCH  
-> from aider.repo import GitRepo  
-> from aider.scrape import main as scrape_main  
-> from aider.sendchat import simple_send_with_retries  
+> from aider_vision_core.repo import GitRepo  
+> from aider_vision_core.scrape import main as scrape_main  
+> from aider_vision_core.sendchat import simple_send_with_retries  
 > =======  
-> from aider.repo import GitRepo, SuitableRepoNotFound  
-> from aider.scrape import main as scrape_main  
-> from aider.sendchat import simple_send_with_retries  
+> from aider_vision_core.repo import GitRepo, SuitableRepoNotFound  
+> from aider_vision_core.scrape import main as scrape_main  
+> from aider_vision_core.sendchat import simple_send_with_retries  
 > >>>>>>> REPLACE  
 >   
 > The SEARCH section must exactly match an existing block of lines including all white space, comments, indentation, docstrings, etc  
@@ -10155,11 +10155,11 @@ I apologize for the confusion. Let me provide the correct SEARCH/REPLACE block b
 aider/main.py
 ```python
 <<<<<<< SEARCH
-from aider.repo import GitRepo
-from aider.sendchat import send_with_retries, simple_send_with_retries
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.sendchat import send_with_retries, simple_send_with_retries
 =======
-from aider.repo import GitRepo, SuitableRepoNotFound
-from aider.sendchat import send_with_retries, simple_send_with_retries
+from aider_vision_core.repo import GitRepo, SuitableRepoNotFound
+from aider_vision_core.sendchat import send_with_retries, simple_send_with_retries
 >>>>>>> REPLACE
 ```
 
@@ -10172,11 +10172,11 @@ This change adds the import for `SuitableRepoNotFound` from the `aider.repo` mod
 >   
 > ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider/main.py  
 > <<<<<<< SEARCH  
-> from aider.repo import GitRepo  
-> from aider.sendchat import send_with_retries, simple_send_with_retries  
+> from aider_vision_core.repo import GitRepo  
+> from aider_vision_core.sendchat import send_with_retries, simple_send_with_retries  
 > =======  
-> from aider.repo import GitRepo, SuitableRepoNotFound  
-> from aider.sendchat import send_with_retries, simple_send_with_retries  
+> from aider_vision_core.repo import GitRepo, SuitableRepoNotFound  
+> from aider_vision_core.sendchat import send_with_retries, simple_send_with_retries  
 > >>>>>>> REPLACE  
 >   
 > The SEARCH section must exactly match an existing block of lines including all white space, comments, indentation, docstrings, etc  
@@ -10223,7 +10223,7 @@ This change will ensure that the code catches the correct exception when a suita
 > Files are in different git repos.
 Traceback (most recent call last):
   File "/Users/gauthier/Projects/aider/.venv/bin/aider", line 33, in <module>
-    sys.exit(load_entry_point('aider-chat', 'console_scripts', 'aider')())
+    sys.exit(load_entry_point('aider-vision-core', 'console_scripts', 'aider')())
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Users/gauthier/Projects/aider/aider/main.py", line 413, in main
     right_repo_root = guessed_wrong_repo(io, git_root, fnames, git_dname)
@@ -10238,7 +10238,7 @@ aider.repo.SuitableRepoNotFound
 > Files are in different git repos.  
 > Traceback (most recent call last):  
 > File "/Users/gauthier/Projects/aider/.venv/bin/aider", line 33, in <module>  
-> sys.exit(load_entry_point('aider-chat', 'console_scripts', 'aider')())  
+> sys.exit(load_entry_point('aider-vision-core', 'console_scripts', 'aider')())  
 > ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
 > File "/Users/gauthier/Projects/aider/aider/main.py", line 413, in main  
 > right_repo_root = guessed_wrong_repo(io, git_root, fnames, git_dname)  
@@ -11778,7 +11778,7 @@ You can then use this decorator as follows:
 def send_with_retries(
     model_name, messages, functions, stream, temperature=0, extra_headers=None, max_tokens=None
 ):
-    from aider.llm import litellm
+    from aider_vision_core.llm import litellm
 
     kwargs = dict(
         model=model_name,
@@ -14369,171 +14369,171 @@ This updated *SEARCH/REPLACE block* should now exactly match the existing code i
 > aider/utils.py  
 > aider/versioncheck.py  
 > aider/voice.py  
-> aider/website/Gemfile  
-> aider/website/HISTORY.md  
-> aider/website/_config.yml  
-> aider/website/_data/blame.yml  
-> aider/website/_data/edit_leaderboard.yml  
-> aider/website/_data/refactor_leaderboard.yml  
-> aider/website/_includes/blame.md  
-> aider/website/_includes/env-keys-tip.md  
-> aider/website/_includes/get-started.md  
-> aider/website/_includes/head_custom.html  
-> aider/website/_includes/help-tip.md  
-> aider/website/_includes/help.md  
-> aider/website/_includes/model-warnings.md  
-> aider/website/_includes/multi-line.md  
-> aider/website/_includes/nav_footer_custom.html  
-> aider/website/_includes/python-m-aider.md  
-> aider/website/_includes/special-keys.md  
-> aider/website/_includes/venv-pipx.md  
-> aider/website/_includes/works-best.md  
-> aider/website/_layouts/redirect.html  
-> aider/website/_posts/2023-05-25-ctags.md  
-> aider/website/_posts/2023-07-02-benchmarks.md  
-> aider/website/_posts/2023-10-22-repomap.md  
-> aider/website/_posts/2023-11-06-benchmarks-1106.md  
-> aider/website/_posts/2023-11-06-benchmarks-speed-1106.md  
-> aider/website/_posts/2023-12-21-unified-diffs.md  
-> aider/website/_posts/2024-01-25-benchmarks-0125.md  
-> aider/website/_posts/2024-03-08-claude-3.md  
-> aider/website/_posts/2024-04-09-gpt-4-turbo.md  
-> aider/website/_posts/2024-05-02-browser.md  
-> aider/website/_posts/2024-05-13-models-over-time.md  
-> aider/website/_posts/2024-05-22-draft.md  
-> aider/website/_posts/2024-05-22-linting.md  
-> aider/website/_posts/2024-05-22-swe-bench-lite.md  
-> aider/website/_posts/2024-05-24-self-assembly.md  
-> aider/website/_posts/2024-06-02-main-swe-bench.md  
-> aider/website/_posts/2024-07-01-sonnet-not-lazy.md  
-> aider/website/_posts/2024-07-25-new-models.md  
-> aider/website/_sass/custom/custom.scss  
-> aider/website/assets/2024-03-07-claude-3.jpg  
-> aider/website/assets/2024-03-07-claude-3.svg  
-> aider/website/assets/2024-04-09-gpt-4-turbo-laziness.jpg  
-> aider/website/assets/2024-04-09-gpt-4-turbo-laziness.svg  
-> aider/website/assets/2024-04-09-gpt-4-turbo.jpg  
-> aider/website/assets/2024-04-09-gpt-4-turbo.svg  
-> aider/website/assets/2024-07-new-models.jpg  
-> aider/website/assets/aider-browser-social.mp4  
-> aider/website/assets/aider-square.jpg  
-> aider/website/assets/aider.jpg  
-> aider/website/assets/benchmarks-0125.jpg  
-> aider/website/assets/benchmarks-0125.svg  
-> aider/website/assets/benchmarks-1106.jpg  
-> aider/website/assets/benchmarks-1106.svg  
-> aider/website/assets/benchmarks-speed-1106.jpg  
-> aider/website/assets/benchmarks-speed-1106.svg  
-> aider/website/assets/benchmarks-udiff.jpg  
-> aider/website/assets/benchmarks-udiff.svg  
-> aider/website/assets/benchmarks.jpg  
-> aider/website/assets/benchmarks.svg  
-> aider/website/assets/blame.jpg  
-> aider/website/assets/browser.jpg  
-> aider/website/assets/codespaces.jpg  
-> aider/website/assets/codespaces.mp4  
-> aider/website/assets/figure.png  
-> aider/website/assets/icons/android-chrome-192x192.png  
-> aider/website/assets/icons/android-chrome-384x384.png  
-> aider/website/assets/icons/apple-touch-icon.png  
-> aider/website/assets/icons/browserconfig.xml  
-> aider/website/assets/icons/favicon-16x16.png  
-> aider/website/assets/icons/favicon-32x32.png  
-> aider/website/assets/icons/favicon.ico  
-> aider/website/assets/icons/mstile-150x150.png  
-> aider/website/assets/icons/safari-pinned-tab.svg  
-> aider/website/assets/icons/site.webmanifest  
-> aider/website/assets/install.jpg  
-> aider/website/assets/install.mp4  
-> aider/website/assets/leaderboard.jpg  
-> aider/website/assets/linting.jpg  
-> aider/website/assets/llms.jpg  
-> aider/website/assets/models-over-time.png  
-> aider/website/assets/models-over-time.svg  
-> aider/website/assets/robot-ast.png  
-> aider/website/assets/robot-flowchart.png  
-> aider/website/assets/sample.aider.conf.yml  
-> aider/website/assets/sample.env  
-> aider/website/assets/screencast.svg  
-> aider/website/assets/screenshot.png  
-> aider/website/assets/self-assembly.jpg  
-> aider/website/assets/sonnet-not-lazy.jpg  
-> aider/website/assets/swe_bench.jpg  
-> aider/website/assets/swe_bench.svg  
-> aider/website/assets/swe_bench_lite.jpg  
-> aider/website/assets/swe_bench_lite.svg  
-> aider/website/assets/udiffs.jpg  
-> aider/website/blog/index.html  
-> aider/website/docs/benchmarks-0125.md  
-> aider/website/docs/benchmarks-1106.md  
-> aider/website/docs/benchmarks-speed-1106.md  
-> aider/website/docs/benchmarks.md  
-> aider/website/docs/config.md  
-> aider/website/docs/config/adv-model-settings.md  
-> aider/website/docs/config/aider_conf.md  
-> aider/website/docs/config/dotenv.md  
-> aider/website/docs/config/options.md  
-> aider/website/docs/ctags.md  
-> aider/website/docs/faq.md  
-> aider/website/docs/git.md  
-> aider/website/docs/install.md  
-> aider/website/docs/install/codespaces.md  
-> aider/website/docs/install/docker.md  
-> aider/website/docs/install/install.md  
-> aider/website/docs/install/optional.md  
-> aider/website/docs/install/pipx.md  
-> aider/website/docs/languages.md  
-> aider/website/docs/leaderboards/index.md  
-> aider/website/docs/llms.md  
-> aider/website/docs/llms/anthropic.md  
-> aider/website/docs/llms/azure.md  
-> aider/website/docs/llms/cohere.md  
-> aider/website/docs/llms/deepseek.md  
-> aider/website/docs/llms/editing-format.md  
-> aider/website/docs/llms/gemini.md  
-> aider/website/docs/llms/groq.md  
-> aider/website/docs/llms/ollama.md  
-> aider/website/docs/llms/openai-compat.md  
-> aider/website/docs/llms/openai.md  
-> aider/website/docs/llms/openrouter.md  
-> aider/website/docs/llms/other.md  
-> aider/website/docs/llms/warnings.md  
-> aider/website/docs/more-info.md  
-> aider/website/docs/repomap.md  
-> aider/website/docs/scripting.md  
-> aider/website/docs/troubleshooting.md  
-> aider/website/docs/troubleshooting/aider-not-found.md  
-> aider/website/docs/troubleshooting/edit-errors.md  
-> aider/website/docs/troubleshooting/support.md  
-> aider/website/docs/troubleshooting/token-limits.md  
-> aider/website/docs/troubleshooting/warnings.md  
-> aider/website/docs/unified-diffs.md  
-> aider/website/docs/usage.md  
-> aider/website/docs/usage/browser.md  
-> aider/website/docs/usage/commands.md  
-> aider/website/docs/usage/conventions.md  
-> aider/website/docs/usage/images-urls.md  
-> aider/website/docs/usage/lint-test.md  
-> aider/website/docs/usage/modes.md  
-> aider/website/docs/usage/tips.md  
-> aider/website/docs/usage/tutorials.md  
-> aider/website/docs/usage/voice.md  
-> aider/website/examples/2048-game.md  
-> aider/website/examples/README.md  
-> aider/website/examples/add-test.md  
-> aider/website/examples/asciinema.md  
-> aider/website/examples/census.md  
-> aider/website/examples/chat-transcript-css.md  
-> aider/website/examples/complex-change.md  
-> aider/website/examples/css-exercises.md  
-> aider/website/examples/hello-world-flask.md  
-> aider/website/examples/hello.md  
-> aider/website/examples/no-color.md  
-> aider/website/examples/pong.md  
-> aider/website/examples/semantic-search-replace.md  
-> aider/website/examples/update-docs.md  
-> aider/website/index.md  
-> aider/website/share/index.md  
+> aider_vision_core/website/Gemfile  
+> aider_vision_core/website/HISTORY.md  
+> aider_vision_core/website/_config.yml  
+> aider_vision_core/website/_data/blame.yml  
+> aider_vision_core/website/_data/edit_leaderboard.yml  
+> aider_vision_core/website/_data/refactor_leaderboard.yml  
+> aider_vision_core/website/_includes/blame.md  
+> aider_vision_core/website/_includes/env-keys-tip.md  
+> aider_vision_core/website/_includes/get-started.md  
+> aider_vision_core/website/_includes/head_custom.html  
+> aider_vision_core/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help.md  
+> aider_vision_core/website/_includes/model-warnings.md  
+> aider_vision_core/website/_includes/multi-line.md  
+> aider_vision_core/website/_includes/nav_footer_custom.html  
+> aider_vision_core/website/_includes/python-m-aider.md  
+> aider_vision_core/website/_includes/special-keys.md  
+> aider_vision_core/website/_includes/venv-pipx.md  
+> aider_vision_core/website/_includes/works-best.md  
+> aider_vision_core/website/_layouts/redirect.html  
+> aider_vision_core/website/_posts/2023-05-25-ctags.md  
+> aider_vision_core/website/_posts/2023-07-02-benchmarks.md  
+> aider_vision_core/website/_posts/2023-10-22-repomap.md  
+> aider_vision_core/website/_posts/2023-11-06-benchmarks-1106.md  
+> aider_vision_core/website/_posts/2023-11-06-benchmarks-speed-1106.md  
+> aider_vision_core/website/_posts/2023-12-21-unified-diffs.md  
+> aider_vision_core/website/_posts/2024-01-25-benchmarks-0125.md  
+> aider_vision_core/website/_posts/2024-03-08-claude-3.md  
+> aider_vision_core/website/_posts/2024-04-09-gpt-4-turbo.md  
+> aider_vision_core/website/_posts/2024-05-02-browser.md  
+> aider_vision_core/website/_posts/2024-05-13-models-over-time.md  
+> aider_vision_core/website/_posts/2024-05-22-draft.md  
+> aider_vision_core/website/_posts/2024-05-22-linting.md  
+> aider_vision_core/website/_posts/2024-05-22-swe-bench-lite.md  
+> aider_vision_core/website/_posts/2024-05-24-self-assembly.md  
+> aider_vision_core/website/_posts/2024-06-02-main-swe-bench.md  
+> aider_vision_core/website/_posts/2024-07-01-sonnet-not-lazy.md  
+> aider_vision_core/website/_posts/2024-07-25-new-models.md  
+> aider_vision_core/website/_sass/custom/custom.scss  
+> aider_vision_core/website/assets/2024-03-07-claude-3.jpg  
+> aider_vision_core/website/assets/2024-03-07-claude-3.svg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo-laziness.jpg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo-laziness.svg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo.jpg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo.svg  
+> aider_vision_core/website/assets/2024-07-new-models.jpg  
+> aider_vision_core/website/assets/aider-browser-social.mp4  
+> aider_vision_core/website/assets/aider-square.jpg  
+> aider_vision_core/website/assets/aider.jpg  
+> aider_vision_core/website/assets/benchmarks-0125.jpg  
+> aider_vision_core/website/assets/benchmarks-0125.svg  
+> aider_vision_core/website/assets/benchmarks-1106.jpg  
+> aider_vision_core/website/assets/benchmarks-1106.svg  
+> aider_vision_core/website/assets/benchmarks-speed-1106.jpg  
+> aider_vision_core/website/assets/benchmarks-speed-1106.svg  
+> aider_vision_core/website/assets/benchmarks-udiff.jpg  
+> aider_vision_core/website/assets/benchmarks-udiff.svg  
+> aider_vision_core/website/assets/benchmarks.jpg  
+> aider_vision_core/website/assets/benchmarks.svg  
+> aider_vision_core/website/assets/blame.jpg  
+> aider_vision_core/website/assets/browser.jpg  
+> aider_vision_core/website/assets/codespaces.jpg  
+> aider_vision_core/website/assets/codespaces.mp4  
+> aider_vision_core/website/assets/figure.png  
+> aider_vision_core/website/assets/icons/android-chrome-192x192.png  
+> aider_vision_core/website/assets/icons/android-chrome-384x384.png  
+> aider_vision_core/website/assets/icons/apple-touch-icon.png  
+> aider_vision_core/website/assets/icons/browserconfig.xml  
+> aider_vision_core/website/assets/icons/favicon-16x16.png  
+> aider_vision_core/website/assets/icons/favicon-32x32.png  
+> aider_vision_core/website/assets/icons/favicon.ico  
+> aider_vision_core/website/assets/icons/mstile-150x150.png  
+> aider_vision_core/website/assets/icons/safari-pinned-tab.svg  
+> aider_vision_core/website/assets/icons/site.webmanifest  
+> aider_vision_core/website/assets/install.jpg  
+> aider_vision_core/website/assets/install.mp4  
+> aider_vision_core/website/assets/leaderboard.jpg  
+> aider_vision_core/website/assets/linting.jpg  
+> aider_vision_core/website/assets/llms.jpg  
+> aider_vision_core/website/assets/models-over-time.png  
+> aider_vision_core/website/assets/models-over-time.svg  
+> aider_vision_core/website/assets/robot-ast.png  
+> aider_vision_core/website/assets/robot-flowchart.png  
+> aider_vision_core/website/assets/sample.aider.conf.yml  
+> aider_vision_core/website/assets/sample.env  
+> aider_vision_core/website/assets/screencast.svg  
+> aider_vision_core/website/assets/screenshot.png  
+> aider_vision_core/website/assets/self-assembly.jpg  
+> aider_vision_core/website/assets/sonnet-not-lazy.jpg  
+> aider_vision_core/website/assets/swe_bench.jpg  
+> aider_vision_core/website/assets/swe_bench.svg  
+> aider_vision_core/website/assets/swe_bench_lite.jpg  
+> aider_vision_core/website/assets/swe_bench_lite.svg  
+> aider_vision_core/website/assets/udiffs.jpg  
+> aider_vision_core/website/blog/index.html  
+> aider_vision_core/website/docs/benchmarks-0125.md  
+> aider_vision_core/website/docs/benchmarks-1106.md  
+> aider_vision_core/website/docs/benchmarks-speed-1106.md  
+> aider_vision_core/website/docs/benchmarks.md  
+> aider_vision_core/website/docs/config.md  
+> aider_vision_core/website/docs/config/adv-model-settings.md  
+> aider_vision_core/website/docs/config/aider_conf.md  
+> aider_vision_core/website/docs/config/dotenv.md  
+> aider_vision_core/website/docs/config/options.md  
+> aider_vision_core/website/docs/ctags.md  
+> aider_vision_core/website/docs/faq.md  
+> aider_vision_core/website/docs/git.md  
+> aider_vision_core/website/docs/install.md  
+> aider_vision_core/website/docs/install/codespaces.md  
+> aider_vision_core/website/docs/install/docker.md  
+> aider_vision_core/website/docs/install/install.md  
+> aider_vision_core/website/docs/install/optional.md  
+> aider_vision_core/website/docs/install/pipx.md  
+> aider_vision_core/website/docs/languages.md  
+> aider_vision_core/website/docs/leaderboards/index.md  
+> aider_vision_core/website/docs/llms.md  
+> aider_vision_core/website/docs/llms/anthropic.md  
+> aider_vision_core/website/docs/llms/azure.md  
+> aider_vision_core/website/docs/llms/cohere.md  
+> aider_vision_core/website/docs/llms/deepseek.md  
+> aider_vision_core/website/docs/llms/editing-format.md  
+> aider_vision_core/website/docs/llms/gemini.md  
+> aider_vision_core/website/docs/llms/groq.md  
+> aider_vision_core/website/docs/llms/ollama.md  
+> aider_vision_core/website/docs/llms/openai-compat.md  
+> aider_vision_core/website/docs/llms/openai.md  
+> aider_vision_core/website/docs/llms/openrouter.md  
+> aider_vision_core/website/docs/llms/other.md  
+> aider_vision_core/website/docs/llms/warnings.md  
+> aider_vision_core/website/docs/more-info.md  
+> aider_vision_core/website/docs/repomap.md  
+> aider_vision_core/website/docs/scripting.md  
+> aider_vision_core/website/docs/troubleshooting.md  
+> aider_vision_core/website/docs/troubleshooting/aider-not-found.md  
+> aider_vision_core/website/docs/troubleshooting/edit-errors.md  
+> aider_vision_core/website/docs/troubleshooting/support.md  
+> aider_vision_core/website/docs/troubleshooting/token-limits.md  
+> aider_vision_core/website/docs/troubleshooting/warnings.md  
+> aider_vision_core/website/docs/unified-diffs.md  
+> aider_vision_core/website/docs/usage.md  
+> aider_vision_core/website/docs/usage/browser.md  
+> aider_vision_core/website/docs/usage/commands.md  
+> aider_vision_core/website/docs/usage/conventions.md  
+> aider_vision_core/website/docs/usage/images-urls.md  
+> aider_vision_core/website/docs/usage/lint-test.md  
+> aider_vision_core/website/docs/usage/modes.md  
+> aider_vision_core/website/docs/usage/tips.md  
+> aider_vision_core/website/docs/usage/tutorials.md  
+> aider_vision_core/website/docs/usage/voice.md  
+> aider_vision_core/website/examples/2048-game.md  
+> aider_vision_core/website/examples/README.md  
+> aider_vision_core/website/examples/add-test.md  
+> aider_vision_core/website/examples/asciinema.md  
+> aider_vision_core/website/examples/census.md  
+> aider_vision_core/website/examples/chat-transcript-css.md  
+> aider_vision_core/website/examples/complex-change.md  
+> aider_vision_core/website/examples/css-exercises.md  
+> aider_vision_core/website/examples/hello-world-flask.md  
+> aider_vision_core/website/examples/hello.md  
+> aider_vision_core/website/examples/no-color.md  
+> aider_vision_core/website/examples/pong.md  
+> aider_vision_core/website/examples/semantic-search-replace.md  
+> aider_vision_core/website/examples/update-docs.md  
+> aider_vision_core/website/index.md  
+> aider_vision_core/website/share/index.md  
 > benchmark/Dockerfile  
 > benchmark/README.md  
 > benchmark/__init__.py  
@@ -15473,7 +15473,7 @@ Now, clients can periodically call `get_pending_output()` to collect the accumul
 > HEAD is: 899792c fix ^c handling  
 
 #### /add aider/io_polling.py  
-> No files matched 'aider/io_polling.py'. Do you want to create /Users/gauthier/Projects/aider/aider/io_polling.py? y  
+> No files matched 'aider_vision_core/io_polling.py'. Do you want to create /Users/gauthier/Projects/aider/aider/io_polling.py? y  
 > Added /Users/gauthier/Projects/aider/aider/io_polling.py to the chat  
 
 #### make an InputOutputPolling subclass of InputOutput. it should override tool_output, tool_error as async methods. make those methods in io also async.  
@@ -15560,7 +15560,7 @@ aider/io_polling.py
 <<<<<<< SEARCH
 =======
 from typing import List
-from aider.io import InputOutput
+from aider_vision_core.io import InputOutput
 
 class InputOutputPolling(InputOutput):
     def __init__(self, *args, **kwargs):
@@ -15842,7 +15842,7 @@ from pathlib import Path
 import git
 from PIL import ImageGrab
 
-from aider import models, prompts, voice
+from aider_vision_core import models, prompts, voice
 =======
 import os
 import re
@@ -15856,7 +15856,7 @@ import git
 import pyperclip
 from PIL import ImageGrab, Image
 
-from aider import models, prompts, voice
+from aider_vision_core import models, prompts, voice
 >>>>>>> REPLACE
 </source>
 
@@ -17450,81 +17450,81 @@ aider/voice.py:
 │    def raw_record_and_transcribe(self, history, language):
 ⋮...
 
-aider/website/HISTORY.md
+aider_vision_core/website/HISTORY.md
 
-aider/website/_data/refactor_leaderboard.yml
+aider_vision_core/website/_data/refactor_leaderboard.yml
 
-aider/website/_includes/special-keys.md
+aider_vision_core/website/_includes/special-keys.md
 
-aider/website/_posts/2024-03-08-claude-3.md
+aider_vision_core/website/_posts/2024-03-08-claude-3.md
 
-aider/website/_posts/2024-05-02-browser.md
+aider_vision_core/website/_posts/2024-05-02-browser.md
 
-aider/website/_posts/2024-05-13-models-over-time.md
+aider_vision_core/website/_posts/2024-05-13-models-over-time.md
 
-aider/website/_posts/2024-05-24-self-assembly.md
+aider_vision_core/website/_posts/2024-05-24-self-assembly.md
 
-aider/website/_posts/2024-07-25-new-models.md
+aider_vision_core/website/_posts/2024-07-25-new-models.md
 
-aider/website/_sass/custom/custom.scss
+aider_vision_core/website/_sass/custom/custom.scss
 
-aider/website/assets/benchmarks-0125.jpg
+aider_vision_core/website/assets/benchmarks-0125.jpg
 
-aider/website/assets/benchmarks-0125.svg
+aider_vision_core/website/assets/benchmarks-0125.svg
 
-aider/website/assets/benchmarks-speed-1106.svg
+aider_vision_core/website/assets/benchmarks-speed-1106.svg
 
-aider/website/assets/benchmarks.svg
+aider_vision_core/website/assets/benchmarks.svg
 
-aider/website/assets/figure.png
+aider_vision_core/website/assets/figure.png
 
-aider/website/assets/icons/android-chrome-192x192.png
+aider_vision_core/website/assets/icons/android-chrome-192x192.png
 
-aider/website/assets/icons/browserconfig.xml
+aider_vision_core/website/assets/icons/browserconfig.xml
 
-aider/website/assets/icons/favicon-16x16.png
+aider_vision_core/website/assets/icons/favicon-16x16.png
 
-aider/website/assets/icons/favicon-32x32.png
+aider_vision_core/website/assets/icons/favicon-32x32.png
 
-aider/website/assets/icons/site.webmanifest
+aider_vision_core/website/assets/icons/site.webmanifest
 
-aider/website/assets/leaderboard.jpg
+aider_vision_core/website/assets/leaderboard.jpg
 
-aider/website/assets/llms.jpg
+aider_vision_core/website/assets/llms.jpg
 
-aider/website/assets/robot-ast.png
+aider_vision_core/website/assets/robot-ast.png
 
-aider/website/assets/sonnet-not-lazy.jpg
+aider_vision_core/website/assets/sonnet-not-lazy.jpg
 
-aider/website/assets/swe_bench.svg
+aider_vision_core/website/assets/swe_bench.svg
 
-aider/website/docs/benchmarks-speed-1106.md
+aider_vision_core/website/docs/benchmarks-speed-1106.md
 
-aider/website/docs/config/adv-model-settings.md
+aider_vision_core/website/docs/config/adv-model-settings.md
 
-aider/website/docs/config/options.md
+aider_vision_core/website/docs/config/options.md
 
-aider/website/docs/ctags.md
+aider_vision_core/website/docs/ctags.md
 
-aider/website/docs/install/optional.md
+aider_vision_core/website/docs/install/optional.md
 
-aider/website/docs/install/pipx.md
+aider_vision_core/website/docs/install/pipx.md
 
-aider/website/docs/languages.md
+aider_vision_core/website/docs/languages.md
 
-aider/website/docs/llms/anthropic.md
+aider_vision_core/website/docs/llms/anthropic.md
 
-aider/website/docs/llms/cohere.md
+aider_vision_core/website/docs/llms/cohere.md
 
-aider/website/docs/troubleshooting/edit-errors.md
+aider_vision_core/website/docs/troubleshooting/edit-errors.md
 
-aider/website/docs/usage/images-urls.md
+aider_vision_core/website/docs/usage/images-urls.md
 
-aider/website/docs/usage/voice.md
+aider_vision_core/website/docs/usage/voice.md
 
-aider/website/examples/add-test.md
+aider_vision_core/website/examples/add-test.md
 
-aider/website/examples/hello.md
+aider_vision_core/website/examples/hello.md
 
 benchmark/benchmark.py:
 ⋮...
@@ -20222,19 +20222,19 @@ If you provide more information about which specific packages in your project re
 
 # aider chat started at 2024-08-09 11:04:21
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/docs/leaderboards/index.md  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/docs/leaderboards/index.md  
 > Aider v0.48.2-dev  
 > Models: claude-3-5-sonnet-20240620 with diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 303 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/docs/leaderboards/index.md to the chat.  
+> Added aider_vision_core/website/docs/leaderboards/index.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 #### can we get the last modified date from git instead  
 
 Certainly! I understand that you want to use Git to get the last modified date instead of using the file system's modification time. To implement this change, we'll need to modify the Python code that generates the last updated date. Here's how we can do that:
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```python
 <<<<<<< SEARCH
 <!--[[[cog
@@ -20242,9 +20242,9 @@ import os
 import datetime
 
 files = [
-    'aider/website/docs/leaderboards/index.md',
-    'aider/website/_data/edit_leaderboard.yml',
-    'aider/website/_data/refactor_leaderboard.yml'
+    'aider_vision_core/website/docs/leaderboards/index.md',
+    'aider_vision_core/website/_data/edit_leaderboard.yml',
+    'aider_vision_core/website/_data/refactor_leaderboard.yml'
 ]
 
 mod_times = [os.path.getmtime(file) for file in files]
@@ -20258,9 +20258,9 @@ import subprocess
 import datetime
 
 files = [
-    'aider/website/docs/leaderboards/index.md',
-    'aider/website/_data/edit_leaderboard.yml',
-    'aider/website/_data/refactor_leaderboard.yml'
+    'aider_vision_core/website/docs/leaderboards/index.md',
+    'aider_vision_core/website/_data/edit_leaderboard.yml',
+    'aider_vision_core/website/_data/refactor_leaderboard.yml'
 ]
 
 def get_last_modified_date(file):
@@ -20288,11 +20288,11 @@ This change replaces the previous code that used `os.path.getmtime()` with a new
 This approach will give you the last modified date based on Git history rather than the file system's modification time. It will be more accurate for tracking changes in your repository, especially if files are checked out or modified without changing their content.
 
 > Tokens: 13,302 sent, 562 received. Cost: $0.05 request, $0.05 session.  
-> Applied edit to aider/website/docs/leaderboards/index.md  
+> Applied edit to aider_vision_core/website/docs/leaderboards/index.md  
 > Commit f2c7ba3 feat: Use Git to get the last modified date  
 > You can use /undo to revert and discard commit f2c7ba3.  
-> aider/website/_data/edit_leaderboard.yml  
-> aider/website/_data/refactor_leaderboard.yml  
+> aider_vision_core/website/_data/edit_leaderboard.yml  
+> aider_vision_core/website/_data/refactor_leaderboard.yml  
 > Add these files to the chat? n  
 
 #### <blank>  
@@ -21533,8 +21533,8 @@ aider/commands.py
 <source>python
 <<<<<<< SEARCH
 def get_help_md():
-    from aider.coders import Coder
-    from aider.models import Model
+    from aider_vision_core.coders import Coder
+    from aider_vision_core.models import Model
 
     coder = Coder(Model("gpt-3.5-turbo"), None)
     md = coder.commands.get_help_md()
@@ -21551,8 +21551,8 @@ if __name__ == "__main__":
     sys.exit(status)
 =======
 def get_help_md():
-    from aider.coders import Coder
-    from aider.models import Model
+    from aider_vision_core.coders import Coder
+    from aider_vision_core.models import Model
 
     coder = Coder(Model("gpt-3.5-turbo"), None)
     md = coder.commands.get_help_md()
@@ -22972,7 +22972,7 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 MockRepoMap.return_value.max_map_tokens = 1000
                 main(
                     ["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"],
@@ -22983,7 +22983,7 @@ tests/basic/test_main.py
 =======
     def test_map_tokens_option_with_non_zero_value(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 MockRepoMap.return_value.max_map_tokens = 1000
                 main(
                     ["--model", "gpt-4", "--map-tokens", "1000", "--exit", "--yes"],
@@ -24245,11 +24245,11 @@ import git
 import pyperclip
 from PIL import Image, ImageGrab
 
-from aider import models, prompts, voice
-from aider.help import Help, install_help_extra
-from aider.llm import litellm
-from aider.scrape import Scraper, install_playwright
-from aider.utils import is_image_file
+from aider_vision_core import models, prompts, voice
+from aider_vision_core.help import Help, install_help_extra
+from aider_vision_core.llm import litellm
+from aider_vision_core.scrape import Scraper, install_playwright
+from aider_vision_core.utils import is_image_file
 
 from .dump import dump  # noqa: F401
 
@@ -24286,7 +24286,7 @@ class Commands:
     def cmd_chat_mode(self, args):
         "Switch to a new chat mode"
 
-        from aider import coders
+        from aider_vision_core import coders
 
         ef = args.strip()
         valid_formats = OrderedDict(
@@ -24397,11 +24397,11 @@ from PIL import Image, ImageGrab
 from pypager.pager import Pager
 from pypager.source import StringSource
 
-from aider import models, prompts, voice
-from aider.help import Help, install_help_extra
-from aider.llm import litellm
-from aider.scrape import Scraper, install_playwright
-from aider.utils import is_image_file
+from aider_vision_core import models, prompts, voice
+from aider_vision_core.help import Help, install_help_extra
+from aider_vision_core.llm import litellm
+from aider_vision_core.scrape import Scraper, install_playwright
+from aider_vision_core.utils import is_image_file
 
 from .dump import dump  # noqa: F401
 
@@ -24438,7 +24438,7 @@ class Commands:
     def cmd_chat_mode(self, args):
         "Switch to a new chat mode"
 
-        from aider import coders
+        from aider_vision_core import coders
 
         ef = args.strip()
         valid_formats = OrderedDict(
@@ -24855,8 +24855,8 @@ This change removes the `paginate` parameter and the conditional logic for pagin
 > 12█from pypager.pager import Pager  
 > 13█from pypager.source import StringSource  
 > 14│  
-> 15│from aider import models, prompts, voice  
-> 16│from aider.help import Help, install_help_extra  
+> 15│from aider_vision_core import models, prompts, voice  
+> 16│from aider_vision_core.help import Help, install_help_extra  
 > ...⋮...  
 >  
 > Attempt to fix lint errors? n  
@@ -27045,8 +27045,8 @@ These modifications will allow the diff output to be paginated using `FileSource
 > 12█from pypager.pager import Pager  
 > 13█from pypager.source import StringSource  
 > 14│  
-> 15│from aider import models, prompts, voice  
-> 16│from aider.help import Help, install_help_extra  
+> 15│from aider_vision_core import models, prompts, voice  
+> 16│from aider_vision_core.help import Help, install_help_extra  
 > ...⋮...  
 > Fix lint errors in /Users/gauthier/Projects/aider/aider/commands.py? y  
 > Commit 08862c7 fix: Remove unnecessary paginate parameter from cmd_diff method  
@@ -27092,8 +27092,8 @@ These modifications will allow the diff output to be paginated using `FileSource
 ####  12█from pypager.pager import Pager  
 ####  13█from pypager.source import StringSource  
 ####  14│  
-####  15│from aider import models, prompts, voice  
-####  16│from aider.help import Help, install_help_extra  
+####  15│from aider_vision_core import models, prompts, voice  
+####  16│from aider_vision_core.help import Help, install_help_extra  
 #### ...⋮...  
 
 To fix the errors reported by flake8, we need to remove the unused imports. Here's the change we need to make:
@@ -27107,13 +27107,13 @@ from PIL import Image, ImageGrab
 from pypager.pager import Pager
 from pypager.source import StringSource
 
-from aider import models, prompts, voice
+from aider_vision_core import models, prompts, voice
 =======
 import git
 import pyperclip
 from PIL import Image, ImageGrab
 
-from aider import models, prompts, voice
+from aider_vision_core import models, prompts, voice
 >>>>>>> REPLACE
 ```
 
@@ -27822,7 +27822,7 @@ _____________ TestInputOutput.test_get_input_is_a_directory_error ______________
 self = <test_io.TestInputOutput testMethod=test_get_input_is_a_directory_error>
 MockPromptSession = <MagicMock name='PromptSession' id='4354952176'>
 
-    @patch("aider.io.PromptSession")
+    @patch("aider_vision_core.io.PromptSession")
     def test_get_input_is_a_directory_error(self, MockPromptSession):
         # Mock the PromptSession to simulate user input
         mock_session = MockPromptSession.return_value
@@ -27835,7 +27835,7 @@ MockPromptSession = <MagicMock name='PromptSession' id='4354952176'>
         commands = MagicMock()
     
         # Simulate IsADirectoryError
-        with patch("aider.io.open", side_effect=IsADirectoryError):
+        with patch("aider_vision_core.io.open", side_effect=IsADirectoryError):
 >           result = io.get_input(root, rel_fnames, addable_rel_fnames, commands)
 
 tests/basic/test_io.py:60: 
@@ -28011,7 +28011,7 @@ FAILED tests/basic/test_io.py::TestInputOutput::test_get_input_is_a_directory_er
 > self = <test_io.TestInputOutput testMethod=test_get_input_is_a_directory_error>  
 > MockPromptSession = <MagicMock name='PromptSession' id='4354952176'>  
 >  
-> @patch("aider.io.PromptSession")  
+> @patch("aider_vision_core.io.PromptSession")  
 > def test_get_input_is_a_directory_error(self, MockPromptSession):  
 > # Mock the PromptSession to simulate user input  
 > mock_session = MockPromptSession.return_value  
@@ -28024,7 +28024,7 @@ FAILED tests/basic/test_io.py::TestInputOutput::test_get_input_is_a_directory_er
 > commands = MagicMock()  
 >  
 > # Simulate IsADirectoryError  
-> with patch("aider.io.open", side_effect=IsADirectoryError):  
+> with patch("aider_vision_core.io.open", side_effect=IsADirectoryError):  
 > >           result = io.get_input(root, rel_fnames, addable_rel_fnames, commands)  
 >  
 > tests/basic/test_io.py:60:  
@@ -30933,7 +30933,7 @@ tests/basic/test_commands.py
             file_path.write_text("Modified content")
 
             # Mock simple_send_with_retries to return a canned commit message
-            with mock.patch("aider.sendchat.simple_send_with_retries") as mock_send:
+            with mock.patch("aider_vision_core.sendchat.simple_send_with_retries") as mock_send:
                 mock_send.return_value = [{"content": "Canned commit message"}]
 
                 # Run cmd_commit
@@ -31122,7 +31122,7 @@ tests/basic/test_commands.py
             file_path.write_text("Modified content")
 
             # Mock simple_send_with_retries to return a canned commit message
-            with mock.patch("aider.sendchat.simple_send_with_retries") as mock_send:
+            with mock.patch("aider_vision_core.sendchat.simple_send_with_retries") as mock_send:
                 mock_send.return_value = [{"content": "Canned commit message"}]
 
                 # Run cmd_commit
@@ -31143,7 +31143,7 @@ tests/basic/test_commands.py
             file_path.write_text("Modified content")
 
             # Mock simple_send_with_retries to return a canned commit message
-            with mock.patch("aider.sendchat.simple_send_with_retries") as mock_send:
+            with mock.patch("aider_vision_core.sendchat.simple_send_with_retries") as mock_send:
                 mock_send.return_value = [{"content": "Canned commit message"}]
 
                 # Run cmd_commit
@@ -31424,12 +31424,12 @@ self = <test_coder.TestCoder testMethod=test_gpt_edit_to_existing_file_not_in_re
 test_coder.py:568: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <class 'aider.coders.base_coder.Coder'>
+self = <class 'aider_vision_core.coders.base_coder.Coder'>
 main_model = <aider.models.Model object at 0x1238c30e0>, edit_format = 'diff'
 io = <aider.io.InputOutput object at 0x1238e6b70>, from_coder = None
 summarize_from_coder = True, kwargs = {'fnames': ['file.txt'], 'pretty': False}
-coders = <module 'aider.coders' from '/Users/gauthier/Projects/aider/aider/coders/__init__.py'>
-coder = <class 'aider.coders.editblock_coder.EditBlockCoder'>
+coders = <module 'aider_vision_core.coders' from '/Users/gauthier/Projects/aider/aider/coders/__init__.py'>
+coder = <class 'aider_vision_core.coders.editblock_coder.EditBlockCoder'>
 
     @classmethod
     def create(
@@ -31441,7 +31441,7 @@ coder = <class 'aider.coders.editblock_coder.EditBlockCoder'>
         summarize_from_coder=True,
         **kwargs,
     ):
-        import aider.coders as coders
+        import aider_vision_core.coders as coders
     
         if not main_model:
             if from_coder:
@@ -31508,13 +31508,13 @@ self = <test_coder.TestCoder testMethod=test_run_with_file_unicode_error>
 test_coder.py:289: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <class 'aider.coders.base_coder.Coder'>
+self = <class 'aider_vision_core.coders.base_coder.Coder'>
 main_model = <aider.models.Model object at 0x1238e6ff0>, edit_format = 'whole'
 io = <aider.io.InputOutput object at 0x1238e7f50>, from_coder = None
 summarize_from_coder = True
 kwargs = {'fnames': ['/var/folders/49/kxrdwwbx0h9bchx99397477c0000gn/T/tmpydbp7adp', '/var/folders/49/kxrdwwbx0h9bchx99397477c0000gn/T/tmp8fmwit59'], 'pretty': False}
-coders = <module 'aider.coders' from '/Users/gauthier/Projects/aider/aider/coders/__init__.py'>
-coder = <class 'aider.coders.wholefile_coder.WholeFileCoder'>
+coders = <module 'aider_vision_core.coders' from '/Users/gauthier/Projects/aider/aider/coders/__init__.py'>
+coder = <class 'aider_vision_core.coders.wholefile_coder.WholeFileCoder'>
 
     @classmethod
     def create(
@@ -31526,7 +31526,7 @@ coder = <class 'aider.coders.wholefile_coder.WholeFileCoder'>
         summarize_from_coder=True,
         **kwargs,
     ):
-        import aider.coders as coders
+        import aider_vision_core.coders as coders
     
         if not main_model:
             if from_coder:
@@ -31613,12 +31613,12 @@ FAILED test_coder.py::TestCoder::test_run_with_file_unicode_error - TypeError...
 > test_coder.py:568:  
 > _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  
 >  
-> self = <class 'aider.coders.base_coder.Coder'>  
+> self = <class 'aider_vision_core.coders.base_coder.Coder'>  
 > main_model = <aider.models.Model object at 0x1238c30e0>, edit_format = 'diff'  
 > io = <aider.io.InputOutput object at 0x1238e6b70>, from_coder = None  
 > summarize_from_coder = True, kwargs = {'fnames': ['file.txt'], 'pretty': False}  
-> coders = <module 'aider.coders' from '/Users/gauthier/Projects/aider/aider/coders/__init__.py'>  
-> coder = <class 'aider.coders.editblock_coder.EditBlockCoder'>  
+> coders = <module 'aider_vision_core.coders' from '/Users/gauthier/Projects/aider/aider/coders/__init__.py'>  
+> coder = <class 'aider_vision_core.coders.editblock_coder.EditBlockCoder'>  
 >  
 > @classmethod  
 > def create(  
@@ -31630,7 +31630,7 @@ FAILED test_coder.py::TestCoder::test_run_with_file_unicode_error - TypeError...
 > summarize_from_coder=True,  
 > **kwargs,  
 > ):  
-> import aider.coders as coders  
+> import aider_vision_core.coders as coders  
 >  
 > if not main_model:  
 > if from_coder:  
@@ -31697,13 +31697,13 @@ FAILED test_coder.py::TestCoder::test_run_with_file_unicode_error - TypeError...
 > test_coder.py:289:  
 > _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  
 >  
-> self = <class 'aider.coders.base_coder.Coder'>  
+> self = <class 'aider_vision_core.coders.base_coder.Coder'>  
 > main_model = <aider.models.Model object at 0x1238e6ff0>, edit_format = 'whole'  
 > io = <aider.io.InputOutput object at 0x1238e7f50>, from_coder = None  
 > summarize_from_coder = True  
 > kwargs = {'fnames': ['/var/folders/49/kxrdwwbx0h9bchx99397477c0000gn/T/tmpydbp7adp', '/var/folders/49/kxrdwwbx0h9bchx99397477c0000gn/T/tmp8fmwit59'], 'pretty': False}  
-> coders = <module 'aider.coders' from '/Users/gauthier/Projects/aider/aider/coders/__init__.py'>  
-> coder = <class 'aider.coders.wholefile_coder.WholeFileCoder'>  
+> coders = <module 'aider_vision_core.coders' from '/Users/gauthier/Projects/aider/aider/coders/__init__.py'>  
+> coder = <class 'aider_vision_core.coders.wholefile_coder.WholeFileCoder'>  
 >  
 > @classmethod  
 > def create(  
@@ -31715,7 +31715,7 @@ FAILED test_coder.py::TestCoder::test_run_with_file_unicode_error - TypeError...
 > summarize_from_coder=True,  
 > **kwargs,  
 > ):  
-> import aider.coders as coders  
+> import aider_vision_core.coders as coders  
 >  
 > if not main_model:  
 > if from_coder:  
@@ -31891,24 +31891,24 @@ Understood. I'll remove the `pretty` argument from the `Coder.create` method cal
 tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main([], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
             assert kwargs["auto_commits"] is True
             assert kwargs["pretty"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is True
 =======
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main([], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
@@ -31927,24 +31927,24 @@ This change removes the assertions related to the `pretty` argument in the `Code
 > tests/basic/test_main.py  
 > ```python  
 > <<<<<<< SEARCH  
->         with patch("aider.coders.Coder.create") as MockCoder:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder:  
 >             main([], input=DummyInput())  
 >             _, kwargs = MockCoder.call_args  
 >             assert kwargs["dirty_commits"] is True  
 >             assert kwargs["auto_commits"] is True  
 >             assert kwargs["pretty"] is True  
 >   
->         with patch("aider.coders.Coder.create") as MockCoder:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder:  
 >             main(["--no-pretty"], input=DummyInput())  
 >             _, kwargs = MockCoder.call_args  
 >             assert kwargs["pretty"] is False  
 >   
->         with patch("aider.coders.Coder.create") as MockCoder:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder:  
 >             main(["--pretty"], input=DummyInput())  
 >             _, kwargs = MockCoder.call_args  
 >             assert kwargs["pretty"] is True  
 > =======  
->         with patch("aider.coders.Coder.create") as MockCoder:  
+>         with patch("aider_vision_core.coders.Coder.create") as MockCoder:  
 >             main([], input=DummyInput())  
 >             _, kwargs = MockCoder.call_args  
 >             assert kwargs["dirty_commits"] is True  
@@ -31958,24 +31958,24 @@ I apologize for the mistake in my previous response. You're absolutely right, an
 tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main([], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
             assert kwargs["auto_commits"] is True
             assert kwargs["pretty"] is True
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--no-pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is False
 
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main(["--pretty"], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["pretty"] is True
 =======
-        with patch("aider.coders.Coder.create") as MockCoder:
+        with patch("aider_vision_core.coders.Coder.create") as MockCoder:
             main([], input=DummyInput())
             _, kwargs = MockCoder.call_args
             assert kwargs["dirty_commits"] is True
@@ -32070,7 +32070,7 @@ tests/basic/test_commands.py
 ```python
 <<<<<<< SEARCH
             # Mock simple_send_with_retries to return a canned commit message
-            with mock.patch("aider.sendchat.simple_send_with_retries") as mock_send:
+            with mock.patch("aider_vision_core.sendchat.simple_send_with_retries") as mock_send:
                 mock_send.return_value = [{"content": "Canned commit message"}]
 
                 # Run cmd_commit
@@ -32198,19 +32198,19 @@ This change replaces the mock of `aider.sendchat.simple_send_with_retries` with 
 
 # aider chat started at 2024-08-10 10:21:23
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/docs/leaderboards/index.md  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/docs/leaderboards/index.md  
 > Aider v0.48.2-dev  
 > Models: claude-3-5-sonnet-20240620 with diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 304 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/docs/leaderboards/index.md to the chat.  
+> Added aider_vision_core/website/docs/leaderboards/index.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 #### the edit leaderboard is wider than the width allocated, so users need to scroll left/right to see it all  
 
 To address the issue of the edit leaderboard being wider than the allocated width, we can modify the table style to make it responsive. We'll add a wrapper div with horizontal scrolling for smaller screens. Here's the proposed change:
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 <table style="width: 100%; max-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
@@ -32220,7 +32220,7 @@ aider/website/docs/leaderboards/index.md
 >>>>>>> REPLACE
 ```
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 </table>
@@ -32232,7 +32232,7 @@ aider/website/docs/leaderboards/index.md
 
 We'll need to make the same change for the refactoring leaderboard table as well:
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 <table style="width: 100%; max-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
@@ -32242,7 +32242,7 @@ aider/website/docs/leaderboards/index.md
 >>>>>>> REPLACE
 ```
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 </table>
@@ -32255,7 +32255,7 @@ aider/website/docs/leaderboards/index.md
 These changes will add a horizontally scrollable wrapper around each table, allowing users to scroll horizontally on smaller screens while maintaining the table's full width.
 
 > Tokens: 13,332 sent, 433 received. Cost: $0.05 request, $0.05 session.  
-> Applied edit to aider/website/docs/leaderboards/index.md  
+> Applied edit to aider_vision_core/website/docs/leaderboards/index.md  
 > Commit 01df7ae feat: add horizontal scrolling for leaderboard tables  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -32271,7 +32271,7 @@ These changes will add a horizontally scrollable wrapper around each table, allo
 
 I understand that the issue is not just related to small screens, but occurs even on wide desktop browsers. To address this, we'll need to modify the table structure to ensure it fits within the allocated width without requiring horizontal scrolling. Here's how we can adjust the code:
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 <div style="overflow-x: auto;">
@@ -32281,7 +32281,7 @@ aider/website/docs/leaderboards/index.md
 >>>>>>> REPLACE
 ```
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 </table>
@@ -32293,7 +32293,7 @@ aider/website/docs/leaderboards/index.md
 
 We'll need to make the same change for the refactoring leaderboard table as well:
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 <div style="overflow-x: auto;">
@@ -32303,7 +32303,7 @@ aider/website/docs/leaderboards/index.md
 >>>>>>> REPLACE
 ```
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 </table>
@@ -32317,7 +32317,7 @@ These changes will remove the `min-width: 800px` property and the wrapping `<div
 
 To further improve the table's responsiveness, we can add some additional CSS to make the content more flexible:
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 <style>
@@ -32356,7 +32356,7 @@ These changes should help the tables fit within the allocated width on all scree
 > https://aider.chat/docs/troubleshooting/edit-errors.html  
 > # 4 SEARCH/REPLACE blocks failed to match!  
 >   
-> ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider/website/docs/leaderboards/index.md  
+> ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider_vision_core/website/docs/leaderboards/index.md  
 > <<<<<<< SEARCH  
 > <div style="overflow-x: auto;">  
 > <table style="width: 100%; min-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">  
@@ -32365,7 +32365,7 @@ These changes should help the tables fit within the allocated width on all scree
 > >>>>>>> REPLACE  
 >   
 >   
-> ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider/website/docs/leaderboards/index.md  
+> ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider_vision_core/website/docs/leaderboards/index.md  
 > <<<<<<< SEARCH  
 > </table>  
 > </div>  
@@ -32374,10 +32374,10 @@ These changes should help the tables fit within the allocated width on all scree
 > >>>>>>> REPLACE  
 >   
 > Are you sure you need this SEARCH/REPLACE block?  
-> The REPLACE lines are already in aider/website/docs/leaderboards/index.md!  
+> The REPLACE lines are already in aider_vision_core/website/docs/leaderboards/index.md!  
 >   
 >   
-> ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider/website/docs/leaderboards/index.md  
+> ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider_vision_core/website/docs/leaderboards/index.md  
 > <<<<<<< SEARCH  
 > <div style="overflow-x: auto;">  
 > <table style="width: 100%; min-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">  
@@ -32386,7 +32386,7 @@ These changes should help the tables fit within the allocated width on all scree
 > >>>>>>> REPLACE  
 >   
 >   
-> ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider/website/docs/leaderboards/index.md  
+> ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider_vision_core/website/docs/leaderboards/index.md  
 > <<<<<<< SEARCH  
 > </table>  
 > </div>  
@@ -32395,7 +32395,7 @@ These changes should help the tables fit within the allocated width on all scree
 > >>>>>>> REPLACE  
 >   
 > Are you sure you need this SEARCH/REPLACE block?  
-> The REPLACE lines are already in aider/website/docs/leaderboards/index.md!  
+> The REPLACE lines are already in aider_vision_core/website/docs/leaderboards/index.md!  
 >   
 > The SEARCH section must exactly match an existing block of lines including all white space, comments, indentation, docstrings, etc  
 >   
@@ -32405,7 +32405,7 @@ These changes should help the tables fit within the allocated width on all scree
 
 I apologize for the confusion. It seems the changes we were trying to make have already been applied. Let's focus on the remaining style changes to improve the table's responsiveness. Here's the updated SEARCH/REPLACE block:
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 <style>
@@ -32435,13 +32435,13 @@ aider/website/docs/leaderboards/index.md
 This change will add the additional CSS rules to improve the table's responsiveness and readability on all screen sizes.
 
 > Tokens: 15,061 sent, 185 received. Cost: $0.05 request, $0.15 session.  
-> Committing aider/website/docs/leaderboards/index.md before applying edits.  
+> Committing aider_vision_core/website/docs/leaderboards/index.md before applying edits.  
 > Commit 56c32f1 feat: Add table layout and word wrap styles to leaderboards page  
 > The LLM did not conform to the edit format.  
 > https://aider.chat/docs/troubleshooting/edit-errors.html  
 > # 1 SEARCH/REPLACE block failed to match!  
 >   
-> ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider/website/docs/leaderboards/index.md  
+> ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider_vision_core/website/docs/leaderboards/index.md  
 > <<<<<<< SEARCH  
 > <style>  
 >   tr.selected {  
@@ -32466,7 +32466,7 @@ This change will add the additional CSS rules to improve the table's responsiven
 > </style>  
 > >>>>>>> REPLACE  
 >   
-> Did you mean to match some of these actual lines from aider/website/docs/leaderboards/index.md?  
+> Did you mean to match some of these actual lines from aider_vision_core/website/docs/leaderboards/index.md?  
 >   
 > ```  
 >       }  
@@ -32487,7 +32487,7 @@ This change will add the additional CSS rules to improve the table's responsiven
 > ```  
 >   
 > Are you sure you need this SEARCH/REPLACE block?  
-> The REPLACE lines are already in aider/website/docs/leaderboards/index.md!  
+> The REPLACE lines are already in aider_vision_core/website/docs/leaderboards/index.md!  
 >   
 > The SEARCH section must exactly match an existing block of lines including all white space, comments, indentation, docstrings, etc  
 >  
@@ -32506,7 +32506,7 @@ Given that the tables are still wider than the allocated width, we might need to
 
 To address the issue of the edit leaderboard being wider than the allocated width, we can modify the table and its styling to make it more responsive and fit better on various screen sizes. Here's how we can adjust the code:
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 <table style="width: 100%; max-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
@@ -32563,7 +32563,7 @@ aider/website/docs/leaderboards/index.md
 
 Now, let's make the same changes to the refactoring leaderboard table:
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 <table style="width: 100%; max-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
@@ -32629,7 +32629,7 @@ These changes will make the tables more responsive:
 These modifications should make the tables more accessible on various screen sizes while maintaining their readability.
 
 > Tokens: 13,397 sent, 1,832 received. Cost: $0.07 request, $0.21 session.  
-> Applied edit to aider/website/docs/leaderboards/index.md  
+> Applied edit to aider_vision_core/website/docs/leaderboards/index.md  
 > Commit f111d53 fix: Improve responsiveness of leaderboard tables  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -32650,7 +32650,7 @@ These modifications should make the tables more accessible on various screen siz
 
 To address the issue of the edit leaderboard being wider than the allocated width, we can modify the table styling to make it more responsive and easier to view on various screen sizes. Here's how we can update the code:
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 <table style="width: 100%; max-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
@@ -32698,7 +32698,7 @@ aider/website/docs/leaderboards/index.md
 
 I understand the issue. Let's modify the table to make it more responsive and easier to view on various screen sizes. We'll wrap the table in a div with horizontal scrolling and adjust some styles. Here's the proposed change:
 
-aider/website/docs/leaderboards/index.md
+aider_vision_core/website/docs/leaderboards/index.md
 ```html
 <<<<<<< SEARCH
 <table style="width: 100%; max-width: 800px; margin: auto; border-collapse: collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-size: 14px;">
@@ -32763,7 +32763,7 @@ This change does the following:
 These changes should make the table more responsive and easier to view on various screen sizes, while still allowing users to see all the information without excessive horizontal scrolling on wider screens.
 
 > Tokens: 15,636 sent, 976 received. Cost: $0.06 request, $0.28 session.  
-> Applied edit to aider/website/docs/leaderboards/index.md  
+> Applied edit to aider_vision_core/website/docs/leaderboards/index.md  
 > Commit 27cbb9f feat: Improve responsiveness of edit leaderboard table  
 > You can use /undo to undo and discard each aider commit.  
 >  
@@ -33032,14 +33032,14 @@ These changes add the new `--attribute-commit-message-committer` argument and up
 
 #### /drop main repo  
 
-#### /add aider/website/docs/git.md  
-> Added /Users/gauthier/Projects/aider/aider/website/docs/git.md to the chat  
+#### /add aider_vision_core/website/docs/git.md  
+> Added /Users/gauthier/Projects/aider/aider_vision_core/website/docs/git.md to the chat  
 
 #### update the docs  
 
 Certainly! I'll update the documentation to reflect the new `--attribute-commit-message-author` and `--attribute-commit-message-committer` options. Here are the changes:
 
-aider/website/docs/git.md
+aider_vision_core/website/docs/git.md
 ```markdown
 <<<<<<< SEARCH
 ## Commit attribution
@@ -33078,7 +33078,7 @@ Both of these options are disabled by default, but can be useful for easily iden
 This update clarifies the new options for attributing commit messages and explains their differences.
 
 > Tokens: 15,810 sent, 420 received. Cost: $0.05 request, $0.15 session.  
-> Applied edit to aider/website/docs/git.md  
+> Applied edit to aider_vision_core/website/docs/git.md  
 > Commit 191b248 docs: Update documentation for commit attribution options  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -33173,10 +33173,10 @@ index 45857c1d..8122df74 100644
              commit_message = "aider: " + commit_message
  
          if not commit_message:
-diff --git a/aider/website/assets/sample.aider.conf.yml b/aider/website/assets/sample.aider.conf.yml
+diff --git a/aider_vision_core/website/assets/sample.aider.conf.yml b/aider_vision_core/website/assets/sample.aider.conf.yml
 index 8a22224f..b771f791 100644
---- a/aider/website/assets/sample.aider.conf.yml
-+++ b/aider/website/assets/sample.aider.conf.yml
+--- a/aider_vision_core/website/assets/sample.aider.conf.yml
++++ b/aider_vision_core/website/assets/sample.aider.conf.yml
 @@ -171,7 +171,10 @@
  #attribute-committer: true
  
@@ -33189,10 +33189,10 @@ index 8a22224f..b771f791 100644
  
  ## Commit all pending changes with a suitable commit message, then exit
  #commit: false
-diff --git a/aider/website/assets/sample.env b/aider/website/assets/sample.env
+diff --git a/aider_vision_core/website/assets/sample.env b/aider_vision_core/website/assets/sample.env
 index 3360112b..a0f30538 100644
---- a/aider/website/assets/sample.env
-+++ b/aider/website/assets/sample.env
+--- a/aider_vision_core/website/assets/sample.env
++++ b/aider_vision_core/website/assets/sample.env
 @@ -175,7 +175,10 @@
  #AIDER_ATTRIBUTE_COMMITTER=true
  
@@ -33205,10 +33205,10 @@ index 3360112b..a0f30538 100644
  
  ## Commit all pending changes with a suitable commit message, then exit
  #AIDER_COMMIT=false
-diff --git a/aider/website/docs/config/aider_conf.md b/aider/website/docs/config/aider_conf.md
+diff --git a/aider_vision_core/website/docs/config/aider_conf.md b/aider_vision_core/website/docs/config/aider_conf.md
 index be4c17a3..e45b71f5 100644
---- a/aider/website/docs/config/aider_conf.md
-+++ b/aider/website/docs/config/aider_conf.md
+--- a/aider_vision_core/website/docs/config/aider_conf.md
++++ b/aider_vision_core/website/docs/config/aider_conf.md
 @@ -210,7 +210,10 @@ cog.outl("```")
  #attribute-committer: true
  
@@ -33221,10 +33221,10 @@ index be4c17a3..e45b71f5 100644
  
  ## Commit all pending changes with a suitable commit message, then exit
  #commit: false
-diff --git a/aider/website/docs/config/dotenv.md b/aider/website/docs/config/dotenv.md
+diff --git a/aider_vision_core/website/docs/config/dotenv.md b/aider_vision_core/website/docs/config/dotenv.md
 index c5ae2c2e..380d7cab 100644
---- a/aider/website/docs/config/dotenv.md
-+++ b/aider/website/docs/config/dotenv.md
+--- a/aider_vision_core/website/docs/config/dotenv.md
++++ b/aider_vision_core/website/docs/config/dotenv.md
 @@ -217,7 +217,10 @@ cog.outl("```")
  #AIDER_ATTRIBUTE_COMMITTER=true
  
@@ -33237,10 +33237,10 @@ index c5ae2c2e..380d7cab 100644
  
  ## Commit all pending changes with a suitable commit message, then exit
  #AIDER_COMMIT=false
-diff --git a/aider/website/docs/config/options.md b/aider/website/docs/config/options.md
+diff --git a/aider_vision_core/website/docs/config/options.md b/aider_vision_core/website/docs/config/options.md
 index e946816d..a95f060b 100644
---- a/aider/website/docs/config/options.md
-+++ b/aider/website/docs/config/options.md
+--- a/aider_vision_core/website/docs/config/options.md
++++ b/aider_vision_core/website/docs/config/options.md
 @@ -47,7 +47,8 @@ usage: aider [-h] [--openai-api-key] [--anthropic-api-key] [--model]
               [--dirty-commits | --no-dirty-commits]
               [--attribute-author | --no-attribute-author]
@@ -33277,10 +33277,10 @@ index e946816d..a95f060b 100644
  
  ### `--commit`
  Commit all pending changes with a suitable commit message, then exit  
-diff --git a/aider/website/docs/git.md b/aider/website/docs/git.md
+diff --git a/aider_vision_core/website/docs/git.md b/aider_vision_core/website/docs/git.md
 index cb955dac..32e5e4d3 100644
---- a/aider/website/docs/git.md
-+++ b/aider/website/docs/git.md
+--- a/aider_vision_core/website/docs/git.md
++++ b/aider_vision_core/website/docs/git.md
 @@ -55,6 +55,9 @@ Aider marks commits that it either authored or committed.
  You can use `--no-attribute-author` and `--no-attribute-committer` to disable
  modification of the git author and committer name fields.
@@ -33368,10 +33368,10 @@ index cb955dac..32e5e4d3 100644
 > commit_message = "aider: " + commit_message  
 >  
 > if not commit_message:  
-> diff --git a/aider/website/assets/sample.aider.conf.yml b/aider/website/assets/sample.aider.conf.yml  
+> diff --git a/aider_vision_core/website/assets/sample.aider.conf.yml b/aider_vision_core/website/assets/sample.aider.conf.yml  
 > index 8a22224f..b771f791 100644  
-> --- a/aider/website/assets/sample.aider.conf.yml  
-> +++ b/aider/website/assets/sample.aider.conf.yml  
+> --- a/aider_vision_core/website/assets/sample.aider.conf.yml  
+> +++ b/aider_vision_core/website/assets/sample.aider.conf.yml  
 > @@ -171,7 +171,10 @@  
 > #attribute-committer: true  
 >  
@@ -33384,10 +33384,10 @@ index cb955dac..32e5e4d3 100644
 >  
 > ## Commit all pending changes with a suitable commit message, then exit  
 > #commit: false  
-> diff --git a/aider/website/assets/sample.env b/aider/website/assets/sample.env  
+> diff --git a/aider_vision_core/website/assets/sample.env b/aider_vision_core/website/assets/sample.env  
 > index 3360112b..a0f30538 100644  
-> --- a/aider/website/assets/sample.env  
-> +++ b/aider/website/assets/sample.env  
+> --- a/aider_vision_core/website/assets/sample.env  
+> +++ b/aider_vision_core/website/assets/sample.env  
 > @@ -175,7 +175,10 @@  
 > #AIDER_ATTRIBUTE_COMMITTER=true  
 >  
@@ -33400,10 +33400,10 @@ index cb955dac..32e5e4d3 100644
 >  
 > ## Commit all pending changes with a suitable commit message, then exit  
 > #AIDER_COMMIT=false  
-> diff --git a/aider/website/docs/config/aider_conf.md b/aider/website/docs/config/aider_conf.md  
+> diff --git a/aider_vision_core/website/docs/config/aider_conf.md b/aider_vision_core/website/docs/config/aider_conf.md  
 > index be4c17a3..e45b71f5 100644  
-> --- a/aider/website/docs/config/aider_conf.md  
-> +++ b/aider/website/docs/config/aider_conf.md  
+> --- a/aider_vision_core/website/docs/config/aider_conf.md  
+> +++ b/aider_vision_core/website/docs/config/aider_conf.md  
 > @@ -210,7 +210,10 @@ cog.outl("```")  
 > #attribute-committer: true  
 >  
@@ -33416,10 +33416,10 @@ index cb955dac..32e5e4d3 100644
 >  
 > ## Commit all pending changes with a suitable commit message, then exit  
 > #commit: false  
-> diff --git a/aider/website/docs/config/dotenv.md b/aider/website/docs/config/dotenv.md  
+> diff --git a/aider_vision_core/website/docs/config/dotenv.md b/aider_vision_core/website/docs/config/dotenv.md  
 > index c5ae2c2e..380d7cab 100644  
-> --- a/aider/website/docs/config/dotenv.md  
-> +++ b/aider/website/docs/config/dotenv.md  
+> --- a/aider_vision_core/website/docs/config/dotenv.md  
+> +++ b/aider_vision_core/website/docs/config/dotenv.md  
 > @@ -217,7 +217,10 @@ cog.outl("```")  
 > #AIDER_ATTRIBUTE_COMMITTER=true  
 >  
@@ -33432,10 +33432,10 @@ index cb955dac..32e5e4d3 100644
 >  
 > ## Commit all pending changes with a suitable commit message, then exit  
 > #AIDER_COMMIT=false  
-> diff --git a/aider/website/docs/config/options.md b/aider/website/docs/config/options.md  
+> diff --git a/aider_vision_core/website/docs/config/options.md b/aider_vision_core/website/docs/config/options.md  
 > index e946816d..a95f060b 100644  
-> --- a/aider/website/docs/config/options.md  
-> +++ b/aider/website/docs/config/options.md  
+> --- a/aider_vision_core/website/docs/config/options.md  
+> +++ b/aider_vision_core/website/docs/config/options.md  
 > @@ -47,7 +47,8 @@ usage: aider [-h] [--openai-api-key] [--anthropic-api-key] [--model]  
 > [--dirty-commits | --no-dirty-commits]  
 > [--attribute-author | --no-attribute-author]  
@@ -33472,10 +33472,10 @@ index cb955dac..32e5e4d3 100644
 >  
 > ### `--commit`  
 > Commit all pending changes with a suitable commit message, then exit  
-> diff --git a/aider/website/docs/git.md b/aider/website/docs/git.md  
+> diff --git a/aider_vision_core/website/docs/git.md b/aider_vision_core/website/docs/git.md  
 > index cb955dac..32e5e4d3 100644  
-> --- a/aider/website/docs/git.md  
-> +++ b/aider/website/docs/git.md  
+> --- a/aider_vision_core/website/docs/git.md  
+> +++ b/aider_vision_core/website/docs/git.md  
 > @@ -55,6 +55,9 @@ Aider marks commits that it either authored or committed.  
 > You can use `--no-attribute-author` and `--no-attribute-committer` to disable  
 > modification of the git author and committer name fields.  
@@ -33536,7 +33536,7 @@ This update adds information about the new commit message attribution options to
 > Tokens: 12,301 sent, 595 received. Cost: $0.05 request, $0.05 session.  
 > Applied edit to HISTORY.md  
 > Commit 3caac42 feat: Update main branch release notes about commit message attribution options  
-> aider/website/HISTORY.md  
+> aider_vision_core/website/HISTORY.md  
 > Add these files to the chat? n  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -33601,12 +33601,12 @@ It looks like you've shared the content of a `setup.py` file. Please specify wha
 
 # aider chat started at 2024-08-10 13:44:59
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_includes/blame.md  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_includes/blame.md  
 > Aider v0.49.1-dev  
 > Models: claude-3-5-sonnet-20240620 with diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 304 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_includes/blame.md to the chat.  
+> Added aider_vision_core/website/_includes/blame.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 #### /ask instead of "Bubble size: Lines of code contributed by aider" can we describe that the position on the y-axis means the % of code and bubble size means # lines of code?  
@@ -33855,7 +33855,7 @@ These changes will make the `/help` and `/ask` commands raise a `SwitchCoder` ex
 > 842│  
 > ...⋮...  
 > 846│  
-> 847│        from aider.coders import Coder  
+> 847│        from aider_vision_core.coders import Coder  
 > 848│  
 > 849█        chat_coder = Coder.create(  
 > 850│            io=self.io,  
@@ -33914,11 +33914,11 @@ These changes remove the unused variables, which should resolve the flake8 error
 > - hook id: flake8  
 > - exit code: 1  
 >  
-> aider/commands.py:799:9: F401 'aider.coders.Coder' imported but unused  
-> from aider.coders import Coder  
+> aider/commands.py:799:9: F401 'aider_vision_core.coders.Coder' imported but unused  
+> from aider_vision_core.coders import Coder  
 > ^  
-> aider/commands.py:840:9: F401 'aider.coders.Coder' imported but unused  
-> from aider.coders import Coder  
+> aider/commands.py:840:9: F401 'aider_vision_core.coders.Coder' imported but unused  
+> from aider_vision_core.coders import Coder  
 > ^  
 >  
 >  
@@ -33936,7 +33936,7 @@ These changes remove the unused variables, which should resolve the flake8 error
 > 796│            self.basic_help()  
 > 797│            return  
 > 798│  
-> 799█        from aider.coders import Coder  
+> 799█        from aider_vision_core.coders import Coder  
 > 800│  
 > 801│        if not self.help:  
 > 802│            res = install_help_extra(self.io)  
@@ -33948,7 +33948,7 @@ These changes remove the unused variables, which should resolve the flake8 error
 > 837│            self.io.tool_error("Please provide a question or topic for the chat.")  
 > 838│            return  
 > 839│  
-> 840█        from aider.coders import Coder  
+> 840█        from aider_vision_core.coders import Coder  
 > 841│  
 > 842│        # Removed unused 'chat_coder' variable  
 > 843│  
@@ -34284,7 +34284,7 @@ These changes remove the unused variables, which should resolve the flake8 error
 #### Model: gpt-4o-mini with whole edit format  
 #### Git repo: .git with 304 files  
 #### Repo-map: disabled  
-> aider/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help-tip.md  
 > Add these files to the chat? y  
 > Add https://aider.chat/docs/troubleshooting.html) to the chat? n  
 >  
@@ -34609,7 +34609,7 @@ These changes remove the unused variables, which should resolve the flake8 error
 #### Model: gpt-4o-mini with whole edit format  
 #### Git repo: .git with 304 files  
 #### Repo-map: disabled  
-> aider/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help-tip.md  
 >  
 >  
 > ^C again to exit  
@@ -35269,7 +35269,7 @@ Here are some relevant links to the Aider documentation that might be helpful:
 #### Model: gpt-4o-mini with whole edit format  
 #### Git repo: .git with 303 files  
 #### Repo-map: disabled  
-> aider/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help-tip.md  
 >  
 >  
 > ^C again to exit  
@@ -35912,7 +35912,7 @@ I'm doing well, thank you! How can I assist you with Aider today? If you have an
 #### Model: gpt-4o-mini with whole edit format  
 #### Git repo: .git with 303 files  
 #### Repo-map: disabled  
-> aider/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help-tip.md  
 >  
 >  
 > ^C again to exit  
@@ -36232,7 +36232,7 @@ I'm doing well, thank you! How can I assist you with Aider today? If you have an
 #### Model: gpt-4o-mini with whole edit format  
 #### Git repo: .git with 303 files  
 #### Repo-map: disabled  
-> aider/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help-tip.md  
 >  
 >  
 > ^C again to exit  
@@ -36552,7 +36552,7 @@ I'm doing well, thank you! How can I assist you with Aider today? If you have an
 #### Model: gpt-4o-mini with whole edit format  
 #### Git repo: .git with 303 files  
 #### Repo-map: disabled  
-> aider/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help-tip.md  
 >  
 >  
 > ^C again to exit  
@@ -36872,7 +36872,7 @@ I'm doing well, thank you! How can I assist you with Aider today? If you have an
 #### Model: gpt-4o-mini with whole edit format  
 #### Git repo: .git with 303 files  
 #### Repo-map: disabled  
-> aider/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help-tip.md  
 >  
 >  
 > ^C again to exit  
@@ -37192,7 +37192,7 @@ I'm doing well, thank you! How can I assist you with Aider today? If you have an
 #### Model: gpt-4o-mini with whole edit format  
 #### Git repo: .git with 303 files  
 #### Repo-map: disabled  
-> aider/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help-tip.md  
 >  
 >  
 > ^C again to exit  
@@ -37512,7 +37512,7 @@ I'm doing well, thank you! How can I assist you with Aider today? If you have an
 #### Model: gpt-4o-mini with whole edit format  
 #### Git repo: .git with 303 files  
 #### Repo-map: disabled  
-> aider/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help-tip.md  
 >  
 >  
 > ^C again to exit  
@@ -37768,7 +37768,7 @@ Hello! How can I assist you today?
 #### Model: gpt-4o-mini with whole edit format  
 #### Git repo: .git with 304 files  
 #### Repo-map: disabled  
-> aider/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help-tip.md  
 > README.md  
 >  
 >  
@@ -38064,7 +38064,7 @@ Hello! How can I assist you today with Aider?
 #### Git repo: .git with 304 files  
 #### Repo-map: disabled  
 > README.md  
-> aider/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help-tip.md  
 >  
 >  
 > ^C again to exit  
@@ -38312,7 +38312,7 @@ Hello! How can I assist you today with Aider?
 #### Model: gpt-4o-mini with whole edit format  
 #### Git repo: .git with 304 files  
 #### Repo-map: disabled  
-> aider/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help-tip.md  
 > README.md  
 > Add these files to the chat? n  
 > Add https://news.ycombinator.com/item?id=38185326) to the chat? n  
@@ -38571,7 +38571,7 @@ Hello! How can I assist you today with Aider?
 #### Model: gpt-4o-mini with whole edit format  
 #### Git repo: .git with 304 files  
 #### Repo-map: disabled  
-> aider/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help-tip.md  
 > README.md  
 >  
 >  
@@ -40819,172 +40819,172 @@ Let me know if you'd like to add any of these or if you have any specific questi
 > aider/utils.py  
 > aider/versioncheck.py  
 > aider/voice.py  
-> aider/website/Gemfile  
-> aider/website/HISTORY.md  
-> aider/website/_config.yml  
-> aider/website/_data/blame.yml  
-> aider/website/_data/edit_leaderboard.yml  
-> aider/website/_data/refactor_leaderboard.yml  
-> aider/website/_includes/blame.md  
-> aider/website/_includes/env-keys-tip.md  
-> aider/website/_includes/get-started.md  
-> aider/website/_includes/head_custom.html  
-> aider/website/_includes/help-tip.md  
-> aider/website/_includes/help.md  
-> aider/website/_includes/model-warnings.md  
-> aider/website/_includes/multi-line.md  
-> aider/website/_includes/nav_footer_custom.html  
-> aider/website/_includes/python-m-aider.md  
-> aider/website/_includes/special-keys.md  
-> aider/website/_includes/venv-pipx.md  
-> aider/website/_includes/works-best.md  
-> aider/website/_layouts/redirect.html  
-> aider/website/_posts/2023-05-25-ctags.md  
-> aider/website/_posts/2023-07-02-benchmarks.md  
-> aider/website/_posts/2023-10-22-repomap.md  
-> aider/website/_posts/2023-11-06-benchmarks-1106.md  
-> aider/website/_posts/2023-11-06-benchmarks-speed-1106.md  
-> aider/website/_posts/2023-12-21-unified-diffs.md  
-> aider/website/_posts/2024-01-25-benchmarks-0125.md  
-> aider/website/_posts/2024-03-08-claude-3.md  
-> aider/website/_posts/2024-04-09-gpt-4-turbo.md  
-> aider/website/_posts/2024-05-02-browser.md  
-> aider/website/_posts/2024-05-13-models-over-time.md  
-> aider/website/_posts/2024-05-22-draft.md  
-> aider/website/_posts/2024-05-22-linting.md  
-> aider/website/_posts/2024-05-22-swe-bench-lite.md  
-> aider/website/_posts/2024-05-24-self-assembly.md  
-> aider/website/_posts/2024-06-02-main-swe-bench.md  
-> aider/website/_posts/2024-07-01-sonnet-not-lazy.md  
-> aider/website/_posts/2024-07-25-new-models.md  
-> aider/website/_sass/custom/custom.scss  
-> aider/website/assets/2024-03-07-claude-3.jpg  
-> aider/website/assets/2024-03-07-claude-3.svg  
-> aider/website/assets/2024-04-09-gpt-4-turbo-laziness.jpg  
-> aider/website/assets/2024-04-09-gpt-4-turbo-laziness.svg  
-> aider/website/assets/2024-04-09-gpt-4-turbo.jpg  
-> aider/website/assets/2024-04-09-gpt-4-turbo.svg  
-> aider/website/assets/2024-07-new-models.jpg  
-> aider/website/assets/aider-browser-social.mp4  
-> aider/website/assets/aider-square.jpg  
-> aider/website/assets/aider.jpg  
-> aider/website/assets/benchmarks-0125.jpg  
-> aider/website/assets/benchmarks-0125.svg  
-> aider/website/assets/benchmarks-1106.jpg  
-> aider/website/assets/benchmarks-1106.svg  
-> aider/website/assets/benchmarks-speed-1106.jpg  
-> aider/website/assets/benchmarks-speed-1106.svg  
-> aider/website/assets/benchmarks-udiff.jpg  
-> aider/website/assets/benchmarks-udiff.svg  
-> aider/website/assets/benchmarks.jpg  
-> aider/website/assets/benchmarks.svg  
-> aider/website/assets/blame.jpg  
-> aider/website/assets/browser.jpg  
-> aider/website/assets/codespaces.jpg  
-> aider/website/assets/codespaces.mp4  
-> aider/website/assets/figure.png  
-> aider/website/assets/icons/android-chrome-192x192.png  
-> aider/website/assets/icons/android-chrome-384x384.png  
-> aider/website/assets/icons/apple-touch-icon.png  
-> aider/website/assets/icons/browserconfig.xml  
-> aider/website/assets/icons/favicon-16x16.png  
-> aider/website/assets/icons/favicon-32x32.png  
-> aider/website/assets/icons/favicon.ico  
-> aider/website/assets/icons/mstile-150x150.png  
-> aider/website/assets/icons/safari-pinned-tab.svg  
-> aider/website/assets/icons/site.webmanifest  
-> aider/website/assets/install.jpg  
-> aider/website/assets/install.mp4  
-> aider/website/assets/leaderboard.jpg  
-> aider/website/assets/linting.jpg  
-> aider/website/assets/llms.jpg  
-> aider/website/assets/models-over-time.png  
-> aider/website/assets/models-over-time.svg  
-> aider/website/assets/robot-ast.png  
-> aider/website/assets/robot-flowchart.png  
-> aider/website/assets/sample.aider.conf.yml  
-> aider/website/assets/sample.env  
-> aider/website/assets/screencast.svg  
-> aider/website/assets/screenshot.png  
-> aider/website/assets/self-assembly.jpg  
-> aider/website/assets/sonnet-not-lazy.jpg  
-> aider/website/assets/swe_bench.jpg  
-> aider/website/assets/swe_bench.svg  
-> aider/website/assets/swe_bench_lite.jpg  
-> aider/website/assets/swe_bench_lite.svg  
-> aider/website/assets/udiffs.jpg  
-> aider/website/blog/index.html  
-> aider/website/docs/benchmarks-0125.md  
-> aider/website/docs/benchmarks-1106.md  
-> aider/website/docs/benchmarks-speed-1106.md  
-> aider/website/docs/benchmarks.md  
-> aider/website/docs/config.md  
-> aider/website/docs/config/adv-model-settings.md  
-> aider/website/docs/config/aider_conf.md  
-> aider/website/docs/config/dotenv.md  
-> aider/website/docs/config/options.md  
-> aider/website/docs/ctags.md  
-> aider/website/docs/faq.md  
-> aider/website/docs/git.md  
-> aider/website/docs/install.md  
-> aider/website/docs/install/codespaces.md  
-> aider/website/docs/install/docker.md  
-> aider/website/docs/install/install.md  
-> aider/website/docs/install/optional.md  
-> aider/website/docs/install/pipx.md  
-> aider/website/docs/languages.md  
-> aider/website/docs/leaderboards/index.md  
-> aider/website/docs/llms.md  
-> aider/website/docs/llms/anthropic.md  
-> aider/website/docs/llms/azure.md  
-> aider/website/docs/llms/cohere.md  
-> aider/website/docs/llms/deepseek.md  
-> aider/website/docs/llms/editing-format.md  
-> aider/website/docs/llms/gemini.md  
-> aider/website/docs/llms/groq.md  
-> aider/website/docs/llms/ollama.md  
-> aider/website/docs/llms/openai-compat.md  
-> aider/website/docs/llms/openai.md  
-> aider/website/docs/llms/openrouter.md  
-> aider/website/docs/llms/other.md  
-> aider/website/docs/llms/vertex.md  
-> aider/website/docs/llms/warnings.md  
-> aider/website/docs/more-info.md  
-> aider/website/docs/repomap.md  
-> aider/website/docs/scripting.md  
-> aider/website/docs/troubleshooting.md  
-> aider/website/docs/troubleshooting/aider-not-found.md  
-> aider/website/docs/troubleshooting/edit-errors.md  
-> aider/website/docs/troubleshooting/support.md  
-> aider/website/docs/troubleshooting/token-limits.md  
-> aider/website/docs/troubleshooting/warnings.md  
-> aider/website/docs/unified-diffs.md  
-> aider/website/docs/usage.md  
-> aider/website/docs/usage/browser.md  
-> aider/website/docs/usage/commands.md  
-> aider/website/docs/usage/conventions.md  
-> aider/website/docs/usage/images-urls.md  
-> aider/website/docs/usage/lint-test.md  
-> aider/website/docs/usage/modes.md  
-> aider/website/docs/usage/tips.md  
-> aider/website/docs/usage/tutorials.md  
-> aider/website/docs/usage/voice.md  
-> aider/website/examples/2048-game.md  
-> aider/website/examples/README.md  
-> aider/website/examples/add-test.md  
-> aider/website/examples/asciinema.md  
-> aider/website/examples/census.md  
-> aider/website/examples/chat-transcript-css.md  
-> aider/website/examples/complex-change.md  
-> aider/website/examples/css-exercises.md  
-> aider/website/examples/hello-world-flask.md  
-> aider/website/examples/hello.md  
-> aider/website/examples/no-color.md  
-> aider/website/examples/pong.md  
-> aider/website/examples/semantic-search-replace.md  
-> aider/website/examples/update-docs.md  
-> aider/website/index.md  
-> aider/website/share/index.md  
+> aider_vision_core/website/Gemfile  
+> aider_vision_core/website/HISTORY.md  
+> aider_vision_core/website/_config.yml  
+> aider_vision_core/website/_data/blame.yml  
+> aider_vision_core/website/_data/edit_leaderboard.yml  
+> aider_vision_core/website/_data/refactor_leaderboard.yml  
+> aider_vision_core/website/_includes/blame.md  
+> aider_vision_core/website/_includes/env-keys-tip.md  
+> aider_vision_core/website/_includes/get-started.md  
+> aider_vision_core/website/_includes/head_custom.html  
+> aider_vision_core/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help.md  
+> aider_vision_core/website/_includes/model-warnings.md  
+> aider_vision_core/website/_includes/multi-line.md  
+> aider_vision_core/website/_includes/nav_footer_custom.html  
+> aider_vision_core/website/_includes/python-m-aider.md  
+> aider_vision_core/website/_includes/special-keys.md  
+> aider_vision_core/website/_includes/venv-pipx.md  
+> aider_vision_core/website/_includes/works-best.md  
+> aider_vision_core/website/_layouts/redirect.html  
+> aider_vision_core/website/_posts/2023-05-25-ctags.md  
+> aider_vision_core/website/_posts/2023-07-02-benchmarks.md  
+> aider_vision_core/website/_posts/2023-10-22-repomap.md  
+> aider_vision_core/website/_posts/2023-11-06-benchmarks-1106.md  
+> aider_vision_core/website/_posts/2023-11-06-benchmarks-speed-1106.md  
+> aider_vision_core/website/_posts/2023-12-21-unified-diffs.md  
+> aider_vision_core/website/_posts/2024-01-25-benchmarks-0125.md  
+> aider_vision_core/website/_posts/2024-03-08-claude-3.md  
+> aider_vision_core/website/_posts/2024-04-09-gpt-4-turbo.md  
+> aider_vision_core/website/_posts/2024-05-02-browser.md  
+> aider_vision_core/website/_posts/2024-05-13-models-over-time.md  
+> aider_vision_core/website/_posts/2024-05-22-draft.md  
+> aider_vision_core/website/_posts/2024-05-22-linting.md  
+> aider_vision_core/website/_posts/2024-05-22-swe-bench-lite.md  
+> aider_vision_core/website/_posts/2024-05-24-self-assembly.md  
+> aider_vision_core/website/_posts/2024-06-02-main-swe-bench.md  
+> aider_vision_core/website/_posts/2024-07-01-sonnet-not-lazy.md  
+> aider_vision_core/website/_posts/2024-07-25-new-models.md  
+> aider_vision_core/website/_sass/custom/custom.scss  
+> aider_vision_core/website/assets/2024-03-07-claude-3.jpg  
+> aider_vision_core/website/assets/2024-03-07-claude-3.svg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo-laziness.jpg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo-laziness.svg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo.jpg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo.svg  
+> aider_vision_core/website/assets/2024-07-new-models.jpg  
+> aider_vision_core/website/assets/aider-browser-social.mp4  
+> aider_vision_core/website/assets/aider-square.jpg  
+> aider_vision_core/website/assets/aider.jpg  
+> aider_vision_core/website/assets/benchmarks-0125.jpg  
+> aider_vision_core/website/assets/benchmarks-0125.svg  
+> aider_vision_core/website/assets/benchmarks-1106.jpg  
+> aider_vision_core/website/assets/benchmarks-1106.svg  
+> aider_vision_core/website/assets/benchmarks-speed-1106.jpg  
+> aider_vision_core/website/assets/benchmarks-speed-1106.svg  
+> aider_vision_core/website/assets/benchmarks-udiff.jpg  
+> aider_vision_core/website/assets/benchmarks-udiff.svg  
+> aider_vision_core/website/assets/benchmarks.jpg  
+> aider_vision_core/website/assets/benchmarks.svg  
+> aider_vision_core/website/assets/blame.jpg  
+> aider_vision_core/website/assets/browser.jpg  
+> aider_vision_core/website/assets/codespaces.jpg  
+> aider_vision_core/website/assets/codespaces.mp4  
+> aider_vision_core/website/assets/figure.png  
+> aider_vision_core/website/assets/icons/android-chrome-192x192.png  
+> aider_vision_core/website/assets/icons/android-chrome-384x384.png  
+> aider_vision_core/website/assets/icons/apple-touch-icon.png  
+> aider_vision_core/website/assets/icons/browserconfig.xml  
+> aider_vision_core/website/assets/icons/favicon-16x16.png  
+> aider_vision_core/website/assets/icons/favicon-32x32.png  
+> aider_vision_core/website/assets/icons/favicon.ico  
+> aider_vision_core/website/assets/icons/mstile-150x150.png  
+> aider_vision_core/website/assets/icons/safari-pinned-tab.svg  
+> aider_vision_core/website/assets/icons/site.webmanifest  
+> aider_vision_core/website/assets/install.jpg  
+> aider_vision_core/website/assets/install.mp4  
+> aider_vision_core/website/assets/leaderboard.jpg  
+> aider_vision_core/website/assets/linting.jpg  
+> aider_vision_core/website/assets/llms.jpg  
+> aider_vision_core/website/assets/models-over-time.png  
+> aider_vision_core/website/assets/models-over-time.svg  
+> aider_vision_core/website/assets/robot-ast.png  
+> aider_vision_core/website/assets/robot-flowchart.png  
+> aider_vision_core/website/assets/sample.aider.conf.yml  
+> aider_vision_core/website/assets/sample.env  
+> aider_vision_core/website/assets/screencast.svg  
+> aider_vision_core/website/assets/screenshot.png  
+> aider_vision_core/website/assets/self-assembly.jpg  
+> aider_vision_core/website/assets/sonnet-not-lazy.jpg  
+> aider_vision_core/website/assets/swe_bench.jpg  
+> aider_vision_core/website/assets/swe_bench.svg  
+> aider_vision_core/website/assets/swe_bench_lite.jpg  
+> aider_vision_core/website/assets/swe_bench_lite.svg  
+> aider_vision_core/website/assets/udiffs.jpg  
+> aider_vision_core/website/blog/index.html  
+> aider_vision_core/website/docs/benchmarks-0125.md  
+> aider_vision_core/website/docs/benchmarks-1106.md  
+> aider_vision_core/website/docs/benchmarks-speed-1106.md  
+> aider_vision_core/website/docs/benchmarks.md  
+> aider_vision_core/website/docs/config.md  
+> aider_vision_core/website/docs/config/adv-model-settings.md  
+> aider_vision_core/website/docs/config/aider_conf.md  
+> aider_vision_core/website/docs/config/dotenv.md  
+> aider_vision_core/website/docs/config/options.md  
+> aider_vision_core/website/docs/ctags.md  
+> aider_vision_core/website/docs/faq.md  
+> aider_vision_core/website/docs/git.md  
+> aider_vision_core/website/docs/install.md  
+> aider_vision_core/website/docs/install/codespaces.md  
+> aider_vision_core/website/docs/install/docker.md  
+> aider_vision_core/website/docs/install/install.md  
+> aider_vision_core/website/docs/install/optional.md  
+> aider_vision_core/website/docs/install/pipx.md  
+> aider_vision_core/website/docs/languages.md  
+> aider_vision_core/website/docs/leaderboards/index.md  
+> aider_vision_core/website/docs/llms.md  
+> aider_vision_core/website/docs/llms/anthropic.md  
+> aider_vision_core/website/docs/llms/azure.md  
+> aider_vision_core/website/docs/llms/cohere.md  
+> aider_vision_core/website/docs/llms/deepseek.md  
+> aider_vision_core/website/docs/llms/editing-format.md  
+> aider_vision_core/website/docs/llms/gemini.md  
+> aider_vision_core/website/docs/llms/groq.md  
+> aider_vision_core/website/docs/llms/ollama.md  
+> aider_vision_core/website/docs/llms/openai-compat.md  
+> aider_vision_core/website/docs/llms/openai.md  
+> aider_vision_core/website/docs/llms/openrouter.md  
+> aider_vision_core/website/docs/llms/other.md  
+> aider_vision_core/website/docs/llms/vertex.md  
+> aider_vision_core/website/docs/llms/warnings.md  
+> aider_vision_core/website/docs/more-info.md  
+> aider_vision_core/website/docs/repomap.md  
+> aider_vision_core/website/docs/scripting.md  
+> aider_vision_core/website/docs/troubleshooting.md  
+> aider_vision_core/website/docs/troubleshooting/aider-not-found.md  
+> aider_vision_core/website/docs/troubleshooting/edit-errors.md  
+> aider_vision_core/website/docs/troubleshooting/support.md  
+> aider_vision_core/website/docs/troubleshooting/token-limits.md  
+> aider_vision_core/website/docs/troubleshooting/warnings.md  
+> aider_vision_core/website/docs/unified-diffs.md  
+> aider_vision_core/website/docs/usage.md  
+> aider_vision_core/website/docs/usage/browser.md  
+> aider_vision_core/website/docs/usage/commands.md  
+> aider_vision_core/website/docs/usage/conventions.md  
+> aider_vision_core/website/docs/usage/images-urls.md  
+> aider_vision_core/website/docs/usage/lint-test.md  
+> aider_vision_core/website/docs/usage/modes.md  
+> aider_vision_core/website/docs/usage/tips.md  
+> aider_vision_core/website/docs/usage/tutorials.md  
+> aider_vision_core/website/docs/usage/voice.md  
+> aider_vision_core/website/examples/2048-game.md  
+> aider_vision_core/website/examples/README.md  
+> aider_vision_core/website/examples/add-test.md  
+> aider_vision_core/website/examples/asciinema.md  
+> aider_vision_core/website/examples/census.md  
+> aider_vision_core/website/examples/chat-transcript-css.md  
+> aider_vision_core/website/examples/complex-change.md  
+> aider_vision_core/website/examples/css-exercises.md  
+> aider_vision_core/website/examples/hello-world-flask.md  
+> aider_vision_core/website/examples/hello.md  
+> aider_vision_core/website/examples/no-color.md  
+> aider_vision_core/website/examples/pong.md  
+> aider_vision_core/website/examples/semantic-search-replace.md  
+> aider_vision_core/website/examples/update-docs.md  
+> aider_vision_core/website/index.md  
+> aider_vision_core/website/share/index.md  
 > benchmark/Dockerfile  
 > benchmark/README.md  
 > benchmark/__init__.py  
@@ -41157,7 +41157,7 @@ self = <test_commands.TestCommands testMethod=test_cmd_ask>
         question = "What is the meaning of life?"
         canned_reply = "The meaning of life is 42."
     
-        with mock.patch("aider.coders.Coder.run") as mock_run:
+        with mock.patch("aider_vision_core.coders.Coder.run") as mock_run:
             mock_run.return_value = canned_reply
     
 >           commands.cmd_ask(question)
@@ -41175,7 +41175,7 @@ args = 'What is the meaning of life?'
             self.io.tool_error("Please provide a question or topic for the chat.")
             return
     
-        from aider.coders import Coder
+        from aider_vision_core.coders import Coder
     
         coder = Coder.create(
             io=self.io,
@@ -41221,7 +41221,7 @@ FAILED tests/basic/test_commands.py::TestCommands::test_cmd_ask - aider.comma...
 > question = "What is the meaning of life?"  
 > canned_reply = "The meaning of life is 42."  
 >  
-> with mock.patch("aider.coders.Coder.run") as mock_run:  
+> with mock.patch("aider_vision_core.coders.Coder.run") as mock_run:  
 > mock_run.return_value = canned_reply  
 >  
 > >           commands.cmd_ask(question)  
@@ -41239,7 +41239,7 @@ FAILED tests/basic/test_commands.py::TestCommands::test_cmd_ask - aider.comma...
 > self.io.tool_error("Please provide a question or topic for the chat.")  
 > return  
 >  
-> from aider.coders import Coder  
+> from aider_vision_core.coders import Coder  
 >  
 > coder = Coder.create(  
 > io=self.io,  
@@ -41279,7 +41279,7 @@ tests/basic/test_commands.py
         question = "What is the meaning of life?"
         canned_reply = "The meaning of life is 42."
 
-        with mock.patch("aider.coders.Coder.run") as mock_run:
+        with mock.patch("aider_vision_core.coders.Coder.run") as mock_run:
             mock_run.return_value = canned_reply
 
             commands.cmd_ask(question)
@@ -41301,8 +41301,8 @@ tests/basic/test_commands.py
         question = "What is the meaning of life?"
         canned_reply = "The meaning of life is 42."
 
-        with mock.patch("aider.coders.Coder.run") as mock_run, \
-             mock.patch("aider.coders.Coder.create") as mock_create:
+        with mock.patch("aider_vision_core.coders.Coder.run") as mock_run, \
+             mock.patch("aider_vision_core.coders.Coder.create") as mock_create:
             mock_run.return_value = canned_reply
             mock_create.return_value = coder
 
@@ -41366,8 +41366,8 @@ This change should make the test pass while still verifying the correct behavior
 > 868│    def test_cmd_ask(self):  
 > 869│        io = InputOutput(pretty=False, yes=True)  
 > ...⋮...  
-> 876│        with mock.patch("aider.coders.Coder.run") as mock_run, \  
-> 877│             mock.patch("aider.coders.Coder.create") as mock_create:  
+> 876│        with mock.patch("aider_vision_core.coders.Coder.run") as mock_run, \  
+> 877│             mock.patch("aider_vision_core.coders.Coder.create") as mock_create:  
 > 878│            mock_run.return_value = canned_reply  
 > 879│            mock_create.return_value = coder  
 > 880│  
@@ -41396,13 +41396,13 @@ from unittest import TestCase, mock
 
 import git
 
-from aider.coders import Coder
-from aider.commands import Commands
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repo import GitRepo
-from aider.utils import ChdirTemporaryDirectory, GitTemporaryDirectory, make_repo
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.utils import ChdirTemporaryDirectory, GitTemporaryDirectory, make_repo
 =======
 import codecs
 import os
@@ -41415,13 +41415,13 @@ from unittest import TestCase, mock
 
 import git
 
-from aider.coders import Coder
-from aider.commands import Commands, SwitchCoder
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repo import GitRepo
-from aider.utils import ChdirTemporaryDirectory, GitTemporaryDirectory, make_repo
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands, SwitchCoder
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.utils import ChdirTemporaryDirectory, GitTemporaryDirectory, make_repo
 >>>>>>> REPLACE
 ```
 
@@ -41429,7 +41429,7 @@ This change imports the `SwitchCoder` exception from the `aider.commands` module
 
 > Tokens: 11,742 sent, 280 received. Cost: $0.04 request, $0.08 session.  
 > Applied edit to tests/basic/test_commands.py  
-> Commit e789e66 fix: Import SwitchCoder from aider.commands  
+> Commit e789e66 fix: Import SwitchCoder from aider_vision_core.commands  
 > You can use /undo to undo and discard each aider commit.  
 
 #### /test pytest tests/basic/test_commands.py  
@@ -41455,8 +41455,8 @@ self = <test_commands.TestCommands testMethod=test_cmd_ask>
         question = "What is the meaning of life?"
         canned_reply = "The meaning of life is 42."
     
-        with mock.patch("aider.coders.Coder.run") as mock_run, mock.patch(
-            "aider.coders.Coder.create"
+        with mock.patch("aider_vision_core.coders.Coder.run") as mock_run, mock.patch(
+            "aider_vision_core.coders.Coder.create"
         ) as mock_create:
             mock_run.return_value = canned_reply
             mock_create.return_value = coder
@@ -41496,8 +41496,8 @@ FAILED tests/basic/test_commands.py::TestCommands::test_cmd_ask - AttributeEr...
 > question = "What is the meaning of life?"  
 > canned_reply = "The meaning of life is 42."  
 >  
-> with mock.patch("aider.coders.Coder.run") as mock_run, mock.patch(  
-> "aider.coders.Coder.create"  
+> with mock.patch("aider_vision_core.coders.Coder.run") as mock_run, mock.patch(  
+> "aider_vision_core.coders.Coder.create"  
 > ) as mock_create:  
 > mock_run.return_value = canned_reply  
 > mock_create.return_value = coder  
@@ -41563,11 +41563,11 @@ If there are other attributes that should be checked for the `SwitchCoder` excep
 
 #### /undo  
 > Removed: f8b7d54 fix: Remove check for 'edit_format' attribute in 'SwitchCoder' exception  
-> Now at:  e789e66 fix: Import SwitchCoder from aider.commands  
+> Now at:  e789e66 fix: Import SwitchCoder from aider_vision_core.commands  
 > You can use /undo to undo and discard each aider commit.  
 
 #### /undo  
-> Removed: e789e66 fix: Import SwitchCoder from aider.commands  
+> Removed: e789e66 fix: Import SwitchCoder from aider_vision_core.commands  
 > Now at:  c6cac7e style: Apply linter edits  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -41606,7 +41606,7 @@ self = <test_commands.TestCommands testMethod=test_cmd_ask>
         question = "What is the meaning of life?"
         canned_reply = "The meaning of life is 42."
     
-        with mock.patch("aider.coders.Coder.run") as mock_run:
+        with mock.patch("aider_vision_core.coders.Coder.run") as mock_run:
             mock_run.return_value = canned_reply
     
 >           commands.cmd_ask(question)
@@ -41624,7 +41624,7 @@ args = 'What is the meaning of life?'
             self.io.tool_error("Please provide a question or topic for the chat.")
             return
     
-        from aider.coders import Coder
+        from aider_vision_core.coders import Coder
     
         coder = Coder.create(
             io=self.io,
@@ -41672,7 +41672,7 @@ FAILED tests/basic/test_commands.py::TestCommands::test_cmd_ask - aider.comma...
 > question = "What is the meaning of life?"  
 > canned_reply = "The meaning of life is 42."  
 >  
-> with mock.patch("aider.coders.Coder.run") as mock_run:  
+> with mock.patch("aider_vision_core.coders.Coder.run") as mock_run:  
 > mock_run.return_value = canned_reply  
 >  
 > >           commands.cmd_ask(question)  
@@ -41690,7 +41690,7 @@ FAILED tests/basic/test_commands.py::TestCommands::test_cmd_ask - aider.comma...
 > self.io.tool_error("Please provide a question or topic for the chat.")  
 > return  
 >  
-> from aider.coders import Coder  
+> from aider_vision_core.coders import Coder  
 >  
 > coder = Coder.create(  
 > io=self.io,  
@@ -41728,7 +41728,7 @@ tests/basic/test_commands.py
         question = "What is the meaning of life?"
         canned_reply = "The meaning of life is 42."
 
-        with mock.patch("aider.coders.Coder.run") as mock_run:
+        with mock.patch("aider_vision_core.coders.Coder.run") as mock_run:
             mock_run.return_value = canned_reply
 
             commands.cmd_ask(question)
@@ -41750,7 +41750,7 @@ tests/basic/test_commands.py
         question = "What is the meaning of life?"
         canned_reply = "The meaning of life is 42."
 
-        with mock.patch("aider.coders.Coder.run") as mock_run:
+        with mock.patch("aider_vision_core.coders.Coder.run") as mock_run:
             mock_run.return_value = canned_reply
 
             with self.assertRaises(SwitchCoder):
@@ -41810,7 +41810,7 @@ This change should make the test pass while still verifying all the important be
 > 868│    def test_cmd_ask(self):  
 > 869│        io = InputOutput(pretty=False, yes=True)  
 > ...⋮...  
-> 876│        with mock.patch("aider.coders.Coder.run") as mock_run:  
+> 876│        with mock.patch("aider_vision_core.coders.Coder.run") as mock_run:  
 > 877│            mock_run.return_value = canned_reply  
 > 878│  
 > 879█            with self.assertRaises(SwitchCoder):  
@@ -41837,8 +41837,8 @@ from unittest import TestCase, mock
 
 import git
 
-from aider.coders import Coder
-from aider.commands import Commands
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands
 =======
 import codecs
 import os
@@ -41851,8 +41851,8 @@ from unittest import TestCase, mock
 
 import git
 
-from aider.coders import Coder
-from aider.commands import Commands, SwitchCoder
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands, SwitchCoder
 >>>>>>> REPLACE
 ```
 
@@ -41912,7 +41912,7 @@ self = <aider.commands.Commands object at 0x10e9a97c0>, args = 'hi'
                 self.basic_help()
                 return
     
-            from aider.coders import Coder
+            from aider_vision_core.coders import Coder
     
             if not self.help:
                 res = install_help_extra(self.io)
@@ -41987,7 +41987,7 @@ self = <aider.commands.Commands object at 0x10e9a97c0>, args = 'hi'
                 self.basic_help()
                 return
     
-            from aider.coders import Coder
+            from aider_vision_core.coders import Coder
     
             if not self.help:
                 res = install_help_extra(self.io)
@@ -42078,7 +42078,7 @@ ERROR tests/help/test_help.py::TestHelp::test_init - aider.commands.SwitchCoder
 > self.basic_help()  
 > return  
 >  
-> from aider.coders import Coder  
+> from aider_vision_core.coders import Coder  
 >  
 > if not self.help:  
 > res = install_help_extra(self.io)  
@@ -42153,7 +42153,7 @@ ERROR tests/help/test_help.py::TestHelp::test_init - aider.commands.SwitchCoder
 > self.basic_help()  
 > return  
 >  
-> from aider.coders import Coder  
+> from aider_vision_core.coders import Coder  
 >  
 > if not self.help:  
 > res = install_help_extra(self.io)  
@@ -42661,7 +42661,7 @@ import git
 import pyperclip
 from PIL import Image, ImageGrab
 
-from aider import models, prompts, voice
+from aider_vision_core import models, prompts, voice
 =======
 import os
 import re
@@ -42676,7 +42676,7 @@ import pyperclip
 from PIL import Image, ImageGrab
 from rich.text import Text
 
-from aider import models, prompts, voice
+from aider_vision_core import models, prompts, voice
 >>>>>>> REPLACE
 ```
 
@@ -42764,7 +42764,7 @@ aider/commands.py
             self.io.tool_error("Please provide a question or topic for the chat.")
             return
 
-        from aider.coders import Coder
+        from aider_vision_core.coders import Coder
 
         coder = Coder.create(
             io=self.io,
@@ -42798,7 +42798,7 @@ aider/commands.py
             self.io.tool_error(f"Please provide a question or topic for the {edit_format} chat.")
             return
 
-        from aider.coders import Coder
+        from aider_vision_core.coders import Coder
 
         coder = Coder.create(
             io=self.io,
@@ -42848,14 +42848,14 @@ This implementation allows for easy addition of similar commands in the future i
 >  
 > ^C again to exit  
 
-#### /add aider/website/docs/usage/modes.md  
-> Added /Users/gauthier/Projects/aider/aider/website/docs/usage/modes.md to the chat  
+#### /add aider_vision_core/website/docs/usage/modes.md  
+> Added /Users/gauthier/Projects/aider/aider_vision_core/website/docs/usage/modes.md to the chat  
 
 #### update the doc, include a small example of /code  
 
 Certainly! I'll update the documentation to include a small example of the `/code` command. Here's the change:
 
-aider/website/docs/usage/modes.md
+aider_vision_core/website/docs/usage/modes.md
 <source>markdown
 <<<<<<< SEARCH
 - `code` - Aider will make changes to your code to satisfy your requests.
@@ -42874,7 +42874,7 @@ send messages in other modes using `/code`, `/ask`, and `/help` commands:
 >>>>>>> REPLACE
 </source>
 
-aider/website/docs/usage/modes.md
+aider_vision_core/website/docs/usage/modes.md
 <source>markdown
 <<<<<<< SEARCH
 #### /help How do I use ollama?
@@ -42917,9 +42917,9 @@ Using `/code`, `/ask`, and `/help` applies just to that particular message.
 These changes update the documentation to include the `/code` command and provide a small example of its usage. The example shows how to use the `/code` command to add a factorial function to the codebase.
 
 > Tokens: 11,580 sent, 541 received. Cost: $0.04 request, $0.11 session.  
-> Committing aider/website/docs/usage/modes.md before applying edits.  
+> Committing aider_vision_core/website/docs/usage/modes.md before applying edits.  
 > Commit 32f771e docs: Add information about launching aider in chat mode using the --chat-mode switch  
-> Applied edit to aider/website/docs/usage/modes.md  
+> Applied edit to aider_vision_core/website/docs/usage/modes.md  
 > Commit b9b5666 docs: add code example for /code command  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -43412,7 +43412,7 @@ tests/basic/test_commands.py
     def test_cmd_add_unicode_error(self):
         # Initialize the Commands and InputOutput objects
         io = InputOutput(pretty=False, yes=True)
-        from aider.coders import Coder
+        from aider_vision_core.coders import Coder
 
         coder = Coder.create(self.GPT35, None, io)
         commands = Commands(io, coder)
@@ -43431,7 +43431,7 @@ tests/basic/test_commands.py
     def test_cmd_add_unicode_error(self):
         # Initialize the Commands and InputOutput objects
         io = InputOutput(pretty=False, yes=True)
-        from aider.coders import Coder
+        from aider_vision_core.coders import Coder
 
         coder = Coder.create(self.GPT35, None, io)
         commands = Commands(io, coder)
@@ -43448,7 +43448,7 @@ tests/basic/test_commands.py
     def test_cmd_add_read_only_file(self):
         # Initialize the Commands and InputOutput objects
         io = InputOutput(pretty=False, yes=True)
-        from aider.coders import Coder
+        from aider_vision_core.coders import Coder
 
         coder = Coder.create(self.GPT35, None, io)
         commands = Commands(io, coder)
@@ -43507,7 +43507,7 @@ tests/basic/test_commands.py
     def test_cmd_add_read_only_file(self):
         # Initialize the Commands and InputOutput objects
         io = InputOutput(pretty=False, yes=True)
-        from aider.coders import Coder
+        from aider_vision_core.coders import Coder
 
         coder = Coder.create(self.GPT35, None, io)
         commands = Commands(io, coder)
@@ -43552,7 +43552,7 @@ tests/basic/test_commands.py
         with GitTemporaryDirectory():
             # Initialize the Commands and InputOutput objects
             io = InputOutput(pretty=False, yes=True)
-            from aider.coders import Coder
+            from aider_vision_core.coders import Coder
 
             coder = Coder.create(self.GPT35, None, io)
             commands = Commands(io, coder)
@@ -43627,7 +43627,7 @@ self = <test_commands.TestCommands testMethod=test_cmd_add_read_only_file>
         with GitTemporaryDirectory():
             # Initialize the Commands and InputOutput objects
             io = InputOutput(pretty=False, yes=True)
-            from aider.coders import Coder
+            from aider_vision_core.coders import Coder
     
             coder = Coder.create(self.GPT35, None, io)
             commands = Commands(io, coder)
@@ -43737,7 +43737,7 @@ FAILED tests/basic/test_commands.py::TestCommands::test_cmd_add_read_only_file
 > with GitTemporaryDirectory():  
 > # Initialize the Commands and InputOutput objects  
 > io = InputOutput(pretty=False, yes=True)  
-> from aider.coders import Coder  
+> from aider_vision_core.coders import Coder  
 >  
 > coder = Coder.create(self.GPT35, None, io)  
 > commands = Commands(io, coder)  
@@ -44119,25 +44119,25 @@ These changes should resolve the UnboundLocalError mentioned in the issue.
 ####   File "<frozen runpy>", line 198, in _run_module_as_main  
 ####   File "<frozen runpy>", line 88, in _run_code  
 ####   File "C:\users\cp\.local\bin\aider.exe\__main__.py", line 7, in <module>  
-####   File "C:\Users\cp\pipx\venvs\aider-chat\Lib\site-packages\aider\main.py", line 620, in main  
+####   File "C:\Users\cp\pipx\venvs\aider-vision-core\Lib\site-packages\aider\main.py", line 620, in main  
 ####     coder.run()  
-####   File "C:\Users\cp\pipx\venvs\aider-chat\Lib\site-packages\aider\coders\base_coder.py", line 685, in run  
+####   File "C:\Users\cp\pipx\venvs\aider-vision-core\Lib\site-packages\aider\coders\base_coder.py", line 685, in run  
 ####     self.run_one(user_message, preproc)  
-####   File "C:\Users\cp\pipx\venvs\aider-chat\Lib\site-packages\aider\coders\base_coder.py", line 717, in run_one  
+####   File "C:\Users\cp\pipx\venvs\aider-vision-core\Lib\site-packages\aider\coders\base_coder.py", line 717, in run_one  
 ####     message = self.preproc_user_input(user_message)  
 ####               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
-####   File "C:\Users\cp\pipx\venvs\aider-chat\Lib\site-packages\aider\coders\base_coder.py", line 709, in preproc_user_input  
+####   File "C:\Users\cp\pipx\venvs\aider-vision-core\Lib\site-packages\aider\coders\base_coder.py", line 709, in preproc_user_input  
 ####     self.check_for_urls(inp)  
-####   File "C:\Users\cp\pipx\venvs\aider-chat\Lib\site-packages\aider\coders\base_coder.py", line 743, in check_for_urls  
+####   File "C:\Users\cp\pipx\venvs\aider-vision-core\Lib\site-packages\aider\coders\base_coder.py", line 743, in check_for_urls  
 ####     inp += self.commands.cmd_web(url, paginate=False)  
 ####            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
-####   File "C:\Users\cp\pipx\venvs\aider-chat\Lib\site-packages\aider\commands.py", line 139, in cmd_web  
+####   File "C:\Users\cp\pipx\venvs\aider-vision-core\Lib\site-packages\aider\commands.py", line 139, in cmd_web  
 ####     content = self.scraper.scrape(url) or ""  
 ####               ^^^^^^^^^^^^^^^^^^^^^^^^  
-####   File "C:\Users\cp\pipx\venvs\aider-chat\Lib\site-packages\aider\scrape.py", line 97, in scrape  
+####   File "C:\Users\cp\pipx\venvs\aider-vision-core\Lib\site-packages\aider\scrape.py", line 97, in scrape  
 ####     content, mime_type = self.scrape_with_playwright(url)  
 ####                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
-####   File "C:\Users\cp\pipx\venvs\aider-chat\Lib\site-packages\aider\scrape.py", line 146, in scrape_with_playwright  
+####   File "C:\Users\cp\pipx\venvs\aider-vision-core\Lib\site-packages\aider\scrape.py", line 146, in scrape_with_playwright  
 ####     mime_type = response.header_value("content-type").split(";")[0]  
 ####                 ^^^^^^^^  
 #### UnboundLocalError: cannot access local variable 'response' where it is not associated with a value  
@@ -44224,14 +44224,14 @@ These modifications should prevent the UnboundLocalError by ensuring that `respo
 
 Based on the request to implement icons as described in the Eraser.io documentation, the most likely file that will need changes is:
 
-aider/website/_config.yml
+aider_vision_core/website/_config.yml
 
 This file likely contains the configuration for the Jekyll-based website, and we may need to add or modify icon-related settings there.
 
 I'll wait for you to add this file to the chat before proceeding with any changes.
 
 > Tokens: 10,645 sent, 78 received. Cost: $0.03 request, $0.03 session.  
-> aider/website/_config.yml  
+> aider_vision_core/website/_config.yml  
 >  
 >  
 > ^C again to exit  
@@ -44946,7 +44946,7 @@ If you have any specific code or requests in mind, feel free to share, and I wil
 #### /help what is this tool?  
 > To use interactive /help you need to install the help extras:  
 >  
-> /usr/local/Cellar/aider/0.48.0/libexec/bin/python -m pip install aider-chat[help] --extra-index-url https://download.pytorch.org/whl/cpu  
+> /usr/local/Cellar/aider/0.48.0/libexec/bin/python -m pip install aider-vision-core[help] --extra-index-url https://download.pytorch.org/whl/cpu  
 > Run pip install? y  
 
 # aider chat started at 2024-08-12 14:26:01
@@ -45222,13 +45222,13 @@ This test ensures that when a file in `read_only_fnames` is mentioned, the user 
 ####   
 #### <doc>  
 #### Because this page is rendered by GitHub as the repo README  
-#### cog.out(open("aider/website/_includes/get-started.md").read())  
+#### cog.out(open("aider_vision_core/website/_includes/get-started.md").read())  
 #### -->  
 ####   
 #### You can get started quickly like this:  
 ####   
 #### ```  
-#### $ pip install aider-chat  
+#### $ pip install aider-vision-core  
 ####   
 #### # Change directory into a git repo  
 #### $ cd /to/your/git/repo  
@@ -45325,7 +45325,7 @@ This test ensures that when a file in `read_only_fnames` is mentioned, the user 
 #### Use the `--browser` switch to launch the browser version of aider:  
 ####   
 #### ```  
-#### pip install aider-chat  
+#### pip install aider-vision-core  
 ####   
 #### export OPENAI_API_KEY=<key> # Mac/Linux  
 #### setx   OPENAI_API_KEY <key> # Windows, restart shell after setx  
@@ -45833,8 +45833,8 @@ import json
 
 import backoff
 
-from aider.dump import dump  # noqa: F401
-from aider.llm import litellm
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import litellm
 =======
 import hashlib
 import json
@@ -45842,8 +45842,8 @@ import os
 
 import backoff
 
-from aider.dump import dump  # noqa: F401
-from aider.llm import litellm
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import litellm
 >>>>>>> REPLACE
 ```
 
@@ -46239,7 +46239,7 @@ README.md
 You can get started quickly like this:
 
 ```
-python -m pip install aider-chat
+python -m pip install aider-vision-core
 
 # Change directory into a git repo
 cd /to/your/git/repo
@@ -46256,7 +46256,7 @@ aider
 Vous pouvez commencer rapidement comme ceci :
 
 ```
-python -m pip install aider-chat
+python -m pip install aider-vision-core
 
 # Changez de répertoire vers un dépôt git
 cd /vers/votre/depot/git
@@ -46448,9 +46448,9 @@ HISTORY.md
 
 - Default pip install size reduced by 3-12x.
 - Added 3 package extras, which aider will offer to install when needed:
-  - `aider-chat[help]`
-  - `aider-chat[browser]`
-  - `aider-chat[playwright]`
+  - `aider-vision-core[help]`
+  - `aider-vision-core[browser]`
+  - `aider-vision-core[playwright]`
 - Improved regex for detecting URLs in user chat messages.
 - Bugfix to globbing logic when absolute paths are included in `/add`.
 - Simplified output of `--models`.
@@ -46820,7 +46820,7 @@ HISTORY.md
 - Ajouté `openai/gpt-4o-2024-08-06`.
 - Contourné un bug de litellm qui supprime les en-têtes d'application OpenRouter lors de l'utilisation de `extra_headers`.
 - Améliorations de l'indication de progression pendant le traitement de la carte du dépôt.
-- Instructions corrigées pour la mise à jour du conteneur docker vers la dernière version d'aider.
+- Instructions corrigées pour la mise à jour du conteneur docker vers la dernière version d'aider_vision_core.
 - Supprimé la limite obsolète de 16k tokens sur les différences de validation, utiliser les limites par modèle.
 
 ### Aider v0.48.0
@@ -46907,9 +46907,9 @@ HISTORY.md
 
 - La taille d'installation pip par défaut réduite de 3 à 12 fois.
 - Ajouté 3 extras de paquets, qu'aider proposera d'installer au besoin :
-  - `aider-chat[help]`
-  - `aider-chat[browser]`
-  - `aider-chat[playwright]`
+  - `aider-vision-core[help]`
+  - `aider-vision-core[browser]`
+  - `aider-vision-core[playwright]`
 - Amélioration de la regex pour détecter les URL dans les messages de discussion des utilisateurs.
 - Correction de bug dans la logique de globbing lors de l'inclusion de chemins absolus dans `/add`.
 - Sortie simplifiée de `--models`.
@@ -47314,7 +47314,7 @@ If you specifically need to work with images in the VSCode environment, you migh
 
 > You need to install the aider browser feature:  
 >  
-> /Users/gauthier/Projects/aider/.venv/bin/python3.12 -m pip install aider-chat[browser]  
+> /Users/gauthier/Projects/aider/.venv/bin/python3.12 -m pip install aider-vision-core[browser]  
 > Run pip install? y  
 
 #### /ex  
@@ -47620,7 +47620,7 @@ def track_event(mp, event_name, properties=None):
 
 ```python
 # In the imports section, add:
-from aider import analytics
+from aider_vision_core import analytics
 
 # In the get_parser function in args.py, add:
 parser.add_argument('--analytics', action='store_true', help='Enable analytics tracking')
@@ -47716,9 +47716,9 @@ Now, let's update the main.py file to use this new Analytics object:
 aider/main.py
 ```python
 <<<<<<< SEARCH
-from aider import analytics
+from aider_vision_core import analytics
 =======
-from aider.analytics import Analytics
+from aider_vision_core.analytics import Analytics
 >>>>>>> REPLACE
 ```
 
@@ -47873,9 +47873,9 @@ This implementation allows you to easily add analytics tracking throughout your 
 >   
 > ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider/main.py  
 > <<<<<<< SEARCH  
-> from aider import analytics  
+> from aider_vision_core import analytics  
 > =======  
-> from aider.analytics import Analytics  
+> from aider_vision_core.analytics import Analytics  
 > >>>>>>> REPLACE  
 >   
 >   
@@ -47993,16 +47993,16 @@ aider/args.py
 aider/main.py
 ```python
 <<<<<<< SEARCH
-from aider import __version__, models, utils
-from aider.args import get_parser
-from aider.coders import Coder
-from aider.commands import Commands, SwitchCoder
+from aider_vision_core import __version__, models, utils
+from aider_vision_core.args import get_parser
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands, SwitchCoder
 =======
-from aider import __version__, models, utils
-from aider.args import get_parser
-from aider.coders import Coder
-from aider.commands import Commands, SwitchCoder
-from aider.analytics import Analytics
+from aider_vision_core import __version__, models, utils
+from aider_vision_core.args import get_parser
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands, SwitchCoder
+from aider_vision_core.analytics import Analytics
 >>>>>>> REPLACE
 ```
 
@@ -48248,172 +48248,172 @@ These changes should be sufficient to implement the requested feature. Is there 
 > aider/utils.py  
 > aider/versioncheck.py  
 > aider/voice.py  
-> aider/website/Gemfile  
-> aider/website/HISTORY.md  
-> aider/website/_config.yml  
-> aider/website/_data/blame.yml  
-> aider/website/_data/edit_leaderboard.yml  
-> aider/website/_data/refactor_leaderboard.yml  
-> aider/website/_includes/blame.md  
-> aider/website/_includes/env-keys-tip.md  
-> aider/website/_includes/get-started.md  
-> aider/website/_includes/head_custom.html  
-> aider/website/_includes/help-tip.md  
-> aider/website/_includes/help.md  
-> aider/website/_includes/model-warnings.md  
-> aider/website/_includes/multi-line.md  
-> aider/website/_includes/nav_footer_custom.html  
-> aider/website/_includes/python-m-aider.md  
-> aider/website/_includes/special-keys.md  
-> aider/website/_includes/venv-pipx.md  
-> aider/website/_includes/works-best.md  
-> aider/website/_layouts/redirect.html  
-> aider/website/_posts/2023-05-25-ctags.md  
-> aider/website/_posts/2023-07-02-benchmarks.md  
-> aider/website/_posts/2023-10-22-repomap.md  
-> aider/website/_posts/2023-11-06-benchmarks-1106.md  
-> aider/website/_posts/2023-11-06-benchmarks-speed-1106.md  
-> aider/website/_posts/2023-12-21-unified-diffs.md  
-> aider/website/_posts/2024-01-25-benchmarks-0125.md  
-> aider/website/_posts/2024-03-08-claude-3.md  
-> aider/website/_posts/2024-04-09-gpt-4-turbo.md  
-> aider/website/_posts/2024-05-02-browser.md  
-> aider/website/_posts/2024-05-13-models-over-time.md  
-> aider/website/_posts/2024-05-22-draft.md  
-> aider/website/_posts/2024-05-22-linting.md  
-> aider/website/_posts/2024-05-22-swe-bench-lite.md  
-> aider/website/_posts/2024-05-24-self-assembly.md  
-> aider/website/_posts/2024-06-02-main-swe-bench.md  
-> aider/website/_posts/2024-07-01-sonnet-not-lazy.md  
-> aider/website/_posts/2024-07-25-new-models.md  
-> aider/website/_sass/custom/custom.scss  
-> aider/website/assets/2024-03-07-claude-3.jpg  
-> aider/website/assets/2024-03-07-claude-3.svg  
-> aider/website/assets/2024-04-09-gpt-4-turbo-laziness.jpg  
-> aider/website/assets/2024-04-09-gpt-4-turbo-laziness.svg  
-> aider/website/assets/2024-04-09-gpt-4-turbo.jpg  
-> aider/website/assets/2024-04-09-gpt-4-turbo.svg  
-> aider/website/assets/2024-07-new-models.jpg  
-> aider/website/assets/aider-browser-social.mp4  
-> aider/website/assets/aider-square.jpg  
-> aider/website/assets/aider.jpg  
-> aider/website/assets/benchmarks-0125.jpg  
-> aider/website/assets/benchmarks-0125.svg  
-> aider/website/assets/benchmarks-1106.jpg  
-> aider/website/assets/benchmarks-1106.svg  
-> aider/website/assets/benchmarks-speed-1106.jpg  
-> aider/website/assets/benchmarks-speed-1106.svg  
-> aider/website/assets/benchmarks-udiff.jpg  
-> aider/website/assets/benchmarks-udiff.svg  
-> aider/website/assets/benchmarks.jpg  
-> aider/website/assets/benchmarks.svg  
-> aider/website/assets/blame.jpg  
-> aider/website/assets/browser.jpg  
-> aider/website/assets/codespaces.jpg  
-> aider/website/assets/codespaces.mp4  
-> aider/website/assets/figure.png  
-> aider/website/assets/icons/android-chrome-192x192.png  
-> aider/website/assets/icons/android-chrome-384x384.png  
-> aider/website/assets/icons/apple-touch-icon.png  
-> aider/website/assets/icons/browserconfig.xml  
-> aider/website/assets/icons/favicon-16x16.png  
-> aider/website/assets/icons/favicon-32x32.png  
-> aider/website/assets/icons/favicon.ico  
-> aider/website/assets/icons/mstile-150x150.png  
-> aider/website/assets/icons/safari-pinned-tab.svg  
-> aider/website/assets/icons/site.webmanifest  
-> aider/website/assets/install.jpg  
-> aider/website/assets/install.mp4  
-> aider/website/assets/leaderboard.jpg  
-> aider/website/assets/linting.jpg  
-> aider/website/assets/llms.jpg  
-> aider/website/assets/models-over-time.png  
-> aider/website/assets/models-over-time.svg  
-> aider/website/assets/robot-ast.png  
-> aider/website/assets/robot-flowchart.png  
-> aider/website/assets/sample.aider.conf.yml  
-> aider/website/assets/sample.env  
-> aider/website/assets/screencast.svg  
-> aider/website/assets/screenshot.png  
-> aider/website/assets/self-assembly.jpg  
-> aider/website/assets/sonnet-not-lazy.jpg  
-> aider/website/assets/swe_bench.jpg  
-> aider/website/assets/swe_bench.svg  
-> aider/website/assets/swe_bench_lite.jpg  
-> aider/website/assets/swe_bench_lite.svg  
-> aider/website/assets/udiffs.jpg  
-> aider/website/blog/index.html  
-> aider/website/docs/benchmarks-0125.md  
-> aider/website/docs/benchmarks-1106.md  
-> aider/website/docs/benchmarks-speed-1106.md  
-> aider/website/docs/benchmarks.md  
-> aider/website/docs/config.md  
-> aider/website/docs/config/adv-model-settings.md  
-> aider/website/docs/config/aider_conf.md  
-> aider/website/docs/config/dotenv.md  
-> aider/website/docs/config/options.md  
-> aider/website/docs/ctags.md  
-> aider/website/docs/faq.md  
-> aider/website/docs/git.md  
-> aider/website/docs/install.md  
-> aider/website/docs/install/codespaces.md  
-> aider/website/docs/install/docker.md  
-> aider/website/docs/install/install.md  
-> aider/website/docs/install/optional.md  
-> aider/website/docs/install/pipx.md  
-> aider/website/docs/languages.md  
-> aider/website/docs/leaderboards/index.md  
-> aider/website/docs/llms.md  
-> aider/website/docs/llms/anthropic.md  
-> aider/website/docs/llms/azure.md  
-> aider/website/docs/llms/cohere.md  
-> aider/website/docs/llms/deepseek.md  
-> aider/website/docs/llms/editing-format.md  
-> aider/website/docs/llms/gemini.md  
-> aider/website/docs/llms/groq.md  
-> aider/website/docs/llms/ollama.md  
-> aider/website/docs/llms/openai-compat.md  
-> aider/website/docs/llms/openai.md  
-> aider/website/docs/llms/openrouter.md  
-> aider/website/docs/llms/other.md  
-> aider/website/docs/llms/vertex.md  
-> aider/website/docs/llms/warnings.md  
-> aider/website/docs/more-info.md  
-> aider/website/docs/repomap.md  
-> aider/website/docs/scripting.md  
-> aider/website/docs/troubleshooting.md  
-> aider/website/docs/troubleshooting/aider-not-found.md  
-> aider/website/docs/troubleshooting/edit-errors.md  
-> aider/website/docs/troubleshooting/support.md  
-> aider/website/docs/troubleshooting/token-limits.md  
-> aider/website/docs/troubleshooting/warnings.md  
-> aider/website/docs/unified-diffs.md  
-> aider/website/docs/usage.md  
-> aider/website/docs/usage/browser.md  
-> aider/website/docs/usage/commands.md  
-> aider/website/docs/usage/conventions.md  
-> aider/website/docs/usage/images-urls.md  
-> aider/website/docs/usage/lint-test.md  
-> aider/website/docs/usage/modes.md  
-> aider/website/docs/usage/tips.md  
-> aider/website/docs/usage/tutorials.md  
-> aider/website/docs/usage/voice.md  
-> aider/website/examples/2048-game.md  
-> aider/website/examples/README.md  
-> aider/website/examples/add-test.md  
-> aider/website/examples/asciinema.md  
-> aider/website/examples/census.md  
-> aider/website/examples/chat-transcript-css.md  
-> aider/website/examples/complex-change.md  
-> aider/website/examples/css-exercises.md  
-> aider/website/examples/hello-world-flask.md  
-> aider/website/examples/hello.md  
-> aider/website/examples/no-color.md  
-> aider/website/examples/pong.md  
-> aider/website/examples/semantic-search-replace.md  
-> aider/website/examples/update-docs.md  
-> aider/website/index.md  
-> aider/website/share/index.md  
+> aider_vision_core/website/Gemfile  
+> aider_vision_core/website/HISTORY.md  
+> aider_vision_core/website/_config.yml  
+> aider_vision_core/website/_data/blame.yml  
+> aider_vision_core/website/_data/edit_leaderboard.yml  
+> aider_vision_core/website/_data/refactor_leaderboard.yml  
+> aider_vision_core/website/_includes/blame.md  
+> aider_vision_core/website/_includes/env-keys-tip.md  
+> aider_vision_core/website/_includes/get-started.md  
+> aider_vision_core/website/_includes/head_custom.html  
+> aider_vision_core/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help.md  
+> aider_vision_core/website/_includes/model-warnings.md  
+> aider_vision_core/website/_includes/multi-line.md  
+> aider_vision_core/website/_includes/nav_footer_custom.html  
+> aider_vision_core/website/_includes/python-m-aider.md  
+> aider_vision_core/website/_includes/special-keys.md  
+> aider_vision_core/website/_includes/venv-pipx.md  
+> aider_vision_core/website/_includes/works-best.md  
+> aider_vision_core/website/_layouts/redirect.html  
+> aider_vision_core/website/_posts/2023-05-25-ctags.md  
+> aider_vision_core/website/_posts/2023-07-02-benchmarks.md  
+> aider_vision_core/website/_posts/2023-10-22-repomap.md  
+> aider_vision_core/website/_posts/2023-11-06-benchmarks-1106.md  
+> aider_vision_core/website/_posts/2023-11-06-benchmarks-speed-1106.md  
+> aider_vision_core/website/_posts/2023-12-21-unified-diffs.md  
+> aider_vision_core/website/_posts/2024-01-25-benchmarks-0125.md  
+> aider_vision_core/website/_posts/2024-03-08-claude-3.md  
+> aider_vision_core/website/_posts/2024-04-09-gpt-4-turbo.md  
+> aider_vision_core/website/_posts/2024-05-02-browser.md  
+> aider_vision_core/website/_posts/2024-05-13-models-over-time.md  
+> aider_vision_core/website/_posts/2024-05-22-draft.md  
+> aider_vision_core/website/_posts/2024-05-22-linting.md  
+> aider_vision_core/website/_posts/2024-05-22-swe-bench-lite.md  
+> aider_vision_core/website/_posts/2024-05-24-self-assembly.md  
+> aider_vision_core/website/_posts/2024-06-02-main-swe-bench.md  
+> aider_vision_core/website/_posts/2024-07-01-sonnet-not-lazy.md  
+> aider_vision_core/website/_posts/2024-07-25-new-models.md  
+> aider_vision_core/website/_sass/custom/custom.scss  
+> aider_vision_core/website/assets/2024-03-07-claude-3.jpg  
+> aider_vision_core/website/assets/2024-03-07-claude-3.svg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo-laziness.jpg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo-laziness.svg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo.jpg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo.svg  
+> aider_vision_core/website/assets/2024-07-new-models.jpg  
+> aider_vision_core/website/assets/aider-browser-social.mp4  
+> aider_vision_core/website/assets/aider-square.jpg  
+> aider_vision_core/website/assets/aider.jpg  
+> aider_vision_core/website/assets/benchmarks-0125.jpg  
+> aider_vision_core/website/assets/benchmarks-0125.svg  
+> aider_vision_core/website/assets/benchmarks-1106.jpg  
+> aider_vision_core/website/assets/benchmarks-1106.svg  
+> aider_vision_core/website/assets/benchmarks-speed-1106.jpg  
+> aider_vision_core/website/assets/benchmarks-speed-1106.svg  
+> aider_vision_core/website/assets/benchmarks-udiff.jpg  
+> aider_vision_core/website/assets/benchmarks-udiff.svg  
+> aider_vision_core/website/assets/benchmarks.jpg  
+> aider_vision_core/website/assets/benchmarks.svg  
+> aider_vision_core/website/assets/blame.jpg  
+> aider_vision_core/website/assets/browser.jpg  
+> aider_vision_core/website/assets/codespaces.jpg  
+> aider_vision_core/website/assets/codespaces.mp4  
+> aider_vision_core/website/assets/figure.png  
+> aider_vision_core/website/assets/icons/android-chrome-192x192.png  
+> aider_vision_core/website/assets/icons/android-chrome-384x384.png  
+> aider_vision_core/website/assets/icons/apple-touch-icon.png  
+> aider_vision_core/website/assets/icons/browserconfig.xml  
+> aider_vision_core/website/assets/icons/favicon-16x16.png  
+> aider_vision_core/website/assets/icons/favicon-32x32.png  
+> aider_vision_core/website/assets/icons/favicon.ico  
+> aider_vision_core/website/assets/icons/mstile-150x150.png  
+> aider_vision_core/website/assets/icons/safari-pinned-tab.svg  
+> aider_vision_core/website/assets/icons/site.webmanifest  
+> aider_vision_core/website/assets/install.jpg  
+> aider_vision_core/website/assets/install.mp4  
+> aider_vision_core/website/assets/leaderboard.jpg  
+> aider_vision_core/website/assets/linting.jpg  
+> aider_vision_core/website/assets/llms.jpg  
+> aider_vision_core/website/assets/models-over-time.png  
+> aider_vision_core/website/assets/models-over-time.svg  
+> aider_vision_core/website/assets/robot-ast.png  
+> aider_vision_core/website/assets/robot-flowchart.png  
+> aider_vision_core/website/assets/sample.aider.conf.yml  
+> aider_vision_core/website/assets/sample.env  
+> aider_vision_core/website/assets/screencast.svg  
+> aider_vision_core/website/assets/screenshot.png  
+> aider_vision_core/website/assets/self-assembly.jpg  
+> aider_vision_core/website/assets/sonnet-not-lazy.jpg  
+> aider_vision_core/website/assets/swe_bench.jpg  
+> aider_vision_core/website/assets/swe_bench.svg  
+> aider_vision_core/website/assets/swe_bench_lite.jpg  
+> aider_vision_core/website/assets/swe_bench_lite.svg  
+> aider_vision_core/website/assets/udiffs.jpg  
+> aider_vision_core/website/blog/index.html  
+> aider_vision_core/website/docs/benchmarks-0125.md  
+> aider_vision_core/website/docs/benchmarks-1106.md  
+> aider_vision_core/website/docs/benchmarks-speed-1106.md  
+> aider_vision_core/website/docs/benchmarks.md  
+> aider_vision_core/website/docs/config.md  
+> aider_vision_core/website/docs/config/adv-model-settings.md  
+> aider_vision_core/website/docs/config/aider_conf.md  
+> aider_vision_core/website/docs/config/dotenv.md  
+> aider_vision_core/website/docs/config/options.md  
+> aider_vision_core/website/docs/ctags.md  
+> aider_vision_core/website/docs/faq.md  
+> aider_vision_core/website/docs/git.md  
+> aider_vision_core/website/docs/install.md  
+> aider_vision_core/website/docs/install/codespaces.md  
+> aider_vision_core/website/docs/install/docker.md  
+> aider_vision_core/website/docs/install/install.md  
+> aider_vision_core/website/docs/install/optional.md  
+> aider_vision_core/website/docs/install/pipx.md  
+> aider_vision_core/website/docs/languages.md  
+> aider_vision_core/website/docs/leaderboards/index.md  
+> aider_vision_core/website/docs/llms.md  
+> aider_vision_core/website/docs/llms/anthropic.md  
+> aider_vision_core/website/docs/llms/azure.md  
+> aider_vision_core/website/docs/llms/cohere.md  
+> aider_vision_core/website/docs/llms/deepseek.md  
+> aider_vision_core/website/docs/llms/editing-format.md  
+> aider_vision_core/website/docs/llms/gemini.md  
+> aider_vision_core/website/docs/llms/groq.md  
+> aider_vision_core/website/docs/llms/ollama.md  
+> aider_vision_core/website/docs/llms/openai-compat.md  
+> aider_vision_core/website/docs/llms/openai.md  
+> aider_vision_core/website/docs/llms/openrouter.md  
+> aider_vision_core/website/docs/llms/other.md  
+> aider_vision_core/website/docs/llms/vertex.md  
+> aider_vision_core/website/docs/llms/warnings.md  
+> aider_vision_core/website/docs/more-info.md  
+> aider_vision_core/website/docs/repomap.md  
+> aider_vision_core/website/docs/scripting.md  
+> aider_vision_core/website/docs/troubleshooting.md  
+> aider_vision_core/website/docs/troubleshooting/aider-not-found.md  
+> aider_vision_core/website/docs/troubleshooting/edit-errors.md  
+> aider_vision_core/website/docs/troubleshooting/support.md  
+> aider_vision_core/website/docs/troubleshooting/token-limits.md  
+> aider_vision_core/website/docs/troubleshooting/warnings.md  
+> aider_vision_core/website/docs/unified-diffs.md  
+> aider_vision_core/website/docs/usage.md  
+> aider_vision_core/website/docs/usage/browser.md  
+> aider_vision_core/website/docs/usage/commands.md  
+> aider_vision_core/website/docs/usage/conventions.md  
+> aider_vision_core/website/docs/usage/images-urls.md  
+> aider_vision_core/website/docs/usage/lint-test.md  
+> aider_vision_core/website/docs/usage/modes.md  
+> aider_vision_core/website/docs/usage/tips.md  
+> aider_vision_core/website/docs/usage/tutorials.md  
+> aider_vision_core/website/docs/usage/voice.md  
+> aider_vision_core/website/examples/2048-game.md  
+> aider_vision_core/website/examples/README.md  
+> aider_vision_core/website/examples/add-test.md  
+> aider_vision_core/website/examples/asciinema.md  
+> aider_vision_core/website/examples/census.md  
+> aider_vision_core/website/examples/chat-transcript-css.md  
+> aider_vision_core/website/examples/complex-change.md  
+> aider_vision_core/website/examples/css-exercises.md  
+> aider_vision_core/website/examples/hello-world-flask.md  
+> aider_vision_core/website/examples/hello.md  
+> aider_vision_core/website/examples/no-color.md  
+> aider_vision_core/website/examples/pong.md  
+> aider_vision_core/website/examples/semantic-search-replace.md  
+> aider_vision_core/website/examples/update-docs.md  
+> aider_vision_core/website/index.md  
+> aider_vision_core/website/share/index.md  
 > benchmark/Dockerfile  
 > benchmark/README.md  
 > benchmark/__init__.py  
@@ -48506,7 +48506,7 @@ import uuid
 from pathlib import Path
 
 from mixpanel import Mixpanel
-from aider import __version__
+from aider_vision_core import __version__
 
 
 class Analytics:
@@ -48925,7 +48925,7 @@ from pathlib import Path
 
 from mixpanel import Mixpanel
 
-from aider import __version__
+from aider_vision_core import __version__
 =======
 import json
 import uuid
@@ -48935,7 +48935,7 @@ from pathlib import Path
 
 from mixpanel import Mixpanel
 
-from aider import __version__
+from aider_vision_core import __version__
 >>>>>>> REPLACE
 ```
 
@@ -49601,8 +49601,8 @@ from pathlib import Path
 
 from mixpanel import Mixpanel
 
-from aider import __version__
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import __version__
+from aider_vision_core.dump import dump  # noqa: F401
 
 
 class Analytics:
@@ -49623,8 +49623,8 @@ from pathlib import Path
 
 from mixpanel import Mixpanel
 
-from aider import __version__
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import __version__
+from aider_vision_core.dump import dump  # noqa: F401
 
 
 class Analytics:
@@ -50009,172 +50009,172 @@ These changes will add the `--analytics-log` argument to the command-line option
 > aider/utils.py  
 > aider/versioncheck.py  
 > aider/voice.py  
-> aider/website/Gemfile  
-> aider/website/HISTORY.md  
-> aider/website/_config.yml  
-> aider/website/_data/blame.yml  
-> aider/website/_data/edit_leaderboard.yml  
-> aider/website/_data/refactor_leaderboard.yml  
-> aider/website/_includes/blame.md  
-> aider/website/_includes/env-keys-tip.md  
-> aider/website/_includes/get-started.md  
-> aider/website/_includes/head_custom.html  
-> aider/website/_includes/help-tip.md  
-> aider/website/_includes/help.md  
-> aider/website/_includes/model-warnings.md  
-> aider/website/_includes/multi-line.md  
-> aider/website/_includes/nav_footer_custom.html  
-> aider/website/_includes/python-m-aider.md  
-> aider/website/_includes/special-keys.md  
-> aider/website/_includes/venv-pipx.md  
-> aider/website/_includes/works-best.md  
-> aider/website/_layouts/redirect.html  
-> aider/website/_posts/2023-05-25-ctags.md  
-> aider/website/_posts/2023-07-02-benchmarks.md  
-> aider/website/_posts/2023-10-22-repomap.md  
-> aider/website/_posts/2023-11-06-benchmarks-1106.md  
-> aider/website/_posts/2023-11-06-benchmarks-speed-1106.md  
-> aider/website/_posts/2023-12-21-unified-diffs.md  
-> aider/website/_posts/2024-01-25-benchmarks-0125.md  
-> aider/website/_posts/2024-03-08-claude-3.md  
-> aider/website/_posts/2024-04-09-gpt-4-turbo.md  
-> aider/website/_posts/2024-05-02-browser.md  
-> aider/website/_posts/2024-05-13-models-over-time.md  
-> aider/website/_posts/2024-05-22-draft.md  
-> aider/website/_posts/2024-05-22-linting.md  
-> aider/website/_posts/2024-05-22-swe-bench-lite.md  
-> aider/website/_posts/2024-05-24-self-assembly.md  
-> aider/website/_posts/2024-06-02-main-swe-bench.md  
-> aider/website/_posts/2024-07-01-sonnet-not-lazy.md  
-> aider/website/_posts/2024-07-25-new-models.md  
-> aider/website/_sass/custom/custom.scss  
-> aider/website/assets/2024-03-07-claude-3.jpg  
-> aider/website/assets/2024-03-07-claude-3.svg  
-> aider/website/assets/2024-04-09-gpt-4-turbo-laziness.jpg  
-> aider/website/assets/2024-04-09-gpt-4-turbo-laziness.svg  
-> aider/website/assets/2024-04-09-gpt-4-turbo.jpg  
-> aider/website/assets/2024-04-09-gpt-4-turbo.svg  
-> aider/website/assets/2024-07-new-models.jpg  
-> aider/website/assets/aider-browser-social.mp4  
-> aider/website/assets/aider-square.jpg  
-> aider/website/assets/aider.jpg  
-> aider/website/assets/benchmarks-0125.jpg  
-> aider/website/assets/benchmarks-0125.svg  
-> aider/website/assets/benchmarks-1106.jpg  
-> aider/website/assets/benchmarks-1106.svg  
-> aider/website/assets/benchmarks-speed-1106.jpg  
-> aider/website/assets/benchmarks-speed-1106.svg  
-> aider/website/assets/benchmarks-udiff.jpg  
-> aider/website/assets/benchmarks-udiff.svg  
-> aider/website/assets/benchmarks.jpg  
-> aider/website/assets/benchmarks.svg  
-> aider/website/assets/blame.jpg  
-> aider/website/assets/browser.jpg  
-> aider/website/assets/codespaces.jpg  
-> aider/website/assets/codespaces.mp4  
-> aider/website/assets/figure.png  
-> aider/website/assets/icons/android-chrome-192x192.png  
-> aider/website/assets/icons/android-chrome-384x384.png  
-> aider/website/assets/icons/apple-touch-icon.png  
-> aider/website/assets/icons/browserconfig.xml  
-> aider/website/assets/icons/favicon-16x16.png  
-> aider/website/assets/icons/favicon-32x32.png  
-> aider/website/assets/icons/favicon.ico  
-> aider/website/assets/icons/mstile-150x150.png  
-> aider/website/assets/icons/safari-pinned-tab.svg  
-> aider/website/assets/icons/site.webmanifest  
-> aider/website/assets/install.jpg  
-> aider/website/assets/install.mp4  
-> aider/website/assets/leaderboard.jpg  
-> aider/website/assets/linting.jpg  
-> aider/website/assets/llms.jpg  
-> aider/website/assets/models-over-time.png  
-> aider/website/assets/models-over-time.svg  
-> aider/website/assets/robot-ast.png  
-> aider/website/assets/robot-flowchart.png  
-> aider/website/assets/sample.aider.conf.yml  
-> aider/website/assets/sample.env  
-> aider/website/assets/screencast.svg  
-> aider/website/assets/screenshot.png  
-> aider/website/assets/self-assembly.jpg  
-> aider/website/assets/sonnet-not-lazy.jpg  
-> aider/website/assets/swe_bench.jpg  
-> aider/website/assets/swe_bench.svg  
-> aider/website/assets/swe_bench_lite.jpg  
-> aider/website/assets/swe_bench_lite.svg  
-> aider/website/assets/udiffs.jpg  
-> aider/website/blog/index.html  
-> aider/website/docs/benchmarks-0125.md  
-> aider/website/docs/benchmarks-1106.md  
-> aider/website/docs/benchmarks-speed-1106.md  
-> aider/website/docs/benchmarks.md  
-> aider/website/docs/config.md  
-> aider/website/docs/config/adv-model-settings.md  
-> aider/website/docs/config/aider_conf.md  
-> aider/website/docs/config/dotenv.md  
-> aider/website/docs/config/options.md  
-> aider/website/docs/ctags.md  
-> aider/website/docs/faq.md  
-> aider/website/docs/git.md  
-> aider/website/docs/install.md  
-> aider/website/docs/install/codespaces.md  
-> aider/website/docs/install/docker.md  
-> aider/website/docs/install/install.md  
-> aider/website/docs/install/optional.md  
-> aider/website/docs/install/pipx.md  
-> aider/website/docs/languages.md  
-> aider/website/docs/leaderboards/index.md  
-> aider/website/docs/llms.md  
-> aider/website/docs/llms/anthropic.md  
-> aider/website/docs/llms/azure.md  
-> aider/website/docs/llms/cohere.md  
-> aider/website/docs/llms/deepseek.md  
-> aider/website/docs/llms/editing-format.md  
-> aider/website/docs/llms/gemini.md  
-> aider/website/docs/llms/groq.md  
-> aider/website/docs/llms/ollama.md  
-> aider/website/docs/llms/openai-compat.md  
-> aider/website/docs/llms/openai.md  
-> aider/website/docs/llms/openrouter.md  
-> aider/website/docs/llms/other.md  
-> aider/website/docs/llms/vertex.md  
-> aider/website/docs/llms/warnings.md  
-> aider/website/docs/more-info.md  
-> aider/website/docs/repomap.md  
-> aider/website/docs/scripting.md  
-> aider/website/docs/troubleshooting.md  
-> aider/website/docs/troubleshooting/aider-not-found.md  
-> aider/website/docs/troubleshooting/edit-errors.md  
-> aider/website/docs/troubleshooting/support.md  
-> aider/website/docs/troubleshooting/token-limits.md  
-> aider/website/docs/troubleshooting/warnings.md  
-> aider/website/docs/unified-diffs.md  
-> aider/website/docs/usage.md  
-> aider/website/docs/usage/browser.md  
-> aider/website/docs/usage/commands.md  
-> aider/website/docs/usage/conventions.md  
-> aider/website/docs/usage/images-urls.md  
-> aider/website/docs/usage/lint-test.md  
-> aider/website/docs/usage/modes.md  
-> aider/website/docs/usage/tips.md  
-> aider/website/docs/usage/tutorials.md  
-> aider/website/docs/usage/voice.md  
-> aider/website/examples/2048-game.md  
-> aider/website/examples/README.md  
-> aider/website/examples/add-test.md  
-> aider/website/examples/asciinema.md  
-> aider/website/examples/census.md  
-> aider/website/examples/chat-transcript-css.md  
-> aider/website/examples/complex-change.md  
-> aider/website/examples/css-exercises.md  
-> aider/website/examples/hello-world-flask.md  
-> aider/website/examples/hello.md  
-> aider/website/examples/no-color.md  
-> aider/website/examples/pong.md  
-> aider/website/examples/semantic-search-replace.md  
-> aider/website/examples/update-docs.md  
-> aider/website/index.md  
-> aider/website/share/index.md  
+> aider_vision_core/website/Gemfile  
+> aider_vision_core/website/HISTORY.md  
+> aider_vision_core/website/_config.yml  
+> aider_vision_core/website/_data/blame.yml  
+> aider_vision_core/website/_data/edit_leaderboard.yml  
+> aider_vision_core/website/_data/refactor_leaderboard.yml  
+> aider_vision_core/website/_includes/blame.md  
+> aider_vision_core/website/_includes/env-keys-tip.md  
+> aider_vision_core/website/_includes/get-started.md  
+> aider_vision_core/website/_includes/head_custom.html  
+> aider_vision_core/website/_includes/help-tip.md  
+> aider_vision_core/website/_includes/help.md  
+> aider_vision_core/website/_includes/model-warnings.md  
+> aider_vision_core/website/_includes/multi-line.md  
+> aider_vision_core/website/_includes/nav_footer_custom.html  
+> aider_vision_core/website/_includes/python-m-aider.md  
+> aider_vision_core/website/_includes/special-keys.md  
+> aider_vision_core/website/_includes/venv-pipx.md  
+> aider_vision_core/website/_includes/works-best.md  
+> aider_vision_core/website/_layouts/redirect.html  
+> aider_vision_core/website/_posts/2023-05-25-ctags.md  
+> aider_vision_core/website/_posts/2023-07-02-benchmarks.md  
+> aider_vision_core/website/_posts/2023-10-22-repomap.md  
+> aider_vision_core/website/_posts/2023-11-06-benchmarks-1106.md  
+> aider_vision_core/website/_posts/2023-11-06-benchmarks-speed-1106.md  
+> aider_vision_core/website/_posts/2023-12-21-unified-diffs.md  
+> aider_vision_core/website/_posts/2024-01-25-benchmarks-0125.md  
+> aider_vision_core/website/_posts/2024-03-08-claude-3.md  
+> aider_vision_core/website/_posts/2024-04-09-gpt-4-turbo.md  
+> aider_vision_core/website/_posts/2024-05-02-browser.md  
+> aider_vision_core/website/_posts/2024-05-13-models-over-time.md  
+> aider_vision_core/website/_posts/2024-05-22-draft.md  
+> aider_vision_core/website/_posts/2024-05-22-linting.md  
+> aider_vision_core/website/_posts/2024-05-22-swe-bench-lite.md  
+> aider_vision_core/website/_posts/2024-05-24-self-assembly.md  
+> aider_vision_core/website/_posts/2024-06-02-main-swe-bench.md  
+> aider_vision_core/website/_posts/2024-07-01-sonnet-not-lazy.md  
+> aider_vision_core/website/_posts/2024-07-25-new-models.md  
+> aider_vision_core/website/_sass/custom/custom.scss  
+> aider_vision_core/website/assets/2024-03-07-claude-3.jpg  
+> aider_vision_core/website/assets/2024-03-07-claude-3.svg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo-laziness.jpg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo-laziness.svg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo.jpg  
+> aider_vision_core/website/assets/2024-04-09-gpt-4-turbo.svg  
+> aider_vision_core/website/assets/2024-07-new-models.jpg  
+> aider_vision_core/website/assets/aider-browser-social.mp4  
+> aider_vision_core/website/assets/aider-square.jpg  
+> aider_vision_core/website/assets/aider.jpg  
+> aider_vision_core/website/assets/benchmarks-0125.jpg  
+> aider_vision_core/website/assets/benchmarks-0125.svg  
+> aider_vision_core/website/assets/benchmarks-1106.jpg  
+> aider_vision_core/website/assets/benchmarks-1106.svg  
+> aider_vision_core/website/assets/benchmarks-speed-1106.jpg  
+> aider_vision_core/website/assets/benchmarks-speed-1106.svg  
+> aider_vision_core/website/assets/benchmarks-udiff.jpg  
+> aider_vision_core/website/assets/benchmarks-udiff.svg  
+> aider_vision_core/website/assets/benchmarks.jpg  
+> aider_vision_core/website/assets/benchmarks.svg  
+> aider_vision_core/website/assets/blame.jpg  
+> aider_vision_core/website/assets/browser.jpg  
+> aider_vision_core/website/assets/codespaces.jpg  
+> aider_vision_core/website/assets/codespaces.mp4  
+> aider_vision_core/website/assets/figure.png  
+> aider_vision_core/website/assets/icons/android-chrome-192x192.png  
+> aider_vision_core/website/assets/icons/android-chrome-384x384.png  
+> aider_vision_core/website/assets/icons/apple-touch-icon.png  
+> aider_vision_core/website/assets/icons/browserconfig.xml  
+> aider_vision_core/website/assets/icons/favicon-16x16.png  
+> aider_vision_core/website/assets/icons/favicon-32x32.png  
+> aider_vision_core/website/assets/icons/favicon.ico  
+> aider_vision_core/website/assets/icons/mstile-150x150.png  
+> aider_vision_core/website/assets/icons/safari-pinned-tab.svg  
+> aider_vision_core/website/assets/icons/site.webmanifest  
+> aider_vision_core/website/assets/install.jpg  
+> aider_vision_core/website/assets/install.mp4  
+> aider_vision_core/website/assets/leaderboard.jpg  
+> aider_vision_core/website/assets/linting.jpg  
+> aider_vision_core/website/assets/llms.jpg  
+> aider_vision_core/website/assets/models-over-time.png  
+> aider_vision_core/website/assets/models-over-time.svg  
+> aider_vision_core/website/assets/robot-ast.png  
+> aider_vision_core/website/assets/robot-flowchart.png  
+> aider_vision_core/website/assets/sample.aider.conf.yml  
+> aider_vision_core/website/assets/sample.env  
+> aider_vision_core/website/assets/screencast.svg  
+> aider_vision_core/website/assets/screenshot.png  
+> aider_vision_core/website/assets/self-assembly.jpg  
+> aider_vision_core/website/assets/sonnet-not-lazy.jpg  
+> aider_vision_core/website/assets/swe_bench.jpg  
+> aider_vision_core/website/assets/swe_bench.svg  
+> aider_vision_core/website/assets/swe_bench_lite.jpg  
+> aider_vision_core/website/assets/swe_bench_lite.svg  
+> aider_vision_core/website/assets/udiffs.jpg  
+> aider_vision_core/website/blog/index.html  
+> aider_vision_core/website/docs/benchmarks-0125.md  
+> aider_vision_core/website/docs/benchmarks-1106.md  
+> aider_vision_core/website/docs/benchmarks-speed-1106.md  
+> aider_vision_core/website/docs/benchmarks.md  
+> aider_vision_core/website/docs/config.md  
+> aider_vision_core/website/docs/config/adv-model-settings.md  
+> aider_vision_core/website/docs/config/aider_conf.md  
+> aider_vision_core/website/docs/config/dotenv.md  
+> aider_vision_core/website/docs/config/options.md  
+> aider_vision_core/website/docs/ctags.md  
+> aider_vision_core/website/docs/faq.md  
+> aider_vision_core/website/docs/git.md  
+> aider_vision_core/website/docs/install.md  
+> aider_vision_core/website/docs/install/codespaces.md  
+> aider_vision_core/website/docs/install/docker.md  
+> aider_vision_core/website/docs/install/install.md  
+> aider_vision_core/website/docs/install/optional.md  
+> aider_vision_core/website/docs/install/pipx.md  
+> aider_vision_core/website/docs/languages.md  
+> aider_vision_core/website/docs/leaderboards/index.md  
+> aider_vision_core/website/docs/llms.md  
+> aider_vision_core/website/docs/llms/anthropic.md  
+> aider_vision_core/website/docs/llms/azure.md  
+> aider_vision_core/website/docs/llms/cohere.md  
+> aider_vision_core/website/docs/llms/deepseek.md  
+> aider_vision_core/website/docs/llms/editing-format.md  
+> aider_vision_core/website/docs/llms/gemini.md  
+> aider_vision_core/website/docs/llms/groq.md  
+> aider_vision_core/website/docs/llms/ollama.md  
+> aider_vision_core/website/docs/llms/openai-compat.md  
+> aider_vision_core/website/docs/llms/openai.md  
+> aider_vision_core/website/docs/llms/openrouter.md  
+> aider_vision_core/website/docs/llms/other.md  
+> aider_vision_core/website/docs/llms/vertex.md  
+> aider_vision_core/website/docs/llms/warnings.md  
+> aider_vision_core/website/docs/more-info.md  
+> aider_vision_core/website/docs/repomap.md  
+> aider_vision_core/website/docs/scripting.md  
+> aider_vision_core/website/docs/troubleshooting.md  
+> aider_vision_core/website/docs/troubleshooting/aider-not-found.md  
+> aider_vision_core/website/docs/troubleshooting/edit-errors.md  
+> aider_vision_core/website/docs/troubleshooting/support.md  
+> aider_vision_core/website/docs/troubleshooting/token-limits.md  
+> aider_vision_core/website/docs/troubleshooting/warnings.md  
+> aider_vision_core/website/docs/unified-diffs.md  
+> aider_vision_core/website/docs/usage.md  
+> aider_vision_core/website/docs/usage/browser.md  
+> aider_vision_core/website/docs/usage/commands.md  
+> aider_vision_core/website/docs/usage/conventions.md  
+> aider_vision_core/website/docs/usage/images-urls.md  
+> aider_vision_core/website/docs/usage/lint-test.md  
+> aider_vision_core/website/docs/usage/modes.md  
+> aider_vision_core/website/docs/usage/tips.md  
+> aider_vision_core/website/docs/usage/tutorials.md  
+> aider_vision_core/website/docs/usage/voice.md  
+> aider_vision_core/website/examples/2048-game.md  
+> aider_vision_core/website/examples/README.md  
+> aider_vision_core/website/examples/add-test.md  
+> aider_vision_core/website/examples/asciinema.md  
+> aider_vision_core/website/examples/census.md  
+> aider_vision_core/website/examples/chat-transcript-css.md  
+> aider_vision_core/website/examples/complex-change.md  
+> aider_vision_core/website/examples/css-exercises.md  
+> aider_vision_core/website/examples/hello-world-flask.md  
+> aider_vision_core/website/examples/hello.md  
+> aider_vision_core/website/examples/no-color.md  
+> aider_vision_core/website/examples/pong.md  
+> aider_vision_core/website/examples/semantic-search-replace.md  
+> aider_vision_core/website/examples/update-docs.md  
+> aider_vision_core/website/index.md  
+> aider_vision_core/website/share/index.md  
 > benchmark/Dockerfile  
 > benchmark/README.md  
 > benchmark/__init__.py  
@@ -51024,10 +51024,10 @@ These changes centralize the logic for getting the data file path and creating t
 > - exit code: 1  
 >  
 > aider/analytics.py:12:1: E402 module level import not at top of file  
-> from aider import __version__  
+> from aider_vision_core import __version__  
 > ^  
 > aider/analytics.py:13:1: E402 module level import not at top of file  
-> from aider.dump import dump  # noqa: F401  
+> from aider_vision_core.dump import dump  # noqa: F401  
 > ^  
 >  
 >  
@@ -51038,8 +51038,8 @@ These changes centralize the logic for getting the data file path and creating t
 > 9│  
 > 10│DATA_FILE_NAME = "mixpanel.json"  
 > 11│  
-> 12█from aider import __version__  
-> 13█from aider.dump import dump  # noqa: F401  
+> 12█from aider_vision_core import __version__  
+> 13█from aider_vision_core.dump import dump  # noqa: F401  
 > 14│  
 > 15│  
 > 16│class Analytics:  
@@ -51063,8 +51063,8 @@ from mixpanel import Mixpanel
 
 DATA_FILE_NAME = "mixpanel.json"
 
-from aider import __version__
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import __version__
+from aider_vision_core.dump import dump  # noqa: F401
 =======
 import json
 import platform
@@ -51075,8 +51075,8 @@ from pathlib import Path
 
 from mixpanel import Mixpanel
 
-from aider import __version__
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import __version__
+from aider_vision_core.dump import dump  # noqa: F401
 
 DATA_FILE_NAME = "mixpanel.json"
 >>>>>>> REPLACE
@@ -51390,7 +51390,7 @@ HISTORY.md
 - Ajouté `openai/gpt-4o-2024-08-06`.
 - Contourné un bug de litellm qui supprime les en-têtes d'application OpenRouter lors de l'utilisation de `extra_headers`.
 - Amélioration de l'indication de progression pendant le traitement de la carte du dépôt.
-- Correction des instructions pour la mise à jour du conteneur docker vers la dernière version d'aider.
+- Correction des instructions pour la mise à jour du conteneur docker vers la dernière version d'aider_vision_core.
 - Supprimé la limite obsolète de 16k tokens sur les différences de validation, utiliser les limites par modèle.
 
 ### Aider v0.48.0
@@ -51477,9 +51477,9 @@ HISTORY.md
 
 - La taille d'installation pip par défaut réduite de 3 à 12 fois.
 - Ajouté 3 extras de paquets, qu'aider proposera d'installer au besoin :
-  - `aider-chat[help]`
-  - `aider-chat[browser]`
-  - `aider-chat[playwright]`
+  - `aider-vision-core[help]`
+  - `aider-vision-core[browser]`
+  - `aider-vision-core[playwright]`
 - Amélioration de la regex pour détecter les URL dans les messages de discussion des utilisateurs.
 - Correction de bug dans la logique de globbing lors de l'inclusion de chemins absolus dans `/add`.
 - Sortie simplifiée de `--models`.
@@ -51608,7 +51608,7 @@ HISTORY.md
 - Ajout de `openai/gpt-4o-2024-08-06`.
 - Contournement d'un bogue litellm qui supprime les en-têtes d'application OpenRouter lors de l'utilisation de `extra_headers`.
 - Amélioration de l'indication de progression pendant le traitement de la carte du dépôt.
-- Instructions corrigées pour mettre à jour le conteneur docker à la dernière version d'aider.
+- Instructions corrigées pour mettre à jour le conteneur docker à la dernière version d'aider_vision_core.
 - Suppression de la limite de 16k tokens sur les différences de commit, utilisation des limites par modèle.
 
 ### Aider v0.48.0
@@ -51695,9 +51695,9 @@ HISTORY.md
 
 - Réduction de la taille d'installation pip par défaut de 3 à 12x.
 - Ajout de 3 extras de package, que aider proposera d'installer si nécessaire :
-  - `aider-chat[help]`
-  - `aider-chat[browser]`
-  - `aider-chat[playwright]`
+  - `aider-vision-core[help]`
+  - `aider-vision-core[browser]`
+  - `aider-vision-core[playwright]`
 - Amélioration de l'expression régulière pour détecter les URLs dans les messages de chat utilisateur.
 - Correction de bogue dans la logique de globbing lorsque des chemins absolus sont inclus dans `/add`.
 - Simplification de la sortie de `--models`.
@@ -52058,7 +52058,7 @@ Les messages de commit ne sont plus préfixés avec "aider:". Au lieu de cela, l
 
 ### Aider v0.31.0
 
-- [Aider est maintenant aussi programmation en binôme AI dans votre navigateur !](https://aider.chat/2024/05/02/browser.html) Utilisez l'option `--browser` pour lancer une version expérimentale basée sur le navigateur d'aider.
+- [Aider est maintenant aussi programmation en binôme AI dans votre navigateur !](https://aider.chat/2024/05/02/browser.html) Utilisez l'option `--browser` pour lancer une version expérimentale basée sur le navigateur d'aider_vision_core.
 - Changer de modèles pendant le chat avec `/model <nom>` et rechercher dans la liste des modèles disponibles avec `/models <requête>`.
 
 ### Aider v0.30.1
@@ -52251,7 +52251,7 @@ de GPT-4 Turbo (`gpt-4-1106-preview`).
 - Utilisez Meta-ENTER (Esc+ENTER dans certains environnements) pour saisir des messages de discussion sur plusieurs lignes.
 - Créez un `.gitignore` avec `.aider*` pour empêcher les utilisateurs d'ajouter accidentellement des fichiers aider à git.
 - Vérifier pypi pour les nouvelles versions et notifier l'utilisateur.
-- Mise à jour de la logique d'interruption du clavier pour que 2 ^C en 2 secondes forcent toujours la sortie d'aider.
+- Mise à jour de la logique d'interruption du clavier pour que 2 ^C en 2 secondes forcent toujours la sortie d'aider_vision_core.
 - Fournir à GPT une erreur détaillée s'il fait un mauvais bloc d'édition, lui demander de réessayer.
 - Forcer `--no-pretty` si aider détecte qu'il s'exécute dans un terminal VSCode.
 - [Référencé](https://aider.chat/docs/benchmarks.html) à 64,7% pour gpt-4/diff (sans régression)
@@ -52348,7 +52348,7 @@ de GPT-4 Turbo (`gpt-4-1106-preview`).
 > Did not apply edit to HISTORY.md (--dry-run)  
 > requirements.txt  
 > .gitignore  
-> aider/website/HISTORY.md  
+> aider_vision_core/website/HISTORY.md  
 
 Les messages de commit ne sont plus préfixés avec "aider:". Au lieu de cela, les noms d'auteur et de commettant git ont "(aider)" ajouté.
 
@@ -52419,7 +52419,7 @@ Les messages de commit ne sont plus préfixés avec "aider:". Au lieu de cela, l
 
 ### Aider v0.31.0
 
-- [Aider est maintenant aussi programmation en binôme AI dans votre navigateur !](https://aider.chat/2024/05/02/browser.html) Utilisez l'option `--browser` pour lancer une version expérimentale basée sur navigateur d'aider.
+- [Aider est maintenant aussi programmation en binôme AI dans votre navigateur !](https://aider.chat/2024/05/02/browser.html) Utilisez l'option `--browser` pour lancer une version expérimentale basée sur navigateur d'aider_vision_core.
 - Changer de modèles pendant le chat avec `/model <nom>` et rechercher la liste des modèles disponibles avec `/models <requête>`.
 
 ### Aider v0.30.1
@@ -52712,7 +52712,7 @@ Les messages de commit ne sont plus préfixés avec "aider:". Au lieu de cela, l
 
 ### Aider v0.31.0
 
-- [Aider est maintenant aussi programmation en binôme IA dans votre navigateur !](https://aider.chat/2024/05/02/browser.html) Utilisez l'option `--browser` pour lancer une version expérimentale basée sur le navigateur d'aider.
+- [Aider est maintenant aussi programmation en binôme IA dans votre navigateur !](https://aider.chat/2024/05/02/browser.html) Utilisez l'option `--browser` pour lancer une version expérimentale basée sur le navigateur d'aider_vision_core.
 - Changer de modèles pendant le chat avec `/model <nom>` et rechercher dans la liste des modèles disponibles avec `/models <requête>`.
 
 ### Aider v0.30.1
@@ -52869,7 +52869,7 @@ Les messages de commit ne sont plus préfixés avec "aider:". Au lieu de cela, l
 
 ### Aider v0.31.0
 
-- [Aider est maintenant aussi programmation en binôme AI dans votre navigateur !](https://aider.chat/2024/05/02/browser.html) Utilisez le commutateur `--browser` pour lancer une version expérimentale basée sur le navigateur d'aider.
+- [Aider est maintenant aussi programmation en binôme AI dans votre navigateur !](https://aider.chat/2024/05/02/browser.html) Utilisez le commutateur `--browser` pour lancer une version expérimentale basée sur le navigateur d'aider_vision_core.
 - Changer de modèles pendant le chat avec `/model <nom>` et rechercher la liste des modèles disponibles avec `/models <requête>`.
 
 ### Aider v0.30.1
@@ -52932,7 +52932,7 @@ Les messages de commit ne sont plus préfixés avec "aider:". Au lieu de cela, l
 > Tokens: 20,677 sent, 2,295 received. Cost: $0.0035 request, $0.0035 session.  
 > Did not apply edit to HISTORY.md (--dry-run)  
 > requirements.txt  
-> aider/website/HISTORY.md  
+> aider_vision_core/website/HISTORY.md  
 >  
 >  
 > ^C again to exit  
@@ -52968,8 +52968,8 @@ tests/basic/test_main.py
         fname = "foo.py"
 
         with GitTemporaryDirectory():
-            with patch("aider.coders.Coder.create") as MockCoder:  # noqa: F841
-                with patch("aider.main.InputOutput") as MockSend:
+            with patch("aider_vision_core.coders.Coder.create") as MockCoder:  # noqa: F841
+                with patch("aider_vision_core.main.InputOutput") as MockSend:
 
                     def side_effect(*args, **kwargs):
                         self.assertEqual(kwargs["encoding"], "iso-8859-15")
@@ -52984,8 +52984,8 @@ tests/basic/test_main.py
         fname = "foo.py"
 
         with GitTemporaryDirectory():
-            with patch("aider.coders.Coder.create") as MockCoder:  # noqa: F841
-                with patch("aider.main.InputOutput") as MockSend:
+            with patch("aider_vision_core.coders.Coder.create") as MockCoder:  # noqa: F841
+                with patch("aider_vision_core.main.InputOutput") as MockSend:
 
                     def side_effect(*args, **kwargs):
                         self.assertEqual(kwargs["encoding"], "iso-8859-15")
@@ -52996,7 +52996,7 @@ tests/basic/test_main.py
                     main(["--yes", fname, "--encoding", "iso-8859-15"])
 
     def test_main_exit_calls_version_check(self):
-        with patch("aider.main.check_version") as mock_check_version:
+        with patch("aider_vision_core.main.check_version") as mock_check_version:
             main(["--exit"])
             mock_check_version.assert_called_once()
 
@@ -53020,13 +53020,13 @@ tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
     def test_main_exit_calls_version_check(self):
-        with patch("aider.main.check_version") as mock_check_version:
+        with patch("aider_vision_core.main.check_version") as mock_check_version:
             main(["--exit"])
             mock_check_version.assert_called_once()
 =======
     def test_main_exit_calls_version_check(self):
         with GitTemporaryDirectory():
-            with patch("aider.main.check_version") as mock_check_version:
+            with patch("aider_vision_core.main.check_version") as mock_check_version:
                 main(["--exit"])
                 mock_check_version.assert_called_once()
 >>>>>>> REPLACE
@@ -53039,9 +53039,9 @@ This change wraps the existing test code inside a `GitTemporaryDirectory()` cont
 > Commit 58f06e1 feat: add GitTemporaryDirectory to test_main_exit_calls_version_check  
 > You can use /undo to undo and discard each aider commit.  
 
-#### @patch("aider.main.InputOutput") too  
+#### @patch("aider_vision_core.main.InputOutput") too  
 
-Understood. I'll make sure to follow these rules when proposing changes. Now, let's address the request to add "@patch("aider.main.InputOutput")" to the test. We'll modify the `test_main.py` file to include this patch in the `test_main_exit_calls_version_check` function.
+Understood. I'll make sure to follow these rules when proposing changes. Now, let's address the request to add "@patch("aider_vision_core.main.InputOutput")" to the test. We'll modify the `test_main.py` file to include this patch in the `test_main_exit_calls_version_check` function.
 
 Here's the proposed change:
 
@@ -53050,21 +53050,21 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_main_exit_calls_version_check(self):
         with GitTemporaryDirectory():
-            with patch("aider.main.check_version") as mock_check_version:
+            with patch("aider_vision_core.main.check_version") as mock_check_version:
                 main(["--exit"], input=DummyInput(), output=DummyOutput())
                 mock_check_version.assert_called_once()
 =======
     def test_main_exit_calls_version_check(self):
         with GitTemporaryDirectory():
-            with patch("aider.main.check_version") as mock_check_version, \
-                 patch("aider.main.InputOutput") as mock_input_output:
+            with patch("aider_vision_core.main.check_version") as mock_check_version, \
+                 patch("aider_vision_core.main.InputOutput") as mock_input_output:
                 main(["--exit"], input=DummyInput(), output=DummyOutput())
                 mock_check_version.assert_called_once()
                 mock_input_output.assert_called_once()
 >>>>>>> REPLACE
 ```
 
-This change adds the `@patch("aider.main.InputOutput")` decorator to the test function and includes an assertion to check if `InputOutput` was called. The test now verifies that both `check_version` and `InputOutput` are called when running `main` with the `--exit` argument.
+This change adds the `@patch("aider_vision_core.main.InputOutput")` decorator to the test function and includes an assertion to check if `InputOutput` was called. The test now verifies that both `check_version` and `InputOutput` are called when running `main` with the `--exit` argument.
 
 > Tokens: 11,642 sent, 285 received. Cost: $0.04 request, $0.12 session.  
 > Committing tests/basic/test_main.py before applying edits.  
@@ -53664,7 +53664,7 @@ aider/coders/commit_handler.py
 ```python
 <<<<<<< SEARCH
 =======
-from aider import prompts
+from aider_vision_core import prompts
 
 class CommitHandler:
     def __init__(self, repo, io, gpt_prompts, show_diffs, commands):
@@ -53722,10 +53722,10 @@ Now, let's update `base_coder.py` to use the new CommitHandler class:
 aider/coders/base_coder.py
 ```python
 <<<<<<< SEARCH
-from aider import __version__, models, prompts, urls, utils
+from aider_vision_core import __version__, models, prompts, urls, utils
 =======
-from aider import __version__, models, prompts, urls, utils
-from aider.coders.commit_handler import CommitHandler
+from aider_vision_core import __version__, models, prompts, urls, utils
+from aider_vision_core.coders.commit_handler import CommitHandler
 >>>>>>> REPLACE
 ```
 
@@ -53917,15 +53917,15 @@ These changes create a new `CommitHandler` class in `commit_handler.py` and upda
 > - hook id: flake8  
 > - exit code: 1  
 >  
-> aider/coders/commit_handler.py:1:1: F401 'aider.prompts' imported but unused  
-> from aider import prompts  
+> aider/coders/commit_handler.py:1:1: F401 'aider_vision_core.prompts' imported but unused  
+> from aider_vision_core import prompts  
 > ^  
 >  
 >  
 > ## See relevant line below marked with █.  
 >  
 > aider/coders/commit_handler.py:  
-> 1█from aider import prompts  
+> 1█from aider_vision_core import prompts  
 > 2│  
 > 3│class CommitHandler:  
 > 4│    def __init__(self, repo, io, gpt_prompts, show_diffs, commands):  
@@ -53938,7 +53938,7 @@ To fix the flake8 error, we need to remove the unused import of `prompts`. Here'
 aider/coders/commit_handler.py
 ```python
 <<<<<<< SEARCH
-from aider import prompts
+from aider_vision_core import prompts
 
 class CommitHandler:
 =======
@@ -53955,7 +53955,7 @@ This change removes the unused import, which should resolve the flake8 error.
 >   
 > ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider/coders/commit_handler.py  
 > <<<<<<< SEARCH  
-> from aider import prompts  
+> from aider_vision_core import prompts  
 >   
 > class CommitHandler:  
 > =======  
@@ -53965,7 +53965,7 @@ This change removes the unused import, which should resolve the flake8 error.
 > Did you mean to match some of these actual lines from aider/coders/commit_handler.py?  
 >   
 > ```  
-> from aider import prompts  
+> from aider_vision_core import prompts  
 >   
 >   
 > class CommitHandler:  
@@ -53985,7 +53985,7 @@ I apologize for the confusion. You're right, and I appreciate your correction. L
 aider/coders/commit_handler.py
 ```python
 <<<<<<< SEARCH
-from aider import prompts
+from aider_vision_core import prompts
 
 
 class CommitHandler:
@@ -54220,12 +54220,12 @@ Now, let's update the `base_coder.py` file to use the new `FileManager`:
 aider/coders/base_coder.py
 ```python
 <<<<<<< SEARCH
-from aider import __version__, models, prompts, urls, utils
-from aider.coders.commit_handler import CommitHandler
+from aider_vision_core import __version__, models, prompts, urls, utils
+from aider_vision_core.coders.commit_handler import CommitHandler
 =======
-from aider import __version__, models, prompts, urls, utils
-from aider.coders.commit_handler import CommitHandler
-from aider.coders.file_manager import FileManager
+from aider_vision_core import __version__, models, prompts, urls, utils
+from aider_vision_core.coders.commit_handler import CommitHandler
+from aider_vision_core.coders.file_manager import FileManager
 >>>>>>> REPLACE
 ```
 
@@ -55483,7 +55483,7 @@ HISTORY.md
 - Ajouté `openai/gpt-4o-2024-08-06`.
 - Contourné un bug de litellm qui supprime les en-têtes d'application OpenRouter lors de l'utilisation de `extra_headers`.
 - Amélioration de l'indication de progression pendant le traitement de la carte du dépôt.
-- Correction des instructions pour la mise à jour du conteneur docker vers la dernière version d'aider.
+- Correction des instructions pour la mise à jour du conteneur docker vers la dernière version d'aider_vision_core.
 - Supprimé la limite obsolète de 16k tokens sur les différences de validation, utiliser les limites par modèle.
 
 ### Aider v0.48.0
@@ -55570,9 +55570,9 @@ HISTORY.md
 
 - Taille d'installation pip par défaut réduite de 3 à 12 fois.
 - Ajouté 3 extras de paquets, qu'aider proposera d'installer au besoin :
-  - `aider-chat[help]`
-  - `aider-chat[browser]`
-  - `aider-chat[playwright]`
+  - `aider-vision-core[help]`
+  - `aider-vision-core[browser]`
+  - `aider-vision-core[playwright]`
 - Amélioration de la regex pour détecter les URL dans les messages de discussion des utilisateurs.
 - Correction de bug dans la logique de globbing lors de l'inclusion de chemins absolus dans `/add`.
 - Simplification de la sortie de `--models`.
@@ -55979,7 +55979,7 @@ HISTORY.md
 - Utilisez Meta-ENTER (Esc+ENTER dans certains environnements) pour saisir des messages de discussion sur plusieurs lignes.
 - Créez un `.gitignore` avec `.aider*` pour empêcher les utilisateurs d'ajouter accidentellement des fichiers aider à git.
 - Vérifier pypi pour les nouvelles versions et notifier l'utilisateur.
-- Mise à jour de la logique d'interruption du clavier pour que 2 ^C en 2 secondes forcent toujours la sortie d'aider.
+- Mise à jour de la logique d'interruption du clavier pour que 2 ^C en 2 secondes forcent toujours la sortie d'aider_vision_core.
 - Fournir à GPT une erreur détaillée s'il fait un mauvais bloc d'édition, lui demander de réessayer.
 - Forcer `--no-pretty` si aider détecte qu'il s'exécute dans un terminal VSCode.
 - [Référencé](https://aider.chat/docs/benchmarks.html) à 64,7% pour gpt-4/diff (sans régression)
@@ -56111,7 +56111,7 @@ HISTORY.md
 - Ajouté `openai/gpt-4o-2024-08-06`.
 - Contourné un bug de litellm qui supprime les en-têtes d'application OpenRouter lors de l'utilisation de `extra_headers`.
 - Amélioration de l'indication de progression pendant le traitement de la carte du dépôt.
-- Correction des instructions pour la mise à jour du conteneur docker vers la dernière version d'aider.
+- Correction des instructions pour la mise à jour du conteneur docker vers la dernière version d'aider_vision_core.
 - Supprimé la limite obsolète de 16k tokens sur les différences de validation, utiliser les limites par modèle.
 
 ### Aider v0.48.0
@@ -56198,9 +56198,9 @@ HISTORY.md
 
 - Taille d'installation pip par défaut réduite de 3 à 12 fois.
 - Ajouté 3 extras de paquets, qu'aider proposera d'installer au besoin :
-  - `aider-chat[help]`
-  - `aider-chat[browser]`
-  - `aider-chat[playwright]`
+  - `aider-vision-core[help]`
+  - `aider-vision-core[browser]`
+  - `aider-vision-core[playwright]`
 - Amélioration de la regex pour détecter les URL dans les messages de discussion des utilisateurs.
 - Correction de bug dans la logique de globbing lors de l'inclusion de chemins absolus dans `/add`.
 - Simplification de la sortie de `--models`.
@@ -56604,7 +56604,7 @@ HISTORY.md
 - Utilisez Meta-ENTER (Esc+ENTER dans certains environnements) pour saisir des messages de discussion sur plusieurs lignes.
 - Créez un `.gitignore` avec `.aider*` pour empêcher les utilisateurs d'ajouter accidentellement des fichiers aider à git.
 - Vérifier pypi pour les nouvelles versions et notifier l'utilisateur.
-- Mise à jour de la logique d'interruption du clavier pour que 2 ^C en 2 secondes forcent toujours la sortie d'aider.
+- Mise à jour de la logique d'interruption du clavier pour que 2 ^C en 2 secondes forcent toujours la sortie d'aider_vision_core.
 - Fournir à GPT une erreur détaillée s'il fait un mauvais bloc d'édition, lui demander de réessayer.
 - Forcer `--no-pretty` si aider détecte qu'il s'exécute dans un terminal VSCode.
 - [Référencé](https://aider.chat/docs/benchmarks.html) à 64,7% pour gpt-4/diff (sans régression)
@@ -56698,7 +56698,7 @@ HISTORY.md
 > Tokens: 15,229 sent, 3,422 received. Cost: $0.0081 request, $0.02 session.  
 > Did not apply edit to HISTORY.md (--dry-run)  
 > requirements.txt  
-> aider/website/HISTORY.md  
+> aider_vision_core/website/HISTORY.md  
 > .gitignore  
 > Add these files to the chat? n  
 
@@ -57207,7 +57207,7 @@ HISTORY.md
 - Ajouté `openai/gpt-4o-2024-08-06`.
 - Contourné un bug de litellm qui supprime les en-têtes d'application OpenRouter lors de l'utilisation de `extra_headers`.
 - Amélioration de l'indication de progression pendant le traitement de la carte du dépôt.
-- Correction des instructions pour la mise à jour du conteneur docker vers la dernière version d'aider.
+- Correction des instructions pour la mise à jour du conteneur docker vers la dernière version d'aider_vision_core.
 - Supprimé la limite obsolète de 16k tokens sur les différences de validation, utiliser les limites par modèle.
 
 ### Aider v0.48.0
@@ -57410,7 +57410,7 @@ HISTORY.md
 - Ajouté `openai/gpt-4o-2024-08-06`.
 - Contourné un bug de litellm qui supprime les en-têtes d'application OpenRouter lors de l'utilisation de `extra_headers`.
 - Amélioration de l'indication de progression pendant le traitement de la carte du dépôt.
-- Correction des instructions pour la mise à jour du conteneur docker vers la dernière version d'aider.
+- Correction des instructions pour la mise à jour du conteneur docker vers la dernière version d'aider_vision_core.
 - Supprimé la limite obsolète de 16k tokens sur les différences de validation, utiliser les limites par modèle.
 
 ### Aider v0.48.0
@@ -57497,9 +57497,9 @@ HISTORY.md
 
 - Taille d'installation pip par défaut réduite de 3 à 12 fois.
 - Ajouté 3 extras de paquets, qu'aider proposera d'installer au besoin :
-  - `aider-chat[help]`
-  - `aider-chat[browser]`
-  - `aider-chat[playwright]`
+  - `aider-vision-core[help]`
+  - `aider-vision-core[browser]`
+  - `aider-vision-core[playwright]`
 - Amélioration de la regex pour détecter les URL dans les messages de discussion des utilisateurs.
 - Correction de bug dans la logique de globbing lors de l'inclusion de chemins absolus dans `/add`.
 - Simplification de la sortie de `--models`.
@@ -57796,7 +57796,7 @@ HISTORY.md
 
 # aider chat started at 2024-08-13 06:31:30
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider --no-git ./aider/website/docs/more/analytics.md  
+> /Users/gauthier/Projects/aider/.venv/bin/aider --no-git ./aider_vision_core/website/docs/more/analytics.md  
 > Aider v0.49.2-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: none  
@@ -57995,7 +57995,7 @@ These changes provide more detailed information about privacy law compliance, wh
 - Utilisez Meta-ENTER (Esc+ENTER dans certains environnements) pour saisir des messages de discussion sur plusieurs lignes.
 - Créez un `.gitignore` avec `.aider*` pour empêcher les utilisateurs d'ajouter accidentellement des fichiers aider à git.
 - Vérifier pypi pour les nouvelles versions et notifier l'utilisateur.
-- Mise à jour de la logique d'interruption du clavier pour que 2 ^C en 2 secondes forcent toujours la sortie d'aider.
+- Mise à jour de la logique d'interruption du clavier pour que 2 ^C en 2 secondes forcent toujours la sortie d'aider_vision_core.
 - Fournir à GPT une erreur détaillée s'il fait un mauvais bloc d'édition, lui demander de réessayer.
 - Forcer `--no-pretty` si aider détecte qu'il s'exécute dans un terminal VSCode.
 - [Référencé](https://aider.chat/docs/benchmarks.html) à 64,7% pour gpt-4/diff (sans régression)
@@ -58089,7 +58089,7 @@ These changes provide more detailed information about privacy law compliance, wh
 > Tokens: 15,229 sent, 3,413 received. Cost: $0.02 message, $0.02 session.  
 > Did not apply edit to HISTORY.md (--dry-run)  
 > .gitignore  
-> aider/website/HISTORY.md  
+> aider_vision_core/website/HISTORY.md  
 > requirements.txt  
 
 # aider chat started at 2024-08-13 06:41:05
@@ -58344,7 +58344,7 @@ HISTORY.md
 - Ajouté `openai/gpt-4o-2024-08-06`.
 - Contourné un bug de litellm qui supprime les en-têtes d'application OpenRouter lors de l'utilisation de `extra_headers`.
 - Amélioration de l'indication de progression pendant le traitement de la carte du dépôt.
-- Correction des instructions pour la mise à jour du conteneur docker vers la dernière version d'aider.
+- Correction des instructions pour la mise à jour du conteneur docker vers la dernière version d'aider_vision_core.
 - Supprimé la limite obsolète de 16k jetons sur les différences de validation, utiliser les limites par modèle.
 
 ### Aider v0.48.0
@@ -58431,9 +58431,9 @@ HISTORY.md
 
 - Taille d'installation pip par défaut réduite de 3 à 12 fois.
 - Ajouté 3 extras de paquets, qu'aider proposera d'installer au besoin :
-  - `aider-chat[help]`
-  - `aider-chat[browser]`
-  - `aider-chat[playwright]`
+  - `aider-vision-core[help]`
+  - `aider-vision-core[browser]`
+  - `aider-vision-core[playwright]`
 - Amélioration de la regex pour détecter les URL dans les messages de discussion des utilisateurs.
 - Correction de bug dans la logique de globbing lors de l'inclusion de chemins absolus dans `/add`.
 - Simplification de la sortie de `--models`.
@@ -58837,7 +58837,7 @@ Beaucoup moins d'erreurs d'édition de GPT-4 Turbo (`gpt-4-1106-preview`).
 - Utilisez Meta-ENTER (Esc+ENTER dans certains environnements) pour saisir des messages de discussion sur plusieurs lignes.
 - Créer un `.gitignore` avec `.aider*` pour empêcher les utilisateurs d'ajouter accidentellement des fichiers aider à git.
 - Vérifier pypi pour les nouvelles versions et notifier l'utilisateur.
-- Mise à jour de la logique d'interruption du clavier pour que 2 ^C en 2 secondes forcent toujours la sortie d'aider.
+- Mise à jour de la logique d'interruption du clavier pour que 2 ^C en 2 secondes forcent toujours la sortie d'aider_vision_core.
 - Fournir à GPT une erreur détaillée s'il fait un mauvais bloc d'édition, lui demander de réessayer.
 - Forcer `--no-pretty` si aider détecte qu'il s'exécute dans un terminal VSCode.
 - [Référencé](https://aider.chat/docs/benchmarks.html) à 64,7% pour gpt-4/diff (sans régression)
@@ -58932,7 +58932,7 @@ Beaucoup moins d'erreurs d'édition de GPT-4 Turbo (`gpt-4-1106-preview`).
 > Did not apply edit to HISTORY.md (--dry-run)  
 > requirements.txt  
 > .gitignore  
-> aider/website/HISTORY.md  
+> aider_vision_core/website/HISTORY.md  
 >  
 >  
 > ^C again to exit  
@@ -59122,7 +59122,7 @@ This *SEARCH/REPLACE block* correctly follows the format you specified. It will 
 
 > You need to install the aider browser feature:  
 >  
-> /Users/gauthier/Projects/aider/.venv/bin/python3.12 -m pip install aider-chat[browser]  
+> /Users/gauthier/Projects/aider/.venv/bin/python3.12 -m pip install aider-vision-core[browser]  
 > Run pip install? y  
 
 # aider chat started at 2024-08-13 07:18:37
@@ -59768,7 +59768,7 @@ import git
 from rich.console import Console, Text
 from rich.markdown import Markdown
 
-from aider import __version__, models, prompts, urls, utils
+from aider_vision_core import __version__, models, prompts, urls, utils
 =======
 import hashlib
 import json
@@ -59791,8 +59791,8 @@ import git
 from rich.console import Console, Text
 from rich.markdown import Markdown
 
-from aider import __version__, models, prompts, urls, utils
-from aider.analytics import Analytics
+from aider_vision_core import __version__, models, prompts, urls, utils
+from aider_vision_core.analytics import Analytics
 >>>>>>> REPLACE
 ```
 
@@ -59995,7 +59995,7 @@ Hello! How can I assist you today? If you have any requests or need help with co
 > Repo-map: using 1024 tokens  
 > Added aider/args.py to the chat.  
 > Added aider/main.py to the chat.  
-> Added aider/website/docs/more/analytics.md to the chat.  
+> Added aider_vision_core/website/docs/more/analytics.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 > Note: in-chat filenames are always relative to the git working dir, not the current working dir.  
 > Cur working dir: /Users/gauthier/Projects/aider/aider  
@@ -60039,7 +60039,7 @@ aider/main.py
 >>>>>>> REPLACE
 </source>
 
-aider/website/docs/more/analytics.md
+aider_vision_core/website/docs/more/analytics.md
 <source>
 <<<<<<< SEARCH
 aider --analytics-disable
@@ -60053,7 +60053,7 @@ These changes will replace `--analytics-disable` with `--disable-analytics` in t
 > Tokens: 12,148 sent, 269 received. Cost: $0.04 message, $0.04 session.  
 > Applied edit to aider/args.py  
 > Applied edit to aider/main.py  
-> Applied edit to aider/website/docs/more/analytics.md  
+> Applied edit to aider_vision_core/website/docs/more/analytics.md  
 > Commit 6567add feat: change --analytics-disable to --disable-analytics  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -60158,9 +60158,9 @@ from typing import Optional
 import yaml
 from PIL import Image
 
-from aider import urls
-from aider.dump import dump  # noqa: F401
-from aider.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
+from aider_vision_core import urls
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
 =======
 import difflib
 import importlib
@@ -60176,9 +60176,9 @@ from typing import Optional
 import yaml
 from PIL import Image
 
-from aider import urls
-from aider.dump import dump  # noqa: F401
-from aider.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
+from aider_vision_core import urls
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
 >>>>>>> REPLACE
 ```
 
@@ -60368,15 +60368,15 @@ pyproject.toml
 ```toml
 <<<<<<< SEARCH
 [project]
-name = "aider-chat"
+name = "aider-vision-core"
 =======
 # [[[cog
-# from aider.help_pats import exclude_website_pats
+# from aider_vision_core.help_pats import exclude_website_pats
 # ]]]
 # [[[end]]]
 
 [project]
-name = "aider-chat"
+name = "aider-vision-core"
 >>>>>>> REPLACE
 ```
 
@@ -60386,7 +60386,7 @@ pyproject.toml
 ```toml
 <<<<<<< SEARCH
 [tool.setuptools.exclude-package-data]
-"aider.website" = [
+"aider_vision_core.website" = [
     "examples/**",
     "_posts/**",
     "HISTORY.md",
@@ -60398,7 +60398,7 @@ pyproject.toml
 ]
 =======
 [tool.setuptools.exclude-package-data]
-"aider.website" = [
+"aider_vision_core.website" = [
 # [[[cog
 # print("\n".join(f'    "{pat}",' for pat in exclude_website_pats))
 # ]]]
@@ -61505,8 +61505,8 @@ from pathlib import Path
 from mixpanel import Mixpanel
 from posthog import Posthog
 
-from aider import __version__
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import __version__
+from aider_vision_core.dump import dump  # noqa: F401
 
 mixpanel_project_token = "6da9a43058a5d1b9f3353153921fb04d"
 posthog_project_api_key = 'phc_99T7muzafUMMZX15H8XePbMSreEUzahHbtWjy3l5Qbv'
@@ -61615,8 +61615,8 @@ from pathlib import Path
 
 from mixpanel import Mixpanel
 
-from aider import __version__
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import __version__
+from aider_vision_core.dump import dump  # noqa: F401
 
 project_token = "6da9a43058a5d1b9f3353153921fb04d"
 
@@ -61651,8 +61651,8 @@ from pathlib import Path
 from mixpanel import Mixpanel
 from posthog import Posthog
 
-from aider import __version__
-from aider.dump import dump  # noqa: F401
+from aider_vision_core import __version__
+from aider_vision_core.dump import dump  # noqa: F401
 
 mixpanel_project_token = "6da9a43058a5d1b9f3353153921fb04d"
 posthog_project_api_key = 'phc_99T7muzafUMMZX15H8XePbMSreEUzahHbtWjy3l5Qbv'
@@ -61857,12 +61857,12 @@ It seems like you might have accidentally sent a system message. If you have any
 
 # aider chat started at 2024-08-13 13:41:47
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_includes/blame.md  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_includes/blame.md  
 > Aider v0.50.1-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 303 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_includes/blame.md to the chat.  
+> Added aider_vision_core/website/_includes/blame.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 >  
 >  
@@ -61895,7 +61895,7 @@ It seems like you might have accidentally sent a system message. If you have any
 
 Certainly! I'll modify the script to create a bar graph with the percentage of code on the y-axis. Here's the updated code:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```html
 <<<<<<< SEARCH
 <canvas id="blameChart" width="800" height="450" style="margin-top: 20px"></canvas>
@@ -62083,7 +62083,7 @@ This change transforms the chart from a bubble chart to a bar chart. Here's a su
 This bar graph will clearly show the percentage of code contributed by Aider for each release, making it easier to see the trend over time.
 
 > Tokens: 11,336 sent, 1,389 received. Cost: $0.05 message, $0.05 session.  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 6a478b4 feat: Create bar graph with percentage of code on y-axis  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -62091,7 +62091,7 @@ This bar graph will clearly show the percentage of code contributed by Aider for
 
 I apologize for the confusion. It seems there was an error in the JavaScript code. Let's fix that by properly handling the lines data. Here's the corrected version:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```html
 <<<<<<< SEARCH
                     callbacks: {
@@ -62119,7 +62119,7 @@ aider/website/_includes/blame.md
 This change wraps the `site.data.blame | map: "aider_total" | join: ","` in square brackets to create a JavaScript array. This should resolve the SyntaxError you encountered.
 
 > Tokens: 12,616 sent, 253 received. Cost: $0.04 message, $0.10 session.  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 15443ec fix: Resolve SyntaxError in blame.md  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -62137,7 +62137,7 @@ This change wraps the `site.data.blame | map: "aider_total" | join: ","` in squa
 
 Certainly! I'll modify the script to create a bar graph with the percentage of code on the y-axis. Here's the updated code:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```html
 <<<<<<< SEARCH
 <canvas id="blameChart" width="800" height="450" style="margin-top: 20px"></canvas>
@@ -62319,7 +62319,7 @@ This change does the following:
 These changes should create a bar graph with the percentage of code on the y-axis as requested.
 
 > Tokens: 11,645 sent, 1,312 received. Cost: $0.05 message, $0.15 session.  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 504cc96 feat: Switch to a bar graph with the % code on the y-axis  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -62332,7 +62332,7 @@ These changes should create a bar graph with the percentage of code on the y-axi
 
 Certainly! I'll modify the script to make the x-axis show the version number instead of the release date. Here's the updated code:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```html
 <<<<<<< SEARCH
     var blameData = {
@@ -62423,7 +62423,7 @@ This change does the following:
 These changes will create a bar graph with the version numbers on the x-axis and the percentage of code contribution on the y-axis.
 
 > Tokens: 13,013 sent, 718 received. Cost: $0.05 message, $0.20 session.  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit a7b108a feat: Change x-axis to show version number  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -62431,7 +62431,7 @@ These changes will create a bar graph with the version numbers on the x-axis and
 
 Certainly! To label every version on the x-axis, we need to modify the x-axis configuration in the Chart.js options. Here's the change:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```html
 <<<<<<< SEARCH
                 x: {
@@ -62473,7 +62473,7 @@ However, please note that if there are many versions, this might cause the label
 Let me know if you want to implement any of these alternatives or if you're happy with this change.
 
 > Tokens: 14,507 sent, 296 received. Cost: $0.05 message, $0.25 session.  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 7c80da7 feat: Add autoSkip: false to x-axis ticks configuration  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -62488,7 +62488,7 @@ Let me know if you want to implement any of these alternatives or if you're happ
 
 I understand the issue. The problem is that we're not correctly accessing the data in the tooltip callback. Let's fix this by updating the tooltip callback function. Here's the change:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```html
 <<<<<<< SEARCH
                 tooltip: {
@@ -62521,7 +62521,7 @@ This change does the following:
 This should fix the "undefined" issues in the tooltip.
 
 > Tokens: 13,424 sent, 260 received. Cost: $0.04 message, $0.29 session.  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit eec9514 fix: Update tooltip callback to correctly access data  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -62534,7 +62534,7 @@ This should fix the "undefined" issues in the tooltip.
 
 I apologize for the oversight. Let's fix the tooltip issue by updating the callback function. Here's the corrected *SEARCH/REPLACE* block:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```html
 <<<<<<< SEARCH
             plugins: {
@@ -62571,7 +62571,7 @@ This change does the following:
 This should fix the "undefined" issues in the tooltip and display the correct information.
 
 > Tokens: 13,811 sent, 283 received. Cost: $0.05 message, $0.34 session.  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 52b4acb fix: Update tooltip callback function to display correct information  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -62611,7 +62611,7 @@ Would you like me to update the file with this correction?
 
 Certainly! I'll update the file with the corrected tooltip callback function using the *SEARCH/REPLACE block* format. Here's the change:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```javascript
 <<<<<<< SEARCH
                 tooltip: {
@@ -62638,7 +62638,7 @@ aider/website/_includes/blame.md
 This change should fix the issue with the tooltips and display the correct information.
 
 > Tokens: 11,379 sent, 180 received. Cost: $0.04 message, $0.41 session.  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit b38b92d fix: Update tooltip callback to display correct data  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -62702,7 +62702,7 @@ This should correctly display the integer line count from your data. Would you l
 
 Certainly! I'll update the file with the corrected tooltip callback using the *SEARCH/REPLACE block* format. Here's the change:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```javascript
 <<<<<<< SEARCH
                 tooltip: {
@@ -62732,18 +62732,18 @@ aider/website/_includes/blame.md
 This change correctly accesses the `lines` property from `context.raw.lines`, which should now properly display the integer line count from your data.
 
 > Tokens: 12,103 sent, 217 received. Cost: $0.04 message, $0.52 session.  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 9b0986f fix: Correct tooltip callback to properly display integer line count  
 > You can use /undo to undo and discard each aider commit.  
 
-#### /add aider/website/_data/blame.yml  
-> Added /Users/gauthier/Projects/aider/aider/website/_data/blame.yml to the chat  
+#### /add aider_vision_core/website/_data/blame.yml  
+> Added /Users/gauthier/Projects/aider/aider_vision_core/website/_data/blame.yml to the chat  
 
 #### it still shows 0 lines for all tooltips  
 
 I apologize for the confusion. Let's fix the tooltip to display the correct number of lines. We need to modify the tooltip callback function to access the correct data. Here's the corrected version:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```javascript
 <<<<<<< SEARCH
                 tooltip: {
@@ -62774,9 +62774,9 @@ aider/website/_includes/blame.md
 This change accesses the `aider_total` property from the `blameData` object, which should contain the correct number of lines for each data point. The `context.dataIndex` is used to get the correct data point from the dataset.
 
 > Tokens: 31,588 sent, 270 received. Cost: $0.10 message, $0.61 session.  
-> Committing aider/website/_includes/blame.md before applying edits.  
+> Committing aider_vision_core/website/_includes/blame.md before applying edits.  
 > Commit cc79294 fix: Update blame.md to use aider_total instead of lines  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 5a32c83 fix: Update tooltip to display correct number of lines  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -62795,7 +62795,7 @@ I apologize for the confusion. You're right, the
 
 I understand the issue. The problem is that the tooltip is not accessing the correct data for the number of lines. Let's fix this by modifying the tooltip callback in the chart configuration. Here's the change:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```javascript
 <<<<<<< SEARCH
                         label: function(context) {
@@ -62819,7 +62819,7 @@ aider/website/_includes/blame.md
 This change replaces the incorrect data access with the correct one, using Liquid templating to insert the actual `aider_total` value for each data point directly from the `site.data.blame` array.
 
 > Tokens: 30,460 sent, 257 received. Cost: $0.10 message, $0.81 session.  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 7a68f8e fix: Update tooltip to display correct number of lines  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -62845,7 +62845,7 @@ This change replaces the incorrect data access with the correct one, using Liqui
 
 The issue with the tooltips showing 0 lines is due to an error in the JavaScript code. The `aider_total` variable is not defined in the current scope. To fix this, we need to access the `aider_total` value from the data for each specific data point. Let's modify the tooltip callback to correctly display the number of lines.
 
-Here's the corrected version of the tooltip callback in the `aider/website/_includes/blame.md` file:
+Here's the corrected version of the tooltip callback in the `aider_vision_core/website/_includes/blame.md` file:
 
 ```javascript
 tooltip: {
@@ -62871,9 +62871,9 @@ With this modification, the tooltips should now correctly show the number of lin
 
 #### do that  
 
-Certainly! I'll make the change to fix the tooltip issue in the `aider/website/_includes/blame.md` file. Here's the *SEARCH/REPLACE block* to implement this fix:
+Certainly! I'll make the change to fix the tooltip issue in the `aider_vision_core/website/_includes/blame.md` file. Here's the *SEARCH/REPLACE block* to implement this fix:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```javascript
 <<<<<<< SEARCH
                 tooltip: {
@@ -62904,9 +62904,9 @@ aider/website/_includes/blame.md
 This change will correctly display the number of lines contributed by Aider for each release in the tooltip.
 
 > Tokens: 22,657 sent, 246 received. Cost: $0.07 message, $0.97 session.  
-> Committing aider/website/_includes/blame.md before applying edits.  
+> Committing aider_vision_core/website/_includes/blame.md before applying edits.  
 > Commit c3d4031 fix: Update blame.md to use aider_total variable correctly  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 78be14a fix: Correctly display the number of lines in tooltips  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -62925,7 +62925,7 @@ This change will correctly display the number of lines contributed by Aider for 
 
 Certainly! I'll modify the JavaScript code to use the `aider_total` value for the number of lines instead of the percentage. Here's the updated *SEARCH/REPLACE block*:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```javascript
 <<<<<<< SEARCH
             data: [{% for row in site.data.blame %}{{ row.aider_percentage }},{% endfor %}],
@@ -62934,7 +62934,7 @@ aider/website/_includes/blame.md
 >>>>>>> REPLACE
 ```
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```javascript
 <<<<<<< SEARCH
                             var value = context.parsed.y || 0;
@@ -62947,7 +62947,7 @@ aider/website/_includes/blame.md
 >>>>>>> REPLACE
 ```
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```javascript
 <<<<<<< SEARCH
                     text: 'Aider\'s Contribution to Each Release',
@@ -62956,7 +62956,7 @@ aider/website/_includes/blame.md
 >>>>>>> REPLACE
 ```
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```javascript
 <<<<<<< SEARCH
                         text: 'Aider Contribution (% of code)'
@@ -62965,7 +62965,7 @@ aider/website/_includes/blame.md
 >>>>>>> REPLACE
 ```
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```javascript
 <<<<<<< SEARCH
                                 text: 'Y-axis is percent of code, bubble size is lines of code',
@@ -62977,7 +62977,7 @@ aider/website/_includes/blame.md
 These changes will update the chart to display the number of lines contributed by Aider for each release, while still showing the percentage in the tooltip. The y-axis label and chart title have been updated accordingly.
 
 > Tokens: 30,456 sent, 410 received. Cost: $0.10 message, $1.07 session.  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 604bcdd feat: Update chart to display Aider's contribution in lines of code  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -62992,7 +62992,7 @@ These changes will update the chart to display the number of lines contributed b
 
 You're right, I apologize for the oversight. Let's correct that to use the `aider_total` value for the number of lines in the tooltip. Here's the corrected *SEARCH/REPLACE block*:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```python
 <<<<<<< SEARCH
                         label: function(context) {
@@ -63014,7 +63014,7 @@ aider/website/_includes/blame.md
 This change will use the `aider_total` value from the dataset for each data point, which represents the actual number of lines contributed by Aider for that release.
 
 > Tokens: 30,463 sent, 226 received. Cost: $0.09 message, $1.16 session.  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit c05a40d fix: Use aider_total value for number of lines in tooltip  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -63022,7 +63022,7 @@ This change will use the `aider_total` value from the dataset for each data poin
 
 I understand the error you're encountering. It seems the issue is with the use of the logical OR operator (`||`) in JavaScript. Let's modify the code to use a more compatible approach. Here's the corrected *SEARCH/REPLACE block*:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```python
 <<<<<<< SEARCH
                         label: function(context) {
@@ -63045,7 +63045,7 @@ aider/website/_includes/blame.md
 This change replaces the use of the `||` operator with a ternary operator, which should be more widely supported. It first assigns the value from `site.data.blame[context.dataIndex].aider_total` to the `lines` variable, and then checks if it's truthy. If it is, it keeps that value; if not, it assigns 0.
 
 > Tokens: 30,754 sent, 294 received. Cost: $0.10 message, $1.26 session.  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 5b6a052 fix: Replace use of logical OR operator with ternary operator  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -63065,7 +63065,7 @@ This change replaces the use of the `||` operator with a ternary operator, which
 
 Certainly! I'll modify the JavaScript code to include the `aider_total` in the tooltip. Here's the change:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```javascript
 <<<<<<< SEARCH
         datasets: [{
@@ -63088,7 +63088,7 @@ aider/website/_includes/blame.md
 
 Now, let's update the tooltip callback to use this new data structure:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```javascript
 <<<<<<< SEARCH
                         label: function(context) {
@@ -63111,9 +63111,9 @@ aider/website/_includes/blame.md
 These changes will now correctly display the number of lines contributed by Aider in the tooltip, along with the percentage.
 
 > Tokens: 30,459 sent, 420 received. Cost: $0.10 message, $1.35 session.  
-> Committing aider/website/_includes/blame.md before applying edits.  
+> Committing aider_vision_core/website/_includes/blame.md before applying edits.  
 > Commit 34fbf52 fix: Add console.log statement to debug tooltip label  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 99d7c79 feat: Add aider_total to tooltip  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -63126,7 +63126,7 @@ These changes will now correctly display the number of lines contributed by Aide
 
 Certainly! I'll add another bar chart to plot the `aider_total` number of lines by release. Here's the modified code:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```html
 <<<<<<< SEARCH
 <canvas id="blameChart" width="800" height="450" style="margin-top: 20px"></canvas>
@@ -63380,9 +63380,9 @@ This modification adds a second canvas for the new chart and creates two separat
 The new chart uses the `aider_total` data and has a similar structure to the original chart, but with different colors and labels to distinguish it. Both charts are now created within the same script, sharing the labels (versions) but using different datasets.
 
 > Tokens: 22,434 sent, 1,788 received. Cost: $0.09 message, $1.45 session.  
-> Committing aider/website/_includes/blame.md before applying edits.  
+> Committing aider_vision_core/website/_includes/blame.md before applying edits.  
 > Commit 4473940 fix: Update blame.md to improve tooltip and label text  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 4ea4fb4 feat: Add a new bar chart to plot the aider_total number of lines by release  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -63390,7 +63390,7 @@ The new chart uses the `aider_total` data and has a similar structure to the ori
 
 Certainly! I'll modify the JavaScript code to hide the legends for both charts. Here's the change:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```javascript
 <<<<<<< SEARCH
         options: {
@@ -63446,7 +63446,7 @@ aider/website/_includes/blame.md
 
 And for the second chart:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```javascript
 <<<<<<< SEARCH
         options: {
@@ -63503,9 +63503,9 @@ aider/website/_includes/blame.md
 These changes add a `legend` property to the `plugins` object in the options for both charts, setting `display` to `false`. This will hide the legends for both charts.
 
 > Tokens: 30,970 sent, 515 received. Cost: $0.10 message, $1.55 session.  
-> Committing aider/website/_includes/blame.md before applying edits.  
+> Committing aider_vision_core/website/_includes/blame.md before applying edits.  
 > Commit 38700b6 fix: Update chart labels and titles for better clarity  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 8c44584 feat: Hide legends for both charts  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -63513,7 +63513,7 @@ These changes add a `legend` property to the `plugins` object in the options for
 
 Certainly! I'll modify the height of both charts to be 20% less tall. Here's the change:
 
-aider/website/_includes/blame.md
+aider_vision_core/website/_includes/blame.md
 ```html
 <<<<<<< SEARCH
 <canvas id="blameChart" width="800" height="450" style="margin-top: 20px"></canvas>
@@ -63527,7 +63527,7 @@ aider/website/_includes/blame.md
 This change reduces the height of both canvas elements from 450 pixels to 360 pixels, which is a 20% reduction. The width remains the same at 800 pixels.
 
 > Tokens: 31,557 sent, 187 received. Cost: $0.10 message, $1.65 session.  
-> Applied edit to aider/website/_includes/blame.md  
+> Applied edit to aider_vision_core/website/_includes/blame.md  
 > Commit 4f54ed5 feat: Reduce chart height by 20%  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -66581,13 +66581,13 @@ def test_main_with_git_config_yml(self):
     make_repo()
 
     Path(".aider.conf.yml").write_text("auto-commits: false\n")
-    with patch("aider.coders.Coder.create") as MockCoder:
+    with patch("aider_vision_core.coders.Coder.create") as MockCoder:
         main(["--yes"], input=DummyInput(), output=DummyOutput())
         _, kwargs = MockCoder.call_args
         assert kwargs["auto_commits"] is False
 
     Path(".aider.conf.yml").write_text("auto-commits: true\n")
-    with patch("aider.coders.Coder.create") as MockCoder:
+    with patch("aider_vision_core.coders.Coder.create") as MockCoder:
         main([], input=DummyInput(), output=DummyOutput())
         _, kwargs = MockCoder.call_args
         assert kwargs["auto_commits"] is True
@@ -66663,7 +66663,7 @@ This test checks the loading and overriding of environment variables from differ
 ```python
 def test_env_file_flag_sets_automatic_variable(self):
     env_file_path = self.create_env_file(".env.test", "AIDER_DARK_MODE=True")
-    with patch("aider.coders.Coder.create") as MockCoder:
+    with patch("aider_vision_core.coders.Coder.create") as MockCoder:
         main(
             ["--env-file", str(env_file_path), "--no-git"],
             input=DummyInput(),
@@ -66675,7 +66675,7 @@ def test_env_file_flag_sets_automatic_variable(self):
 
 def test_default_env_file_sets_automatic_variable(self):
     self.create_env_file(".env", "AIDER_DARK_MODE=True")
-    with patch("aider.coders.Coder.create") as MockCoder:
+    with patch("aider_vision_core.coders.Coder.create") as MockCoder:
         main(["--no-git"], input=DummyInput(), output=DummyOutput())
         MockCoder.assert_called_once()
         _, kwargs = MockCoder.call_args
@@ -66700,8 +66700,8 @@ Adding tests for these scenarios would provide more comprehensive coverage of th
 >  
 > ^C again to exit  
 
-#### /add aider/website/docs/config/aider_conf.md  
-> Added /Users/gauthier/Projects/aider/aider/website/docs/config/aider_conf.md to the chat  
+#### /add aider_vision_core/website/docs/config/aider_conf.md  
+> Added /Users/gauthier/Projects/aider/aider_vision_core/website/docs/config/aider_conf.md to the chat  
 
 #### make a test like test_env_file_override, but which checks that the yml config files are loaded per the docs  
 
@@ -66768,7 +66768,7 @@ tests/basic/test_main.py
             named_config.write_text("model: gpt-4-1106-preview\nmap-tokens: 8192\n")
             
             with patch("pathlib.Path.home", return_value=fake_home), \
-                 patch("aider.coders.Coder.create") as MockCoder:
+                 patch("aider_vision_core.coders.Coder.create") as MockCoder:
                 
                 # Test loading from current working directory
                 main(["--yes", "--exit"], input=DummyInput(), output=DummyOutput())
@@ -66878,7 +66878,7 @@ self = <test_main.TestMain testMethod=test_yaml_config_file_loading>
     
             with (
                 patch("pathlib.Path.home", return_value=fake_home),
-                patch("aider.coders.Coder.create") as MockCoder,
+                patch("aider_vision_core.coders.Coder.create") as MockCoder,
             ):
                 # Test loading from current working directory
                 main(["--yes", "--exit"], input=DummyInput(), output=DummyOutput())
@@ -66938,7 +66938,7 @@ FAILED tests/basic/test_main.py::TestMain::test_yaml_config_file_loading - Ke...
 >  
 > with (  
 > patch("pathlib.Path.home", return_value=fake_home),  
-> patch("aider.coders.Coder.create") as MockCoder,  
+> patch("aider_vision_core.coders.Coder.create") as MockCoder,  
 > ):  
 > # Test loading from current working directory  
 > main(["--yes", "--exit"], input=DummyInput(), output=DummyOutput())  
@@ -67031,7 +67031,7 @@ self = <test_main.TestMain testMethod=test_yaml_config_file_loading>
     
             with (
                 patch("pathlib.Path.home", return_value=fake_home),
-                patch("aider.coders.Coder.create") as MockCoder,
+                patch("aider_vision_core.coders.Coder.create") as MockCoder,
             ):
                 # Test loading from current working directory
                 main(["--yes", "--exit"], input=DummyInput(), output=DummyOutput())
@@ -67070,7 +67070,7 @@ import git
 from dotenv import load_dotenv
 from prompt_toolkit.enums import EditingMode
 
-from aider import __version__, models, utils
+from aider_vision_core import __version__, models, utils
 =======
 import configparser
 import os
@@ -67084,7 +67084,7 @@ import yaml
 from dotenv import load_dotenv
 from prompt_toolkit.enums import EditingMode
 
-from aider import __version__, models, utils
+from aider_vision_core import __version__, models, utils
 >>>>>>> REPLACE
 </source>
 
@@ -67168,7 +67168,7 @@ self = <test_main.TestMain testMethod=test_yaml_config_file_loading>
     
             with (
                 patch("pathlib.Path.home", return_value=fake_home),
-                patch("aider.coders.Coder.create") as MockCoder,
+                patch("aider_vision_core.coders.Coder.create") as MockCoder,
             ):
                 # Test loading from current working directory
                 main(["--yes", "--exit"], input=DummyInput(), output=DummyOutput())
@@ -67230,7 +67230,7 @@ FAILED tests/basic/test_main.py::TestMain::test_yaml_config_file_loading - As...
 >  
 > with (  
 > patch("pathlib.Path.home", return_value=fake_home),  
-> patch("aider.coders.Coder.create") as MockCoder,  
+> patch("aider_vision_core.coders.Coder.create") as MockCoder,  
 > ):  
 > # Test loading from current working directory  
 > main(["--yes", "--exit"], input=DummyInput(), output=DummyOutput())  
@@ -67315,8 +67315,8 @@ These changes should fix the test by correctly accessing the model name from the
 > Commit 95535b9 fix: Update test_yaml_config_file_loading to correctly access model name  
 > You can use /undo to undo and discard each aider commit.  
 
-#### /drop aider/website/docs/config/aider_conf.md  
-> Removed aider/website/docs/config/aider_conf.md from the chat  
+#### /drop aider_vision_core/website/docs/config/aider_conf.md  
+> Removed aider_vision_core/website/docs/config/aider_conf.md from the chat  
 
 #### /drop tests/basic/test_main.py  
 > Removed tests/basic/test_main.py from the chat  
@@ -67385,15 +67385,15 @@ import git
 from dotenv import load_dotenv
 from prompt_toolkit.enums import EditingMode
 
-from aider import __version__, models, utils
-from aider.args import get_parser
-from aider.coders import Coder
-from aider.commands import Commands, SwitchCoder
-from aider.history import ChatSummary
-from aider.io import InputOutput
-from aider.llm import litellm  # noqa: F401; properly init litellm on launch
-from aider.repo import GitRepo
-from aider.versioncheck import check_version
+from aider_vision_core import __version__, models, utils
+from aider_vision_core.args import get_parser
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands, SwitchCoder
+from aider_vision_core.history import ChatSummary
+from aider_vision_core.io import InputOutput
+from aider_vision_core.llm import litellm  # noqa: F401; properly init litellm on launch
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.versioncheck import check_version
 
 from .dump import dump  # noqa: F401
 =======
@@ -67408,15 +67408,15 @@ import git
 from dotenv import load_dotenv
 from prompt_toolkit.enums import EditingMode
 
-from aider import __version__, models, utils
-from aider.args import get_parser
-from aider.coders import Coder
-from aider.commands import Commands, SwitchCoder
-from aider.history import ChatSummary
-from aider.io import InputOutput
-from aider.llm import litellm  # noqa: F401; properly init litellm on launch
-from aider.repo import GitRepo
-from aider.versioncheck import check_version
+from aider_vision_core import __version__, models, utils
+from aider_vision_core.args import get_parser
+from aider_vision_core.coders import Coder
+from aider_vision_core.commands import Commands, SwitchCoder
+from aider_vision_core.history import ChatSummary
+from aider_vision_core.io import InputOutput
+from aider_vision_core.llm import litellm  # noqa: F401; properly init litellm on launch
+from aider_vision_core.repo import GitRepo
+from aider_vision_core.versioncheck import check_version
 
 from .dump import dump  # noqa: F401
 
@@ -67751,8 +67751,8 @@ import sys
 
 import configargparse
 
-from aider import __version__
-from aider.args_formatter import (
+from aider_vision_core import __version__
+from aider_vision_core.args_formatter import (
     DotEnvFormatter,
     MarkdownHelpFormatter,
     YamlHelpFormatter,
@@ -68413,13 +68413,13 @@ if __name__ == "__main__":
 
 # aider chat started at 2024-08-14 16:41:33
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_posts/2024-08-14-code-in-json.md aider/website/_data/code-in-json.yml  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_posts/2024-08-14-code-in-json.md aider_vision_core/website/_data/code-in-json.yml  
 > Aider v0.50.2-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 305 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_data/code-in-json.yml to the chat.  
-> Added aider/website/_posts/2024-08-14-code-in-json.md to the chat.  
+> Added aider_vision_core/website/_data/code-in-json.yml to the chat.  
+> Added aider_vision_core/website/_posts/2024-08-14-code-in-json.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 #### add a bar graph at the top which plots `pass_rate_1` for each model and edit_format combo. group all the edit_formats for each model together.  
@@ -68428,7 +68428,7 @@ Certainly! I'll add a bar graph at the top of the Markdown file to visualize the
 
 Here's the *SEARCH/REPLACE block* to make this change:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>
 <<<<<<< SEARCH
 ---
@@ -68489,7 +68489,7 @@ graph TD
 This change adds a Mermaid graph at the top of the file, just after the title. The graph visualizes the `pass_rate_1` for each model and edit_format combination, grouping the edit formats for each model together.
 
 > Tokens: 5,311 sent, 592 received. Cost: $0.02 message, $0.02 session.  
-> Applied edit to aider/website/_posts/2024-08-14-code-in-json.md  
+> Applied edit to aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Commit 09996e7 feat: Add bar graph to visualize pass rate by model and edit format  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -68501,21 +68501,21 @@ This change adds a Mermaid graph at the top of the file, just after the title. T
 #### /add blame.md  
 > No files matched 'blame.md'. Do you want to create /Users/gauthier/Projects/aider/blame.md? n  
 
-#### /add aider/website/_includes/blame.md  
-> Added /Users/gauthier/Projects/aider/aider/website/_includes/blame.md to the chat  
+#### /add aider_vision_core/website/_includes/blame.md  
+> Added /Users/gauthier/Projects/aider/aider_vision_core/website/_includes/blame.md to the chat  
 
 #### /clear  
 
 #### /drop blame  
 
-#### /read aider/website/_includes/blame.md  
-> Added /Users/gauthier/Projects/aider/aider/website/_includes/blame.md to read-only files.  
+#### /read aider_vision_core/website/_includes/blame.md  
+> Added /Users/gauthier/Projects/aider/aider_vision_core/website/_includes/blame.md to read-only files.  
 
 #### add a bar graph at the top which plots `pass_rate_1` for each model and edit_format combo. group all the edit_formats for each model together.  
 
 Certainly! I'll add a bar graph at the top of the file to plot the `pass_rate_1` for each model and edit_format combination, grouping the edit_formats for each model together. Here's how we can do this:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>
 <<<<<<< SEARCH
 ---
@@ -68629,7 +68629,7 @@ Here's a brief explanation of the changes:
 This visualization will help readers quickly understand the performance differences between models and edit formats.
 
 > Tokens: 7,133 sent, 882 received. Cost: $0.03 message, $0.06 session.  
-> Applied edit to aider/website/_posts/2024-08-14-code-in-json.md  
+> Applied edit to aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Commit 9575246 feat: Add bar graph to plot pass_rate_1 by model and edit_format  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -68637,7 +68637,7 @@ This visualization will help readers quickly understand the performance differen
 
 Certainly! I'll modify the JavaScript code to pull the data from the YAML file instead of having it hardcoded. Here's the change:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>python
 <<<<<<< SEARCH
 <script>
@@ -68782,7 +68782,7 @@ This change does the following:
 This approach makes the chart more flexible and automatically updates when the YAML data changes.
 
 > Tokens: 16,461 sent, 916 received. Cost: $0.06 message, $0.12 session.  
-> Applied edit to aider/website/_posts/2024-08-14-code-in-json.md  
+> Applied edit to aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Commit 7310f09 feat: Fetch data from YAML file for chart  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -68793,7 +68793,7 @@ This approach makes the chart more flexible and automatically updates when the Y
 
 Certainly! I'll reorder the edit formats as requested: Markdown, Tool call, Tool call (strict). Here's the *SEARCH/REPLACE block* to make this change:
 
-aider/website/_data/code-in-json.yml
+aider_vision_core/website/_data/code-in-json.yml
 <source>
 <<<<<<< SEARCH
 - dirname: 2024-08-14-18-38-25--json-gpt-4o-2024-08-06-non-strict-func
@@ -68819,10 +68819,10 @@ aider/website/_data/code-in-json.yml
 #### /drop yml  
 
 #### /drop blame  
-> Removed read-only file /Users/gauthier/Projects/aider/aider/website/_includes/blame.md from the chat  
+> Removed read-only file /Users/gauthier/Projects/aider/aider_vision_core/website/_includes/blame.md from the chat  
 
-#### /read aider/website/_data/code-in-json.yml  
-> Added /Users/gauthier/Projects/aider/aider/website/_data/code-in-json.yml to read-only files.  
+#### /read aider_vision_core/website/_data/code-in-json.yml  
+> Added /Users/gauthier/Projects/aider/aider_vision_core/website/_data/code-in-json.yml to read-only files.  
 >  
 >  
 > ^C again to exit  
@@ -68834,9 +68834,9 @@ aider/website/_data/code-in-json.yml
 >  
 > ^C again to exit  
 
-To order the edit formats as requested (markdown, tool call, tool call strict), we need to modify the YAML data in the `aider/website/_data/code-in-json.yml` file. Here's how we can do that:
+To order the edit formats as requested (markdown, tool call, tool call strict), we need to modify the YAML data in the `aider_vision_core/website/_data/code-in-json.yml` file. Here's how we can do that:
 
-aider/website/_data/code-in-json.yml
+aider_vision_core/website/_data/code-in-json.yml
 <source>yaml
 <<<<<<< SEARCH
 - dirname: 2024-08-14-18-38-25--json-gpt-4o-2024-08-06-non-strict-func
@@ -68862,19 +68862,19 @@ aider/website/_data/code-in-json.yml
 
 # aider chat started at 2024-08-14 20:04:37
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_posts/2024-08-14-code-in-json.md --read aider/website/_data/code-in-json.yml  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_posts/2024-08-14-code-in-json.md --read aider_vision_core/website/_data/code-in-json.yml  
 > Aider v0.50.2-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 305 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_posts/2024-08-14-code-in-json.md to the chat.  
+> Added aider_vision_core/website/_posts/2024-08-14-code-in-json.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 #### make the tool+split color the same as tool, but stripe it  
 
 Certainly! I'll modify the JavaScript code to make the "Tool call (strict)" color the same as "Tool call" but with a stripe pattern. Here's the change:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>javascript
 <<<<<<< SEARCH
         backgroundColor: format === 'Markdown' ? 'rgba(54, 162, 235, 0.8)' :
@@ -68899,7 +68899,7 @@ This change does the following:
 These modifications will make the "Tool call (strict)" bars have the same fill color as "Tool call" but with a white striped pattern on top, creating a visual distinction while maintaining color consistency.
 
 > Tokens: 13,742 sent, 406 received. Cost: $0.05 message, $0.05 session.  
-> Applied edit to aider/website/_posts/2024-08-14-code-in-json.md  
+> Applied edit to aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Commit 0a2d75b fix: Apply consistent color and striped pattern to "Tool call (strict)"  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -68907,7 +68907,7 @@ These modifications will make the "Tool call (strict)" bars have the same fill c
 
 Certainly! I understand that you want to add a dot or stripe pattern across the bars for the "Tool call (strict)" format without modifying its border. We can achieve this by using a pattern fill instead of changing the border. Here's how we can modify the JavaScript code to implement this:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>javascript
 <<<<<<< SEARCH
         backgroundColor: format === 'Markdown' ? 'rgba(54, 162, 235, 0.8)' :
@@ -68934,7 +68934,7 @@ aider/website/_posts/2024-08-14-code-in-json.md
 
 Now, we need to add the `createStripedCanvas` function to create the striped pattern. Let's add this function just before the `new Chart(ctx, config);` line:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>javascript
 <<<<<<< SEARCH
     new Chart(ctx, config);
@@ -68968,13 +68968,13 @@ aider/website/_posts/2024-08-14-code-in-json.md
 These changes will create a striped pattern for the "Tool call (strict)" bars while keeping a solid fill for the "Tool call" bars. The "Markdown" bars will remain unchanged. The striped pattern will be diagonal lines on top of the original color, giving a visual distinction without changing the border.
 
 > Tokens: 14,220 sent, 650 received. Cost: $0.05 message, $0.10 session.  
-> Committing aider/website/_posts/2024-08-14-code-in-json.md before applying edits.  
+> Committing aider_vision_core/website/_posts/2024-08-14-code-in-json.md before applying edits.  
 > Commit a47a5c9 fix: update code-in-json.md post with improved styling for code blocks  
 > The LLM did not conform to the edit format.  
 > https://aider.chat/docs/troubleshooting/edit-errors.html  
 > # 1 SEARCH/REPLACE block failed to match!  
 >   
-> ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider/website/_posts/2024-08-14-code-in-json.md  
+> ## SearchReplaceNoExactMatch: This SEARCH block failed to exactly match lines in aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > <<<<<<< SEARCH  
 >         backgroundColor: format === 'Markdown' ? 'rgba(54, 162, 235, 0.8)' :  
 >                          format.startsWith('Tool call') ? 'rgba(255, 99, 132, 0.8)' :  
@@ -69005,7 +69005,7 @@ These changes will create a striped pattern for the "Tool call (strict)" bars wh
 
 I apologize for the mistake. Let me provide the correct SEARCH/REPLACE block that matches the existing content:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>javascript
 <<<<<<< SEARCH
         backgroundColor: format === 'Markdown' ? 'rgba(54, 162, 235, 0.8)' :
@@ -69030,9 +69030,9 @@ aider/website/_posts/2024-08-14-code-in-json.md
 This SEARCH/REPLACE block should now correctly match the existing content and apply the desired changes to implement the striped pattern for the "Tool call (strict)" bars.
 
 > Tokens: 15,403 sent, 269 received. Cost: $0.05 message, $0.15 session.  
-> Committing aider/website/_posts/2024-08-14-code-in-json.md before applying edits.  
+> Committing aider_vision_core/website/_posts/2024-08-14-code-in-json.md before applying edits.  
 > Commit 9b2f317 feat: Add function to create striped canvas pattern  
-> Applied edit to aider/website/_posts/2024-08-14-code-in-json.md  
+> Applied edit to aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Commit 23f89f1 feat: Add striped pattern for "Tool call (strict)" format  
 > You can use /undo to undo and discard each aider commit.  
 >  
@@ -69145,19 +69145,19 @@ Hello! How can I assist you with your code today? If you have any requests or ne
 
 # aider chat started at 2024-08-15 08:07:29
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_posts/2024-08-14-code-in-json.md --read aider/website/_data/code-in-json.yml  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_posts/2024-08-14-code-in-json.md --read aider_vision_core/website/_data/code-in-json.yml  
 > Aider v0.50.2-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 305 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_posts/2024-08-14-code-in-json.md to the chat.  
+> Added aider_vision_core/website/_posts/2024-08-14-code-in-json.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 #### the yml contains multiple datapoints for each model/edit_format. average them for display on the graph.  
 
 Certainly! I'll modify the JavaScript code to average the datapoints for each model/edit_format combination. Here's the updated code:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>javascript
 <<<<<<< SEARCH
     var yamlData = {{ site.data.code-in-json | jsonify }};
@@ -69196,9 +69196,9 @@ This change will:
 Now the graph will display the average pass rate for each model/edit_format combination, which should provide a more accurate representation of the data across multiple runs.
 
 > Tokens: 21,961 sent, 377 received. Cost: $0.07 message, $0.07 session.  
-> Committing aider/website/_posts/2024-08-14-code-in-json.md before applying edits.  
+> Committing aider_vision_core/website/_posts/2024-08-14-code-in-json.md before applying edits.  
 > Commit ed6ebfb fix: Update post on code in JSON  
-> Applied edit to aider/website/_posts/2024-08-14-code-in-json.md  
+> Applied edit to aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Commit 341c08b feat: average datapoints for each model/edit_format  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -69213,19 +69213,19 @@ Now the graph will display the average pass rate for each model/edit_format comb
 
 # aider chat started at 2024-08-15 08:29:25
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_posts/2024-08-14-code-in-json.md --read aider/website/_data/code-in-json.yml  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_posts/2024-08-14-code-in-json.md --read aider_vision_core/website/_data/code-in-json.yml  
 > Aider v0.50.2-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 305 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_posts/2024-08-14-code-in-json.md to the chat.  
+> Added aider_vision_core/website/_posts/2024-08-14-code-in-json.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 #### sort the x-axis by model name  
 
 Certainly! To sort the x-axis by model name, we need to modify the JavaScript code that creates the chart. Here's the change:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>
 <<<<<<< SEARCH
     var models = [...new Set(yamlData.map(item => item.model))];
@@ -69237,9 +69237,9 @@ aider/website/_posts/2024-08-14-code-in-json.md
 This change adds the `.sort()` method to the array of unique model names, which will sort them alphabetically. This will result in the x-axis of the chart being sorted by model name.
 
 > Tokens: 22,747 sent, 132 received. Cost: $0.07 message, $0.07 session.  
-> Committing aider/website/_posts/2024-08-14-code-in-json.md before applying edits.  
+> Committing aider_vision_core/website/_posts/2024-08-14-code-in-json.md before applying edits.  
 > Commit 957374a fix: Update code-in-json post with improved formatting and performance details  
-> Applied edit to aider/website/_posts/2024-08-14-code-in-json.md  
+> Applied edit to aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Commit ea38f91 feat: Sort x-axis by model name  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -69267,12 +69267,12 @@ Here are the *SEARCH/REPLACE* blocks to implement these changes:
 benchmark/over_time.py
 ```python
 <<<<<<< SEARCH
-from aider.dump import dump  # noqa: 401
+from aider_vision_core.dump import dump  # noqa: 401
 
 
 def plot_over_time(yaml_file):
 =======
-from aider.dump import dump  # noqa: 401
+from aider_vision_core.dump import dump  # noqa: 401
 
 
 def get_model_color(model):
@@ -69326,12 +69326,12 @@ These changes will refactor the color assignment logic into a separate function,
 
 # aider chat started at 2024-08-15 10:04:27
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_posts/2024-08-14-code-in-json.md  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Aider v0.50.2-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 305 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_posts/2024-08-14-code-in-json.md to the chat.  
+> Added aider_vision_core/website/_posts/2024-08-14-code-in-json.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 >  
 >  
@@ -69346,12 +69346,12 @@ These changes will refactor the color assignment logic into a separate function,
 
 # aider chat started at 2024-08-15 10:07:30
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_posts/2024-08-14-code-in-json.md  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Aider v0.50.2-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 305 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_posts/2024-08-14-code-in-json.md to the chat.  
+> Added aider_vision_core/website/_posts/2024-08-14-code-in-json.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 #### /add /Users/gauthier/Downloads/IMG_4F7739DC537C-1.jpeg  
@@ -69366,10 +69366,10 @@ These changes will refactor the color assignment logic into a separate function,
 
 Certainly! We can make the chart responsive by adjusting its aspect ratio based on the screen width. This will make it more square-like on narrow screens, providing more vertical space for the title, legend, and axes. Here's how we can modify the chart configuration to achieve this:
 
-Let's update the `aider/website/_posts/2024-08-14-code-in-json.md` file:
+Let's update the `aider_vision_core/website/_posts/2024-08-14-code-in-json.md` file:
 
 ```markdown
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 ```
 
 Replace the entire `<script>` block with this updated version:
@@ -69445,7 +69445,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 Certainly! I'll modify the chart configuration to make it more responsive, especially for narrow screens like phones. We'll adjust the aspect ratio and layout to better accommodate smaller displays. Here's the proposed change:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>
 <<<<<<< SEARCH
     var config = {
@@ -69552,7 +69552,7 @@ These changes will make the chart more responsive:
 
 To ensure this works properly, we should also adjust the canvas size to be responsive. Let's update the canvas element:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>
 <<<<<<< SEARCH
 <canvas id="passRateChart" width="800" height="400" style="margin-bottom: 20px"></canvas>
@@ -69568,9 +69568,9 @@ This change wraps the canvas in a responsive container that maintains a 2:1 aspe
 These modifications should significantly improve the chart's appearance and readability on narrow screens like phones.
 
 > Tokens: 0 sent, 779 received. Cost: $0.01 message, $0.02 session.  
-> Committing aider/website/_posts/2024-08-14-code-in-json.md before applying edits.  
+> Committing aider_vision_core/website/_posts/2024-08-14-code-in-json.md before applying edits.  
 > Commit 19073dd feat: Add section on overall coding skill and syntax errors to blog post on code in JSON  
-> Applied edit to aider/website/_posts/2024-08-14-code-in-json.md  
+> Applied edit to aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Commit 83396f1 feat: Improve chart responsiveness for narrow screens  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -69586,7 +69586,7 @@ These modifications should significantly improve the chart's appearance and read
 
 Understood. I'll modify the chart configuration to increase the height on small screens. Here's the proposed change:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>
 <<<<<<< SEARCH
 <canvas id="passRateChart" width="800" height="400" style="margin-bottom: 20px"></canvas>
@@ -69597,7 +69597,7 @@ aider/website/_posts/2024-08-14-code-in-json.md
 >>>>>>> REPLACE
 </source>
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>
 <<<<<<< SEARCH
     var config = {
@@ -69699,7 +69699,7 @@ These changes will make the chart responsive and increase its height on small sc
 This solution will make the chart taller on screens narrower than 600px, giving more vertical space for the title, legend, and axis labels on small devices.
 
 > Tokens: 0 sent, 722 received. Cost: $0.01 message, $0.03 session.  
-> Applied edit to aider/website/_posts/2024-08-14-code-in-json.md  
+> Applied edit to aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Commit 8f0cc73 feat: Increase chart height on small screens  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -69717,30 +69717,30 @@ This solution will make the chart taller on screens narrower than 600px, giving 
 
 # aider chat started at 2024-08-15 10:15:20
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_posts/2024-08-14-code-in-json.md  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Aider v0.50.2-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 305 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_posts/2024-08-14-code-in-json.md to the chat.  
+> Added aider_vision_core/website/_posts/2024-08-14-code-in-json.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 
 # aider chat started at 2024-08-15 10:20:37
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_posts/2024-08-14-code-in-json.md  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Aider v0.50.2-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 305 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_posts/2024-08-14-code-in-json.md to the chat.  
+> Added aider_vision_core/website/_posts/2024-08-14-code-in-json.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 #### add a bar graph in the Syntax errors section. for each model/edit_format, plot the total number of syntax_errors+indentation_errors across all runs of that model/edit_format  
 
 Certainly! I'll add a bar graph for syntax errors in the "Syntax errors" section. Here's the proposed change:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>python
 <<<<<<< SEARCH
 ## Syntax errors
@@ -69850,9 +69850,9 @@ This change adds a new bar graph that displays the total number of syntax errors
 Now, you can add some text below this graph to discuss the findings related to syntax errors. Would you like me to suggest some text for that as well?
 
 > Tokens: 12,042 sent, 774 received. Cost: $0.05 message, $0.05 session.  
-> Committing aider/website/_posts/2024-08-14-code-in-json.md before applying edits.  
+> Committing aider_vision_core/website/_posts/2024-08-14-code-in-json.md before applying edits.  
 > Commit 31e7a75 fix: Improve code-in-json blog post  
-> Applied edit to aider/website/_posts/2024-08-14-code-in-json.md  
+> Applied edit to aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Commit 7bc2454 feat: Add bar graph for syntax errors in the "Syntax errors" section  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -69860,7 +69860,7 @@ Now, you can add some text below this graph to discuss the findings related to s
 
 I understand the error. The `createStripedCanvas` function is defined in the first chart's script but not in the second one. Let's add this function to the second chart's script. Here's the change:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>javascript
 <<<<<<< SEARCH
     new Chart(ctx, config);
@@ -69898,7 +69898,7 @@ function createStripedCanvas(isStrict) {
 This change adds the `createStripedCanvas` function to the second chart's script, which should resolve the ReferenceError. The function is now available for both charts to use when creating the striped pattern for the JSON bars.
 
 > Tokens: 13,512 sent, 305 received. Cost: $0.05 message, $0.09 session.  
-> Applied edit to aider/website/_posts/2024-08-14-code-in-json.md  
+> Applied edit to aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Commit a2882f4 feat: Add createStripedCanvas function to second chart's script  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -69906,7 +69906,7 @@ This change adds the `createStripedCanvas` function to the second chart's script
 
 Certainly! I'll add the number to the top of each bar in both graphs. Here are the changes:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>javascript
 <<<<<<< SEARCH
             plugins: {
@@ -69963,7 +69963,7 @@ aider/website/_posts/2024-08-14-code-in-json.md
 
 Now, let's make the same change for the second graph:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>javascript
 <<<<<<< SEARCH
             plugins: {
@@ -70021,9 +70021,9 @@ aider/website/_posts/2024-08-14-code-in-json.md
 These changes will add the number to the top of each bar in both graphs. The numbers will be displayed with one decimal place for the pass rate graph and as whole numbers for the syntax errors graph. The tooltip has also been updated to show the same information when hovering over the bars.
 
 > Tokens: 14,125 sent, 687 received. Cost: $0.05 message, $0.15 session.  
-> Committing aider/website/_posts/2024-08-14-code-in-json.md before applying edits.  
+> Committing aider_vision_core/website/_posts/2024-08-14-code-in-json.md before applying edits.  
 > Commit 2bb75dc feat: Add figures and captions to blog post on code in JSON  
-> Applied edit to aider/website/_posts/2024-08-14-code-in-json.md  
+> Applied edit to aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
 > Commit e9811f5 feat: add number to top of each bar in both graphs  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -70040,14 +70040,14 @@ These changes will add the number to the top of each bar in both graphs. The num
 
 # aider chat started at 2024-08-15 10:50:12
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_posts/2024-08-14-code-in-json.md aider/website/_includes/code-in-json-benchmark.js  
-> Creating empty file /Users/gauthier/Projects/aider/aider/website/_includes/code-in-json-benchmark.js  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_posts/2024-08-14-code-in-json.md aider_vision_core/website/_includes/code-in-json-benchmark.js  
+> Creating empty file /Users/gauthier/Projects/aider/aider_vision_core/website/_includes/code-in-json-benchmark.js  
 > Aider v0.50.2-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 305 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_includes/code-in-json-benchmark.js to the chat.  
-> Added aider/website/_posts/2024-08-14-code-in-json.md to the chat.  
+> Added aider_vision_core/website/_includes/code-in-json-benchmark.js to the chat.  
+> Added aider_vision_core/website/_posts/2024-08-14-code-in-json.md to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 #### move the js for figure 1 into the js file  
@@ -70056,7 +70056,7 @@ Certainly! I'll move the JavaScript code for Figure 1 from the Markdown file to 
 
 First, let's remove the JavaScript code from the Markdown file:
 
-aider/website/_posts/2024-08-14-code-in-json.md
+aider_vision_core/website/_posts/2024-08-14-code-in-json.md
 <source>
 <<<<<<< SEARCH
 <script>
@@ -70200,7 +70200,7 @@ function createStripedCanvas(isStrict) {
 
 Now, let's add the JavaScript code to the JavaScript file:
 
-aider/website/_includes/code-in-json-benchmark.js
+aider_vision_core/website/_includes/code-in-json-benchmark.js
 <source>
 <<<<<<< SEARCH
 =======
@@ -70320,11 +70320,11 @@ function createStripedCanvas(isStrict) {
 These changes will move the JavaScript code for Figure 1 from the Markdown file to the separate JavaScript file, and update the Markdown file to include the new JavaScript file.
 
 > Tokens: 14,005 sent, 1,792 received. Cost: $0.07 message, $0.07 session.  
-> Committing aider/website/_posts/2024-08-14-code-in-json.md before applying edits.  
-> Committing aider/website/_includes/code-in-json-benchmark.js before applying edits.  
+> Committing aider_vision_core/website/_posts/2024-08-14-code-in-json.md before applying edits.  
+> Committing aider_vision_core/website/_includes/code-in-json-benchmark.js before applying edits.  
 > Commit e906422 feat: Add code-in-json-benchmark.js file and update code-in-json.md post  
-> Applied edit to aider/website/_posts/2024-08-14-code-in-json.md  
-> Applied edit to aider/website/_includes/code-in-json-benchmark.js  
+> Applied edit to aider_vision_core/website/_posts/2024-08-14-code-in-json.md  
+> Applied edit to aider_vision_core/website/_includes/code-in-json-benchmark.js  
 > Commit 225f1ac feat: move js for figure 1 into js file  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -70341,20 +70341,20 @@ These changes will move the JavaScript code for Figure 1 from the Markdown file 
 
 # aider chat started at 2024-08-15 10:57:16
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_includes/code-in-json-benchmark.js aider/website/_includes/code-in-json-syntax.js  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_includes/code-in-json-benchmark.js aider_vision_core/website/_includes/code-in-json-syntax.js  
 > Aider v0.50.2-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 306 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_includes/code-in-json-benchmark.js to the chat.  
-> Added aider/website/_includes/code-in-json-syntax.js to the chat.  
+> Added aider_vision_core/website/_includes/code-in-json-benchmark.js to the chat.  
+> Added aider_vision_core/website/_includes/code-in-json-syntax.js to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 #### show the value of each bar at the top of each bar  
 
 Certainly! I'll modify both files to show the value of each bar at the top. Here are the changes:
 
-aider/website/_includes/code-in-json-benchmark.js
+aider_vision_core/website/_includes/code-in-json-benchmark.js
 ```javascript
 <<<<<<< SEARCH
     var config = {
@@ -70464,7 +70464,7 @@ aider/website/_includes/code-in-json-benchmark.js
 >>>>>>> REPLACE
 ```
 
-aider/website/_includes/code-in-json-syntax.js
+aider_vision_core/website/_includes/code-in-json-syntax.js
 ```javascript
 <<<<<<< SEARCH
     var config = {
@@ -70581,11 +70581,11 @@ These changes will add the value of each bar at the top of the bar for both char
 The values will be displayed in black text just above each bar, making it easy for users to see the exact values without hovering over the bars.
 
 > Tokens: 4,350 sent, 1,203 received. Cost: $0.03 message, $0.03 session.  
-> Committing aider/website/_includes/code-in-json-benchmark.js before applying edits.  
-> Committing aider/website/_includes/code-in-json-syntax.js before applying edits.  
+> Committing aider_vision_core/website/_includes/code-in-json-benchmark.js before applying edits.  
+> Committing aider_vision_core/website/_includes/code-in-json-syntax.js before applying edits.  
 > Commit f91faf5 feat: Add code-in-json-syntax.js and update code-in-json-benchmark.js  
-> Applied edit to aider/website/_includes/code-in-json-syntax.js  
-> Applied edit to aider/website/_includes/code-in-json-benchmark.js  
+> Applied edit to aider_vision_core/website/_includes/code-in-json-syntax.js  
+> Applied edit to aider_vision_core/website/_includes/code-in-json-benchmark.js  
 > Commit 353b631 feat: Add bar value labels to charts  
 > You can use /undo to undo and discard each aider commit.  
 >  
@@ -70678,12 +70678,12 @@ The values will be displayed in black text just above each bar, making it easy f
 
 # aider chat started at 2024-08-15 13:52:23
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_includes/code-in-json-benchmark.js  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_includes/code-in-json-benchmark.js  
 > Aider v0.50.2-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 307 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_includes/code-in-json-benchmark.js to the chat.  
+> Added aider_vision_core/website/_includes/code-in-json-benchmark.js to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 #### /ask if the user is on a narrow device, like a phone, i want the aspect ratio to be square.  
@@ -70910,7 +70910,7 @@ This approach should provide a good balance between being square-ish on narrow d
 
 Certainly! I'll implement the changes using the *SEARCH/REPLACE block* format as requested. Here are the changes:
 
-aider/website/_includes/code-in-json-benchmark.js
+aider_vision_core/website/_includes/code-in-json-benchmark.js
 ```javascript
 <<<<<<< SEARCH
 <canvas id="passRateChart" width="800" height="400" style="margin-bottom: 20px"></canvas>
@@ -71234,21 +71234,21 @@ function createStripedCanvas(isStrict) {
 These changes will implement the fluid aspect ratio adjustment for the chart, making it more square-like on narrow devices while maintaining a landscape orientation on wider screens. The chart will now resize dynamically based on the container's width, minimizing unnecessary whitespace and providing a better viewing experience across different device sizes.
 
 > Tokens: 5,231 sent, 2,157 received. Cost: $0.05 message, $0.08 session.  
-> Applied edit to aider/website/_includes/code-in-json-benchmark.js  
+> Applied edit to aider_vision_core/website/_includes/code-in-json-benchmark.js  
 > Commit de7c148 feat: Implement fluid aspect ratio for chart on narrow devices  
 > You can use /undo to undo and discard each aider commit.  
 
 #### /diff  
 > Diff since b7a8dde...  
 
-#### /add aider/website/_includes/code-in-json-syntax.js  
-> Added /Users/gauthier/Projects/aider/aider/website/_includes/code-in-json-syntax.js to the chat  
+#### /add aider_vision_core/website/_includes/code-in-json-syntax.js  
+> Added /Users/gauthier/Projects/aider/aider_vision_core/website/_includes/code-in-json-syntax.js to the chat  
 
 #### make the same change to the syntax chart  
 
 Certainly! I'll make the same changes to the syntax chart to implement a fluid aspect ratio. Here are the necessary modifications:
 
-aider/website/_includes/code-in-json-syntax.js
+aider_vision_core/website/_includes/code-in-json-syntax.js
 ```javascript
 <<<<<<< SEARCH
 <canvas id="syntaxErrorsChart" width="800" height="400" style="margin-bottom: 20px"></canvas>
@@ -71278,7 +71278,7 @@ document.addEventListener('DOMContentLoaded', function () {
 >>>>>>> REPLACE
 ```
 
-aider/website/_includes/code-in-json-syntax.js
+aider_vision_core/website/_includes/code-in-json-syntax.js
 ```javascript
 <<<<<<< SEARCH
     var config = {
@@ -71305,7 +71305,7 @@ aider/website/_includes/code-in-json-syntax.js
 >>>>>>> REPLACE
 ```
 
-aider/website/_includes/code-in-json-syntax.js
+aider_vision_core/website/_includes/code-in-json-syntax.js
 ```javascript
 <<<<<<< SEARCH
     new Chart(ctx, config);
@@ -71339,15 +71339,15 @@ These changes will implement the fluid aspect ratio for the syntax errors chart,
 These changes will make the syntax errors chart responsive and adjust its aspect ratio based on the screen width, just like the pass rate chart.
 
 > Tokens: 4,742 sent, 608 received. Cost: $0.02 message, $0.11 session.  
-> Applied edit to aider/website/_includes/code-in-json-syntax.js  
+> Applied edit to aider_vision_core/website/_includes/code-in-json-syntax.js  
 > Commit cc09606 feat: Implement fluid aspect ratio for syntax errors chart  
 > You can use /undo to undo and discard each aider commit.  
 
 #### /diff  
 > Diff since de7c148...  
 
-#### /drop aider/website/_includes/code-in-json-syntax.js  
-> Removed aider/website/_includes/code-in-json-syntax.js from the chat  
+#### /drop aider_vision_core/website/_includes/code-in-json-syntax.js  
+> Removed aider_vision_core/website/_includes/code-in-json-syntax.js from the chat  
 
 #### /clear  
 
@@ -71355,7 +71355,7 @@ These changes will make the syntax errors chart responsive and adjust its aspect
 
 Certainly! I'll modify the code to show the percentage numbers on top of the bars without decimals. Here's the change:
 
-aider/website/_includes/code-in-json-benchmark.js
+aider_vision_core/website/_includes/code-in-json-benchmark.js
 ```javascript
 <<<<<<< SEARCH
                         if (data !== null) {
@@ -71377,9 +71377,9 @@ aider/website/_includes/code-in-json-benchmark.js
 This change replaces `data.toFixed(1)` with `Math.round(data)`, which will round the percentage to the nearest whole number and remove the decimal point. The percentage sign is still appended to the number.
 
 > Tokens: 3,815 sent, 199 received. Cost: $0.01 message, $0.12 session.  
-> Committing aider/website/_includes/code-in-json-benchmark.js before applying edits.  
+> Committing aider_vision_core/website/_includes/code-in-json-benchmark.js before applying edits.  
 > Commit 9f5d5ff feat: Adjust aspect ratio calculation for code-in-json-benchmark.js  
-> Applied edit to aider/website/_includes/code-in-json-benchmark.js  
+> Applied edit to aider_vision_core/website/_includes/code-in-json-benchmark.js  
 > Commit 200427e feat: Show percentage numbers on top of bars without decimals  
 > You can use /undo to undo and discard each aider commit.  
 >  
@@ -71696,19 +71696,19 @@ I can't identify the content of the image. If you have any questions or need ass
 
 # aider chat started at 2024-08-15 14:35:46
 
-> /Users/gauthier/Projects/aider/.venv/bin/aider aider/website/_includes/code-in-json-benchmark.js  
+> /Users/gauthier/Projects/aider/.venv/bin/aider aider_vision_core/website/_includes/code-in-json-benchmark.js  
 > Aider v0.50.2-dev  
 > Models: claude-3-5-sonnet-20240620 with ♾️ diff edit format, weak model claude-3-haiku-20240307  
 > Git repo: .git with 307 files  
 > Repo-map: using 1024 tokens  
-> Added aider/website/_includes/code-in-json-benchmark.js to the chat.  
+> Added aider_vision_core/website/_includes/code-in-json-benchmark.js to the chat.  
 > Use /help <question> for help, run "aider --help" to see cmd line args  
 
 #### for the number atop the bars, show 1 decimal point if we are on a wide screen (not a phone)  
 
 Certainly! I'll modify the code to show one decimal point for the numbers atop the bars when the screen is wide (not a phone). We'll need to make changes to the `afterDraw` function in the chart configuration. Here's the *SEARCH/REPLACE* block to implement this change:
 
-aider/website/_includes/code-in-json-benchmark.js
+aider_vision_core/website/_includes/code-in-json-benchmark.js
 ```javascript
 <<<<<<< SEARCH
         afterDraw: function(chart) {
@@ -71758,7 +71758,7 @@ This change does the following:
 This change will make the chart show one decimal point for the numbers atop the bars on wide screens, while still rounding to the nearest whole number on narrow screens (like phones).
 
 > Tokens: 3,806 sent, 514 received. Cost: $0.02 message, $0.02 session.  
-> Applied edit to aider/website/_includes/code-in-json-benchmark.js  
+> Applied edit to aider_vision_core/website/_includes/code-in-json-benchmark.js  
 > Commit 84e24bd feat: Show one decimal point for numbers atop bars on wide screens  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -71769,7 +71769,7 @@ This change will make the chart show one decimal point for the numbers atop the 
 
 Certainly! I'll modify the code to omit the numbers if the screen isn't wide. Here's the *SEARCH/REPLACE* block to implement this change:
 
-aider/website/_includes/code-in-json-benchmark.js
+aider_vision_core/website/_includes/code-in-json-benchmark.js
 ```javascript
 <<<<<<< SEARCH
         afterDraw: function(chart) {
@@ -71822,7 +71822,7 @@ This change does the following:
 This modification will show the numbers with one decimal point on wide screens and omit them entirely on narrow screens (like phones).
 
 > Tokens: 4,422 sent, 492 received. Cost: $0.02 message, $0.04 session.  
-> Applied edit to aider/website/_includes/code-in-json-benchmark.js  
+> Applied edit to aider_vision_core/website/_includes/code-in-json-benchmark.js  
 > Commit 2054bef feat: Omit numbers on narrow screens  
 > You can use /undo to undo and discard each aider commit.  
 
@@ -76893,9 +76893,9 @@ from typing import Optional
 import yaml
 from PIL import Image
 
-from aider import urls
-from aider.dump import dump  # noqa: F401
-from aider.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
+from aider_vision_core import urls
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
 
 DEFAULT_MODEL_NAME = "gpt-4o"
 =======
@@ -76913,9 +76913,9 @@ from typing import Optional
 import yaml
 from PIL import Image
 
-from aider import urls
-from aider.dump import dump  # noqa: F401
-from aider.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
+from aider_vision_core import urls
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm
 
 DEFAULT_MODEL_NAME = "gpt-4o"
 ANTHROPIC_BETA_HEADER = "max-tokens-3-5-sonnet-2024-07-15, prompt-caching-2024-07-31"
@@ -76995,11 +76995,11 @@ These changes introduce a new constant `ANTHROPIC_BETA_HEADER` at the top of the
 > - hook id: flake8  
 > - exit code: 1  
 >  
-> aider/models.py:17:1: F401 'aider.llm.AIDER_APP_NAME' imported but unused  
-> from aider.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm  
+> aider/models.py:17:1: F401 'aider_vision_core.llm.AIDER_APP_NAME' imported but unused  
+> from aider_vision_core.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm  
 > ^  
-> aider/models.py:17:1: F401 'aider.llm.AIDER_SITE_URL' imported but unused  
-> from aider.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm  
+> aider/models.py:17:1: F401 'aider_vision_core.llm.AIDER_SITE_URL' imported but unused  
+> from aider_vision_core.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm  
 > ^  
 >  
 >  
@@ -77008,9 +77008,9 @@ These changes introduce a new constant `ANTHROPIC_BETA_HEADER` at the top of the
 > aider/models.py:  
 > ...⋮...  
 > 14│  
-> 15│from aider import urls  
-> 16│from aider.dump import dump  # noqa: F401  
-> 17█from aider.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm  
+> 15│from aider_vision_core import urls  
+> 16│from aider_vision_core.dump import dump  # noqa: F401  
+> 17█from aider_vision_core.llm import AIDER_APP_NAME, AIDER_SITE_URL, litellm  
 > 18│  
 > 19│DEFAULT_MODEL_NAME = "gpt-4o"  
 > 20│ANTHROPIC_BETA_HEADER = "max-tokens-3-5-sonnet-2024-07-15, prompt-caching-2024-07-31"  
@@ -78986,7 +78986,7 @@ aider/voice.py:
 │    def raw_record_and_transcribe(self, history, language):
 ⋮...
 
-aider/website/_includes/code-in-json-benchmark.js:
+aider_vision_core/website/_includes/code-in-json-benchmark.js:
 ⋮...
 │    function getAspectRatio() {
 │        var width = chartContainer.offsetWidth;
@@ -79009,7 +79009,7 @@ aider/website/_includes/code-in-json-benchmark.js:
 │
 ⋮...
 
-aider/website/_includes/code-in-json-syntax.js:
+aider_vision_core/website/_includes/code-in-json-syntax.js:
 ⋮...
 │    function getAspectRatio() {
 │        var width = chartContainer.offsetWidth;
@@ -80239,7 +80239,7 @@ aider/voice.py:
 │    def raw_record_and_transcribe(self, history, language):
 ⋮...
 
-aider/website/_includes/code-in-json-benchmark.js:
+aider_vision_core/website/_includes/code-in-json-benchmark.js:
 ⋮...
 │    function getAspectRatio() {
 │        var width = chartContainer.offsetWidth;
@@ -80262,7 +80262,7 @@ aider/website/_includes/code-in-json-benchmark.js:
 │
 ⋮...
 
-aider/website/_includes/code-in-json-syntax.js:
+aider_vision_core/website/_includes/code-in-json-syntax.js:
 ⋮...
 │    function getAspectRatio() {
 │        var width = chartContainer.offsetWidth;
@@ -81573,9 +81573,9 @@ HISTORY.md
 
 - Réduction de la taille d'installation pip par défaut de 3 à 12x.
 - Ajout de 3 extras de package, que Aider proposera d'installer si nécessaire :
-  - `aider-chat[help]`
-  - `aider-chat[browser]`
-  - `aider-chat[playwright]`
+  - `aider-vision-core[help]`
+  - `aider-vision-core[browser]`
+  - `aider-vision-core[playwright]`
 - Amélioration de l'expression régulière pour détecter les URLs dans les messages de chat utilisateur.
 - Correction de la logique de globbing lorsque des chemins absolus sont inclus dans `/add`.
 - Simplification de la sortie de `--models`.
@@ -83156,7 +83156,7 @@ See https://aider.chat/docs/install/optional.html#enable-playwright for more inf
 > Scraping https://aider.chat...  
 > For the best web scraping, install Playwright:
 
-/venv/bin/python -m pip install aider-chat[playwright]
+/venv/bin/python -m pip install aider-vision-core[playwright]
 /venv/bin/python -m playwright install --with-deps chromium
 
 See https://aider.chat/docs/install/optional.html#enable-playwright for more info.  
@@ -83306,7 +83306,7 @@ tests/basic/test_main.py
 
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 MockRepoMap.return_value = mock_repo_map
 
@@ -83351,7 +83351,7 @@ self = <test_main.TestMain testMethod=test_sonnet_and_cache_options>
 
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 MockRepoMap.return_value = mock_repo_map
     
@@ -83437,7 +83437,7 @@ FAILED tests/basic/test_main.py::TestMain::test_sonnet_and_cache_options - Ty...
 >  
 > def test_sonnet_and_cache_options(self):  
 > with GitTemporaryDirectory():  
-> with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:  
+> with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:  
 > mock_repo_map = MagicMock()  
 > MockRepoMap.return_value = mock_repo_map  
 >  
@@ -83515,7 +83515,7 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 MockRepoMap.return_value = mock_repo_map
 
@@ -83529,7 +83529,7 @@ tests/basic/test_main.py
 =======
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -83587,7 +83587,7 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -83600,7 +83600,7 @@ tests/basic/test_main.py
 =======
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -83641,7 +83641,7 @@ self = <test_main.TestMain testMethod=test_sonnet_and_cache_options>
 
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -83721,7 +83721,7 @@ FAILED tests/basic/test_main.py::TestMain::test_sonnet_and_cache_options - As...
 >  
 > def test_sonnet_and_cache_options(self):  
 > with GitTemporaryDirectory():  
-> with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:  
+> with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:  
 > mock_repo_map = MagicMock()  
 > mock_repo_map.max_map_tokens = 1000  # Set a specific value  
 > MockRepoMap.return_value = mock_repo_map  
@@ -83795,7 +83795,7 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -83810,7 +83810,7 @@ tests/basic/test_main.py
 =======
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory() as temp_dir:
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -83886,7 +83886,7 @@ This approach is more flexible and will allow the test to pass even if additiona
 > 517│  
 > 518│    def test_sonnet_and_cache_options(self):  
 > 519█        with GitTemporaryDirectory() as temp_dir:  
-> 520│            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:  
+> 520│            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:  
 > 521│                mock_repo_map = MagicMock()  
 > 522│                mock_repo_map.max_map_tokens = 1000  # Set a specific value  
 > 523│                MockRepoMap.return_value = mock_repo_map  
@@ -83930,7 +83930,7 @@ This approach is more flexible and will allow the test to pass even if additiona
 #### 517│  
 #### 518│    def test_sonnet_and_cache_options(self):  
 #### 519█        with GitTemporaryDirectory() as temp_dir:  
-#### 520│            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:  
+#### 520│            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:  
 #### 521│                mock_repo_map = MagicMock()  
 #### 522│                mock_repo_map.max_map_tokens = 1000  # Set a specific value  
 #### 523│                MockRepoMap.return_value = mock_repo_map  
@@ -83948,7 +83948,7 @@ tests/basic/test_main.py
 <<<<<<< SEARCH
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory() as temp_dir:
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -83967,7 +83967,7 @@ tests/basic/test_main.py
 =======
     def test_sonnet_and_cache_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.base_coder.RepoMap") as MockRepoMap:
+            with patch("aider_vision_core.coders.base_coder.RepoMap") as MockRepoMap:
                 mock_repo_map = MagicMock()
                 mock_repo_map.max_map_tokens = 1000  # Set a specific value
                 MockRepoMap.return_value = mock_repo_map
@@ -84275,22 +84275,22 @@ tests/basic/test_repomap.py
 import os
 import unittest
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import IgnorantTemporaryDirectory
 =======
 import os
 import unittest
 
 import git
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 >>>>>>> REPLACE
 ```
 
@@ -84785,11 +84785,11 @@ import unittest
 
 import git
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 =======
 import os
 import time
@@ -84797,11 +84797,11 @@ import unittest
 
 import git
 
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.repomap import RepoMap
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.repomap import RepoMap
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory
 >>>>>>> REPLACE
 ```
 
@@ -84987,7 +84987,7 @@ self = <test_commands.TestCommands testMethod=test_cmd_add_read_only_file>
         with GitTemporaryDirectory():
             # Initialize the Commands and InputOutput objects
             io = InputOutput(pretty=False, yes=True)
-            from aider.coders import Coder
+            from aider_vision_core.coders import Coder
     
             coder = Coder.create(self.GPT35, None, io)
             commands = Commands(io, coder)
@@ -85063,7 +85063,7 @@ FAILED tests/basic/test_commands.py::TestCommands::test_cmd_read_with_external_f
 > with GitTemporaryDirectory():  
 > # Initialize the Commands and InputOutput objects  
 > io = InputOutput(pretty=False, yes=True)  
-> from aider.coders import Coder  
+> from aider_vision_core.coders import Coder  
 >  
 > coder = Coder.create(self.GPT35, None, io)  
 > commands = Commands(io, coder)  
@@ -85258,7 +85258,7 @@ tests/basic/test_main.py
 
     def test_sonnet_and_cache_prompts_options(self):
         with GitTemporaryDirectory():
-            with patch("aider.coders.Coder.create") as MockCoder:
+            with patch("aider_vision_core.coders.Coder.create") as MockCoder:
                 mock_coder = MagicMock()
                 MockCoder.return_value = mock_coder
 
@@ -86227,7 +86227,7 @@ from pathlib import Path
 
 import git
 
-from aider.dump import dump  # noqa: F401
+from aider_vision_core.dump import dump  # noqa: F401
 
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tiff", ".webp"}
 
@@ -86249,7 +86249,7 @@ from pathlib import Path
 
 import git
 
-from aider.dump import dump  # noqa: F401
+from aider_vision_core.dump import dump  # noqa: F401
 
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tiff", ".webp"}
 
@@ -89230,12 +89230,12 @@ To make this test work, we need to import the `Coder` class at the top of the fi
 tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
-from aider.main import check_gitignore, main, setup_git
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
 =======
-from aider.main import check_gitignore, main, setup_git
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
-from aider.coders import Coder
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.coders import Coder
 >>>>>>> REPLACE
 ```
 
@@ -89332,12 +89332,12 @@ To make this test work, we need to import the `Coder` class at the top of the fi
 tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
-from aider.main import check_gitignore, main, setup_git
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
 =======
-from aider.main import check_gitignore, main, setup_git
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
-from aider.coders import Coder
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.coders import Coder
 >>>>>>> REPLACE
 ```
 
@@ -89432,12 +89432,12 @@ To make this test work, we need to import the `Coder` class at the top of the fi
 tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
-from aider.main import check_gitignore, main, setup_git
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
 =======
-from aider.main import check_gitignore, main, setup_git
-from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
-from aider.coders import Coder
+from aider_vision_core.main import check_gitignore, main, setup_git
+from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo
+from aider_vision_core.coders import Coder
 >>>>>>> REPLACE
 ```
 
@@ -91778,7 +91778,7 @@ import sys
 from difflib import SequenceMatcher
 from pathlib import Path
 
-from aider import utils
+from aider_vision_core import utils
 
 from ..dump import dump  # noqa: F401
 from .base_coder import Coder
@@ -91897,7 +91897,7 @@ import os
 from difflib import SequenceMatcher
 from pathlib import Path
 
-from aider import utils
+from aider_vision_core import utils
 
 from ..dump import dump  # noqa: F401
 from .base_coder import Coder
@@ -92514,7 +92514,7 @@ Cost: $0.02 message, $0.02 session. Use --no-stream for accurate caching costs.
 
 > Newer aider version v0.51.1 is available. To upgrade, run:  
 >  
-> /Users/gauthier/Projects/aider/.venv/bin/python3.12 -m pip install --upgrade aider-chat  
+> /Users/gauthier/Projects/aider/.venv/bin/python3.12 -m pip install --upgrade aider-vision-core  
 
 # aider chat started at 2024-08-21 05:37:06
 
@@ -92535,7 +92535,7 @@ Cost: $0.02 message, $0.02 session. Use --no-stream for accurate caching costs.
 # aider chat started at 2024-08-21 05:37:10
 
 > Newer aider version v0.51.1 is available. To upgrade, run:  
-> /Users/gauthier/Projects/aider/.venv/bin/python3.12 -m pip install --upgrade aider-chat  
+> /Users/gauthier/Projects/aider/.venv/bin/python3.12 -m pip install --upgrade aider-vision-core  
 > Run pip install? n  
 > /Users/gauthier/Projects/aider/.venv/bin/aider  
 > Aider v0.51.2-dev  
@@ -97042,7 +97042,7 @@ tests/basic/test_io.py
         commands = MagicMock()
 
         # Simulate IsADirectoryError
-        with patch("aider.io.open", side_effect=IsADirectoryError):
+        with patch("aider_vision_core.io.open", side_effect=IsADirectoryError):
             result = io.get_input(root, rel_fnames, addable_rel_fnames, commands)
             self.assertEqual(result, "test input")
 
@@ -97062,11 +97062,11 @@ if __name__ == "__main__":
         commands = MagicMock()
 
         # Simulate IsADirectoryError
-        with patch("aider.io.open", side_effect=IsADirectoryError):
+        with patch("aider_vision_core.io.open", side_effect=IsADirectoryError):
             result = io.get_input(root, rel_fnames, addable_rel_fnames, commands)
             self.assertEqual(result, "test input")
 
-    @patch('aider.io.prompt')
+    @patch('aider_vision_core.io.prompt')
     def test_confirm_ask_explicit_yes_required(self, mock_prompt):
         io = InputOutput(pretty=False)
 
@@ -97111,7 +97111,7 @@ This new test method, `test_confirm_ask_explicit_yes_required`, covers four diff
 3. When `explicit_yes_required=True` and `self.yes=None`, it should prompt the user and return `True` if the user inputs 'y'.
 4. When `explicit_yes_required=False` and `self.yes=True`, it should return `True` without prompting the user.
 
-These tests will ensure that the `explicit_yes_required` parameter is working as expected in different scenarios. The `@patch('aider.io.prompt')` decorator is used to mock the `prompt` function, allowing us to control its behavior and verify that it's called (or not called) as expected.
+These tests will ensure that the `explicit_yes_required` parameter is working as expected in different scenarios. The `@patch('aider_vision_core.io.prompt')` decorator is used to mock the `prompt` function, allowing us to control its behavior and verify that it's called (or not called) as expected.
 
 > Tokens: 7.7k sent, 870 received.
 Cost: $0.04 message, $0.10 session. Use --no-stream for accurate caching costs.  
@@ -97203,9 +97203,9 @@ To implement this behavior, we need to modify the `main()` function in `tests/ba
 tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
-from aider.main import check_gitignore, main, setup_git
+from aider_vision_core.main import check_gitignore, main, setup_git
 =======
-from aider.main import check_gitignore, main, setup_git, ApplyShellCommandsError
+from aider_vision_core.main import check_gitignore, main, setup_git, ApplyShellCommandsError
 >>>>>>> REPLACE
 ```
 
@@ -97317,9 +97317,9 @@ Certainly! I'll remove the `ApplyShellCommandsError` and modify the test to simp
 tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
-from aider.main import ApplyShellCommandsError, check_gitignore, main, setup_git
+from aider_vision_core.main import ApplyShellCommandsError, check_gitignore, main, setup_git
 =======
-from aider.main import check_gitignore, main, setup_git
+from aider_vision_core.main import check_gitignore, main, setup_git
 >>>>>>> REPLACE
 ```
 
@@ -97379,9 +97379,9 @@ I apologize for the confusion. You're right, we should remove all references to 
 tests/basic/test_main.py
 ```python
 <<<<<<< SEARCH
-from aider.main import ApplyShellCommandsError, check_gitignore, main, setup_git
+from aider_vision_core.main import ApplyShellCommandsError, check_gitignore, main, setup_git
 =======
-from aider.main import check_gitignore, main, setup_git
+from aider_vision_core.main import check_gitignore, main, setup_git
 >>>>>>> REPLACE
 ```
 
@@ -97511,8 +97511,8 @@ Cost: $0.03 message, $0.03 session. Use --no-stream for accurate caching costs.
 > - hook id: flake8  
 > - exit code: 1  
 >  
-> tests/basic/test_main.py:17:1: F401 'aider.main.ApplyShellCommandsError' imported but unused  
-> from aider.main import ApplyShellCommandsError, check_gitignore, main, setup_git  
+> tests/basic/test_main.py:17:1: F401 'aider_vision_core.main.ApplyShellCommandsError' imported but unused  
+> from aider_vision_core.main import ApplyShellCommandsError, check_gitignore, main, setup_git  
 > ^  
 >  
 >  
@@ -97520,11 +97520,11 @@ Cost: $0.03 message, $0.03 session. Use --no-stream for accurate caching costs.
 >  
 > tests/basic/test_main.py:  
 > ...⋮...  
-> 14│from aider.coders import Coder  
-> 15│from aider.dump import dump  # noqa: F401  
-> 16│from aider.io import InputOutput  
-> 17█from aider.main import ApplyShellCommandsError, check_gitignore, main, setup_git  
-> 18│from aider.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo  
+> 14│from aider_vision_core.coders import Coder  
+> 15│from aider_vision_core.dump import dump  # noqa: F401  
+> 16│from aider_vision_core.io import InputOutput  
+> 17█from aider_vision_core.main import ApplyShellCommandsError, check_gitignore, main, setup_git  
+> 18│from aider_vision_core.utils import GitTemporaryDirectory, IgnorantTemporaryDirectory, make_repo  
 > 19│  
 > 20│  
 > ...⋮...  
@@ -97536,9 +97536,9 @@ Certainly! The error is due to an unused import. We need to remove the `ApplyShe
 tests/basic/test_main.py
 <source>python
 <<<<<<< SEARCH
-from aider.main import ApplyShellCommandsError, check_gitignore, main, setup_git
+from aider_vision_core.main import ApplyShellCommandsError, check_gitignore, main, setup_git
 =======
-from aider.main import check_gitignore, main, setup_git
+from aider_vision_core.main import check_gitignore, main, setup_git
 >>>>>>> REPLACE
 </source>
 
@@ -98617,7 +98617,7 @@ if __name__ == "__main__":
 import re
 import sys
 import json
-from aider.coders.editblock_coder import find_original_update_blocks, DEFAULT_FENCE
+from aider_vision_core.coders.editblock_coder import find_original_update_blocks, DEFAULT_FENCE
 
 def process_markdown(filename):
     try:
@@ -99456,8 +99456,8 @@ Cost: $0.02 message, $0.04 session. Use --no-stream for accurate caching costs.
 > - hook id: flake8  
 > - exit code: 1  
 >  
-> testsr.py:7:1: F401 'aider.coders.editblock_coder.all_fences' imported but unused  
-> from aider.coders.editblock_coder import (  
+> testsr.py:7:1: F401 'aider_vision_core.coders.editblock_coder.all_fences' imported but unused  
+> from aider_vision_core.coders.editblock_coder import (  
 > ^  
 >  
 >  
@@ -99468,7 +99468,7 @@ Cost: $0.02 message, $0.04 session. Use --no-stream for accurate caching costs.
 > 4│import re  
 > 5│import sys  
 > 6│  
-> 7█from aider.coders.editblock_coder import (  
+> 7█from aider_vision_core.coders.editblock_coder import (  
 > 8│    DEFAULT_FENCE,  
 > 9│    all_fences,  
 > 10│    find_original_update_blocks,  
@@ -99558,8 +99558,8 @@ Cost: $0.02 message, $0.06 session. Use --no-stream for accurate caching costs.
 > - hook id: flake8  
 > - exit code: 1  
 >  
-> testsr.py:7:1: F401 'aider.coders.editblock_coder.all_fences' imported but unused  
-> from aider.coders.editblock_coder import (  
+> testsr.py:7:1: F401 'aider_vision_core.coders.editblock_coder.all_fences' imported but unused  
+> from aider_vision_core.coders.editblock_coder import (  
 > ^  
 >  
 >  
@@ -99570,7 +99570,7 @@ Cost: $0.02 message, $0.06 session. Use --no-stream for accurate caching costs.
 > 4│import re  
 > 5│import sys  
 > 6│  
-> 7█from aider.coders.editblock_coder import (  
+> 7█from aider_vision_core.coders.editblock_coder import (  
 > 8│    DEFAULT_FENCE,  
 > 9│    all_fences,  
 > 10│    find_original_update_blocks,  
@@ -99817,8 +99817,8 @@ Cost: $0.04 message, $0.12 session. Use --no-stream for accurate caching costs.
 > - hook id: flake8  
 > - exit code: 1  
 >  
-> testsr.py:8:1: F401 'aider.coders.editblock_coder.DEFAULT_FENCE' imported but unused  
-> from aider.coders.editblock_coder import DEFAULT_FENCE, find_original_update_blocks  
+> testsr.py:8:1: F401 'aider_vision_core.coders.editblock_coder.DEFAULT_FENCE' imported but unused  
+> from aider_vision_core.coders.editblock_coder import DEFAULT_FENCE, find_original_update_blocks  
 > ^  
 >  
 >  
@@ -99828,8 +99828,8 @@ Cost: $0.04 message, $0.12 session. Use --no-stream for accurate caching costs.
 > ...⋮...  
 > 5│import sys  
 > 6│  
-> 7│from aider.coders.base_coder import all_fences  
-> 8█from aider.coders.editblock_coder import DEFAULT_FENCE, find_original_update_blocks  
+> 7│from aider_vision_core.coders.base_coder import all_fences  
+> 8█from aider_vision_core.coders.editblock_coder import DEFAULT_FENCE, find_original_update_blocks  
 > 9│  
 > 10│  
 > 11│def process_markdown(filename):  
@@ -99842,9 +99842,9 @@ To fix the flake8 error, we need to remove the unused import of `DEFAULT_FENCE`.
 testsr.py
 ```python
 <<<<<<< SEARCH
-from aider.coders.editblock_coder import DEFAULT_FENCE, find_original_update_blocks
+from aider_vision_core.coders.editblock_coder import DEFAULT_FENCE, find_original_update_blocks
 =======
-from aider.coders.editblock_coder import find_original_update_blocks
+from aider_vision_core.coders.editblock_coder import find_original_update_blocks
 >>>>>>> REPLACE
 ```
 

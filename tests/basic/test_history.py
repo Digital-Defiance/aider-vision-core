@@ -1,7 +1,7 @@
 from unittest import TestCase, mock
 
-from aider.history import ChatSummary
-from aider.models import Model
+from aider_vision_core.history import ChatSummary
+from aider_vision_core.models import Model
 
 
 def count(msg):

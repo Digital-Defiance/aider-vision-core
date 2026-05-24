@@ -5,12 +5,12 @@ import unittest
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-from aider.coders import Coder
-from aider.coders import editblock_coder as eb
-from aider.dump import dump  # noqa: F401
-from aider.io import InputOutput
-from aider.models import Model
-from aider.utils import ChdirTemporaryDirectory
+from aider_vision_core.coders import Coder
+from aider_vision_core.coders import editblock_coder as eb
+from aider_vision_core.dump import dump  # noqa: F401
+from aider_vision_core.io import InputOutput
+from aider_vision_core.models import Model
+from aider_vision_core.utils import ChdirTemporaryDirectory
 
 
 class TestUtils(unittest.TestCase):
@@ -222,7 +222,7 @@ tests/test_repomap.py
             mock_run.return_value = CompletedProcess(args=["ctags", "--version"], returncode=0, stdout='''{
   "_type": "tag",
   "name": "status",
-  "path": "aider/main.py",
+  "path": "aider_vision_core/main.py",
   "pattern": "/^    status = main()$/",
   "kind": "variable"
 }''')
@@ -232,7 +232,7 @@ tests/test_repomap.py
             mock_check_output.return_value = '''{
   "_type": "tag",
   "name": "status",
-  "path": "aider/main.py",
+  "path": "aider_vision_core/main.py",
   "pattern": "/^    status = main()$/",
   "kind": "variable"
 }'''

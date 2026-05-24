@@ -1,7 +1,7 @@
 import unittest
 
-from aider.coders.udiff_coder import find_diffs
-from aider.dump import dump  # noqa: F401
+from aider_vision_core.coders.udiff_coder import find_diffs
+from aider_vision_core.dump import dump  # noqa: F401
 
 
 class TestUnifiedDiffCoder(unittest.TestCase):

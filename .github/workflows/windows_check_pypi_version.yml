@@ -1,6 +1,6 @@
 name: Windows Check PyPI Version
 
-# Check to be sure `pip install aider-chat` installs the most recently published version on Windows.
+# Check to be sure `pip install aider-vision-core` installs the most recently published version on Windows.
 # If dependencies get yanked, it may render the latest version uninstallable.
 # See https://github.com/Aider-AI/aider/issues/3699 for example.
 
@@ -26,16 +26,16 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install aider-chat
-        run: pip install aider-chat
+      - name: Install aider-vision-core
+        run: pip install aider-vision-core
 
       - name: Get installed aider version
         id: installed_version
         run: |
-          Write-Host "Running 'aider --version'..."
-          $aider_version_output = aider --version
+          Write-Host "Running 'aider-vision-core --version'..."
+          $aider_version_output = aider-vision-core --version
           if ($LASTEXITCODE -ne 0) {
-            Write-Error "Error: 'aider --version' command failed."
+            Write-Error "Error: 'aider-vision-core --version' command failed."
             exit 1
           }
           Write-Host "Raw aider --version output: $aider_version_output"

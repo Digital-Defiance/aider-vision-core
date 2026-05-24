@@ -27,7 +27,7 @@ def embed_font():
     """Returns base64 encoded font data for the GlassTTYVT220 font."""
     # Path to the font file
     font_path = (
-        Path(__file__).parent.parent / "aider" / "website" / "assets" / "Glass_TTY_VT220.ttf"
+        Path(__file__).parent.parent / "aider_vision_core" / "website" / "assets" / "Glass_TTY_VT220.ttf"
     )
 
     # If font file doesn't exist, return empty string
