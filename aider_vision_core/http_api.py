@@ -34,6 +34,7 @@ from aider_vision_core.git_undo import undo_last_aider_commit_for_coder
 from aider_vision_core.http_auth import auth_enabled, configure_auth, get_token_from_env, verify_bearer
 from aider_vision_core.session import Session
 from aider_vision_core.workspace_todos import (
+    SPEC_LAYER_TEMPLATES,
     TODO_TEMPLATES,
     ChecklistItem,
     TodoItem,
@@ -151,6 +152,10 @@ class CreateTodoRequest(BaseModel):
 class PatchTodoRequest(BaseModel):
     title: str | None = None
     spec: str | None = None
+    requirements: str | None = None
+    design: str | None = None
+    tasks_md: str | None = None
+    depends_on: list[str] | None = None
     status: str | None = None
     links: list[str] | None = None
     checklist: list[ChecklistItemModel] | None = None
@@ -302,6 +307,10 @@ def _patch_todo_api(api: WorkspaceTodos, todo_id: str, body: PatchTodoRequest) -
             todo_id,
             title=body.title,
             spec=body.spec,
+            requirements=body.requirements,
+            design=body.design,
+            tasks_md=body.tasks_md,
+            depends_on=body.depends_on,
             status=status,
             links=body.links,
             checklist=checklist,
@@ -316,6 +325,10 @@ def _todo_item_model(item: TodoItem) -> TodoItemModel:
         id=item.id,
         title=item.title,
         spec=item.spec,
+        requirements=item.requirements,
+        design=item.design,
+        tasks_md=item.tasks_md,
+        depends_on=item.depends_on,
         status=item.status,
         links=item.links,
         checklist=[ChecklistItemModel(id=c.id, text=c.text, done=c.done) for c in item.checklist],
