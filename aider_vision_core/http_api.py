@@ -25,9 +25,9 @@ from pydantic import BaseModel, Field
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
 
-from aider_vision_core.headless_stdio import install_headless_stdio
+from aider_vision_core.vision_runtime import configure_vision_runtime
 
-install_headless_stdio()
+configure_vision_runtime()
 
 from aider_vision_core.git_undo import undo_last_aider_commit_for_coder
 from aider_vision_core.http_auth import auth_enabled, configure_auth, get_token_from_env, verify_bearer

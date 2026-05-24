@@ -52,6 +52,11 @@ class Session:
         if not workspace.is_dir():
             raise FileNotFoundError(f"Workspace not found: {workspace}")
 
+        from aider_vision_core.vision_runtime import configure_vision_runtime, purge_legacy_tag_caches
+
+        configure_vision_runtime()
+        purge_legacy_tag_caches(workspace)
+
         prev_cwd = os.getcwd()
         os.chdir(workspace)
         try:

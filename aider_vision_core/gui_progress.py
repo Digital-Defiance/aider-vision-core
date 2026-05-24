@@ -13,7 +13,9 @@ T = TypeVar("T")
 
 
 def headless_enabled() -> bool:
-    return os.environ.get("AIDER_VISION_HEADLESS") == "1"
+    from aider_vision_core.headless_stdio import headless_enabled as _headless_enabled
+
+    return _headless_enabled()
 
 
 def emit_progress(

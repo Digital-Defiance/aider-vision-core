@@ -29,6 +29,9 @@ class EventIO(InputOutput):
     ):
         kwargs.setdefault("fancy_input", False)
         kwargs.setdefault("pretty", False)
+        self.on_event = on_event
+        self.echo_to_console = echo_to_console
+        self.events: list[dict[str, Any]] = []
         self._null_sink: TextIO | None = None
         if not echo_to_console and kwargs.get("output") is None:
             self._null_sink = open(os.devnull, "w", encoding="utf-8")
@@ -42,9 +45,6 @@ class EventIO(InputOutput):
         # InputOutput attaches Console to stdout; when the desktop app spawns core with
         # stdout closed, Rich writes raise BrokenPipeError.
         self.console = Console(file=sink, force_terminal=False, no_color=True)
-        self.on_event = on_event
-        self.echo_to_console = echo_to_console
-        self.events: list[dict[str, Any]] = []
 
     def emit(self, event_type: str, **payload: Any) -> dict[str, Any]:
         event = {"type": event_type, **payload}

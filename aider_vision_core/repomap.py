@@ -20,6 +20,13 @@ from tree_sitter import Query
 from aider_vision_core.dump import dump
 from aider_vision_core.gui_progress import progress_iter
 from aider_vision_core.special import filter_important_files
+from aider_vision_core.vision_runtime import (
+    CACHE_LOAD_ERRORS,
+    REPO_MAP_CACHE_DIRNAME,
+    REPO_MAP_CACHE_VERSION,
+    purge_legacy_tag_caches,
+    safe_cache_len,
+)
 from aider_vision_core.waiting import Spinner
 
 # tree_sitter is throwing a FutureWarning
@@ -30,17 +37,14 @@ Tag = namedtuple("Tag", "rel_fname fname line name kind".split())
 
 
 SQLITE_ERRORS = (sqlite3.OperationalError, sqlite3.DatabaseError, OSError)
-
-
-CACHE_VERSION = 3
-if USING_TSL_PACK:
-    CACHE_VERSION = 4
+# Re-export for tests / callers
+CACHE_VERSION = REPO_MAP_CACHE_VERSION
 
 UPDATING_REPO_MAP_MESSAGE = "Updating repo map"
 
 
 class RepoMap:
-    TAGS_CACHE_DIR = f".aider.tags.cache.v{CACHE_VERSION}"
+    TAGS_CACHE_DIR = REPO_MAP_CACHE_DIRNAME
 
     warned_files = set()
 
@@ -215,6 +219,7 @@ class RepoMap:
         self.TAGS_CACHE = dict()
 
     def load_tags_cache(self):
+        purge_legacy_tag_caches(self.root)
         path = Path(self.root) / self.TAGS_CACHE_DIR
         try:
             self.TAGS_CACHE = Cache(path)
@@ -239,14 +244,14 @@ class RepoMap:
         cache_key = fname
         try:
             val = self.TAGS_CACHE.get(cache_key)  # Issue #1308
-        except SQLITE_ERRORS as e:
+        except CACHE_LOAD_ERRORS as e:
             self.tags_cache_error(e)
             val = self.TAGS_CACHE.get(cache_key)
 
         if val is not None and val.get("mtime") == file_mtime:
             try:
                 return self.TAGS_CACHE[cache_key]["data"]
-            except SQLITE_ERRORS as e:
+            except CACHE_LOAD_ERRORS as e:
                 self.tags_cache_error(e)
                 return self.TAGS_CACHE[cache_key]["data"]
 
@@ -382,11 +387,10 @@ class RepoMap:
         # https://networkx.org/documentation/stable/_modules/networkx/algorithms/link_analysis/pagerank_alg.html#pagerank
         personalize = 100 / len(fnames)
 
-        try:
-            cache_size = len(self.TAGS_CACHE)
-        except SQLITE_ERRORS as e:
-            self.tags_cache_error(e)
-            cache_size = len(self.TAGS_CACHE)
+        cache_size = safe_cache_len(self.TAGS_CACHE)
+        if cache_size < 0:
+            self.tags_cache_error()
+            cache_size = safe_cache_len(self.TAGS_CACHE)
 
         if len(fnames) - cache_size > 100:
             self.io.tool_output(

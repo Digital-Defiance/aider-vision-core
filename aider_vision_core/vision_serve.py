@@ -33,10 +33,10 @@ def run(argv: list[str] | None = None) -> None:
     validate_listen_address(args.host)
     configure_auth(args.host)
 
-    if os.environ.get("AIDER_VISION_HEADLESS") == "1":
-        from aider_vision_core.headless_stdio import install_headless_stdio
+    from aider_vision_core.vision_runtime import configure_vision_runtime
 
-        install_headless_stdio()
+    if os.environ.get("AIDER_VISION_HEADLESS") == "1":
+        configure_vision_runtime()
     else:
         print(startup_message(args.host))
 
