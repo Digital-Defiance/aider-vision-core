@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: aider-vision-core
-Version: 0.90.7.dev0
+Version: 0.90.8.dev0
 Summary: aider-vision-core: Aider fork with headless API, submodule git, and web integration
 Project-URL: Homepage, https://github.com/Digital-Defiance/aider-vision-core
 Classifier: Development Status :: 4 - Beta
@@ -37,6 +37,7 @@ Requires-Dist: diff-match-patch==20241021
 Requires-Dist: diskcache==5.6.3
 Requires-Dist: distro==1.9.0
 Requires-Dist: fastapi==0.135.1
+Requires-Dist: httptools==0.7.1
 Requires-Dist: fastuuid==0.14.0
 Requires-Dist: filelock==3.25.2
 Requires-Dist: flake8==7.3.0
@@ -117,8 +118,11 @@ Requires-Dist: typer==0.24.1
 Requires-Dist: typing-extensions==4.15.0
 Requires-Dist: typing-inspection==0.4.2
 Requires-Dist: urllib3==2.6.3
+Requires-Dist: uvicorn==0.48.0
+Requires-Dist: uvloop==0.22.1
 Requires-Dist: watchfiles==1.1.1
 Requires-Dist: wcwidth==0.6.0
+Requires-Dist: websockets==16.0
 Requires-Dist: yarl==1.23.0
 Requires-Dist: zipp==3.23.0
 Requires-Dist: tree-sitter==0.23.2; python_version < "3.10"

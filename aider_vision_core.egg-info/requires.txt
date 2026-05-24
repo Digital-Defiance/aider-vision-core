@@ -17,6 +17,7 @@ diff-match-patch==20241021
 diskcache==5.6.3
 distro==1.9.0
 fastapi==0.135.1
+httptools==0.7.1
 fastuuid==0.14.0
 filelock==3.25.2
 flake8==7.3.0
@@ -97,8 +98,11 @@ typer==0.24.1
 typing-extensions==4.15.0
 typing-inspection==0.4.2
 urllib3==2.6.3
+uvicorn==0.48.0
+uvloop==0.22.1
 watchfiles==1.1.1
 wcwidth==0.6.0
+websockets==16.0
 yarl==1.23.0
 zipp==3.23.0
 
