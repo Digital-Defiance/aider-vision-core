@@ -5,7 +5,10 @@ Headless I/O that emits structured events for web/API consumers.
 from __future__ import annotations
 
 import json
-from typing import Any, Callable
+import os
+from typing import Any, Callable, TextIO
+
+from rich.console import Console
 
 from aider_vision_core.io import InputOutput
 
@@ -24,7 +27,21 @@ class EventIO(InputOutput):
         echo_to_console: bool = False,
         **kwargs,
     ):
-        super().__init__(fancy_input=False, **kwargs)
+        kwargs.setdefault("fancy_input", False)
+        kwargs.setdefault("pretty", False)
+        self._null_sink: TextIO | None = None
+        if not echo_to_console and kwargs.get("output") is None:
+            self._null_sink = open(os.devnull, "w", encoding="utf-8")
+            kwargs["output"] = self._null_sink
+        super().__init__(**kwargs)
+        sink = self.output if self.output is not None else self._null_sink
+        if sink is None:
+            self._null_sink = open(os.devnull, "w", encoding="utf-8")
+            sink = self._null_sink
+            self.output = sink
+        # InputOutput attaches Console to stdout; when the desktop app spawns core with
+        # stdout closed, Rich writes raise BrokenPipeError.
+        self.console = Console(file=sink, force_terminal=False, no_color=True)
         self.on_event = on_event
         self.echo_to_console = echo_to_console
         self.events: list[dict[str, Any]] = []
@@ -91,7 +108,24 @@ class EventIO(InputOutput):
             "EventIO does not support interactive input; send messages via Session.run_message()."
         )
 
+    def _tool_message(self, message="", strip=True, color=None):
+        if self.echo_to_console:
+            try:
+                super()._tool_message(message, strip, color)
+            except BrokenPipeError:
+                pass
+
+    def print(self, message=""):
+        if self.echo_to_console:
+            try:
+                super().print(message)
+            except BrokenPipeError:
+                pass
+
     def ai_output(self, content):
         self.emit("assistant_complete", text=content or "")
         if self.echo_to_console:
-            super().ai_output(content)
+            try:
+                super().ai_output(content)
+            except BrokenPipeError:
+                pass

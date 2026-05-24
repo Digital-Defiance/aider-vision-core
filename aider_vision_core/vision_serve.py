@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 
 
@@ -31,7 +32,13 @@ def run(argv: list[str] | None = None) -> None:
 
     validate_listen_address(args.host)
     configure_auth(args.host)
-    print(startup_message(args.host))
+
+    if os.environ.get("AIDER_VISION_HEADLESS") == "1":
+        from aider_vision_core.headless_stdio import install_headless_stdio
+
+        install_headless_stdio()
+    else:
+        print(startup_message(args.host))
 
     try:
         import uvicorn
@@ -44,4 +51,6 @@ def run(argv: list[str] | None = None) -> None:
         host=args.host,
         port=args.port,
         reload=args.reload,
+        log_level="warning",
+        access_log=not os.environ.get("AIDER_VISION_HEADLESS"),
     )

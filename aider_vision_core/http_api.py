@@ -25,6 +25,10 @@ from pydantic import BaseModel, Field
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
 
+from aider_vision_core.headless_stdio import install_headless_stdio
+
+install_headless_stdio()
+
 from aider_vision_core.git_undo import undo_last_aider_commit_for_coder
 from aider_vision_core.http_auth import auth_enabled, configure_auth, get_token_from_env, verify_bearer
 from aider_vision_core.session import Session
@@ -88,6 +92,15 @@ class SessionInfo(BaseModel):
     files_in_chat: list[str]
 
 
+class CommandInfo(BaseModel):
+    name: str
+    summary: str
+
+
+class CommandListResponse(BaseModel):
+    commands: list[CommandInfo]
+
+
 def _sse_pack(event: dict[str, Any]) -> str:
     return f"data: {json.dumps(event, ensure_ascii=False)}\n\n"
 
@@ -146,13 +159,39 @@ def delete_session(session_id: str):
     return {"deleted": session_id}
 
 
+@app.get("/sessions/{session_id}/commands", response_model=CommandListResponse)
+def list_commands(session_id: str):
+    session = _get_session(session_id)
+    commands = session.coder.commands.get_commands()
+    items: list[CommandInfo] = []
+    for cmd in sorted(commands):
+        key = cmd[1:].replace("-", "_")
+        method = getattr(session.coder.commands, f"cmd_{key}", None)
+        summary = ""
+        if method and method.__doc__:
+            summary = method.__doc__.strip().split("\n")[0]
+        items.append(CommandInfo(name=cmd, summary=summary))
+    return CommandListResponse(commands=items)
+
+
 @app.post("/sessions/{session_id}/messages")
 def post_message(session_id: str, body: MessageRequest):
     session = _get_session(session_id)
 
     def generate():
-        for event in session.run_message(body.content, preproc=body.preproc):
-            yield _sse_pack(event)
+        try:
+            for event in session.run_message(body.content, preproc=body.preproc):
+                yield _sse_pack(event)
+        except (BrokenPipeError, ConnectionResetError) as err:
+            yield _sse_pack({"type": "error", "text": str(err)})
+            yield _sse_pack({"type": "done", "error": True})
+        except OSError as err:
+            if err.errno != 32:
+                raise
+            yield _sse_pack({"type": "error", "text": str(err)})
+            yield _sse_pack({"type": "done", "error": True})
+        except GeneratorExit:
+            return
 
     return StreamingResponse(
         generate(),

@@ -13,11 +13,16 @@ Use it like:
     spinner.stop()
 """
 
+import os
 import sys
 import threading
 import time
 
 from rich.console import Console
+
+
+def _headless() -> bool:
+    return os.environ.get("AIDER_VISION_HEADLESS") == "1"
 
 
 class Spinner:
@@ -35,7 +40,7 @@ class Spinner:
         self.start_time = time.time()
         self.last_update = 0.0
         self.visible = False
-        self.is_tty = sys.stdout.isatty()
+        self.is_tty = not _headless() and sys.stdout.isatty()
         self.console = Console()
 
         # Pre-render the animation frames using pure ASCII so they will
@@ -185,11 +190,15 @@ class WaitingSpinner:
 
     def start(self):
         """Start the spinner in a background thread."""
+        if _headless():
+            return
         if not self._thread.is_alive():
             self._thread.start()
 
     def stop(self):
         """Request the spinner to stop and wait briefly for the thread to exit."""
+        if _headless():
+            return
         self._stop_event.set()
         if self._thread.is_alive():
             self._thread.join(timeout=self.delay)

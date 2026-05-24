@@ -105,7 +105,20 @@ class Session:
         assistant_text = []
 
         try:
-            for chunk in self.coder.run_stream(message):
+            self.coder.init_before_message()
+            self.io.user_input(message)
+
+            user_msg = message
+            if preproc:
+                user_msg = self.coder.preproc_user_input(message)
+
+            if user_msg is None:
+                for event in self.io.drain_events():
+                    yield event
+                yield self.io.emit("done", assistant_text="")
+                return
+
+            for chunk in self.coder.send_message(user_msg):
                 if chunk:
                     assistant_text.append(chunk)
                     event = self.io.emit("token", text=chunk)
@@ -126,6 +139,9 @@ class Session:
                 payload["commits"] = self.coder.aider_commit_stack[-1]
 
             yield self.io.emit("done", **payload)
+        except BrokenPipeError as err:
+            yield self.io.emit("error", text=str(err))
+            yield self.io.emit("done", assistant_text="".join(assistant_text), error=True)
         except Exception as err:
             yield self.io.emit("error", text=str(err))
             yield self.io.emit("done", assistant_text="".join(assistant_text), error=True)

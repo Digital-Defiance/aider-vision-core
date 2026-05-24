@@ -41,6 +41,7 @@ aider_vision_core/format_settings.py
 aider_vision_core/git_undo.py
 aider_vision_core/git_workspace.py
 aider_vision_core/gui.py
+aider_vision_core/headless_stdio.py
 aider_vision_core/help.py
 aider_vision_core/help_pats.py
 aider_vision_core/history.py
