@@ -21,4 +21,4 @@ __commit_id__: str | None
 __version__ = version = '0.90.10.dev0'
 __version_tuple__ = version_tuple = (0, 90, 10, 'dev0')
 
-__commit_id__ = commit_id = None
+__commit_id__ = commit_id = 'g7d7163ed7'
