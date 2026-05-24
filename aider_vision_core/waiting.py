@@ -35,8 +35,9 @@ class Spinner:
 
     last_frame_idx = 0  # Class variable to store the last frame index
 
-    def __init__(self, text: str, width: int = 7):
+    def __init__(self, text: str, width: int = 7, io=None):
         self.text = text
+        self.io = io
         self.start_time = time.time()
         self.last_update = 0.0
         self.visible = False
@@ -110,6 +111,12 @@ class Spinner:
     def step(self, text: str = None) -> None:
         if text is not None:
             self.text = text
+
+        if _headless() and self.io is not None:
+            from aider_vision_core.gui_progress import emit_progress
+
+            emit_progress(self.io, label=self.text, message=text or self.text, fraction=None)
+            return
 
         if not self.is_tty:
             return

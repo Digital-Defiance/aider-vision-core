@@ -15,10 +15,10 @@ from diskcache import Cache
 from grep_ast import TreeContext, filename_to_lang
 from pygments.lexers import guess_lexer_for_filename
 from pygments.token import Token
-from tqdm import tqdm
 from tree_sitter import Query
 
 from aider_vision_core.dump import dump
+from aider_vision_core.gui_progress import progress_iter
 from aider_vision_core.special import filter_important_files
 from aider_vision_core.waiting import Spinner
 
@@ -289,7 +289,7 @@ class RepoMap:
             return
 
         query_scm = get_scm_fname(lang)
-        if not query_scm.exists():
+        if not query_scm or not query_scm.exists():
             return
         query_scm = query_scm.read_text()
 
@@ -392,12 +392,15 @@ class RepoMap:
             self.io.tool_output(
                 "Initial repo scan can be slow in larger repos, but only happens once."
             )
-            fnames = tqdm(fnames, desc="Scanning repo")
+            fname_source = progress_iter(
+                fnames, desc="Scanning repo", io=self.io, total=len(fnames)
+            )
             showing_bar = True
         else:
+            fname_source = fnames
             showing_bar = False
 
-        for fname in fnames:
+        for fname in fname_source:
             if self.verbose:
                 self.io.tool_output(f"Processing {fname}")
             if progress and not showing_bar:
@@ -643,7 +646,7 @@ class RepoMap:
         if not mentioned_idents:
             mentioned_idents = set()
 
-        spin = Spinner(UPDATING_REPO_MAP_MESSAGE)
+        spin = Spinner(UPDATING_REPO_MAP_MESSAGE, io=self.io)
 
         ranked_tags = self.get_ranked_tags(
             chat_fnames,
@@ -803,30 +806,30 @@ def get_random_color():
 
 
 def get_scm_fname(lang):
-    # Load the tags queries
+    # Load tags queries from the aider_vision_core package root (not this submodule).
+    pkg = __package__.split(".")[0] if __package__ else "aider_vision_core"
     if USING_TSL_PACK:
         subdir = "tree-sitter-language-pack"
         try:
-            path = resources.files(__package__).joinpath(
+            path = resources.files(pkg).joinpath(
                 "queries",
                 subdir,
                 f"{lang}-tags.scm",
             )
             if path.exists():
                 return path
-        except KeyError:
+        except (KeyError, ModuleNotFoundError, TypeError):
             pass
 
-    # Fall back to tree-sitter-languages
     subdir = "tree-sitter-languages"
     try:
-        return resources.files(__package__).joinpath(
+        return resources.files(pkg).joinpath(
             "queries",
             subdir,
             f"{lang}-tags.scm",
         )
-    except KeyError:
-        return
+    except (KeyError, ModuleNotFoundError, TypeError):
+        return None
 
 
 def get_supported_languages_md():

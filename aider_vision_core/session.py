@@ -119,6 +119,8 @@ class Session:
                 return
 
             for chunk in self.coder.send_message(user_msg):
+                for event in self.io.drain_events():
+                    yield event
                 if chunk:
                     assistant_text.append(chunk)
                     event = self.io.emit("token", text=chunk)

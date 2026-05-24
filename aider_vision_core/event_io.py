@@ -53,6 +53,27 @@ class EventIO(InputOutput):
             self.on_event(event)
         return event
 
+    def emit_progress(
+        self,
+        *,
+        label: str,
+        current: int | None = None,
+        total: int | None = None,
+        message: str | None = None,
+        fraction: float | None = None,
+    ) -> dict[str, Any]:
+        from aider_vision_core.gui_progress import emit_progress
+
+        emit_progress(
+            self,
+            label=label,
+            current=current,
+            total=total,
+            message=message,
+            fraction=fraction,
+        )
+        return self.events[-1] if self.events else {"type": "progress", "label": label}
+
     def drain_events(self) -> list[dict[str, Any]]:
         events = self.events
         self.events = []
