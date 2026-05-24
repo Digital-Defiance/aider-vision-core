@@ -40,7 +40,7 @@ from .editor import pipe_editor
 from .utils import is_image_file
 
 # Constants
-NOTIFICATION_MESSAGE = "Aider is waiting for your input"
+NOTIFICATION_MESSAGE = "Aider Vision Core is waiting for your input"
 
 
 def ensure_hash_prefix(color):
@@ -987,10 +987,14 @@ class InputOutput:
 
     def tool_error(self, message="", strip=True):
         self.num_error_outputs += 1
-        self._tool_message(message, strip, self.tool_error_color)
+        from aider_vision_core.brand import format_user_error
+
+        self._tool_message(format_user_error(message), strip, self.tool_error_color)
 
     def tool_warning(self, message="", strip=True):
-        self._tool_message(message, strip, self.tool_warning_color)
+        from aider_vision_core.brand import format_user_error
+
+        self._tool_message(format_user_error(message), strip, self.tool_warning_color)
 
     def tool_output(self, *messages, log_only=False, bold=False):
         if messages:

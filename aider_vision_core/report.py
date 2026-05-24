@@ -7,6 +7,7 @@ import urllib.parse
 import webbrowser
 
 from aider_vision_core import __version__
+from aider_vision_core.brand import DISPLAY_CORE, PRODUCT_CORE, launcher_context_lines
 from aider_vision_core.urls import github_issues
 from aider_vision_core.versioncheck import VERSION_CHECK_FNAME
 
@@ -44,15 +45,23 @@ def report_github_issue(issue_text, title=None, confirm=True):
     :param confirm: Whether to ask for confirmation before opening the browser (default: True)
     :return: None
     """
-    version_info = f"Aider version: {__version__}\n"
+    version_info = f"{DISPLAY_CORE} ({PRODUCT_CORE}) version: {__version__}\n"
     python_version = f"Python version: {sys.version.split()[0]}\n"
     platform_info = f"Platform: {platform.platform()}\n"
     python_info = get_python_info() + "\n"
     os_info = get_os_info() + "\n"
     git_info = get_git_info() + "\n"
+    launcher_info = "\n".join(launcher_context_lines())
 
     system_info = (
-        version_info + python_version + platform_info + python_info + os_info + git_info + "\n"
+        version_info
+        + python_version
+        + platform_info
+        + python_info
+        + os_info
+        + git_info
+        + (launcher_info + "\n" if launcher_info else "")
+        + "\n"
     )
 
     issue_text = system_info + issue_text
@@ -63,10 +72,15 @@ def report_github_issue(issue_text, title=None, confirm=True):
     issue_url = f"{github_issues}?{urllib.parse.urlencode(params)}"
 
     if confirm:
+        from aider_vision_core.brand import is_launched_by_vision, user_facing_name
+
+        product = user_facing_name() if is_launched_by_vision() else DISPLAY_CORE
         print(f"\n# {title}\n")
         print(issue_text.strip())
         print()
-        print("Please consider reporting this bug to help improve aider!")
+        print(f"Please consider reporting this bug to help improve {product}!")
+        if is_launched_by_vision():
+            print(f"(Technical details above refer to {DISPLAY_CORE}.)")
         prompt = "Open a GitHub Issue pre-filled with the above error in your browser? (Y/n) "
         confirmation = input(prompt).strip().lower()
 

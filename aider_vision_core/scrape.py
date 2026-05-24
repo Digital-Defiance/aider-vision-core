@@ -8,7 +8,9 @@ import pypandoc
 from aider_vision_core import __version__, urls, utils
 from aider_vision_core.dump import dump  # noqa: F401
 
-aider_user_agent = f"Aider/{__version__} +{urls.website}"
+from aider_vision_core.brand import PRODUCT_CORE
+
+aider_user_agent = f"{PRODUCT_CORE}/{__version__} +{urls.website}"
 
 # Playwright is nice because it has a simple way to install dependencies on most
 # platforms.

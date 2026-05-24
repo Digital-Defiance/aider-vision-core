@@ -29,6 +29,7 @@ from typing import List
 from rich.console import Console
 
 from aider_vision_core import __version__, models, prompts, urls, utils
+from aider_vision_core.brand import version_banner
 from aider_vision_core.analytics import Analytics
 from aider_vision_core.commands import Commands
 from aider_vision_core.exceptions import LiteLLMExceptions
@@ -209,7 +210,7 @@ class Coder:
 
     def get_announcements(self):
         lines = []
-        lines.append(f"Aider v{__version__}")
+        lines.append(version_banner())
 
         # Model
         main_model = self.main_model

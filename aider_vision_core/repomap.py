@@ -1,6 +1,7 @@
 import colorsys
 import math
 import os
+import pickle
 import random
 import shutil
 import sqlite3
@@ -32,15 +33,16 @@ Tag = namedtuple("Tag", "rel_fname fname line name kind".split())
 SQLITE_ERRORS = (sqlite3.OperationalError, sqlite3.DatabaseError, OSError)
 
 
-CACHE_VERSION = 3
+CACHE_VERSION = 5
 if USING_TSL_PACK:
-    CACHE_VERSION = 4
+    CACHE_VERSION = 5
 
 UPDATING_REPO_MAP_MESSAGE = "Updating repo map"
 
 
 class RepoMap:
-    TAGS_CACHE_DIR = f".aider.tags.cache.v{CACHE_VERSION}"
+    # Distinct from upstream `.aider.tags.cache.*` (pickles reference old `aider` module).
+    TAGS_CACHE_DIR = f".aider-vision-core.tags.cache.v{CACHE_VERSION}"
 
     warned_files = set()
 
@@ -230,6 +232,22 @@ class RepoMap:
         except FileNotFoundError:
             self.io.tool_warning(f"File not found error: {fname}")
 
+    def _tags_cache_get(self, cache_key):
+        try:
+            return self.TAGS_CACHE.get(cache_key)  # Issue #1308
+        except SQLITE_ERRORS as e:
+            self.tags_cache_error(e)
+            return self.TAGS_CACHE.get(cache_key)
+        except (ModuleNotFoundError, pickle.UnpicklingError, AttributeError):
+            self._drop_tags_cache_key(cache_key)
+            return None
+
+    def _drop_tags_cache_key(self, cache_key):
+        try:
+            del self.TAGS_CACHE[cache_key]
+        except Exception:
+            pass
+
     def get_tags(self, fname, rel_fname):
         # Check if the file is in the cache and if the modification time has not changed
         file_mtime = self.get_mtime(fname)
@@ -237,11 +255,7 @@ class RepoMap:
             return []
 
         cache_key = fname
-        try:
-            val = self.TAGS_CACHE.get(cache_key)  # Issue #1308
-        except SQLITE_ERRORS as e:
-            self.tags_cache_error(e)
-            val = self.TAGS_CACHE.get(cache_key)
+        val = self._tags_cache_get(cache_key)
 
         if val is not None and val.get("mtime") == file_mtime:
             try:
@@ -249,6 +263,8 @@ class RepoMap:
             except SQLITE_ERRORS as e:
                 self.tags_cache_error(e)
                 return self.TAGS_CACHE[cache_key]["data"]
+            except (ModuleNotFoundError, pickle.UnpicklingError, AttributeError):
+                self._drop_tags_cache_key(cache_key)
 
         # miss!
         data = list(self.get_tags_raw(fname, rel_fname))
