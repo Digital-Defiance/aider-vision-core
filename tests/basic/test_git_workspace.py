@@ -4,7 +4,12 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from aider_vision_core.git_workspace import RepoSet, create_git_workspace, discover_submodule_paths
+from aider_vision_core.git_workspace import (
+    RepoSet,
+    _submodule_status_paths,
+    create_git_workspace,
+    discover_submodule_paths,
+)
 from aider_vision_core.git_undo import undo_last_aider_commit_for_coder
 from aider_vision_core.io import InputOutput
 from aider_vision_core.repo import GitRepo
@@ -75,6 +80,38 @@ class TestGitWorkspace(unittest.TestCase):
             ws = create_git_workspace(io, [str(root)], None)
             tracked = ws.get_tracked_files()
             self.assertIn("vendor/lib/pkg.py", tracked)
+
+    def test_get_tracked_files_excludes_submodule_gitlink(self):
+        """Superproject gitlink paths are directories, not repo-map files."""
+        with GitTemporaryDirectory() as root:
+            root = Path(root)
+            _init_submodule(root, "vendor/lib", {"pkg.py": "x = 1\n"})
+            io = InputOutput(pretty=False, yes=True)
+            ws = create_git_workspace(io, [str(root)], None)
+            tracked = ws.get_tracked_files()
+            self.assertNotIn("vendor/lib", tracked)
+            self.assertIn("vendor/lib/pkg.py", tracked)
+
+    def test_submodule_status_path_not_describe_tag(self):
+        with GitTemporaryDirectory() as root:
+            root = Path(root)
+            _init_submodule(root, "vendor/lib", {"pkg.py": "x = 1\n"})
+            paths = _submodule_status_paths(str(root))
+            self.assertIn("vendor/lib", paths)
+            self.assertTrue(all(not p.startswith("(") for p in paths))
+
+    def test_submodule_status_parses_nested_paths(self):
+        lines = (
+            " abc1234 vendor/lib (v1.0.0)\n"
+            " def5678 vendor/lib/pkg (heads/main)\n"
+        )
+        with patch(
+            "aider_vision_core.git_workspace.git.Repo"
+        ) as mock_repo_cls:
+            mock_repo = mock_repo_cls.return_value
+            mock_repo.git.submodule.return_value = lines
+            paths = _submodule_status_paths("/tmp/ws")
+        self.assertEqual(paths, ["vendor/lib", "vendor/lib/pkg"])
 
     def test_commit_inside_submodule_updates_pointer(self):
         with GitTemporaryDirectory() as root:

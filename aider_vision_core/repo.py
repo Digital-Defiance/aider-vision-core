@@ -430,6 +430,21 @@ class GitRepo:
 
         return diffs
 
+    def is_submodule_gitlink(self, path: str) -> bool:
+        """True when ``path`` is a submodule gitlink in this repo (mode 160000)."""
+        if not self.repo:
+            return False
+        path = self.normalize_path(path)
+        try:
+            out = self.repo.git.ls_files("-s", "--", path)
+        except ANY_GIT_ERROR:
+            return False
+        if not out or not str(out).strip():
+            return False
+        first_line = str(out).strip().splitlines()[0]
+        parts = first_line.split()
+        return len(parts) >= 1 and parts[0] == "160000"
+
     def get_tracked_files(self):
         if not self.repo:
             return []
@@ -484,6 +499,7 @@ class GitRepo:
             self.io.tool_error(f"Unable to read staged files: {err}")
 
         res = [fname for fname in files if not self.ignored_file(fname)]
+        res = [fname for fname in res if not self.is_submodule_gitlink(fname)]
 
         return res
 

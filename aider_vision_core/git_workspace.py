@@ -124,18 +124,42 @@ def _submodule_status_paths(super_root: str) -> list[str]:
         line = line.strip()
         if not line:
             continue
+        # Format: [+-]<sha> <path> [(describe)]
         parts = line.split()
         if len(parts) >= 2:
-            paths.append(parts[-1])
+            paths.append(parts[1])
     return paths
 
 
+def _normalize_submodule_rel_path(path: str) -> str:
+    return path.replace("\\", "/").strip("/")
+
+
 def discover_submodule_paths_with_git(super_root: str) -> list[str]:
-    """Prefer git submodule status; fall back to parsing .gitmodules."""
-    paths = _submodule_status_paths(super_root)
-    if paths:
-        return paths
-    return discover_submodule_paths(super_root)
+    """
+    Submodule roots relative to the superproject, including nested (recursive) paths.
+
+    Merges ``git submodule status --recursive`` with a ``.gitmodules`` walk so
+    uninitialized or partially-checked-out nested submodules are still discovered.
+    """
+    root = Path(super_root)
+    candidates: list[str] = []
+    candidates.extend(_submodule_status_paths(super_root))
+    candidates.extend(discover_submodule_paths(super_root))
+
+    seen: set[str] = set()
+    valid: list[str] = []
+    for raw in candidates:
+        rel = _normalize_submodule_rel_path(raw)
+        if not rel or rel in seen:
+            continue
+        if not (root / rel).is_dir():
+            continue
+        seen.add(rel)
+        valid.append(rel)
+
+    # Deepest paths first (helps commit/undo ordering for nested gitlinks).
+    return sorted(valid, key=lambda p: (-p.count("/"), p))
 
 
 def create_git_workspace(io, fnames, git_dname, **git_repo_kwargs):
@@ -180,6 +204,7 @@ class RepoSet:
         self.repos: list[GitRepo] = [primary]
         seen_roots = {primary.root}
 
+        # submodule_paths are deepest-first; init every nested checkout we can open.
         for rel_path in submodule_paths:
             abs_path = Path(primary.root) / rel_path
             if not abs_path.is_dir():
@@ -195,6 +220,9 @@ class RepoSet:
 
         self.repos.sort(key=lambda r: len(Path(r.root).parts), reverse=True)
         self.last_commit_batch: list[dict] = []
+        self.submodule_rel_paths = frozenset(
+            _normalize_submodule_rel_path(p) for p in submodule_paths
+        )
 
     def repo_by_root(self, root: str) -> GitRepo | None:
         for repo in self.repos:
@@ -247,9 +275,6 @@ class RepoSet:
         abs_path = self._abs_path(path)
         return abs_path.relative_to(Path(self.root)).as_posix()
 
-    def abs_root_path(self, path):
-        return self.primary.abs_root_path(path)
-
     def normalize_path(self, path):
         return self.primary.normalize_path(self.path_in_workspace(path))
 
@@ -266,11 +291,25 @@ class RepoSet:
             if str(prefix) == ".":
                 prefix = Path("")
             for fname in repo.get_tracked_files():
+                posix_fname = fname.replace("\\", "/")
+                if not prefix:
+                    workspace_rel = posix_fname
+                    if workspace_rel in self.submodule_rel_paths:
+                        continue
+                    if self.primary.is_submodule_gitlink(posix_fname):
+                        continue
+                elif prefix:
+                    workspace_rel = f"{prefix.as_posix()}/{posix_fname}"
+                    if workspace_rel in self.submodule_rel_paths:
+                        continue
                 if prefix:
                     files.add((prefix / fname).as_posix())
                 else:
                     files.add(fname)
         return sorted(files)
+
+    def abs_root_path(self, path):
+        return str(self._abs_path(path))
 
     def ignored_file(self, fname):
         return self.primary.ignored_file(self.path_in_workspace(str(fname)))
