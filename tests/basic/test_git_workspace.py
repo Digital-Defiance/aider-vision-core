@@ -105,9 +105,7 @@ class TestGitWorkspace(unittest.TestCase):
             " abc1234 vendor/lib (v1.0.0)\n"
             " def5678 vendor/lib/pkg (heads/main)\n"
         )
-        with patch(
-            "aider_vision_core.git_workspace.git.Repo"
-        ) as mock_repo_cls:
+        with patch("git.Repo") as mock_repo_cls:
             mock_repo = mock_repo_cls.return_value
             mock_repo.git.submodule.return_value = lines
             paths = _submodule_status_paths("/tmp/ws")
@@ -151,7 +149,10 @@ class TestGitWorkspace(unittest.TestCase):
             root = Path(root)
             _init_submodule(root, "vendor/lib", {"pkg.py": "x = 1\n"})
             io = InputOutput(pretty=False, yes=True)
-            ws = create_git_workspace(io, [str(root / "vendor/lib/pkg.py")], None)
+            # Match Session.create: superproject git_dname + file inside submodule
+            ws = create_git_workspace(
+                io, [str(root / "vendor/lib/pkg.py")], str(root)
+            )
             self.assertIsInstance(ws, RepoSet)
             self.assertEqual(ws.root, str(root.resolve()))
 
@@ -163,13 +164,22 @@ class TestGitWorkspace(unittest.TestCase):
             root = Path(root)
             _init_submodule(root, "vendor/lib", {"pkg.py": "x = 1\n"})
             io = InputOutput(pretty=False, yes=True)
-            ws = create_git_workspace(io, [str(root)], None)
+            ws = create_git_workspace(
+                io,
+                [str(root)],
+                str(root),
+                models=[],
+            )
             self.assertIsInstance(ws, RepoSet)
 
             sub_file = root / "vendor/lib/pkg.py"
             sub_file.write_text("x = 99\n")
 
-            res = ws.commit(fnames=["vendor/lib/pkg.py"], aider_edits=True)
+            res = ws.commit(
+                fnames=["vendor/lib/pkg.py"],
+                aider_edits=True,
+                message="update pkg",
+            )
             self.assertIsNotNone(res)
             self.assertGreaterEqual(len(ws.last_commit_batch), 1)
 

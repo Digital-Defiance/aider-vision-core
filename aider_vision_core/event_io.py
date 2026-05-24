@@ -6,6 +6,8 @@ from __future__ import annotations
 
 import json
 import os
+import threading
+import uuid
 from typing import Any, Callable, TextIO
 
 from rich.console import Console
@@ -32,6 +34,10 @@ class EventIO(InputOutput):
         self.on_event = on_event
         self.echo_to_console = echo_to_console
         self.events: list[dict[str, Any]] = []
+        self._confirm_lock = threading.Lock()
+        self._confirm_events: dict[str, threading.Event] = {}
+        self._confirm_answers: dict[str, bool] = {}
+        self._confirm_timeout_s = 3600.0
         self._null_sink: TextIO | None = None
         if not echo_to_console and kwargs.get("output") is None:
             self._null_sink = open(os.devnull, "w", encoding="utf-8")
@@ -105,24 +111,53 @@ class EventIO(InputOutput):
         if self.echo_to_console:
             super().tool_warning(message, strip=strip)
 
+    def resolve_confirm(self, confirm_id: str, accepted: bool) -> bool:
+        """Answer a pending confirm (HTTP/UI). Returns False if unknown or already resolved."""
+        with self._confirm_lock:
+            event = self._confirm_events.get(confirm_id)
+            if event is None:
+                return False
+            self._confirm_answers[confirm_id] = accepted
+            event.set()
+        return True
+
     def confirm_ask(self, question, subject=None, explicit_yes=None, group=None, allow_never=False):
         default = explicit_yes if explicit_yes is not None else bool(self.yes)
+        if self.yes:
+            self.emit(
+                "confirm",
+                confirm_id=None,
+                question=str(question),
+                subject=subject,
+                default=default,
+                auto_answered=True,
+            )
+            return True
+
+        confirm_id = uuid.uuid4().hex
+        waiter = threading.Event()
+        with self._confirm_lock:
+            self._confirm_events[confirm_id] = waiter
+
         self.emit(
             "confirm",
+            confirm_id=confirm_id,
             question=str(question),
             subject=subject,
             default=default,
-            auto_answered=bool(self.yes),
+            auto_answered=False,
         )
-        if self.yes:
-            return True
-        return super().confirm_ask(
-            question,
-            subject=subject,
-            explicit_yes=explicit_yes,
-            group=group,
-            allow_never=allow_never,
-        )
+
+        if not waiter.wait(timeout=self._confirm_timeout_s):
+            with self._confirm_lock:
+                self._confirm_events.pop(confirm_id, None)
+                self._confirm_answers.pop(confirm_id, None)
+            return False
+
+        with self._confirm_lock:
+            self._confirm_events.pop(confirm_id, None)
+            answer = self._confirm_answers.pop(confirm_id, False)
+        return answer
 
     def get_input(self, root, rel_fnames, addable_rel_fnames, commands, abs_read_only_fnames, edit_format=""):
         raise RuntimeError(

@@ -1185,6 +1185,90 @@ class Commands:
         if text:
             self.io.placeholder = text
 
+    def cmd_todo(self, args):
+        "Manage workspace tasks: list | add | active | done | export | import"
+
+        from pathlib import Path
+
+        from aider_vision_core.workspace_todos import WorkspaceTodos
+
+        store_api = WorkspaceTodos(self.coder.root)
+        parts = (args or "").strip().split(maxsplit=1)
+        sub = (parts[0] if parts else "list").lower()
+        rest = parts[1].strip() if len(parts) > 1 else ""
+
+        if sub in ("list", "ls", ""):
+            store = store_api.load()
+            if not store.todos:
+                self.io.tool_output("No tasks.")
+                return
+            for item in store.todos:
+                active = " *" if store.active_id == item.id else ""
+                self.io.tool_output(f"{item.id[:8]}  [{item.status}]  {item.title}{active}")
+            return
+
+        if sub == "add":
+            title = rest or "Untitled"
+            item = store_api.add(title)
+            self.io.tool_output(f"Added task {item.id[:8]}… {item.title}")
+            return
+
+        if sub == "active":
+            if not rest:
+                store_api.set_active(None)
+                self.io.tool_output("Cleared active task.")
+                return
+            try:
+                store = store_api.set_active(rest)
+            except ValueError as err:
+                self.io.tool_error(str(err))
+                return
+            item = store_api.find(store, store.active_id or rest)
+            if item:
+                self.io.tool_output(f"Active task: {item.title} ({item.id[:8]}…)")
+            return
+
+        if sub == "done":
+            if not rest:
+                self.io.tool_error("Usage: /todo done <id-or-title>")
+                return
+            try:
+                item = store_api.mark_done(rest)
+            except ValueError as err:
+                self.io.tool_error(str(err))
+                return
+            self.io.tool_output(f"Marked done: {item.title}")
+            return
+
+        if sub == "export":
+            path = rest.strip() if rest else None
+            md = store_api.export_markdown()
+            if path:
+                Path(path).write_text(md, encoding="utf-8")
+                self.io.tool_output(f"Wrote tasks to {path}")
+            else:
+                self.io.tool_output(md)
+            return
+
+        if sub == "import":
+            if not rest:
+                self.io.tool_error("Usage: /todo import <file.md> [--merge]")
+                return
+            merge = "--merge" in rest
+            path = rest.replace("--merge", "").strip()
+            try:
+                text = Path(path).read_text(encoding="utf-8")
+            except OSError as err:
+                self.io.tool_error(f"Cannot read {path}: {err}")
+                return
+            store = store_api.import_markdown(text, merge=merge)
+            self.io.tool_output(f"Imported {len(store.todos)} task(s).")
+            return
+
+        self.io.tool_error(
+            "Usage: /todo list | add <title> | active <id> | done <id> | export [file] | import <file> [--merge]"
+        )
+
     def cmd_paste(self, args):
         """Paste image/text from the clipboard into the chat.\
         Optionally provide a name for the image."""

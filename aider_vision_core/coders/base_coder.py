@@ -1973,15 +1973,15 @@ class Coder:
             elif text:
                 # Apply reasoning tag formatting
                 text = replace_reasoning_tags(text, self.reasoning_tag_name)
-                try:
-                    sys.stdout.write(text)
-                except UnicodeEncodeError:
-                    # Safely encode and decode the text
-                    safe_text = text.encode(sys.stdout.encoding, errors="backslashreplace").decode(
-                        sys.stdout.encoding
-                    )
-                    sys.stdout.write(safe_text)
-                sys.stdout.flush()
+                if not getattr(self, "yield_stream", False):
+                    try:
+                        sys.stdout.write(text)
+                    except UnicodeEncodeError:
+                        safe_text = text.encode(sys.stdout.encoding, errors="backslashreplace").decode(
+                            sys.stdout.encoding
+                        )
+                        sys.stdout.write(safe_text)
+                    sys.stdout.flush()
                 yield text
 
         if not received_content:
