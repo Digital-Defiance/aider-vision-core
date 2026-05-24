@@ -47,4 +47,5 @@ importlib-metadata<8.0.0
 # The proper dependency is litellm[proxy], but it installs
 # mcp which is a pywin32 dependency that fails on linux CI.
 fastapi
+uvicorn[standard]
 orjson

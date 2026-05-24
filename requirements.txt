@@ -88,6 +88,10 @@ fastapi==0.135.1
     # via
     #   -c requirements/common-constraints.txt
     #   -r requirements/requirements.in
+httptools==0.7.1
+    # via
+    #   -r requirements/requirements.in
+    #   uvicorn
 fastuuid==0.14.0
     # via
     #   -c requirements/common-constraints.txt
@@ -455,6 +459,13 @@ urllib3==2.6.3
     # via
     #   -c requirements/common-constraints.txt
     #   requests
+uvicorn==0.48.0
+    # via
+    #   -r requirements/requirements.in
+uvloop==0.22.1
+    # via
+    #   -r requirements/requirements.in
+    #   uvicorn
 watchfiles==1.1.1
     # via
     #   -c requirements/common-constraints.txt
@@ -463,6 +474,10 @@ wcwidth==0.6.0
     # via
     #   -c requirements/common-constraints.txt
     #   prompt-toolkit
+websockets==16.0
+    # via
+    #   -r requirements/requirements.in
+    #   uvicorn
 yarl==1.23.0
     # via
     #   -c requirements/common-constraints.txt
