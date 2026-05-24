@@ -86,12 +86,20 @@ sync_version_metadata_from_tag() {
   echo "Syncing version metadata from git tag ${VERSION}..."
   "$PYTHON" -m pip install -q "setuptools-scm[toml]>=8" build wheel
 
-  # At the tagged commit, dump_version reads the tag (no pretend version).
+  # At the tagged commit, read version from git and write pyproject [tool.setuptools_scm] write_to.
+  # setuptools-scm 8+ requires dump_version(root, version, write_to); use _get_version + Configuration.
   "$PYTHON" - <<'PY' || die "failed to write aider_vision_core/_version.py"
-from setuptools_scm import dump_version
+from setuptools_scm import Configuration, _get_version
 
-dump_version(root=".", write_to="aider_vision_core/_version.py")
-print("wrote aider_vision_core/_version.py from git tag")
+config = Configuration.from_file(
+    relative_to="pyproject.toml",
+    dist_name="aider-vision-core",
+)
+version = _get_version(config)
+if not version:
+    raise SystemExit("setuptools-scm could not detect version (is the release tag on HEAD?)")
+write_to = config.write_to or config.version_file
+print(f"wrote {write_to} ({version}) from git tag")
 PY
 
   "$PYTHON" -m pip install -q -e . --no-deps

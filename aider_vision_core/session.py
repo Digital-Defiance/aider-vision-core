@@ -125,7 +125,7 @@ class Session:
             if item:
                 turn_todo_id = item.id
                 if inject_todo_spec:
-                    user_text = format_todo_context(item) + message
+                    user_text = format_todo_context(item, store=store) + message
 
         self.io.emit("user_message", text=user_text)
         assistant_text = []

@@ -120,6 +120,10 @@ class TodoItemModel(BaseModel):
     id: str
     title: str
     spec: str = ""
+    requirements: str = ""
+    design: str = ""
+    tasks_md: str = ""
+    depends_on: list[str] = Field(default_factory=list)
     status: str = "open"
     links: list[str] = Field(default_factory=list)
     checklist: list[ChecklistItemModel] = Field(default_factory=list)
@@ -131,7 +135,9 @@ class TodoListResponse(BaseModel):
     version: int = 1
     active_id: str | None = Field(None, serialization_alias="activeId")
     todos: list[TodoItemModel]
-    templates: list[str] = Field(default_factory=lambda: sorted(TODO_TEMPLATES.keys()))
+    templates: list[str] = Field(
+        default_factory=lambda: sorted(set(TODO_TEMPLATES) | set(SPEC_LAYER_TEMPLATES))
+    )
 
     model_config = {"populate_by_name": True}
 

@@ -8,6 +8,8 @@ HISTORY.md
 LICENSE.txt
 MANIFEST.in
 README.md
+aider-vision-black.png
+aider-vision-black.svg
 build.sh
 pyproject.toml
 pytest.ini
@@ -29,6 +31,7 @@ aider_vision_core/_version.py
 aider_vision_core/analytics.py
 aider_vision_core/args.py
 aider_vision_core/args_formatter.py
+aider_vision_core/brand.py
 aider_vision_core/cli_serve.py
 aider_vision_core/commands.py
 aider_vision_core/copypaste.py
@@ -67,6 +70,7 @@ aider_vision_core/scrape.py
 aider_vision_core/sendchat.py
 aider_vision_core/session.py
 aider_vision_core/special.py
+aider_vision_core/todo_markdown.py
 aider_vision_core/urls.py
 aider_vision_core/utils.py
 aider_vision_core/versioncheck.py
@@ -76,6 +80,7 @@ aider_vision_core/voice.py
 aider_vision_core/waiting.py
 aider_vision_core/watch.py
 aider_vision_core/watch_prompts.py
+aider_vision_core/workspace_todos.py
 aider_vision_core.egg-info/PKG-INFO
 aider_vision_core.egg-info/SOURCES.txt
 aider_vision_core.egg-info/dependency_links.txt
@@ -196,6 +201,7 @@ aider_vision_core/website/_includes/python-m-aider.md
 aider_vision_core/website/_includes/recording.css
 aider_vision_core/website/_includes/recording.md
 aider_vision_core/website/_includes/replit-pipx.md
+aider_vision_core/website/_includes/vision-notice.md
 aider_vision_core/website/_includes/works-best.md
 aider_vision_core/website/_sass/custom/custom.scss
 aider_vision_core/website/docs/config.md
@@ -324,6 +330,7 @@ scripts/my_models.py
 scripts/pip-compile.sh
 scripts/recording_audio.py
 scripts/redact-cast.py
+scripts/sync_aider_vision.sh
 scripts/tmux_record.sh
 scripts/tsl_pack_langs.py
 scripts/update-blame.sh
@@ -347,6 +354,8 @@ tests/basic/test_find_or_blocks.py
 tests/basic/test_git_workspace.py
 tests/basic/test_history.py
 tests/basic/test_http_api.py
+tests/basic/test_http_session_todos.py
+tests/basic/test_http_workspace_todos.py
 tests/basic/test_io.py
 tests/basic/test_linter.py
 tests/basic/test_main.py
@@ -361,8 +370,11 @@ tests/basic/test_run_cmd.py
 tests/basic/test_sanity_check_repo.py
 tests/basic/test_scripting.py
 tests/basic/test_sendchat.py
+tests/basic/test_session_add_files.py
 tests/basic/test_special.py
 tests/basic/test_ssl_verification.py
+tests/basic/test_superproject_integration.py
+tests/basic/test_todo_markdown.py
 tests/basic/test_udiff.py
 tests/basic/test_urls.py
 tests/basic/test_utils.py
@@ -370,6 +382,7 @@ tests/basic/test_vision_runtime.py
 tests/basic/test_voice.py
 tests/basic/test_watch.py
 tests/basic/test_wholefile.py
+tests/basic/test_workspace_todos.py
 tests/browser/test_browser.py
 tests/fixtures/chat-history-search-replace-gold.txt
 tests/fixtures/chat-history.md
