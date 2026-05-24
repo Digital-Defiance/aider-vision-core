@@ -8,6 +8,7 @@ HISTORY.md
 LICENSE.txt
 MANIFEST.in
 README.md
+build.sh
 pyproject.toml
 pytest.ini
 requirements.txt
