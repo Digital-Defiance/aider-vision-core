@@ -150,23 +150,17 @@ fi
 
 echo "Regenerating version metadata for ${VERSION}..."
 export SETUPTOOLS_SCM_PRETEND_VERSION="$PEP440_VERSION"
+
+# setuptools-scm is a build dependency only — not installed by pip install -e .
+"$PYTHON" -m pip install -q "setuptools-scm[toml]>=8" build wheel
+
 "$PYTHON" - <<'PY' || die "failed to write aider_vision_core/_version.py"
 import os
-from pathlib import Path
+from setuptools_scm import dump_version
 
-try:
-    from setuptools_scm import get_version
-except ImportError:
-    raise SystemExit("install setuptools_scm in your venv: pip install setuptools_scm")
-
-root = Path(".").resolve()
-version = get_version(
-    root=str(root),
-    version=os.environ["SETUPTOOLS_SCM_PRETEND_VERSION"],
-)
-out = root / "aider_vision_core" / "_version.py"
-out.write_text(f'__version__ = "{version}"\n', encoding="utf-8")
-print(f"wrote {out} -> {version}")
+ver = os.environ["SETUPTOOLS_SCM_PRETEND_VERSION"]
+dump_version(root=".", write_to="aider_vision_core/_version.py", version=ver)
+print(f"wrote aider_vision_core/_version.py -> {ver}")
 PY
 
 # Refresh egg-info so PKG-INFO / SOURCES.txt match the intended release.
