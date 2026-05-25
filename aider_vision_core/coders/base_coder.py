@@ -1449,15 +1449,18 @@ class Coder:
             utils.show_messages(messages, functions=self.functions)
 
         self.multi_response_content = ""
+        self.mdstream = None
         if self.show_pretty():
             self.waiting_spinner = WaitingSpinner("Waiting for " + self.main_model.name)
             self.waiting_spinner.start()
             if self.stream:
                 self.mdstream = self.io.get_assistant_mdstream()
-            else:
-                self.mdstream = None
-        else:
-            self.mdstream = None
+        elif callable(getattr(self.io, "emit", None)):
+            self.waiting_spinner = WaitingSpinner(
+                "Waiting for " + self.main_model.name,
+                io=self.io,
+            )
+            self.waiting_spinner.start()
 
         retry_delay = 0.125
 

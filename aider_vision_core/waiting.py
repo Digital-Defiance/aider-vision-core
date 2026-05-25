@@ -183,8 +183,8 @@ class Spinner:
 class WaitingSpinner:
     """Background spinner that can be started/stopped safely."""
 
-    def __init__(self, text: str = "Waiting for LLM", delay: float = 0.15):
-        self.spinner = Spinner(text)
+    def __init__(self, text: str = "Waiting for LLM", delay: float = 0.15, io=None):
+        self.spinner = Spinner(text, io=io)
         self.delay = delay
         self._stop_event = threading.Event()
         self._thread = threading.Thread(target=self._spin, daemon=True)
@@ -197,15 +197,11 @@ class WaitingSpinner:
 
     def start(self):
         """Start the spinner in a background thread."""
-        if _headless():
-            return
         if not self._thread.is_alive():
             self._thread.start()
 
     def stop(self):
         """Request the spinner to stop and wait briefly for the thread to exit."""
-        if _headless():
-            return
         self._stop_event.set()
         if self._thread.is_alive():
             self._thread.join(timeout=self.delay)

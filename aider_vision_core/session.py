@@ -145,6 +145,9 @@ class Session:
                 yield self.io.emit("done", assistant_text="")
                 return
 
+            for event in self.io.drain_events():
+                yield event
+
             for chunk in self.coder.send_message(user_msg):
                 for event in self.io.drain_events():
                     yield event
