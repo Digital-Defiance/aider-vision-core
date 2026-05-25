@@ -16,6 +16,7 @@ from aider_vision_core.commands import Commands
 from aider_vision_core.event_io import EventIO
 from aider_vision_core.git_undo import undo_last_aider_commit_for_coder
 from aider_vision_core.git_workspace import create_git_workspace
+from aider_vision_core.todo_spec_generate import build_generate_message, parse_generated_layers
 from aider_vision_core.workspace_todos import WorkspaceTodos, format_todo_context
 
 
@@ -251,3 +252,44 @@ class Session:
         """Undo the last aider commit batch. Returns drained IO events."""
         undo_last_aider_commit_for_coder(self.coder, self.io)
         return self.io.drain_events()
+
+    def run_one_shot(self, message: str) -> str:
+        """Run a single turn without slash-command preprocessing; return assistant text."""
+        parts: list[str] = []
+        for event in self.run_message(message, preproc=False):
+            if event.get("type") == "token":
+                parts.append(str(event.get("text") or ""))
+            elif event.get("type") == "done":
+                return str(event.get("assistant_text") or "".join(parts))
+        return "".join(parts)
+
+    def generate_todo_layers(
+        self,
+        todo_id: str,
+        prompt: str,
+        *,
+        mode: str = "generate",
+        apply: bool = True,
+    ) -> dict[str, Any]:
+        """
+        Ask the session model for three-layer spec markdown, optionally PATCH the task.
+        """
+        api = WorkspaceTodos(self.coder.root)
+        item = api.get(todo_id)
+        msg = build_generate_message(prompt, mode=mode, item=item)  # type: ignore[arg-type]
+        raw = self.run_one_shot(msg)
+        layers = parse_generated_layers(raw)
+        if apply and any(layers.values()):
+            item, _ = api.update(
+                todo_id,
+                requirements=layers.get("requirements", ""),
+                design=layers.get("design", ""),
+                tasks_md=layers.get("tasks_md", ""),
+            )
+        return {
+            "requirements": layers.get("requirements", ""),
+            "design": layers.get("design", ""),
+            "tasks_md": layers.get("tasks_md", ""),
+            "raw": raw,
+            "item": item,
+        }

@@ -33,6 +33,7 @@ configure_vision_runtime()
 from aider_vision_core.git_undo import undo_last_aider_commit_for_coder
 from aider_vision_core.http_auth import auth_enabled, configure_auth, get_token_from_env, verify_bearer
 from aider_vision_core.session import Session
+from aider_vision_core.todo_spec_jobs import spec_job_store
 from aider_vision_core.workspace_todos import (
     SPEC_LAYER_TEMPLATES,
     TODO_TEMPLATES,
@@ -125,6 +126,8 @@ class TodoItemModel(BaseModel):
     design: str = ""
     tasks_md: str = ""
     depends_on: list[str] = Field(default_factory=list)
+    branch: str = ""
+    pr_url: str = ""
     status: str = "open"
     links: list[str] = Field(default_factory=list)
     checklist: list[ChecklistItemModel] = Field(default_factory=list)
@@ -156,6 +159,8 @@ class PatchTodoRequest(BaseModel):
     design: str | None = None
     tasks_md: str | None = None
     depends_on: list[str] | None = None
+    branch: str | None = None
+    pr_url: str | None = None
     status: str | None = None
     links: list[str] | None = None
     checklist: list[ChecklistItemModel] | None = None
@@ -167,6 +172,10 @@ class SetActiveTodoRequest(BaseModel):
     model_config = {"populate_by_name": True}
 
 
+class MoveTodoRequest(BaseModel):
+    direction: str = Field(..., description="up | down")
+
+
 class PatchTodoResponse(BaseModel):
     item: TodoItemModel
     auto_completed: bool = False
@@ -176,6 +185,44 @@ class ImportTodosRequest(BaseModel):
     workspace: str = Field(..., min_length=1)
     markdown: str = Field(..., min_length=1)
     merge: bool = False
+
+
+class GenerateTodoSpecRequest(BaseModel):
+    prompt: str = Field(..., min_length=1)
+    mode: str = Field("generate", description="generate | refine")
+    apply: bool = Field(True, description="Write parsed layers back to the task")
+    background: bool = Field(
+        True,
+        description="Use ephemeral session in a background thread (chat session stays free)",
+    )
+
+
+class GenerateTodoSpecJobStarted(BaseModel):
+    job_id: str
+    status: str = "pending"
+    todo_id: str
+
+
+class GenerateTodoSpecJobStatus(BaseModel):
+    job_id: str
+    status: str
+    todo_id: str
+    error: str | None = None
+    requirements: str = ""
+    design: str = ""
+    tasks_md: str = ""
+    raw: str = ""
+    item: TodoItemModel | None = None
+
+
+class GenerateTodoSpecResponse(BaseModel):
+    job_id: str | None = None
+    status: str = "completed"
+    requirements: str = ""
+    design: str = ""
+    tasks_md: str = ""
+    raw: str = ""
+    item: TodoItemModel | None = None
 
 
 class AddFilesRequest(BaseModel):
@@ -311,6 +358,8 @@ def _patch_todo_api(api: WorkspaceTodos, todo_id: str, body: PatchTodoRequest) -
             design=body.design,
             tasks_md=body.tasks_md,
             depends_on=body.depends_on,
+            branch=body.branch,
+            pr_url=body.pr_url,
             status=status,
             links=body.links,
             checklist=checklist,
@@ -329,6 +378,8 @@ def _todo_item_model(item: TodoItem) -> TodoItemModel:
         design=item.design,
         tasks_md=item.tasks_md,
         depends_on=item.depends_on,
+        branch=item.branch,
+        pr_url=item.pr_url,
         status=item.status,
         links=item.links,
         checklist=[ChecklistItemModel(id=c.id, text=c.text, done=c.done) for c in item.checklist],
@@ -371,6 +422,29 @@ def delete_workspace_todo(workspace: str, todo_id: str):
     return {"deleted": todo_id}
 
 
+@app.post("/workspaces/todos/{todo_id}/move", response_model=TodoListResponse)
+def move_workspace_todo(workspace: str, todo_id: str, body: MoveTodoRequest):
+    if body.direction not in ("up", "down"):
+        raise HTTPException(status_code=400, detail=f"Invalid direction: {body.direction}")
+    try:
+        store = _todos_for_workspace(workspace).move(todo_id, body.direction)
+    except ValueError as err:
+        raise HTTPException(status_code=404, detail=str(err)) from err
+    return _todo_list_response(store)
+
+
+@app.put("/sessions/{session_id}/todos/{todo_id}/move", response_model=TodoListResponse)
+def move_session_todo(session_id: str, todo_id: str, body: MoveTodoRequest):
+    if body.direction not in ("up", "down"):
+        raise HTTPException(status_code=400, detail=f"Invalid direction: {body.direction}")
+    session = _get_session(session_id)
+    try:
+        store = _workspace_todos(session).move(todo_id, body.direction)
+    except ValueError as err:
+        raise HTTPException(status_code=404, detail=str(err)) from err
+    return _todo_list_response(store)
+
+
 @app.put("/workspaces/todos/active", response_model=TodoListResponse)
 def set_workspace_active_todo(workspace: str, body: SetActiveTodoRequest):
     try:
@@ -411,6 +485,150 @@ def create_session_todo(session_id: str, body: CreateTodoRequest):
 def patch_session_todo(session_id: str, todo_id: str, body: PatchTodoRequest):
     session = _get_session(session_id)
     return _patch_todo_api(_workspace_todos(session), todo_id, body)
+
+
+def _validate_generate_mode(mode: str) -> None:
+    if mode not in ("generate", "refine"):
+        raise HTTPException(status_code=400, detail=f"Invalid mode: {mode}")
+
+
+def _job_status_response(job) -> GenerateTodoSpecJobStatus:
+    item = job.item
+    return GenerateTodoSpecJobStatus(
+        job_id=job.job_id,
+        status=job.status,
+        todo_id=job.todo_id,
+        error=job.error,
+        requirements=job.requirements,
+        design=job.design,
+        tasks_md=job.tasks_md,
+        raw=job.raw,
+        item=_todo_item_model(item) if item else None,
+    )
+
+
+def _start_spec_job(
+    workspace: str,
+    todo_id: str,
+    body: GenerateTodoSpecRequest,
+    *,
+    model: str | None,
+) -> GenerateTodoSpecJobStarted:
+    _validate_generate_mode(body.mode)
+    root = Path(workspace).resolve()
+    if not root.is_dir():
+        raise HTTPException(status_code=404, detail=f"Not a directory: {workspace}")
+    try:
+        WorkspaceTodos(root).get(todo_id)
+    except ValueError as err:
+        raise HTTPException(status_code=404, detail=str(err)) from err
+    job = spec_job_store.start(
+        str(root),
+        todo_id,
+        body.prompt,
+        mode=body.mode,
+        apply=body.apply,
+        model=model,
+    )
+    return GenerateTodoSpecJobStarted(job_id=job.job_id, status=job.status, todo_id=todo_id)
+
+
+def _wait_spec_job(job_id: str) -> GenerateTodoSpecResponse:
+    try:
+        job = spec_job_store.wait(job_id, timeout_s=600.0)
+    except KeyError as err:
+        raise HTTPException(status_code=404, detail=str(err)) from err
+    except TimeoutError as err:
+        raise HTTPException(status_code=504, detail=str(err)) from err
+    if job.status == "error":
+        raise HTTPException(status_code=500, detail=job.error or "Spec generation failed")
+    return GenerateTodoSpecResponse(
+        job_id=job.job_id,
+        status=job.status,
+        requirements=job.requirements,
+        design=job.design,
+        tasks_md=job.tasks_md,
+        raw=job.raw,
+        item=_todo_item_model(job.item) if job.item else None,
+    )
+
+
+@app.post("/workspaces/todos/{todo_id}/sync-spec-files", response_model=TodoItemModel)
+def sync_workspace_spec_files(workspace: str, todo_id: str):
+    """Import three-layer markdown from ``.aider-vision/specs/{id}/`` into todos.json."""
+    api = _todos_for_workspace(workspace)
+    try:
+        item = api.import_spec_files(todo_id)
+    except ValueError as err:
+        raise HTTPException(status_code=404, detail=str(err)) from err
+    return _todo_item_model(item)
+
+
+@app.post("/sessions/{session_id}/todos/{todo_id}/sync-spec-files", response_model=TodoItemModel)
+def sync_session_spec_files(session_id: str, todo_id: str):
+    session = _get_session(session_id)
+    try:
+        item = _workspace_todos(session).import_spec_files(todo_id)
+    except ValueError as err:
+        raise HTTPException(status_code=404, detail=str(err)) from err
+    return _todo_item_model(item)
+
+
+@app.get("/workspaces/todos/generate-spec/{job_id}", response_model=GenerateTodoSpecJobStatus)
+def get_workspace_spec_job(job_id: str):
+    job = spec_job_store.get(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+    return _job_status_response(job)
+
+
+@app.get("/sessions/{session_id}/todos/generate-spec/{job_id}", response_model=GenerateTodoSpecJobStatus)
+def get_session_spec_job(session_id: str, job_id: str):
+    _get_session(session_id)
+    job = spec_job_store.get(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+    return _job_status_response(job)
+
+
+@app.post(
+    "/sessions/{session_id}/todos/{todo_id}/generate-spec",
+    response_model=None,
+)
+def generate_session_todo_spec(session_id: str, todo_id: str, body: GenerateTodoSpecRequest):
+    session = _get_session(session_id)
+    model = session.coder.main_model.name
+    workspace = str(Path(session.coder.root).resolve())
+    started = _start_spec_job(workspace, todo_id, body, model=model)
+    if body.background:
+        return JSONResponse(status_code=202, content=started.model_dump())
+    return _wait_spec_job(started.job_id)
+
+
+@app.post("/workspaces/todos/{todo_id}/generate-spec", response_model=None)
+def generate_workspace_todo_spec(
+    workspace: str,
+    todo_id: str,
+    body: GenerateTodoSpecRequest,
+    session_id: str,
+):
+    """Start spec generation; ``session_id`` supplies the model name and workspace check."""
+    session = _get_session(session_id)
+    root = Path(workspace).resolve()
+    if Path(session.coder.root).resolve() != root:
+        raise HTTPException(
+            status_code=400,
+            detail="Session workspace does not match workspace query parameter",
+        )
+    started = _start_spec_job(
+        str(root),
+        todo_id,
+        body,
+        model=session.coder.main_model.name,
+    )
+    if body.background:
+        return JSONResponse(status_code=202, content=started.model_dump())
+    return _wait_spec_job(started.job_id)
 
 
 @app.delete("/sessions/{session_id}/todos/{todo_id}")

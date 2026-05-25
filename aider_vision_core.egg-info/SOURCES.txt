@@ -71,6 +71,7 @@ aider_vision_core/sendchat.py
 aider_vision_core/session.py
 aider_vision_core/special.py
 aider_vision_core/todo_markdown.py
+aider_vision_core/todo_spec_generate.py
 aider_vision_core/urls.py
 aider_vision_core/utils.py
 aider_vision_core/versioncheck.py

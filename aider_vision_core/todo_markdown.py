@@ -14,6 +14,8 @@ _TASK_HEADER = re.compile(r"^#\s+(.+)$")
 _META_ID = re.compile(r"^id:\s*(\S+)\s*$", re.I)
 _META_STATUS = re.compile(r"^status:\s*(\S+)\s*$", re.I)
 _META_DEPENDS = re.compile(r"^depends_on:\s*(.+)$", re.I)
+_META_BRANCH = re.compile(r"^branch:\s*(.+)$", re.I)
+_META_PR = re.compile(r"^pr:\s*(.+)$", re.I)
 _CHECKLIST_ITEM = re.compile(r"^-\s*\[([ xX])\]\s*(.*)$")
 
 _LAYER_SECTIONS = {
@@ -35,6 +37,10 @@ def export_markdown(store: TodoStore) -> str:
         ]
         if item.depends_on:
             lines.append(f"depends_on: {', '.join(item.depends_on)}")
+        if item.branch.strip():
+            lines.append(f"branch: {item.branch.strip()}")
+        if item.pr_url.strip():
+            lines.append(f"pr: {item.pr_url.strip()}")
         lines.append("")
         if item.requirements.strip() or item.design.strip() or item.tasks_md.strip():
             lines += ["## Requirements", item.requirements.strip() or "", ""]
@@ -103,6 +109,8 @@ def import_markdown(text: str, existing: TodoStore | None = None, *, merge: bool
             design=str(current.get("design") or ""),
             tasks_md=str(current.get("tasks_md") or ""),
             depends_on=list(current.get("depends_on") or []),
+            branch=str(current.get("branch") or ""),
+            pr_url=str(current.get("pr_url") or ""),
             status=current.get("status") or "open",
             links=list(current.get("links") or []),
             checklist=list(current.get("checklist") or []),
@@ -124,7 +132,14 @@ def import_markdown(text: str, existing: TodoStore | None = None, *, merge: bool
         hm = _TASK_HEADER.match(stripped)
         if hm and not stripped.lower().startswith("# aider vision"):
             flush_task()
-            current = {"title": hm.group(1).strip(), "checklist": [], "links": [], "depends_on": []}
+            current = {
+                "title": hm.group(1).strip(),
+                "checklist": [],
+                "links": [],
+                "depends_on": [],
+                "branch": "",
+                "pr_url": "",
+            }
             section = None
             section_lines = []
             i += 1
@@ -149,6 +164,16 @@ def import_markdown(text: str, existing: TodoStore | None = None, *, merge: bool
         md = _META_DEPENDS.match(stripped)
         if md:
             current["depends_on"] = [p.strip() for p in md.group(1).split(",") if p.strip()]
+            i += 1
+            continue
+        mb = _META_BRANCH.match(stripped)
+        if mb:
+            current["branch"] = mb.group(1).strip()
+            i += 1
+            continue
+        mp = _META_PR.match(stripped)
+        if mp:
+            current["pr_url"] = mp.group(1).strip()
             i += 1
             continue
 

@@ -110,6 +110,8 @@ class TodoItem:
     design: str = ""
     tasks_md: str = ""
     depends_on: list[str] = field(default_factory=list)
+    branch: str = ""
+    pr_url: str = ""
     status: TodoStatus = "open"
     links: list[str] = field(default_factory=list)
     checklist: list[ChecklistItem] = field(default_factory=list)
@@ -135,6 +137,8 @@ class TodoItem:
             design=str(raw.get("design") or ""),
             tasks_md=str(raw.get("tasks_md") or raw.get("tasksMd") or ""),
             depends_on=[str(d) for d in deps if str(d).strip()],
+            branch=str(raw.get("branch") or ""),
+            pr_url=str(raw.get("pr_url") or raw.get("prUrl") or ""),
             status=valid,
             links=list(raw.get("links") or []),
             checklist=checklist,
@@ -179,6 +183,12 @@ def _layer_or_placeholder(text: str, placeholder: str) -> str:
 def format_todo_context(item: TodoItem, *, store: TodoStore | None = None) -> str:
     item = migrate_todo_layers(item)
     lines = [f"[Active task: {item.title} · id {item.id[:8]}]", ""]
+    if item.branch.strip():
+        lines.append(f"**Git branch:** {item.branch.strip()}")
+    if item.pr_url.strip():
+        lines.append(f"**Pull request:** {item.pr_url.strip()}")
+    if item.branch.strip() or item.pr_url.strip():
+        lines.append("")
     if item.depends_on and store:
         pending = []
         for dep_id in item.depends_on:
@@ -225,6 +235,31 @@ class WorkspaceTodos:
         (folder / "requirements.md").write_text(item.requirements or "", encoding="utf-8")
         (folder / "design.md").write_text(item.design or "", encoding="utf-8")
         (folder / "tasks.md").write_text(item.tasks_md or "", encoding="utf-8")
+
+    def import_spec_files(self, todo_id: str) -> TodoItem:
+        """Load ``requirements.md`` / ``design.md`` / ``tasks.md`` from disk into the task."""
+        item = self.get(todo_id)
+        folder = self.specs_root / todo_id
+        if not folder.is_dir():
+            raise ValueError(f"No spec folder for task: {todo_id}")
+        layers: dict[str, str] = {}
+        for filename, key in (
+            ("requirements.md", "requirements"),
+            ("design.md", "design"),
+            ("tasks.md", "tasks_md"),
+        ):
+            path = folder / filename
+            if path.is_file():
+                layers[key] = path.read_text(encoding="utf-8")
+        if not layers:
+            raise ValueError(f"Spec folder is empty: {folder}")
+        item, _ = self.update(
+            todo_id,
+            requirements=layers.get("requirements", item.requirements),
+            design=layers.get("design", item.design),
+            tasks_md=layers.get("tasks_md", item.tasks_md),
+        )
+        return item
 
     def load(self) -> TodoStore:
         if not self.path.is_file():
@@ -293,6 +328,8 @@ class WorkspaceTodos:
         design: str | None = None,
         tasks_md: str | None = None,
         depends_on: list[str] | None = None,
+        branch: str | None = None,
+        pr_url: str | None = None,
         status: TodoStatus | None = None,
         links: list[str] | None = None,
         checklist: list[ChecklistItem] | None = None,
@@ -316,6 +353,10 @@ class WorkspaceTodos:
             item.tasks_md = tasks_md
         if depends_on is not None:
             item.depends_on = [d.strip() for d in depends_on if str(d).strip()]
+        if branch is not None:
+            item.branch = branch.strip()
+        if pr_url is not None:
+            item.pr_url = pr_url.strip()
         if status is not None:
             item.status = status
         if links is not None:
@@ -354,6 +395,20 @@ class WorkspaceTodos:
         from aider_vision_core.todo_markdown import export_markdown
 
         return export_markdown(self.load())
+
+    def move(self, todo_id: str, direction: str) -> TodoStore:
+        """Move a task up/down in list order (``direction``: ``up`` | ``down``)."""
+        store = self.load()
+        idx = next((i for i, t in enumerate(store.todos) if t.id == todo_id), None)
+        if idx is None:
+            raise ValueError(f"Unknown task: {todo_id}")
+        delta = -1 if direction == "up" else 1
+        new_idx = idx + delta
+        if new_idx < 0 or new_idx >= len(store.todos):
+            return store
+        store.todos[idx], store.todos[new_idx] = store.todos[new_idx], store.todos[idx]
+        self.save(store)
+        return store
 
     def delete(self, todo_id: str) -> None:
         store = self.load()
