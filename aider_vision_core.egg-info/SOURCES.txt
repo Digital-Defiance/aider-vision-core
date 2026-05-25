@@ -72,6 +72,7 @@ aider_vision_core/session.py
 aider_vision_core/special.py
 aider_vision_core/todo_markdown.py
 aider_vision_core/todo_spec_generate.py
+aider_vision_core/todo_spec_jobs.py
 aider_vision_core/urls.py
 aider_vision_core/utils.py
 aider_vision_core/versioncheck.py
@@ -376,6 +377,8 @@ tests/basic/test_special.py
 tests/basic/test_ssl_verification.py
 tests/basic/test_superproject_integration.py
 tests/basic/test_todo_markdown.py
+tests/basic/test_todo_spec_generate.py
+tests/basic/test_todo_spec_jobs.py
 tests/basic/test_udiff.py
 tests/basic/test_urls.py
 tests/basic/test_utils.py
